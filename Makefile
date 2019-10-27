@@ -54,6 +54,7 @@ Ebola_math:
 	$(linkdir)
 
 ######################################################################
+
 ## Cancelled talks (father illness)
 
 ## Taiwan AIMS (overlap with SMB/hetero? what else?)
@@ -74,10 +75,35 @@ fido.outline.pdf: fido.txt
 fido.draft.pdf: fido.txt
 fido.final.pdf: fido.txt
 
-## bridging.draft.tex: bridging.txt
+## The super-fast Banff talk
 bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
 bridging.final.pdf: bridging.txt
+
+######################################################################
+
+## Paths (could be modularized in case there's another user)
+
+mli = ~/screens/mli
+legacy = ~/gitroot
+
+######################################################################
+
+## Directories
+
+Ignore += rabies_R0
+rabies_R0: dir=~/screens/mli/R0
+rabies_R0: dir=~$(mli)/R0
+rabies_R0:
+	$(linkdirname)
+
+## Move this to Park if you find yourself working in this directory
+Ignore += networkSEIR
+networkSEIR: dir=$(legacy)
+networkSEIR:
+	$(linkdir)
+
+pardirs += Generation_distributions Endemic_curves Disease_data
 
 ######################################################################
 
