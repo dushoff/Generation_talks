@@ -1,0 +1,28 @@
+EXTRA
+
+Aim to talk for <25 minutes
+
+Build a little bit on speed and strength stuff from last year
+
+Look up Trapman and use for reference
+
+Follow basic structure of poster unless you have a better idea
+
+Look at Trapman
+
+Daniel
+
+	* Explain the basics
+
+	* Start with contact tracing vs. shedding
+
+	* Temporal correction is very beautiful but not statistically very stable
+
+	* We moved from that to individual-based censorship (full likelihood and conditional likelihood)
+
+----------------------------------------------------------------------
+
+Header
+
+	Bullet 
+

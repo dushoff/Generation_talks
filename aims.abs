@@ -1,0 +1,5 @@
+Generation intervals in models of infectious-disease spread
+
+Generation intervals are an often-neglected component of the disease-transmission process. Mathematical models often assume exponentially distributed latent and infectious periods, but the interval between when a focal individual was infected and when they infect others (and the distribution of such intervals) can play a crucial role in parameterizing models and in making inferences and forecasts.
+
+I will discuss how generation intervals link outbreak "speed" and strength", and issues involved in definitions and approximations of generation intervals.

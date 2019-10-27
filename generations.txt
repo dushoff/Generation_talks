@@ -1,0 +1,995 @@
+
+----------------------------------------------------------------------
+
+Modeling and estimating generation intervals
+
+PRESENT \vfill
+
+Tachikawa infectious boot camp,  2019
+
+PRESENT \vfill
+
+Jonathan Dushoff, McMaster University
+
+PRESENT \vfill
+
+\url{https://github.com/dushoff/Generation_talks}
+
+PRESENT \vfill
+
+----------------------------------------------------------------------
+
+TSEC Introduction
+
+	I talk too fast
+
+	I have too much to tell you
+
+	Interrupt me!
+
+----------------------------------------------------------------------
+
+PSLIDE Who am I? Head
+
+FIG notebook/average.Rout.pdf
+
+
+----------------------------------------------------------------------
+
+PSLIDE Who am I? Heart
+
+FIG notebook/pythagoras.Rout.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Who am I? Stomach
+
+FIG Disease_data/HIV_incidence_all.world.yearly.Rout.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Who are you?
+
+	Math person
+
+	Health person
+
+	Biology person
+
+----------------------------------------------------------------------
+
+How long is a disease generation?
+
+BCC
+
+	Introduced by Prof.~Nakaoka
+
+	If I am infected on day 0, when do I infect you?
+
+	When do you infect Dr.~Akhmetzhanov?
+
+NCC
+
+SIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Goals
+
+	Introduce a generation-based framework for modeling
+
+	Discuss importance of generation intervals
+
+	Discuss how generation intervals are defined and measured
+
+----------------------------------------------------------------------
+
+
+SEC Linking strength and speed 
+
+----------------------------------------------------------------------
+
+Speed
+
+	We measure epidemic speed using little $r$:
+
+		The ratio of the \emph{change} in disease impact to the \emph{amount} of
+		disease impact
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+PIC FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$. Sort-of fast.
+
+----------------------------------------------------------------------
+
+Mexican flu
+
+PIC FIG fitting_code/mexican_plots.Rout-0.pdf
+
+$C \approx 1 \,\mathrm{week}$. Sort-of fast.
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and control
+
+	We describe epidemic \emph{strength} with big \Rx
+
+	Number of potential new cases per case
+
+		Not accounting for proportion susceptible
+
+	To eliminate disease, we must:
+
+		Reduce effective reproduction by a factor of \Rx
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and equilibrium
+
+	If we have $\Rx$ new cases per case when everyone is susceptible
+
+	And 1 case per case (on average) at equilibrium:
+
+		Proportion susceptible at equilibrium is $S = 1/\Rx$
+
+		Proportion affected at equilibrium is $V = 1 - 1/\Rx$
+
+----------------------------------------------------------------------
+
+PSLIDE $\Rx$ and control
+
+BC
+
+CFIG ss_pix/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+SEC The link
+
+----------------------------------------------------------------------
+
+BC
+
+SIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NC
+
+	The generation distribution measures generations of the disease
+
+		Interval between ``index'' infection and resulting infection
+
+	Do fast disease generations mean more danger or less danger?
+
+EC
+
+----------------------------------------------------------------------
+
+Conditional effect of generation time
+
+	\emph{Given} the reproductive number $\Rx$
+
+		faster generation time $G$ means faster growth rate $r$
+
+		More danger
+
+	\emph{Given} the growth rate $r$
+
+		faster generation time $G$ means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
+
+PSLIDE Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+PRESENT FIG Generation_distributions/steps.Rout-0.pdf
+
+NOTES DOUBLEFIG Generation_distributions/steps.Rout-1.pdf Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Generations and \Rx
+
+BSS
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+NSS
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+ESS
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$, $G \approx 2 \,\mathrm{week}$
+
+----------------------------------------------------------------------
+
+Mexican flu
+
+PRESENT FIG fitting_code/mexican_plots.Rout-0.pdf
+
+$C \approx 1 \,\mathrm{week}$, $G \approx 3 \,\mathrm{day}$
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+PRESENT FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$, $G \approx 4 \,\mathrm{years}$
+
+----------------------------------------------------------------------
+
+Linking framework
+
+BCC
+
+	PRESENT Epidemic speed ($r$) is a \emph{product}:
+
+		PRESENT generation speed $\times$
+
+		PRESENT epidemic strength
+
+	PRESENT WRONG
+
+NCC
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+EC
+
+----------------------------------------------------------------------
+
+SS Renewal-equation models
+
+----------------------------------------------------------------------
+
+Box models
+
+WIDEFIG SIR_model_family/sir.four.pdf
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the \emph{proportion} of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	For invasion, treat $S$ as constant
+
+----------------------------------------------------------------------
+
+Infection kernel 
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Renewal equations
+
+	More flexible than ODEs
+
+		Non-exponential distributions, variation in infectiousness through time
+
+		The ODEs we've seen can be rewritten as renewal equations!
+
+	Can be parameterized by observing generation intervals
+
+		Contact tracing (realized intervals)
+		
+		infectiousness of studied individuals (intrinsic distribution)
+
+----------------------------------------------------------------------
+
+SEC Estimating \Rx
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	Model
+
+		$$i(t) = S \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+		If we neglect changes in $S$, we expect exponential growth
+
+	Exponential phase
+
+		Disease grows with characteristic time $C=1/r$
+
+		$$i(t) = i(0) \exp(rt)$$
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	$$i(t) = S \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+	Substitute: $$i(t) = i(0) \exp(rt)$$
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+----------------------------------------------------------------------
+
+Interpretation: generating functions
+
+BC
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NC
+
+SIDEFIG webpix/black_box.png
+
+EC
+
+----------------------------------------------------------------------
+
+SS Effective generation times
+
+----------------------------------------------------------------------
+
+Interpretation: ``effective'' generation times
+
+	Define the effective generation time so that 
+
+		$${\Rx} = \exp(r\hat G)$$
+
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+		A filtered mean:
+		
+			The discounted value of $\hat G$ is the expectation of the discounted
+			values across the distribution
+
+----------------------------------------------------------------------
+
+Filtered means
+
+	Many things we know about are examples of filtered means
+
+		Geometric mean (log function)
+
+		Harmonic mean (reciprocal function)
+
+		Root mean square (square) 
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r = (1/\hat G) \times \log(\Rx) $
+
+		$ \hat G$ is the effective mean generation time
+
+----------------------------------------------------------------------
+
+DEFHEAD $C = 1/r = 10d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE $C= 1/r  = 20d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+DEFHEAD $C= 1/r  = 30d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Filtered means have intuitive properties
+
+	Shifts in distribution shift the mean about how you would expect
+
+		More late transmission means longer $\hat G$
+
+		Longer $\hat G$ means higher $\Rx$ for a given $r$
+
+	As distribution gets narrower, $\hat G$ increases toward the mean $\bar G$
+
+	As distribution gets wider, $\hat G$ decreases
+
+		Scientific interpretation?
+
+----------------------------------------------------------------------
+
+The filtering function
+
+	$\exp(-r \hat G) = \langle \exp(-r \tau) \rangle_g$,
+
+	$\hat G$ is the mean of the generation distribution $g(\tau)$ ...
+
+	Filtered by the discount function associated with the rate of
+	exponential growth of the epidemic 
+
+		i.e., the relative importance of a contribution at that time
+
+----------------------------------------------------------------------
+
+SS Moment approximations
+
+----------------------------------------------------------------------
+
+Problems
+
+	The filtered mean has drawbacks
+
+	$\hat G$ depends on $r$ as well as $G$
+
+	How is
+	
+		$\Rx = \exp(r \hat G)$
+
+	Consistent with the result from ODEs
+
+		$\Rx = 1 + r \bar G$?
+
+----------------------------------------------------------------------
+
+Infectious times and waiting times
+
+	If the average infectious time is 5 days, what is the average generation
+	time?
+
+		The average latent period plus the infectious-waiting period
+
+	What is the average infectious-waiting period?
+
+		$5\mathrm{d}(1+\kappa)/2$
+
+			$\kappa$ measures the relative variation of the infectious period
+
+		The waiting period is not the infectious period
+
+			The exponential distribution is trying to trick you!
+
+----------------------------------------------------------------------
+
+PSLIDE Infectious and waiting periods
+
+FIG Generation_distributions/waiting.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Infectious and waiting periods
+
+FIG Generation_distributions/waiting.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Infectious and waiting periods
+
+FIG Generation_distributions/waiting.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+An approximation
+
+	We make the \rR\ link with a moment approximation
+
+	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+	coefficient of variation of the generation distribution
+
+	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
+
+		Equal when $g(\tau)$ has a gamma distribution
+
+		Simple and straightforward
+
+		When is it a useful approximation?
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	Define $\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+----------------------------------------------------------------------
+
+PSLIDE Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+PRESENT WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+PRESENT WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+NOTES DOUBLEFIG Generation_distributions/gamHist.Rout-6.pdf Generation_distributions/gamHist.Rout-7.pdf
+
+----------------------------------------------------------------------
+
+Qualitative response
+
+	For a given value of $\bar G$, smaller values of $\kappa$ mean:
+
+		less variation in generation interval
+
+		less compounding of growth
+
+		greater \Rx\ required for a given $r$
+
+----------------------------------------------------------------------
+
+Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+Approximating the distribution
+
+BCC
+
+PRESENT WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
+
+NCC
+
+PRESENT WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+EC
+
+NOTES DOUBLEFIG Generation_distributions/lognormal.histcomp.Rout.pdf Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+----------------------------------------------------------------------
+
+Approximating the curve
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
+
+		$\ell$ is the inverse of $X$
+
+----------------------------------------------------------------------
+
+Other diseases
+
+	This approximation works suspiciously well for measles parameters
+
+	Noticeably less well for rabies parameters
+
+		Can be improved using gamma-based estimates of the moments
+
+----------------------------------------------------------------------
+
+Summary
+
+	For many practical applications:
+
+		Estimating the mean generation interval is not enough
+
+		But estimating the mean and CV may be enough
+
+			This can also allow us to address our uncertainty
+
+	Filtered mean is useful for qualitative explanations
+
+		e.g., Ebola burial
+
+----------------------------------------------------------------------
+
+TSEC Generation intervals through time
+
+	Generation intervals can be estimated by:
+
+		Observing patients:
+		
+			How long does it take to become infectious?
+		
+			How long does it take to recover?
+
+			What is the time profile of infectiousness/activity?
+
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become ill (serial interval)?
+
+----------------------------------------------------------------------
+
+Types of interval
+
+	Contact-tracing intervals look systematically different, depending on when you observe them.
+
+	Define:
+
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
+
+		\emph{Forward interval}: When do people infected at a particular time 
+		infect others?
+
+		\emph{Backward interval}: When were the people who infect at a particular
+		time infected? 
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{shorter} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Forward and backward intervals
+
+FIG my_images/GI_PRSB_1.jpg
+
+----------------------------------------------------------------------
+
+Correcting
+
+	Infection events: someone infected at time $s$ is infecting someone at time
+	$t$
+
+		$i_s(t) = S(t) k(t-s) i(s)$
+
+	Backward intervals 
+
+		Who infected the people infected at time $t$?
+	
+			$\propto k(t-s) i(s)$
+
+		Depends on $k$, but also on changes in $i(s)$
+
+	Forward intervals 
+
+		Who did the people infected at time $s$ infect?
+	
+			$\propto S(t) k(t-s)$
+
+		Depends on $k$, but also on changes in $S(t)$
+
+----------------------------------------------------------------------
+
+PSLIDE What changes backward intervals?
+
+FIG my_images/GI_PRSB_2.jpg
+
+----------------------------------------------------------------------
+
+PSLIDE What changes forward intervals?
+
+FIG my_images/GI_PRSB_3.jpg
+
+----------------------------------------------------------------------
+
+Theory and simulation
+
+FIG my_images/GI_PRSB_4.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Conclusion
+
+	Backward intervals change if the number of infectious individuals is
+	changing as you look back
+
+	Forward intervals change if the number of \emph{susceptible} individuals is
+	changing as you look forward
+
+	Lack of care in defining generation intervals can lead to bias
+
+		In particular, generation intervals look short during an epidemic outbreak
+
+			Makes diseases look less dangerous!
+
+		These biases can be corrected
+
+----------------------------------------------------------------------
+
+SEC Conclusion
+
+----------------------------------------------------------------------
+
+Spatial struture
+
+WIDEFIG contact_trace/fig/cmp_reproductive_seminr.pdf
+
+----------------------------------------------------------------------
+
+Individual-level heterogeneity
+
+FIG my_images/rabies_corr.pdf
+
+
+----------------------------------------------------------------------
+
+Summary
+
+	Generation intervals are often taken for granted
+
+	We need better methods for defining different measures of disease
+	generations
+	
+		We need to consider our \emph{uncertainty} about generations when making
+		conclusions
+
+	Generation intervals are fun conceptually, mathematically and practically
+
+----------------------------------------------------------------------
+
+SEC Renewal math (extra)
+
+----------------------------------------------------------------------
+
+Compartments vs.~cohorts
+
+	We have a some simplified biological assumptions about how a disease spreads
+
+	We can implement these assumptions into a model:
+
+		Track \textbf{compartments}: S, I, R, \ldots
+
+		\emph{or} track \textbf{cohorts}: a group of people infected at the same
+		time
+
+----------------------------------------------------------------------
+
+Cohort approach
+
+	Model 
+
+		$$ \frac{dS}{dt} = \mu S - \beta SI/N $$
+
+		$$ \frac{dI}{dt} = \beta SI/N - \gamma I $$
+
+	What happens to a cohort infected at time 0?
+
+		$$ \frac{dI}{d\tau} = - \gamma I $$
+
+		$$ I(\tau) = I(0)\exp(-\gamma\tau) $$
+
+	We can write cohort equations for more complicated models as well
+
+----------------------------------------------------------------------
+
+Another view of the model
+
+	Model \textbf{incidence} $i$:
+
+		$$ \frac{dS}{dt} = \mu S - i(t) $$
+
+		$$ \frac{dI}{dt} = i(t) - \gamma I$$
+
+		$$ i(t) = \beta SI/N $$
+
+----------------------------------------------------------------------
+
+Cohort approach
+
+	We can use standard methods for the differential equation:
+
+		$$ \frac{dI}{dt} = i(t) - \gamma I $$
+
+	or we can just write down the answer using a cohort approach:
+
+		$$ I(t) = \int I(t-\tau, \tau)) d\tau$$
+
+		$$ = \int i(t-\tau) \exp (-\gamma \tau)) d\tau$$
+
+	This answer makes \emph{biological} sense
+
+----------------------------------------------------------------------
+
+Cohort-based equation
+
+	We can eliminate $I$ and write:
+
+		$$ \frac{dS}{dt} = \mu S - i(t) $$
+
+		$$ i(t) = \frac{S}{N} \int \beta i(t-\tau) \exp (-\gamma \tau)) d\tau$$
+
+	This is the \emph{same model}
+
+		Same assumptions, same dynamics
+
+	We can generalize our compartmental assumptions:
+
+		$$ i(t) = \frac{S}{N} \int i(t-\tau) k(\tau) d\tau$$
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+	$$ i(t) = \frac{S}{N} \int i(t-\tau) k(\tau) d\tau$$
+
+	$k(\tau)$ is the infection ``kernel'' -- it describes how an incident (new,
+	occurring) case tends to cause other incident cases over time
+
+		As a function of time since infection
+
+	What are the advantages or disadvantages of this cohort-based approach,
+	compared to a general compartmental model?
+
+	How would you estimate an infection kernel?
+
+----------------------------------------------------------------------

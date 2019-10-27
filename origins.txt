@@ -1,0 +1,879 @@
+
+Measuring the strength and speed of epidemics
+
+\vfill
+
+McMaster University Origins Institute Colloquium
+
+November 2016 
+
+\vfill
+
+Jonathan Dushoff
+
+\url{http://lalashan.mcmaster.ca/DushoffLab}
+
+\vfill
+
+----------------------------------------------------------------------
+
+EXTRA Abstract
+
+Epidemics, including the Mexican flu, Ebola and Zika virus hold
+unknown and often potentially serious dangers. Mathematical modeling
+has become a key part of epidemic response. I will explore both the
+theory and practice of how key epidemiological parameters are
+measured, and how they are used to make predictions about epidemic
+spread, and to guide proposed control interventions.
+
+----------------------------------------------------------------------
+
+SEC Introduction
+
+----------------------------------------------------------------------
+
+Infectious diseases
+
+FIG image_drop/flu_masks.jpg
+
+----------------------------------------------------------------------
+
+FIG image_drop/burial_team.jpg
+
+----------------------------------------------------------------------
+
+FIG Disease_data/us2000.Rout.pdf
+
+----------------------------------------------------------------------
+
+# The role of modeling
+
+Models
+
+BCC
+
+CFIG image_drop/flat.png
+
+NCC
+
+	A model is a simplified view of the world
+
+	Allows linking between assumptions and outcomes
+
+EC
+
+----------------------------------------------------------------------
+
+Dynamic models
+
+WIDEFIG SIR_model_family/sir.three.pdf
+
+Small-scale events $\displaystyle \Leftrightarrow$ Large-scale patterns and outcomes
+
+----------------------------------------------------------------------
+
+Dynamic modeling
+
+SUBH Connects scales
+
+BCC
+
+CFIG image_drop/trans.jpg
+
+NCC
+
+CFIG image_drop/ew_measles.png
+
+EC
+
+----------------------------------------------------------------------
+
+Dynamic modeling
+
+SUBH Connects scales
+
+BCC
+
+CFIG image_drop/ebola_ward.jpg
+
+NCC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Yellow fever in Panama
+
+BC
+
+CFIG image_drop/endemic.Rout-0.png
+
+NC
+
+CFIG image_drop/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+TSS Speed of epidemics
+
+BCC
+
+	Exponential growth:
+
+		Growth proportional to size
+
+NCC
+
+CFIG fitting_code/mexican_plots.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Exponential growth
+
+BCC
+
+CFIG fitting_code/mexican_plots.Rout-0.pdf
+
+NCC
+
+CFIG fitting_code/mexican_plots.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Exponential growth
+
+BCC
+
+CFIG fitting_code/mexican_plots.Rout-0.pdf
+
+NCC
+
+CFIG fitting_code/mexican_plots.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Speed
+
+	We measure epidemic speed using little $r$:
+
+		The ratio of the \emph{change} in disease impact to the \emph{amount} of
+		disease impact
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+		Ebola, $C \approx 1 \mathrm{month}$
+
+		HIV in SSA, $C \approx 18 \mathrm{month}$
+
+----------------------------------------------------------------------
+
+TSS Strength of epidemics
+
+BC
+
+CFIG image_drop/endemic.Rout-0.png
+
+NC
+
+CFIG image_drop/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Basic reproductive number
+
+	We describe epidemic strength with big \Rx
+
+	Number of potential new cases per case
+
+	To eliminate disease, we must:
+
+		Reduce transmission by a factor of \Rx\ \emph{or}
+
+		Reduce number of susceptible people by a factor of \Rx\ \emph{or} \ldots
+
+	Examples:
+
+		Ebola, $\Rx \approx 2$
+
+		HIV in SSA, $\Rx \approx 5$
+
+----------------------------------------------------------------------
+
+Linking little $r$ and big \Rx
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Generation intervals
+
+BCC
+
+	The generation distribution measures generations of the disease
+
+		Interval between ``index'' infection and resulting infection
+
+	What does $G$ tell us about how dangerous the epidemic is?
+
+		It depends on what else we know!
+
+NCC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+BCC
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+NCC
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Conditional effect of generation time
+
+	\emph{Given} the reproductive number $\Rx$
+
+		faster generation time $G$ means faster spread time $C$
+
+		More danger
+
+	\emph{Given} the spread time $C$
+
+		faster generation time $G$ means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
+
+TSEC Generation intervals through time
+
+	Generation intervals can be estimated by:
+
+		Observing patients:
+		
+			How long does it take to become infectious?
+		
+			How long does it take to recover?
+
+			What is the time profile of infectiousness/activity?
+
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become ill (serial interval)?
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{faster} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Forward and backward intervals
+
+FIG my_images/GI_PRSB_1.jpg
+
+CREDIT 16 Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+What changes backward intervals?
+
+FIG my_images/GI_PRSB_2.jpg
+
+----------------------------------------------------------------------
+
+What changes forward intervals?
+
+FIG my_images/GI_PRSB_3.jpg
+
+----------------------------------------------------------------------
+
+Comparison to simulations
+
+FIG my_images/GI_PRSB_4.jpg
+
+----------------------------------------------------------------------
+
+Conclusion
+
+	Backward intervals change if the number of infectious individuals is
+	changing as you look back
+
+	Forward intervals change if the number of \emph{susceptible} individuals is
+	changing as you look forward
+
+	Lack of care in defining generation intervals can lead to bias
+
+		Results also tell us how to correct this bias
+
+----------------------------------------------------------------------
+
+SEC Estimating the effect of generation intervals
+
+----------------------------------------------------------------------
+
+The ``effective'' generation time
+
+	If the generation interval were absolutely fixed at a time interval
+	of $G$, then 
+
+		$${\Rx} = \exp(G/C)$$
+
+	\emph{Define} the effective generation time so that this remains
+	true:
+
+		$${\Rx} = \exp(\hat G/C)$$
+		
+	We can show $\hat G$ is a ``filtered mean'' of the distribution $g$:
+
+		$$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g.$$,
+
+----------------------------------------------------------------------
+
+$C = 15d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+$C = 30d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+$C = 45d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Example: Post-death transmission and safe burial
+
+BC
+
+	How much Ebola spread occurs before vs.\ after death
+
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+NC
+
+FIG image_drop/burial_team.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Standard disease model 
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/brides.four.pdf
+
+----------------------------------------------------------------------
+
+Scenarios
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Conclusions
+
+	Different parameters can produce indistinguishable early dynamics
+
+	More after-death transmission implies
+
+		Higher \Ro
+
+		Larger epidemics
+
+		Larger importance of safe burials
+
+----------------------------------------------------------------------
+
+SS Moment approximations
+
+----------------------------------------------------------------------
+
+An approximation
+
+	We connect these quantities with a moment approximation
+
+	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+	coefficient of variation of the generation distribution
+
+	$\Rx \approx (1 + \kappa \bar G/C)^{1/\kappa}$
+
+		Equal when $G$ has a gamma distribution
+
+		Simple and straightforward
+
+		When is it a useful approximation?
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+Approximating the distribution
+
+BCC
+
+WIDEFIG Generation_distributions/lognormal.hist.Rout.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/lognormal.ga.hist.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Approximating the curve
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Summary
+
+	Generation intervals are the missing link between $r$ and \Rx
+
+	We need better methods for estimating them, and propagating
+	uncertainty to other parts of the model
+
+	For many practical applications:
+
+		Knowing the mean generation interval is not enough
+
+		But knowing the mean and CV may be enough
+
+----------------------------------------------------------------------
+
+SEC Strength and Speed of Epidemics
+
+----------------------------------------------------------------------
+
+Strength: $\Rx$ -- the reproductive number
+
+BCC
+
+	Expected number of new cases per cases
+	
+	$\Rx = \beta D S/N$
+
+		Disease increases iff $\Rx>1$
+
+NCC
+
+CFIG image_drop/endemic.Rout-0.png
+
+EC
+
+----------------------------------------------------------------------
+
+Speed: $r$ -- the growth rate
+
+BCC
+
+	$\ds i(t) \approx i(0) \exp(rt)$
+
+	$\ds C = 1/r$
+
+	$\ds T_2 = \ln(2)/r$
+
+NCC
+
+CFIG SIR_simulations/hiv_plot.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD \Rx\ and the generation interval
+
+	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
+
+	$\Rx = \int{k(\tau) d\tau}$
+
+	Define the intrinsic generation interval distribution: $k(\tau) = \Rx
+	g(\tau)$
+
+----------------------------------------------------------------------
+
+DEFHEAD \Rx\ and the generation interval
+
+FIG io/ess.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+DEFHEAD \Rx\ and the generation interval
+
+FIG io/ess.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+DEFHEAD $r$ and the (other) generation interval
+
+	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
+
+	if $i(t)$ grows like $\exp(rt)$, then 
+
+	$\ds 1 = \int{k(\tau) \exp(-r\tau) \,d\tau}$
+
+	$b_0(\tau) = k(\tau) \exp(-r\tau)$ is the initial \emph{backwards}
+	generation interval
+
+----------------------------------------------------------------------
+
+DEFHEAD $r$ and the (other) generation interval
+
+FIG io/ess.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Strength of intervention
+
+	Imagine we have an intervention that reduces transmission
+
+		$k(\tau) \to k(\tau)/L(\tau)$
+
+		Define \emph{strength} $\theta = \Rx/\hatR$ -- the proportional amount
+		by which the intervention reduces transmission.
+
+	We then have:
+
+		$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
+
+		$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
+		distribution $g$.
+
+	Outbreak can be controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+Speed of intervention
+
+	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
+
+	$\ds 1 =
+		\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
+
+	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
+
+		Averaged over the initial \emph{backwards} generation interval
+
+	Outbreak can be controlled if $\phi > r$.
+
+----------------------------------------------------------------------
+
+A new way of looking
+
+FIG image_drop/lens.jpg
+
+----------------------------------------------------------------------
+
+Measuring the epidemic
+
+BCC
+
+CFIG image_drop/ew_measles.png
+
+NCC
+
+CFIG fitting_code/mexican_plots.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Measuring the intervention
+
+BCC
+
+CFIG image_drop/vaccination.jpg
+
+NCC
+
+CFIG image_drop/tutu.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+SS HIV example
+
+----------------------------------------------------------------------
+
+Can treatment stop the HIV epidemic?
+
+FIG image_drop/cocktail.jpg
+
+----------------------------------------------------------------------
+
+Are HIV generations fast or slow?
+
+BCC
+
+	Fast generations mean:
+
+		Testing and treating will help less
+
+		\emph{but} lower epidemic strength
+
+NCC
+
+\vspace{-0.4in}
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+\vspace{-0.4in}
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Condom intervention
+
+FIG io/hss.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Find and treat
+
+FIG io/hss.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Low early transmission
+
+FIG io/test.scen.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+High early transmission
+
+FIG io/test.scen.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Range of estimates
+
+FIG io/test.scen.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Find and treat
+
+FIG io/test.scen.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Low early transmission
+
+FIG io/test.scen.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+High early transmission
+
+FIG io/test.scen.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+Range of estimates
+
+FIG io/test.scen.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Condom intervention
+
+FIG io/flat.scen.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Condom intervention
+
+FIG io/flat.scen.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Conclusion
+
+	This perspective helps us understand why find and treat predictions are
+	robust to assumptions about transmission
+
+	Sometimes ``strength'' and sometimes ``speed'' can help us see epidemic
+	control questions more clearly
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Organizers
+
+	Audience
+
+	Collaborators
+
+	Funders: NSERC, CIHR
