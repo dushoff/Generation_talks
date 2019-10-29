@@ -72,15 +72,4 @@ Ignore += notebook
 
 ######################################################################
 
-Ignore += tmpfigs
-tmpfigs:
-	$(mkdir)
-
-%.png: %.svg
-	$(convert)
-
-tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
-	$(copy)
-
-######################################################################
 

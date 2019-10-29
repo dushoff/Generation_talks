@@ -2,6 +2,7 @@
 ## Workshops/generations
 ## makestuff/project.Makefile
 
+## deptarget:
 current: target
 -include target.mk
 
@@ -80,30 +81,52 @@ bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
 bridging.final.pdf: bridging.txt
 
+## Glasgow Oct 2019 (half me/half Mike)
+## Start from fido and shorten
+genEst.outline.pdf: genEst.txt
+genEst.draft.pdf: genEst.txt
+genEst.final.pdf: genEst.txt
+
 ######################################################################
 
 ## Paths (could be modularized in case there's another user)
 
-mli = ~/screens/mli
+screenroot = ~/screens
 legacy = ~/gitroot
 
 ######################################################################
 
 ## Directories
 
-Ignore += rabies_R0
-rabies_R0: dir=~/screens/mli/R0
-rabies_R0: dir=~$(mli)/R0
+pardirs += Generation_distributions Endemic_curves Disease_data link_calculations
+pardirs += SIR_model_family WA_Ebola_Outbreak SIR_simulations ss_pix
+
+hotdirs += $(pardirs)
+
+## (linked from elsewhere)
+linkdirs += rabies_R0
+rabies_R0: dir=~$(screenroot)/mli/R0
 rabies_R0:
 	$(linkdirname)
 
+linkdirs += rabies_correlations
+rabies_correlations: dir=$(mli)/correlations
+rabies_correlations:
+	$(linkdirname)
+
 ## Move this to Park if you find yourself working in this directory
-Ignore += networkSEIR
+linkdirs += networkSEIR
 networkSEIR: dir=$(legacy)
 networkSEIR:
 	$(linkdir)
 
-pardirs += Generation_distributions Endemic_curves Disease_data
+linkdirs += notebook
+notebook: dir=$(screenroot)/admin
+notebook:
+	$(linkdir)
+
+Ignore += $(linkdirs)
+colddirs += $(linkdirs)
 
 ######################################################################
 
@@ -124,6 +147,7 @@ ebola.html: ebola.step
 hiv.html: hiv.step
 pix.html: pix.step
 vaccine.html: vaccine.step
+ici3d.html: ici3d.step
 
 ######################################################################
 
@@ -149,6 +173,18 @@ legacy:
 -include makestuff/newtalk.def
 
 Ignore += beamer.tmp local.txt.format
+
+######################################################################
+
+Ignore += tmpfigs
+tmpfigs:
+	$(mkdir)
+
+%.png: %.svg
+	$(convert)
+
+tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
+	$(copy)
 
 ######################################################################
 
