@@ -72,21 +72,14 @@ hetero.final.pdf: hetero.txt
 ## Forecasting talk (developing for U. Chicago 2018 Oct 26 (Fri))
 ## Glasgow Oct 2019 (half me/half Mike); marked out a bunch of stuff, moved thanks to beginning
 ## Used to be callled fido
-
-## fido.draft.tex: fido.txt
-fido.outline.pdf: fido.txt
-fido.draft.pdf: fido.txt
-fido.final.pdf: fido.txt
+genEst.outline.pdf: genEst.txt
+genEst.draft.pdf: genEst.txt
+genEst.final.pdf: genEst.txt
 
 ## The super-fast Banff talk is a version
 bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
 bridging.final.pdf: bridging.txt
-
-## Start from fido and shorten
-genEst.outline.pdf: genEst.txt
-genEst.draft.pdf: genEst.txt
-genEst.final.pdf: genEst.txt
 
 ######################################################################
 
