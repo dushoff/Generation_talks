@@ -1,12 +1,4 @@
 
-
-ADD
-
-Movie stars
-
-----------------------------------------------------------------------
-
-
 NOFRAME
 
 \newcommand{\jdtitle}
@@ -28,6 +20,16 @@ WORKSHOP
 ----------------------------------------------------------------------
 
 SEC Overview
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Department
+
+	Collaborators
+
+	Funders: NSERC, CIHR
 
 ----------------------------------------------------------------------
 
@@ -67,6 +69,8 @@ Solution
 
 	Dynamical modeling is fun and useful
 
+	\ldots and highly relevant to the spread of disease
+
 ---------------------------------------------------------------------- 
 
 Dynamical modeling connects scales
@@ -91,11 +95,13 @@ LANDFIG SIR_model_family/comp.pdf
 
 New problem
 
-	There is (or was a gulf) between dynamical and statistical modeling
+	There is a gulf between dynamical and statistical modeling
 
 		Dynamics are needed to incorporate mechanism
 
 		Statistics are needed to incorporate uncertainty
+
+	Closing this gap is a very active area of research
 
 ----------------------------------------------------------------------
 
@@ -126,6 +132,16 @@ DEFHEAD ICI3D
 
 PICSLIDE FIG webpix/sempa.jpg
 
+----------------------------------------------------------------------
+
+PICSLIDE FIG MMED18.jpg
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG my_images/tachigroup.jpg
+
+----------------------------------------------------------------------
+
 TSEC Compartmental models
 
 SUBH Divide people into categories:
@@ -154,11 +170,11 @@ LANDFIG SIR_model_family/comp.pdf
 
 Lessons
 
+	Exponential invasion potential
+
 	Tendency to oscillate
 
 	Thresholds
-
-	Exponential growth
 
 ----------------------------------------------------------------------
 
@@ -184,6 +200,10 @@ Big \Rx
 RHEAD Big \Rx
 
 FIG webpix/red_carpet.jpg
+
+----------------------------------------------------------------------
+
+EXTRA ADD Winslet (no good images except a tagged, commercial one)
 
 ----------------------------------------------------------------------
 
@@ -353,7 +373,17 @@ FIG my_images/weitz_full.pdf
 
 ----------------------------------------------------------------------
 
-TSS Generation intervals
+SS Generation intervals
+
+----------------------------------------------------------------------
+
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Generation intervals
 
 BCC
 
@@ -430,7 +460,7 @@ Linking framework
 
 ----------------------------------------------------------------------
 
-Filtered means
+EXTRA Filtered means
 
 	There is a sensible way to define an ``effective'' generation time 
 
@@ -613,7 +643,7 @@ Summary
 	We need better methods for estimating them, and propagating
 	uncertainty to other parts of the model
 
-	Filtered means may help with intuition
+	NOTES Filtered means may help with intuition
 
 	For many practical applications:
 
@@ -748,8 +778,9 @@ Conclusion
 
 	Lack of care in defining generation intervals can lead to bias
 
-		In particular, censored intervals look too short, lead to underestimates
-		of $\Rx$.
+		Censored intervals look short $\implies$ 
+		
+		underestimates of $\Rx$
 
 ----------------------------------------------------------------------
 
@@ -781,11 +812,20 @@ WIDEFIG tmpfigs/network.png
 
 Surprising results
 
+	We tend to think that heterogeneity leads to underestimates of $\Rx$, whican
+	can be dangerous.
+
 	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
 
 		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
 
-	Because people don't question the intrinsic generation interval
+----------------------------------------------------------------------
+
+Generation-interval perspective
+
+	Modelers don't usually question the intrinsic generation interval
+
+	But spatial network structure does change generation intervals:
 
 		Local interactions
 
@@ -805,7 +845,19 @@ PIC WIDEFIG networkSEIR/fig/diagram.pdf
 
 Outbreak estimation
 
-PIC WIDEFIG networkSEIR/fig/corrected_box.Rout.pdf
+PIC WIDEFIG /home/dushoff/screens/park/trace/fig/compare_methods.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG /home/dushoff/screens/park/trace/fig/compare_methods.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
@@ -822,13 +874,24 @@ Serial intervals
 		You might report to the clinic with flu before me, even though I
 		infected you
 
+	For rabies, I have argued that serial intervals and generation intervals
+	should be the same 
+
+		Symptoms are closely correlated with infectiousness
+
 ----------------------------------------------------------------------
 
-FIG rabies_R0/figures/interval.png
+PICSLIDE FIG my_images/li_peace.jpg 
 
 ----------------------------------------------------------------------
 
-Rabies
+EXTRA
+
+PIC WIDEFIG rabies_R0/figures/interval.png
+
+----------------------------------------------------------------------
+
+EXTRA Rabies
 
 	If symptoms always start \emph{before} infectiousness happens, then
 	serial interval should equal generation interval:
@@ -839,17 +902,13 @@ Rabies
 
 ----------------------------------------------------------------------
 
-FIG rabies_R0/figures/interval.png
-
-----------------------------------------------------------------------
-
 EXTRA
 
 FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
 
 ----------------------------------------------------------------------
 
-FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
+EXTRA FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
@@ -911,6 +970,8 @@ Eaton and Hallett
 	Slow transmission:
 
 		high proportion prevented, but high $\Rx$ estimate
+
+	Conclusion: it doesn't matter as much as we thought!
 
 	CREDIT Eaton JW, Hallett TB.  Proc Natl Acad Sci U S A. 2014 Nov 11;111(45):16202-7.
 
@@ -1110,25 +1171,21 @@ Paradigms are complementary
 
 		Intervention (vaccine) also strength-like
 
-	Ebola vaccination
+	Ebola outbreak
 
 		Information is speed-like
 
 		Pre-emptive vaccination is strength-like
 
-----------------------------------------------------------------------
-
-FIG webpix/lens.jpg
+		Quarantine or reactive vaccination may be more speed-like
 
 ----------------------------------------------------------------------
 
-Thanks
+PICSLIDE FIG webpix/lens.jpg
 
-	Department
+----------------------------------------------------------------------
 
-	Collaborators
-
-	Funders: NSERC, CIHR
+PICSLIDE FIG my_images/glowing.png
 
 ----------------------------------------------------------------------
 

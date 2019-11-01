@@ -1,11 +1,5 @@
 
-EXTRA
-
-* Something about the hammer and nail
-
-----------------------------------------------------------------------
-
-EXTRA Abstract
+EXTRA Chicago Abstract Oct 2018
 
 Dynamical models are a key tool for forecasting infectious-disease
 outbreaks, and for evaluating the potential impacts of various
@@ -15,18 +9,25 @@ Ebola, canine rabies and HIV.
 
 ----------------------------------------------------------------------
 
+EXTRA Glasgow abstract Oct 2019
+
+Dynamical models are a key tool for forecasting infectious-disease outbreaks, and for evaluating the potential impacts of various interventions. Our efforts to use fitted dynamical models to better understand the spread and control of diseases ranging from influenza to rabies to Ebola have led us, to our surprise, to a focus on disease "generation times". The distribution of generation times is the key to linking the “speed” and “strength” of disease outbreaks. We will show that disease generation intervals are relative – they look different depending on how they are measured through space and time, and the extent to which they account for individual-level heterogeneity. We will use examples from HIV and rabies to discuss how accounting for these effects can be important to understanding disease spread and control.
+
+----------------------------------------------------------------------
+
 NOFRAME
 
 \newcommand{\jdtitle}
-	{Forecasting infectious-disease outbreaks}
+	{Estimating epidemic speed and strength}
+
 \newcommand{\jdsub}
 	{The role of generation intervals}
 \newcommand{\jdauth}
 	{Jonathan Dushoff, McMaster University}
 \newcommand{\years}
-	{2012--2018} 
+	{2012--2019} 
 \newcommand{\wdate}
-	{U. Chicago, Oct 2018}
+	{U.~Glasgow, Oct 2019}
 
 ----------------------------------------------------------------------
 
@@ -35,6 +36,16 @@ WORKSHOP
 ----------------------------------------------------------------------
 
 SEC Overview
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Department
+
+	Collaborators
+
+	Funders: NSERC, CIHR
 
 ----------------------------------------------------------------------
 
@@ -109,6 +120,29 @@ New problem
 Ebola forecasting
 
 FIG my_images/sierraLeone.hybrid.compare.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+SS Capacity building
+
+----------------------------------------------------------------------
+
+DEFHEAD ICI3D
+
+	International Clinics on Infectious Disease Dynamics and Data
+
+	\url{ici3d.org}
+
+	At least two clinics a year, usually in South Africa
+
+	MMED every year at the African Institute of Mathematical Sciences in
+	Muizenberg
+
+	Aimed at engaging dynamical models with infectious disease data
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG webpix/sempa.jpg
 
 ----------------------------------------------------------------------
 
@@ -795,7 +829,7 @@ PIC WIDEFIG networkSEIR/fig/corrected_box.Rout.pdf
 
 ----------------------------------------------------------------------
 
-Serial intervals
+EXTRA Serial intervals
 
 	Do serial intervals and generation intervals have the same distribution?
 
@@ -805,12 +839,12 @@ Serial intervals
 
 		Serial intervals can even be negative!
 
-		You might report to the clinic with flu before me, even though I infected
-		you
+		You might report to the clinic with flu before me, even though I
+		infected you
 
 ----------------------------------------------------------------------
 
-FIG rabies_R0/figures/interval.png
+PIC WIDEFIG rabies_R0/figures/interval.png
 
 ----------------------------------------------------------------------
 
@@ -825,9 +859,7 @@ Rabies
 
 ----------------------------------------------------------------------
 
-FIG rabies_R0/figures/interval.png
-
-----------------------------------------------------------------------
+EXTRA
 
 FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
 
@@ -1102,17 +1134,11 @@ Paradigms are complementary
 
 ----------------------------------------------------------------------
 
-FIG webpix/lens.jpg
+PICSLIDE FIG webpix/lens.jpg
 
 ----------------------------------------------------------------------
 
-Thanks
-
-	Department
-
-	Collaborators
-
-	Funders: NSERC, CIHR
+PICSLIDE FIG my_images/glowing.png
 
 ----------------------------------------------------------------------
 
