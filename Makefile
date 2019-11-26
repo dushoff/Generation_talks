@@ -1,5 +1,5 @@
-## This is XXX, a screens project directory
-## makestuff/project.Makefile
+## This is GenerationTalks, a screens project directory
+## Workshops/generations
 
 current: target
 -include target.mk
