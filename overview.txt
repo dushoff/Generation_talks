@@ -1,0 +1,306 @@
+
+Thoughts about modeling time since infection
+
+\vfill
+
+SMB 2019
+
+\vfill
+
+Jonathan Dushoff
+
+\vfill
+
+\url{https://github.com/dushoff/Generation_talks}
+
+\vfill
+
+----------------------------------------------------------------------
+
+Why might we care about modeling TSI
+
+	Questions
+
+	Systems
+
+	Mechanisms
+
+	Implementation?
+
+----------------------------------------------------------------------
+
+Questions
+
+	Size, speed and strength
+
+	Periodic dynamics
+
+	Troughs and persistence
+
+	Intervention and control
+
+	Surveillance and elimination
+
+----------------------------------------------------------------------
+
+Mechanisms
+
+	Realistic distributions
+
+	Incubation periods
+
+	Courses of disease and routes of transmission
+
+	Dormancy mechanisms
+
+----------------------------------------------------------------------
+
+Implementation
+
+	Boxes (Linear chain trick etc.)
+
+	PDEs
+
+	What specific distributions or mathematical mechanisms reflect the biology
+
+----------------------------------------------------------------------
+
+DEFHEAD \rR
+
+BC
+
+	We measure epidemic speed using little $r$:
+
+	We measure epidemic ``strength'' using \Rx
+
+	These are linked by the \emph{distribution} of generation times
+
+
+NC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Conditional effect of generation time
+
+	\emph{Given} the reproductive number $\Rx$
+
+		faster generation time $G$ means faster growth rate $r$
+
+		More danger
+
+	\emph{Given} the growth rate $r$
+
+		faster generation time $G$ means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
+
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	How much does ``generation speed'' depend on the details of how infected
+	people change through time?
+
+	When can we just use the mean \emph{generation interval?}
+
+		Not infectious period!
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	Provides the \rR\ link during an exponential period
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+----------------------------------------------------------------------
+
+Interpretation: ``effective'' generation times
+
+	Define the effective generation time so that 
+
+		$${\Rx} = \exp(r\hat G)$$
+
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+		A filtered mean:
+		
+			The discounted value of $\hat G$ is the expectation of the discounted
+			values across the distribution
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r = (1/\hat G) \times \log(\Rx) $
+
+		$ \hat G$ is the effective mean generation time
+
+----------------------------------------------------------------------
+
+An approximation
+
+	We connect these quantities with a moment approximation
+
+	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+	coefficient of variation of the generation distribution
+
+	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
+
+		Equal when $g(\tau)$ has a gamma distribution
+
+		Simple and straightforward
+
+		When is it a useful approximation?
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	Define $\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Qualitative response
+
+	For a given value of $\bar G$, smaller values of $\kappa$ mean:
+
+		less variation in generation interval
+
+		less compounding of growth
+
+		greater \Rx\ required for a given $r$
+
+----------------------------------------------------------------------
+
+Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+Approximating the distribution
+
+BCC
+
+WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Approximating the curve
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf

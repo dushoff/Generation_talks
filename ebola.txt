@@ -1,0 +1,716 @@
+
+Modeling Ebola
+
+TSPACE
+
+Tachikawa infectious boot camp,  2019
+
+TSPACE
+
+Jonathan Dushoff, McMaster University
+
+TSPACE
+
+\url{https://github.com/dushoff/Generation_talks}
+
+TSPACE
+
+----------------------------------------------------------------------
+
+SEC Dynamic modeling of infectious diseases
+
+----------------------------------------------------------------------
+
+EXTRA Infectious diseases
+
+FIG webpix/flu_masks.jpg
+
+----------------------------------------------------------------------
+
+EXTRA Infectious diseases
+
+FIG webpix/burial_team.jpg
+
+----------------------------------------------------------------------
+
+Models
+
+BCC
+
+SIDEFIG webpix/flat.png
+
+NCC
+
+	A model is a simplified view of the world
+
+	Allows linking between assumptions and outcomes
+
+EC
+
+----------------------------------------------------------------------
+
+Dynamic models
+
+SUBH Connect scales
+
+WIDEFIG SIR_model_family/sir.three.pdf
+
+Small-scale events $\displaystyle \Leftrightarrow$ Large-scale patterns and outcomes
+
+----------------------------------------------------------------------
+
+Measles
+
+SUBH Dynamic modeling connects scales
+
+BCC
+
+SIDEFIG my_images/trans.jpg
+
+NCC
+
+CFIG Disease_data/ewmeas.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Ebola
+
+SUBH Dynamic modeling connects scales
+
+BCC
+
+SIDEFIG webpix/ebola_ward.jpg
+
+NCC
+
+SIDEFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Statistics and theory
+
+	Dynamical models are required to bridge scales
+
+	Statistical frameworks are required to interpret noisy data
+
+	We need tools that can incorporate dynamical mechanisms into
+	frameworks that allow statistical inference
+
+	Simple dynamical theories allow clearer interpretation and inspire
+	better techniques
+
+----------------------------------------------------------------------
+
+Questions
+
+BC
+
+	Your model is not reality
+
+	But it may help you answer a specific research question
+
+	The model you use should be tailored to your question
+
+		What are the relevant details?
+
+NC
+
+SIDEFIG webpix/flat.png
+
+EC
+
+----------------------------------------------------------------------
+
+SEC Early Ebola models
+
+----------------------------------------------------------------------
+
+TSS Process error and observation error
+
+	\textbf{Observation error}: we don't observe the world perfectly
+
+	\textbf{Process error}: we think our dynamical system has a fundamental random component
+
+		This is usually the only way to model processes where we treat
+		individuals as individuals
+
+	Doing both of these things is hard
+
+----------------------------------------------------------------------
+
+Lekone and Finkenstadt, 2006
+
+	Modeled a small 1995 Ebola outbreak in DR Congo
+
+	Used latent variables to consider both process error and observation error
+
+	Result: More realistic model $\implies$ more uncertainty
+
+	CREDIT DOI: 10.1111/j.1541-0420.2006.00609.x
+
+----------------------------------------------------------------------
+
+SS Projection models
+
+----------------------------------------------------------------------
+
+The CDC projection
+
+	Meltzer 2014 estimated $>1$ million cases by ``Jan 20, 2015'' unless
+	effective action was taken
+
+	Model contained contained many compartments for infected people
+
+		disease stage, linkage to treatment
+
+	Very crude handling of contact patterns, susceptibles
+
+----------------------------------------------------------------------
+
+FIG Ebola_math/straw.Rout.pdf
+
+----------------------------------------------------------------------
+
+Projection models
+
+	Wrong level of detail
+
+	But they did address a question:
+
+		Does the West Africa Ebola epidemic have the potential to be a global
+		crisis?
+
+----------------------------------------------------------------------
+
+The epidemic
+
+BCC
+
+PRESENT WIDEFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+NCC
+
+PRESENT WIDEFIG WA_Ebola_Outbreak/sierraLeone.npc.tsplot.Rout-1.pdf
+
+EC
+
+NOTES DOUBLEFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf WA_Ebola_Outbreak/sierraLeone.npc.tsplot.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+EXTRA Reproductive number
+
+	Expected number of new cases per cases
+	
+	$\Rx = \beta D S/N$
+
+		Disease increases iff $\Rx>1$
+
+	$\Ro = \beta D$
+
+		Disease is usually eliminated when $\Ro<1$
+
+----------------------------------------------------------------------
+
+EXTRA Simple conclusions
+
+	Tendency to oscillate
+
+	Threshold for spread (or control)
+
+	Very large or very small number of people affected
+
+		by a single epidemic
+
+		at equilibrium
+
+	Unless \Ro\ happens to be very near 1.
+
+----------------------------------------------------------------------
+
+Ebola outbreaks
+
+	Before 2014, most Ebola outbreaks were either
+	
+		very small, or
+
+		pretty large (compared to some estimate of population at risk in
+		a remote village)
+
+	More or less consistent with simple picture
+
+----------------------------------------------------------------------
+
+Predicted outbreak size
+
+BCC
+
+	Simple models argue that outbreaks should (almost always) be:
+
+		Very small (sub-critical), or
+
+		Very large (at the scale of the population)
+
+NCC
+
+CFIG subclinical/ebola.curve.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+SEC Some simple models
+
+----------------------------------------------------------------------
+
+SS Burial transmission
+
+----------------------------------------------------------------------
+
+REPSLIDE Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$.
+
+----------------------------------------------------------------------
+
+Post-death transmission and safe burial
+
+BC
+
+	What proportion of Ebola spread occurs before vs.\ after death?
+
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	What if it's more than we think?
+
+		Disease spreads slower?
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+NC
+
+SIDEFIG webpix/burial_team.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Standard disease model 
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/brides.four.pdf
+
+----------------------------------------------------------------------
+
+Ebola burial example
+
+	Burial transmission increases the mean generation interval
+
+		\emph{Increases} estimate of $\Rx$
+
+	\ldots increases variation
+
+		\emph{Decreases} estimate of $\Rx$
+
+	So what's the result?
+
+		It feels like it should increase
+
+		The filtered mean approach tells us: shifting transmission
+		later must increase the estimate
+
+----------------------------------------------------------------------
+
+REPSLIDE Scenarios
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Summary
+
+	Different parameters can produce indistinguishable early dynamics
+
+	More after-death transmission implies
+
+		Higher \Ro
+
+		Larger epidemics
+
+		Larger importance of safe burials
+
+	$r = \mathrm{strength~something}\times\mathrm{generation~speed~something}$
+
+----------------------------------------------------------------------
+
+TSS Dynamic effects of sub-clinical infections
+
+	People with no history of clinical Ebola illness have Ebola-specific
+	antibodies:
+
+		In forests where animals carry Ebola
+
+		In places where past Ebola outbreaks have occurred
+
+	What if $\approx$ 50% of infected people have \emph{sub-clinical} infection?
+
+	CREDIT Bellan et al. \emph{Lancet} 384:1499--1500, October 2014
+
+----------------------------------------------------------------------
+
+PSLIDE Standard epidemic model
+
+WIDEFIG SIR_model_family/sir.three.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Add an exposed class
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Add sub-clinical immunity
+
+WIDEFIG SIR_model_family/raise.four.pdf
+
+----------------------------------------------------------------------
+
+Simplify
+
+WIDEFIG SIR_model_family/arisen.four.pdf
+
+----------------------------------------------------------------------
+
+What is the effect of sub-clinical immunity?
+
+	What do we already know?
+
+		Parameters and starting conditions?
+
+		Incidence time series?
+
+----------------------------------------------------------------------
+
+Ebola \emph{cases}
+
+BCC
+
+PRESENT CFIG subclinical/base.tsplots.Rout-0.png
+
+NCC
+
+PRESENT CFIG subclinical/base.tsplots.Rout-1.png
+
+EC
+
+NOTES DOUBLEPDF subclinical/base.tsplots.Rout
+
+
+----------------------------------------------------------------------
+
+Ebola \emph{infections}
+
+BCC
+
+PRESENT CFIG subclinical/base.tsplots.Rout-2.png
+
+NCC
+
+PRESENT CFIG subclinical/base.tsplots.Rout-3.png
+
+EC
+
+NOTES DOUBLEFIG subclinical/base.tsplots.Rout-2.png subclinical/base.tsplots.Rout-3.png
+
+----------------------------------------------------------------------
+
+Estimation
+
+	Indirect evidence
+
+		Not enough information, and too many complications
+
+			Population structure, changes through time
+
+	Direct evidence
+
+		Easy: how common is sub-clinical infection?
+
+			More evidence is available now
+
+			\ldots but not as much as we expected.
+
+		Hard: how protected are people who recover from it?
+
+
+----------------------------------------------------------------------
+
+PRESENT SS More on \Rx
+
+----------------------------------------------------------------------
+
+REPSLIDE Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+REPSLIDE Approximating the distribution
+
+BCC
+
+PRESENT WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
+
+NCC
+
+PRESENT WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+EC
+
+NOTES DOUBLEFIG Generation_distributions/lognormal.histcomp.Rout.pdf Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+----------------------------------------------------------------------
+
+REPSLIDE Approximating the curve
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+SEC Forecasting
+
+----------------------------------------------------------------------
+
+Compartment model approaches
+
+FIG webpix/sherif.jpg
+
+----------------------------------------------------------------------
+
+Discrete-time renewal equation
+
+FIG webpix/discrete_renewal.jpg
+
+CREDIT https://doi.org/10.1016/j.epidem.2017.02.011
+
+----------------------------------------------------------------------
+
+PSLIDE What else do we need to add?
+
+BC
+
+
+Why do we see medium-sized epidemics?
+
+CFIG subclinical/ebola.curve.Rout-0.pdf
+
+NC
+
+CFIG webpix/question.png
+
+EC
+
+----------------------------------------------------------------------
+
+Relevant detail
+
+	The things we are good at estimating and modeling may not be sufficient to
+	forecast Ebola spread
+
+	We don't know enough about:
+
+		contact structures
+
+		beliefs and behaviours
+
+----------------------------------------------------------------------
+
+PSLIDE Report what we don't know?
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE What we don't know
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE What we don't know
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE What we don't know
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+What we don't know!
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+TSEC Ethics
+
+BC
+
+	History of abuse $\to$ strong rules
+
+	In general, you can't put public good ahead of participant
+	interests
+
+	It's hard to achieve clinical equipoise -- would \emph{you} want to
+	be in the control arm?
+
+	CREDIT Bellan et al., \emph{BMJ} 2014;349:g7518
+
+NC
+
+PRESENT WIDEFIG my_images/equipoise.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Vaccine trials
+
+	What are the \emph{ethics} of controlled trials in the middle of a
+	deadly epidemic?
+
+	What are the \emph{logistics} of controlled trials on the down-slope
+	of an epidemic?
+
+----------------------------------------------------------------------
+
+SS The statistical power and validity of Ebola vaccine trials 
+
+----------------------------------------------------------------------
+
+Randomized controlled trials
+
+	The gold standard of medical evidence
+
+	A plan is made, and then participants are individually and randomly
+	assigned to \textbf{treatment} and \textbf{control} groups
+
+	Control groups sometimes get something that is meant to be good for
+	their health, too
+
+		E.g., a meningococcal vaccine
+
+----------------------------------------------------------------------
+
+Stepped-wedge controlled trials (SWCT)
+
+	Sometimes it's unethical to delay vaccination (or other treatment)
+	to participants
+
+	You still can't necessarily vaccinate everyone at once
+
+	It may be possible to evaluate efficacy by randomizing the
+	\emph{order} in which people are vaccinated
+
+		A free lunch!
+
+	This is a relatively \emph{fragile} idea
+
+		Not as powerful as RCT
+
+		If RCT is not ethical, then it's also not ethical to make
+		logistical concessions to study objectives
+
+----------------------------------------------------------------------
+
+Simulated incidence
+
+WIDEFIG my_images/projection.pdf
+
+----------------------------------------------------------------------
+
+Vaccine rollout scenarios
+
+WIDEFIG my_images/rollout.pdf
+
+----------------------------------------------------------------------
+
+Statistical validity
+
+WIDEFIG my_images/validity.pdf
+
+----------------------------------------------------------------------
+
+Statistical power
+
+FIG my_images/TrialPower.png
+
+----------------------------------------------------------------------
+
+Summary
+
+	Spatiotemporal variation undercuts SWCT
+
+		Reduces power
+
+		Reduces or eliminates ethical advantages
+
+	RCTs surprisingly robust to all kinds of issues
+
+		Also allow prioritization
+
+	Permutation tests can rescue statistical validity 
+
+	Changing landscapes
+
+		Hard to do an Ebola vaccine trial when incidence is very high or
+		very low
+
+----------------------------------------------------------------------
+
+TSEC Conclusions
+
+	Dynamic models allow us to explore the meaning of \emph{scientific}
+	hypotheses
+
+	They are most useful when they help us understand mechanisms in a scientific
+	way
+
+		Don't trust mathematical results that you can't explain
+
+	We need to recognize what we don't know
+
+		Use statistical methods
+
+		Recognize when your uncertainty is large
+
