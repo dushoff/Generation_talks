@@ -97,7 +97,7 @@ pardirs += SIR_model_family WA_Ebola_Outbreak SIR_simulations ss_pix
 hotdirs += $(pardirs)
 
 screenroot = ~/screens
-mli = $(screenroot)/mli
+mli = $(screenroot)/rabies
 
 ## (linked from elsewhere)
 linkdirs += rabies_R0
