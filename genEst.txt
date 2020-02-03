@@ -845,13 +845,13 @@ PIC WIDEFIG networkSEIR/fig/diagram.pdf
 
 Outbreak estimation
 
-PIC WIDEFIG /home/dushoff/screens/park/trace/fig/compare_methods.Rout-1.pdf
+PIC WIDEFIG trace/fig/compare_methods.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
 Outbreak estimation
 
-PIC WIDEFIG /home/dushoff/screens/park/trace/fig/compare_methods.Rout-0.pdf
+PIC WIDEFIG trace/fig/compare_methods.Rout-0.pdf
 
 ----------------------------------------------------------------------
 

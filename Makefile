@@ -75,10 +75,16 @@ genEst.outline.pdf: genEst.txt
 genEst.draft.pdf: genEst.txt
 genEst.final.pdf: genEst.txt
 
-## The super-fast Banff talk is a version
+## The super-fast Banff talk is a version of bridging
 bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
 bridging.final.pdf: bridging.txt
+
+## nCoV McMaster version Feb 2020
+outbreakGens.outline.pdf: outbreakGens.txt
+outbreakGens.draft.pdf: outbreakGens.txt
+outbreakGens.final.pdf: outbreakGens.txt
+
 
 ######################################################################
 
@@ -91,7 +97,7 @@ legacy = ~/gitroot
 
 ## Directories
 
-pardirs += Generation_distributions Endemic_curves Disease_data link_calculations
+pardirs += Generation_distributions Endemic_curves Disease_data link_calculations trace
 pardirs += SIR_model_family WA_Ebola_Outbreak SIR_simulations ss_pix
 
 hotdirs += $(pardirs)
@@ -99,6 +105,7 @@ hotdirs += $(pardirs)
 screenroot = ~/screens
 mli = $(screenroot)/rabies
 
+## Maybe try to deprecate this; some repetition of pardirs seems fine
 ## (linked from elsewhere)
 linkdirs += rabies_R0
 rabies_R0: dir=$(mli)/R0
@@ -110,11 +117,15 @@ rabies_correlations: dir=$(mli)/correlations
 rabies_correlations:
 	$(linkdirname)
 
-## Move this to Park if you find yourself working in this directory
+## Trying to avoid alling this directory
 linkdirs += networkSEIR
 networkSEIR: dir=$(legacy)
 networkSEIR:
 	$(linkdir)
+
+networkSEIR/fig/diagram.pdf:
+	$(MAKE) networkSEIR
+	cd networkSEIR/fig && pdflatex diagram
 
 linkdirs += notebook
 notebook: dir=$(screenroot)/admin
