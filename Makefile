@@ -85,7 +85,6 @@ outbreakGens.outline.pdf: outbreakGens.txt
 outbreakGens.draft.pdf: outbreakGens.txt
 outbreakGens.final.pdf: outbreakGens.txt
 
-
 ######################################################################
 
 ## Paths (could be modularized in case there's another user)
@@ -155,6 +154,8 @@ hiv.html: hiv.step
 pix.html: pix.step
 vaccine.html: vaccine.step
 ici3d.html: ici3d.step
+influenza.html: influenza.step
+corona.html: corona.step
 
 ######################################################################
 
