@@ -1,11 +1,13 @@
 
 EXTRA
 
-Sharpen the approximation framework argument and talk about how it applies to nCoV
+Bridge picture after scales
 
-Talk about serial intervals and find an example about Mike's stuff?
+forecasting pic: show half-size and talk about reporting, etc.
 
-Speed and strength: is strength really more important?
+Reorganize aedes pix
+
+Is a faster epidemic more dangerous or less? It depends
 
 ----------------------------------------------------------------------
 
@@ -31,9 +33,7 @@ WORKSHOP
 
 ----------------------------------------------------------------------
 
-EXTRA
-
-ADD Train wreck
+FIG webpix/montparnasse.jpg
 
 ----------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ Case fatality proportion
 
 Case-fatality proportion
 
-	Currently estimated at 2--4\%
+	Currently estimated at 2--4%
 
 	Denominators not reported clearly
 
@@ -140,13 +140,19 @@ What do we know?
 
 ----------------------------------------------------------------------
 
-Why did everyone get the flu?
+Will everyone get nCoV?
 
-	Fast generations
+	Why did everyone get the flu?
 
-	Pre-symptomatic and sub-clinical transmission
+		Fast generations
 
-	Effective antigenic evolution
+		Pre-symptomatic and sub-clinical transmission
+
+		Effective antigenic evolution
+
+	Can we control nCoV?
+
+	How will nCoV \emph{evolve}
 
 ----------------------------------------------------------------------
 
@@ -167,6 +173,12 @@ REP DBFIG 0.7 my_images/trans.jpg 1 Disease_data/ewmeas.Rout.pdf
 		Usually about \emph{populations}
 
 ----------------------------------------------------------------------
+
+PIC FIG webpix/bridge.jpg
+
+----------------------------------------------------------------------
+
+Compartmental models
 
 SUBH Divide people into categories:
 
@@ -199,6 +211,28 @@ Lessons
 	Tendency to oscillate
 
 	Thresholds
+
+----------------------------------------------------------------------
+
+Coronavirus forecasting
+
+FIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus forecasting
+
+BC
+
+	Counterfactual forecasting
+
+	Relationship between forecasts and cases
+
+NC
+
+CFIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -260,12 +294,9 @@ little $r$
 
 ----------------------------------------------------------------------
 
-EXTRA
-
-ADD li_peace
+PICSLIDE FIG my_images/li_peace.jpg 
 
 ----------------------------------------------------------------------
-
 
 Coronavirus speed
 
@@ -293,13 +324,9 @@ FIG coronaSpread/HBcorona.talkplot.Rout-3.pdf
 
 Coronavirus speed
 
-FIG coronaSpread/git_push/HBcorona.growthrate_plot.Rout.pdf
+FIG coronaSpread/HBcorona.growthrate_plot.Rout.pdf
 
-----------------------------------------------------------------------
-
-Coronavirus forecasting
-
-FIG coronaSpread/git_push/HBcorona.jagsForecastPlot.Rout.pdf
+CREDIT Ma et al., 10.1007/s11538-013-9918-2
 
 ----------------------------------------------------------------------
 
@@ -320,7 +347,7 @@ TSS Epidemic strength
 
 ----------------------------------------------------------------------
 
-RHEAD Big \Ro
+RHEAD Big Rx
 
 BC
 
@@ -405,8 +432,8 @@ TSS Linking
 
 		Measles, influenza
 
-	Much corona virus modeling has explicitly or implicitly estimated \Rx\ from
-	\r.
+	Much coronavirus modeling has explicitly or implicitly estimated \Rx\ from
+	\littler.
 
 ----------------------------------------------------------------------
 
@@ -499,13 +526,13 @@ Conditional effect of generation time
 
 Linking framework
 
-	Epidemic speed ($r$) is a \emph{product}:
+	Epidemic speed $r$ is a \emph{product}:
 
 		(something to do with) generation speed 
 
 		$\times$ (something to do with) epidemic strength
 
-	Epidemic strength is therefore (approximately) a \emph{quotient}
+	Epidemic strength \Rx\ is therefore (approximately) a \emph{quotient}
 
 		Epidemic speed
 
@@ -513,18 +540,16 @@ Linking framework
 
 ----------------------------------------------------------------------
 
-EXTRA Filtered means
+Effect of variation in generation time
 
-	There is a sensible way to define an ``effective'' generation time 
+	For a given value of mean generation time, what happens if we have more
+	\emph{variation} in generation time?
 
-	Preserve the exponential growth equation $${\Rx} = \exp(r \hat G)$$
+		Events that happen earlier than expected compound through time
 
-	$\hat G$ is a ``filtered mean'' of the distribution $g$:
+		If \Rx\ is fixed then $r$ will be higher $\implies$
 
-		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$,
-
-	This is cool, but not easy to interpret (our estimates about the generation
-	time change when $r$ changes)
+		If $r$ is fixed then \Rx\ will be lower 
 
 ----------------------------------------------------------------------
 
@@ -584,30 +609,21 @@ EC
 
 ----------------------------------------------------------------------
 
-Compound-interest interpretation
+Approximation framework
 
-	Define $\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+	$\Rx \approx X(r \bar G; 1/\kappa)$
 
-	$X$ is the compound-interest approximation to the exponential
+		$\kappa$ is the dispersion parameter of the generation-interval
+		distribution (measures the effective amount of variation
 
-		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+	$X$ is the compound-interest function
 
-		Approaches exponential as $\kappa \to 0$
+		$\Rx \approx 1+ r \bar G$ when variation is large
+
+		$\Rx$ \approx \exp(r \bar G)$ when variation is small
 
 	Key quantity is $r\bar G$: the relative length of the generation interval
 	compared to the characteristic time scale of spread
-
-----------------------------------------------------------------------
-
-Qualitative response
-
-	For a given value of $\bar G$, smaller values of $\kappa$ mean:
-
-		less variation in generation interval
-
-		less compounding of growth
-
-		greater \Rx\ required for a given $r$
 
 ----------------------------------------------------------------------
 
@@ -617,7 +633,7 @@ Intuition
 
 		$\implies$ more strength, when speed is fixed
 
-	What about more variation?
+	What about more variation in generation times?
 
 		More action (both before and after the mean time)
 
@@ -671,7 +687,87 @@ FIG link_calculations/rabies.pdf
 
 ----------------------------------------------------------------------
 
-SEC A false dichotomy
+SS Propagating error in novel coronavirus
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG my_images/dswp.jpg
+
+----------------------------------------------------------------------
+
+Assumptions
+
+FIG coronaFrame/assumption_1.jpg
+
+----------------------------------------------------------------------
+
+Assumptions
+
+FIG coronaFrame/assumption_2.jpg
+
+----------------------------------------------------------------------
+
+Assumptions
+
+FIG coronaFrame/assumption_3.jpg
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/figure2.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/figure2.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+TSEC A false dichotomy
+
+	Why are people scrambling to estimate \Rx\ and mostly ignoring \littler?
+
+		History
+
+		Modelers gotta model
+
+----------------------------------------------------------------------
+
+The strength paradigm
+
+	$\Rx>1$ is a threshold
+
+	If we can reduce transmission by a constant \emph{factor} of $\theta > \Rx$,
+	disease can be controlled
+
+	In general, we can define $\theta$ as a (harmonic) mean of the reduction
+	factor over the course of an infection
+	
+		weighted by the \emph{intrinsic} generation interval
+
+	Epidemic is controlled if $\theta > \Rx$
+
+	More useful in long term (tells us about final size, equilibrium)
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	$r>0$ is a threshold
+
+	If we can reduce transmission at a constant \emph{hazard rate} of $\phi >
+	r$, disease can be controlled
+
+	In general, we can define $\phi$ as a (very weird) mean of the reduction
+	factor over the course of an infection
+	
+		weighted by the \emph{backward} generation interval
+
+	Epidemic is controlled if $\phi > r$
+
+	More useful in short term (tells us about, um, speed)
 
 ----------------------------------------------------------------------
 
@@ -693,7 +789,7 @@ Strength of intervention
 
 BC
 
-FIG ss_pix/ess.Rout-2.pdf
+CFIG ss_pix/ess.Rout-2.pdf
 
 NC
 
@@ -708,7 +804,7 @@ PSLIDE Different interventions
 
 BC
 
-FIG ss_pix/ess.Rout-2.pdf
+CFIG ss_pix/ess.Rout-2.pdf
 
 NC
 
@@ -724,7 +820,7 @@ PSLIDE Different interventions
 
 BC
 
-FIG ss_pix/ess.Rout-1.pdf
+CFIG ss_pix/ess.Rout-1.pdf
 
 NC
 
@@ -740,7 +836,7 @@ Epidemic speed
 
 BC
 
-PIC FIG ss_pix/ess.Rout-0.pdf
+PIC CFIG ss_pix/ess.Rout-0.pdf
 
 NC
 
@@ -755,7 +851,7 @@ Epidemic speed
 
 BC
 
-PIC FIG ss_pix/ess.Rout-3.pdf
+PIC CFIG ss_pix/ess.Rout-3.pdf
 
 NC
 
@@ -770,7 +866,7 @@ Speed of intervention
 
 BC
 
-FIG ss_pix/ess.Rout-3.pdf
+CFIG ss_pix/ess.Rout-3.pdf
 
 NC
 
@@ -793,36 +889,6 @@ NC
 
 EC
 
-
-----------------------------------------------------------------------
-
-The strength paradigm
-
-	$\Rx>1$ is a threshold
-
-	If we can reduce transmission by a constant \emph{factor} of $\theta > \Rx$, disease can be controlled
-
-	In general, we can define $\theta$ as a (harmonic) mean of the reduction
-	factor over the course of an infection
-	
-		weighted by the \emph{intrinsic} generation interval
-
-	Epidemic is controlled if $\theta > \Rx$
-
-----------------------------------------------------------------------
-
-The speed paradigm
-
-	$r>0$ is a threshold
-
-	If we can reduce transmission at a constant \emph{hazard rate} of $\phi > r$, disease can be controlled
-
-	In general, we can define $\phi$ as a (very weird) mean of the reduction
-	factor over the course of an infection
-	
-		weighted by the \emph{backward} generation interval
-
-	Epidemic is controlled if $\phi > r$
 
 ----------------------------------------------------------------------
 
@@ -906,10 +972,6 @@ NCC
 	Importance of heterogeneity
 
 EC
-
-----------------------------------------------------------------------
-
-nCoV example
 
 ----------------------------------------------------------------------
 
@@ -1051,7 +1113,7 @@ PIC WIDEFIG trace/fig/compare_methods.Rout-1.pdf
 
 Outbreak estimation
 
-PIC WIDEFIG trace/fig/individual_and_population.pdf
+PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
 ----------------------------------------------------------------------
 
@@ -1067,23 +1129,15 @@ Serial intervals
 
 	It seems that they should: they describe generations of the same process
 
-	In fact, they don't
+		But serial intervals can even be very different
 
-		Serial intervals can even be negative!
+		Even negative! You might report to the clinic with flu before me, even
+		though I infected you
 
-		You might report to the clinic with flu before me, even though I
-		infected you
-
-	For rabies, I have argued that serial intervals and generation intervals
+	For rabies, we \emph{thought} that serial intervals and generation intervals
 	should be the same 
 
 		Symptoms are closely correlated with infectiousness
-
-----------------------------------------------------------------------
-
-EXTRA
-
-PICSLIDE FIG my_images/li_peace.jpg 
 
 ----------------------------------------------------------------------
 
@@ -1102,15 +1156,11 @@ Rabies
 
 ----------------------------------------------------------------------
 
-EXTRA
-
-FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
+FIG rabies_correlations/intervalPlots.Rout.pdf
 
 ----------------------------------------------------------------------
 
-EXTRA
-
-FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
+FIG rabies_correlations/correlations.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -1123,5 +1173,19 @@ Thanks
 	Funders: NSERC, CIHR
 
 ----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
+
+		$\ell$ is the inverse of $X$
 
 
