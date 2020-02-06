@@ -116,7 +116,7 @@ rabies_correlations: dir=$(mli)/correlations
 rabies_correlations:
 	$(linkdirname)
 
-## Trying to avoid alling this directory
+## Trying to avoid alling this subdirectory
 linkdirs += networkSEIR
 networkSEIR: dir=$(legacy)
 networkSEIR:
