@@ -31,14 +31,7 @@ WORKSHOP
 
 ----------------------------------------------------------------------
 
-NOFRAME 
-
-\newcommand{\littler}{\ensuremath{r}}
-\newcommand{\Rproj}{\textbf{\textsf{R}}}
-
-----------------------------------------------------------------------
-
-What do we need to know?
+Novel Coronavirus: What do we need to know?
 
 	How deadly is the disease?
 
@@ -65,6 +58,13 @@ How can modelers help?
 SEC How deadly?
 
 ----------------------------------------------------------------------
+
+EXTRA
+
+ADD What's the worst that can happen?
+
+----------------------------------------------------------------------
+
 
 LANDFIG my_images/usmort.pdf
 
@@ -131,6 +131,16 @@ What do we know?
 	Life expectancy, harvesting and attributable risk
 
 		The older the profile, the smaller the overall impact
+
+----------------------------------------------------------------------
+
+Why did everyone get the flu?
+
+	Fast generations
+
+	Pre-symptomatic and sub-clinical transmission
+
+	Effective antigenic evolution
 
 ----------------------------------------------------------------------
 
@@ -616,307 +626,7 @@ FIG link_calculations/rabies.pdf
 
 ----------------------------------------------------------------------
 
-Generation intervals
-
-BCC
-
-CFIG webpix/spending.jpg
-
-NCC
-
-	Sort of the poor relations of disease-modeling world
-
-	Ad hoc methods
-
-	Error often not propagated
-
-EC
-
-----------------------------------------------------------------------
-
-nCoV example
-
-----------------------------------------------------------------------
-
-Generations through time
-
-	Generation intervals can be estimated by:
-
-		Observing patients:
-
-			How long does it take to become infectious?
-
-			How long does it take to recover?
-
-			What is the time profile of infectiousness/activity?
-
-		Contact tracing
-
-			Who (probably) infected whom?
-
-			When did each become infected?
-
-			--- or ill (serial interval)?
-
-----------------------------------------------------------------------
-
-Which is the real interval?
-
-	Contact-tracing intervals look systematically different, depending on when
-	you observe them.
-
-	Observed in:
-
-		Real data, detailed simulations, simple model
-
-	Also differ from intrinsic (infector centered) estimates
-
-----------------------------------------------------------------------
-
-Types of interval
-
-	Define:
-
-		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
-		after infection?
-
-		\emph{Forward interval}: When will the people infected today 
-		infect others?
-
-		\emph{Backward interval}: When did the people who infected people today
-		themselves become infected? 
-
-		\emph{Censored interval}: What do all the intervals observed up until a
-		particular time look like?
-
-			Like backward intervals, if it's early in the epidemic
-
-----------------------------------------------------------------------
-
-Growing epidemics
-
-BC
-
-	Generation intervals look \emph{shorter} at the beginning of an epidemic
-
-		A disproportionate number of people are infectious right now
-
-		They haven't finished all of their transmitting
-
-		We are biased towards observing faster events
-
-NC
-
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
-
-CFIG SIR_simulations/za_gens.Rout-0.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Backward intervals
-
-WIDEFIG backward.jpg
-
-CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
-
-----------------------------------------------------------------------
-
-TSEC Other kinds of generation interval
-
-BCC
-
-CFIG webpix/hammer.jpg
-
-NCC
-
-	Once you think carefully about generation intervals, they're everywhere
-
-	Spatial heterogeneity
-
-	Individual heterogeneity
-
-EC
-
-----------------------------------------------------------------------
-
-Generations in space
-
-	How do local interactions affect realized generation intervals?
-
-WIDEFIG tmpfigs/network.png
-
-----------------------------------------------------------------------
-
-Surprising results
-
-	We tend to think that heterogeneity leads to underestimates of $\Rx$, whican
-	can be dangerous.
-
-	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
-
-		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
-
-----------------------------------------------------------------------
-
-Generation-interval perspective
-
-	Modelers don't usually question the intrinsic generation interval
-
-	But spatial network structure does change generation intervals:
-
-		Local interactions
-
-		⇒ wasted contacts
-
-		⇒ shorter generation intervals
-
-		⇒ smaller estimates of \Rx.
-
-----------------------------------------------------------------------
-
-Observed and estimated intervals
-
-PIC WIDEFIG networkSEIR/fig/diagram.pdf
-
-----------------------------------------------------------------------
-
-EXTRA
-
-Used to show an older version and brag about method improvement; not worth rescuing
-
-Outbreak estimation
-
-PIC WIDEFIG trace/fig/compare_methods.Rout-1.pdf
-
-----------------------------------------------------------------------
-
-Outbreak estimation
-
-PIC WIDEFIG trace/fig/individual_and_population.pdf
-
-----------------------------------------------------------------------
-
-Serial intervals
-
-FIG rabies_correlations/figure/general_interval.png
-
-----------------------------------------------------------------------
-
-Serial intervals
-
-	Do serial intervals and generation intervals have the same distribution?
-
-	It seems that they should: they describe generations of the same process
-
-	In fact, they don't
-
-		Serial intervals can even be negative!
-
-		You might report to the clinic with flu before me, even though I
-		infected you
-
-	For rabies, I have argued that serial intervals and generation intervals
-	should be the same 
-
-		Symptoms are closely correlated with infectiousness
-
-----------------------------------------------------------------------
-
-PICSLIDE FIG my_images/li_peace.jpg 
-
-----------------------------------------------------------------------
-
-EXTRA
-
-PIC WIDEFIG rabies_R0/figures/interval.png
-
-----------------------------------------------------------------------
-
-EXTRA Rabies
-
-	If symptoms always start \emph{before} infectiousness happens, then
-	serial interval should equal generation interval:
-
-		incubation time + extra latent time + waiting time
-
-		extra latent time + waiting time + incubation time
-
-----------------------------------------------------------------------
-
-EXTRA
-
-FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
-
-----------------------------------------------------------------------
-
-EXTRA FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
-
-----------------------------------------------------------------------
-
-SEC Speed and strength
-
-----------------------------------------------------------------------
-
-Can treatment stop the HIV epidemic?
-
-BC
-
-	Modern treatments are well tolerated and highly effective
-
-	Virus is undetectable, and transmission is negligible
-
-	Can active testing and treatment stop the epidemic?
-
-NC
-
-CFIG webpix/cocktail.jpg
-
-EC
-
-----------------------------------------------------------------------
-
-Are HIV generations fast or slow?
-
-BCC
-
-	Fast generations mean:
-
-		Testing and treating will help less
-
-		\emph{but} lower epidemic strength
-
-NCC
-
-\vspace{-0.4in}
-
-CFIG Generation_distributions/steps.Rout-1.pdf
-
-\vspace{-0.4in}
-
-CFIG Generation_distributions/steps.Rout-0.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Eaton and Hallett
-
-	Predicted effectiveness of test and treat intervention minimally sensitive to proportion of early transmission
-
-	Fast transmission:
-
-		low proportion prevented, but low $\Rx$ estimate
-
-
-	Slow transmission:
-
-		high proportion prevented, but high $\Rx$ estimate
-
-	Conclusion: it doesn't matter as much as we thought!
-
-	CREDIT Eaton JW, Hallett TB.  Proc Natl Acad Sci U S A. 2014 Nov 11;111(45):16202-7.
+SEC A false dichotomy
 
 ----------------------------------------------------------------------
 
@@ -1102,6 +812,18 @@ HIV
 
 ----------------------------------------------------------------------
 
+HIV test and treat
+
+FIG ss_pix/test.scen.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+HIV test and treat
+
+FIG ss_pix/test.scen.Rout-5.pdf
+
+----------------------------------------------------------------------
+
 Paradigms are complementary
 
 	HIV
@@ -1124,27 +846,226 @@ Paradigms are complementary
 
 ----------------------------------------------------------------------
 
-PICSLIDE FIG webpix/lens.jpg
+TSEC Measuring generation intervals
+
+BCC
+
+CFIG webpix/hammer
+
+NCC
+
+	Ad hoc methods
+
+	Error often not propagated
+
+	Importance of heterogeneity
+
+EC
 
 ----------------------------------------------------------------------
 
-PICSLIDE FIG my_images/glowing.png
+nCoV example
 
 ----------------------------------------------------------------------
 
-Linking framework
+Generations through time
 
-	Epidemic speed ($r$) is a \emph{product}:
+	Generation intervals can be estimated by:
 
-		(something to do with) generation speed $\times$
+		Observing patients:
 
-		(something to do with) epidemic strength
+			How long does it take to become infectious?
 
-	In particular:
+			How long does it take to recover?
 
-		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
+			What is the time profile of infectiousness/activity?
 
-		$\ell$ is the inverse of $X$
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become infected?
+
+			--- or ill (serial interval)?
+
+----------------------------------------------------------------------
+
+Which is the real interval?
+
+	Contact-tracing intervals look systematically different, depending on when
+	you observe them.
+
+	Observed in:
+
+		Real data, detailed simulations, simple model
+
+	Also differ from intrinsic (infector centered) estimates
+
+----------------------------------------------------------------------
+
+Types of interval
+
+	Define:
+
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
+
+		\emph{Forward interval}: When will the people infected today 
+		infect others?
+
+		\emph{Backward interval}: When did the people who infected people today
+		themselves become infected? 
+
+		\emph{Censored interval}: What do all the intervals observed up until a
+		particular time look like?
+
+			Like backward intervals, if it's early in the epidemic
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{shorter} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Generations in space
+
+	How do local interactions affect realized generation intervals?
+
+WIDEFIG tmpfigs/network.png
+
+----------------------------------------------------------------------
+
+Surprising results
+
+	We tend to think that heterogeneity leads to underestimates of $\Rx$, whican
+	can be dangerous.
+
+	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
+
+		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+
+----------------------------------------------------------------------
+
+Generation-interval perspective
+
+	Modelers don't usually question the intrinsic generation interval
+
+	But spatial network structure does change generation intervals:
+
+		Local interactions
+
+		⇒ wasted contacts
+
+		⇒ shorter generation intervals
+
+		⇒ smaller estimates of \Rx.
+
+----------------------------------------------------------------------
+
+Observed and estimated intervals
+
+PIC WIDEFIG networkSEIR/fig/diagram.pdf
+
+----------------------------------------------------------------------
+
+EXTRA
+
+Used to show an older version and brag about method improvement; not worth rescuing
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/compare_methods.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/individual_and_population.pdf
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+	Do serial intervals and generation intervals have the same distribution?
+
+	It seems that they should: they describe generations of the same process
+
+	In fact, they don't
+
+		Serial intervals can even be negative!
+
+		You might report to the clinic with flu before me, even though I
+		infected you
+
+	For rabies, I have argued that serial intervals and generation intervals
+	should be the same 
+
+		Symptoms are closely correlated with infectiousness
+
+----------------------------------------------------------------------
+
+EXTRA
+
+PICSLIDE FIG my_images/li_peace.jpg 
+
+----------------------------------------------------------------------
+
+PIC WIDEFIG rabies_R0/figures/interval.png
+
+----------------------------------------------------------------------
+
+Rabies
+
+	If symptoms always start \emph{before} infectiousness happens, then
+	serial interval should equal generation interval:
+
+		incubation time + extra latent time + waiting time
+
+		extra latent time + waiting time + incubation time
+
+----------------------------------------------------------------------
+
+EXTRA
+
+FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
+
+----------------------------------------------------------------------
+
+EXTRA
+
+FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
