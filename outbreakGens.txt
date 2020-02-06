@@ -1,4 +1,14 @@
 
+EXTRA
+
+Sharpen the approximation framework argument and talk about how it applies to nCoV
+
+Talk about serial intervals and find an example about Mike's stuff?
+
+Speed and strength: is strength really more important?
+
+----------------------------------------------------------------------
+
 NOFRAME
 
 \newcommand{\jdtitle}
@@ -9,7 +19,7 @@ NOFRAME
 \newcommand{\jdauth}
 	{Jonathan Dushoff}
 \newcommand{\years}
-	{2012--2019} 
+	{2012--2020} 
 \newcommand{\wdate}
 	{McMaster University 
 	\\ Department of Biology Seminar Series 
@@ -18,6 +28,13 @@ NOFRAME
 ----------------------------------------------------------------------
 
 WORKSHOP
+
+----------------------------------------------------------------------
+
+NOFRAME 
+
+\newcommand{\littler}{\ensuremath{r}}
+\newcommand{\Rproj}{\textbf{\textsf{R}}}
 
 ----------------------------------------------------------------------
 
@@ -169,7 +186,7 @@ Lessons
 
 ----------------------------------------------------------------------
 
-Speed and strength
+TSEC Speed and strength
 
 	Current coronavirus modeling is largely focused on inferring \Ro.
 
@@ -183,23 +200,55 @@ Speed and strength
 
 ----------------------------------------------------------------------
 
-TSEC Speed of an epidemic
+TSS  Epidemic
 
-	
+BCC
+
+	Diseases have a tendency to grow exponentially at first
+
+		I infect three people, they each infect 3 people \ldots
+
+		How fast does disease grow?
+
+		How quickly do we need to respond?
+
+NCC
+
+CFIG SIR_simulations/hiv_plot.Rout-4.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
-My life
+West African Ebola
 
-	I just realized yesterday:
-	
-		the main thing I do for a living is \ldots
-		
-		using \Rproj\ to understand the relationship between \Rx\ and \littler
+FIG my_images/weitz_full.pdf
 
 ----------------------------------------------------------------------
 
-Big \Rx
+
+little $r$
+
+	We measure epidemic \emph{speed} using little $r$:
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+		Ebola, $C \approx 1 \mathrm{month}$
+
+		HIV in SSA, $C \approx 18 \mathrm{month}$
+
+
+----------------------------------------------------------------------
+
+How fast is coronavirus?
+
+----------------------------------------------------------------------
+
+TSS Epidemic strength
 
 	We estimate epidemic strength using \Rx.
 
@@ -228,7 +277,7 @@ NC
 
 CFIG webpix/red_carpet.jpg
 
-ADD Winslet (no good images except a tagged, commercial one)
+CFIG webpix/winslet.jpg
 
 EC
 
@@ -256,11 +305,11 @@ EC
 
 Yellow fever in Panama
 
-BC
+BCC
 
-CFIG Endemic_curves/propCurves.Rout-0.pdf
+CFIG Endemic_curves/aedes.Rout-0.pdf
 
-NC
+NCC
 
 CFIG webpix/aedes.jpg
 
@@ -268,42 +317,7 @@ EC
 
 ----------------------------------------------------------------------
 
-Exponential growth
-
-	Diseases have a tendency to grow exponentially at first
-
-		I infect three people, they each infect 3 people \ldots
-
-		How fast does disease grow?
-
-		How quickly do we need to respond?
-
-----------------------------------------------------------------------
-
-little $r$
-
-	We measure epidemic \emph{speed} using little $r$:
-
-		\emph{Units}: [1/time]
-
-		Disease increases like $e^{rt}$
-
-	Time scale is $C=1/r$
-
-		Ebola, $C \approx 1 \mathrm{month}$
-
-		HIV in SSA, $C \approx 18 \mathrm{month}$
-
-	Often focus on initial period (may also say $r_0$)
-
-
-----------------------------------------------------------------------
-
-RHEAD little $r$
-
-FIG SIR_simulations/hiv_plot.Rout-4.pdf
-
-----------------------------------------------------------------------
+EXTRA
 
 Limitations
 
@@ -322,85 +336,22 @@ Limitations
 
 ----------------------------------------------------------------------
 
-TSEC The \rR\ relationship
+TSS Linking
 
 	We're very interested in the relationship between little $r$ and \big \Rx.
 
-	We might have good estimates of $r$ only
+	We might have good estimates of $r$ and want to know more about equilibrium
+	burden or expected outbreak size
 
 		e.g., West African Ebola outbreak, HIV in Africa
 
-	Or we might have good estimates of \Rx\ only
+	Or we might have good estimates of \Rx\ and want to know how fast disease
+	would spread if introduced to a new population
 
 		Measles, influenza
 
-----------------------------------------------------------------------
-
-Example: Post-death transmission and safe burial
-
-BC
-
-	How much Ebola spread occurs before vs.\ after death
-
-	Highly context dependent
-
-		Funeral practices, disease knowledge
-
-	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
-
-NC
-
-FIG webpix/burial_team.jpg
-
-EC
-
-----------------------------------------------------------------------
-
-Standard disease model 
-
-WIDEFIG SIR_model_family/sir.four.pdf
-
-----------------------------------------------------------------------
-
-Add a latent period
-
-WIDEFIG SIR_model_family/seir.four.pdf
-
-	(i.e., a lag between infection and infectiousness)
-
-----------------------------------------------------------------------
-
-Add post-death transmission
-
-WIDEFIG SIR_model_family/seird.four.pdf
-
-----------------------------------------------------------------------
-
-Add post-death transmission
-
-WIDEFIG SIR_model_family/brides.four.pdf
-
-----------------------------------------------------------------------
-
-What happens if we account for burial transmission?
-
-	We've made the disease transmitting process slower, so obviously Ebola is
-	\emph{less} dangerous than we thought
-
-	We've added another source of transmission, so obviously Ebola is
-	\emph{more} dangerous than we thought
-
-	What we learn depends on what we know!
-
-----------------------------------------------------------------------
-
-What do we know?
-
-FIG my_images/weitz_full.pdf
-
-----------------------------------------------------------------------
-
-SS Generation intervals
+	Much corona virus modeling has explicitly or implicitly estimated \Rx\ from
+	\r.
 
 ----------------------------------------------------------------------
 
@@ -450,6 +401,26 @@ CFIG Generation_distributions/steps.Rout-1.pdf
 NCC
 
 CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Example: Post-death transmission and safe burial
+
+BC
+
+	How much Ebola spread occurs before vs.\ after death
+
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+NC
+
+FIG webpix/burial_team.jpg
 
 EC
 
@@ -603,7 +574,7 @@ Intuition
 
 ----------------------------------------------------------------------
 
-How well do approximations work
+Test the approximations
 
 	Simulate realistic generation intervals for various diseases
 
@@ -663,26 +634,11 @@ EC
 
 ----------------------------------------------------------------------
 
-Summary
-
-	Generation intervals are the missing link between $r$ and \Rx
-
-	We need better methods for estimating them, and propagating
-	uncertainty to other parts of the model
-
-	NOTES Filtered means may help with intuition
-
-	For many practical applications:
-
-		Estimating the mean generation interval is not enough
-
-		But estimating the mean and CV may be enough
-
-		A good basis for understanding and propagating uncertainty
+nCoV example
 
 ----------------------------------------------------------------------
 
-TSEC Generations through time
+Generations through time
 
 	Generation intervals can be estimated by:
 
@@ -759,55 +715,11 @@ EC
 
 ----------------------------------------------------------------------
 
-What changes backward intervals?
-
-	Who is likely to infect me depends on:
-
-		How infectious they are (intrinsic GI)
-
-		How many of them there are (changes in disease incidence)
-
-----------------------------------------------------------------------
-
 Backward intervals
 
 WIDEFIG backward.jpg
 
 CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
-
-----------------------------------------------------------------------
-
-What changes forward intervals?
-
-	Who I am likely to infect depends on:
-
-		How infectious I am (intrinsic GI)
-
-		How many of them there are (changes in numbers of susceptibles)
-
-----------------------------------------------------------------------
-
-Forward intervals
-
-WIDEFIG forward.jpg
-
-CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
-
-----------------------------------------------------------------------
-
-Conclusion
-
-	Backward intervals change if the number of infectious individuals is
-	changing as you look back
-
-	Forward intervals change if the number of \emph{susceptible} individuals is
-	changing as you look forward
-
-	Lack of care in defining generation intervals can lead to bias
-
-		Censored intervals look short $\implies$ 
-		
-		underestimates of $\Rx$
 
 ----------------------------------------------------------------------
 
@@ -1245,4 +1157,5 @@ Thanks
 	Funders: NSERC, CIHR
 
 ----------------------------------------------------------------------
+
 
