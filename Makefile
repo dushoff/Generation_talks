@@ -96,7 +96,7 @@ legacy = ~/gitroot
 
 ## Directories
 
-pardirs += Generation_distributions Endemic_curves Disease_data link_calculations trace
+pardirs += Generation_distributions Endemic_curves Disease_data link_calculations trace coronaSpread
 pardirs += SIR_model_family WA_Ebola_Outbreak SIR_simulations ss_pix
 
 hotdirs += $(pardirs)

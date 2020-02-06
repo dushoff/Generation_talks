@@ -31,6 +31,12 @@ WORKSHOP
 
 ----------------------------------------------------------------------
 
+EXTRA
+
+ADD Train wreck
+
+----------------------------------------------------------------------
+
 Novel Coronavirus: What do we need to know?
 
 	How deadly is the disease?
@@ -254,7 +260,42 @@ little $r$
 
 ----------------------------------------------------------------------
 
+EXTRA
+
+ADD li_peace
+
+----------------------------------------------------------------------
+
+
 Coronavirus speed
+
+FIG coronaSpread/HBcorona.talkplot.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/HBcorona.talkplot.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/HBcorona.talkplot.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/HBcorona.talkplot.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/git_push/HBcorona.growthrate_plot.Rout.pdf
+
+HBcorona.jagsForecastPlot.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -850,7 +891,7 @@ TSEC Measuring generation intervals
 
 BCC
 
-CFIG webpix/hammer
+CFIG webpix/hammer.jpg
 
 NCC
 
