@@ -295,7 +295,11 @@ Coronavirus speed
 
 FIG coronaSpread/git_push/HBcorona.growthrate_plot.Rout.pdf
 
-HBcorona.jagsForecastPlot.Rout.pdf
+----------------------------------------------------------------------
+
+Coronavirus forecasting
+
+FIG coronaSpread/git_push/HBcorona.jagsForecastPlot.Rout.pdf
 
 ----------------------------------------------------------------------
 
