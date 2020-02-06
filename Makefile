@@ -159,18 +159,23 @@ corona.html: corona.step
 
 ######################################################################
 
+## Manipulate images
+Ignore += *.jpg
+
 ## downcall my_images/MMED18.jpg ##
 MMED18.jpg: my_images/MMED18.jpg
 	convert -scale 25% $< $@
-
-## Manipulate images
-Ignore += *.jpg
 
 forward.jpg: my_images/GI_PRSB_4.jpg
 	convert -crop 1280x640+0+0 $< $@
 
 backward.jpg: my_images/GI_PRSB_4.jpg
 	convert -crop 1280x640+0+640 $< $@
+
+## This split makes two files somehow!!
+coronasingle.jpg: webpix/coronapair.jpg
+	convert -crop 646x400 $< $@
+coronasingle-0.jpg: coronasingle.jpg ;
 
 ######################################################################
 
@@ -187,6 +192,8 @@ legacy:
 Ignore += beamer.tmp local.txt.format
 
 ######################################################################
+
+## Keep deprecating whatever this is! 2020 Feb 05 (Wed)
 
 Ignore += tmpfigs
 tmpfigs:

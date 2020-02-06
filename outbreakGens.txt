@@ -21,21 +21,13 @@ WORKSHOP
 
 ----------------------------------------------------------------------
 
-What's the worst that could happen?
-
-LANDFIG my_images/usmort.pdf
-
-CREDIT Dushoff, from Armstrong et al.
-
----------------------------------------------------------------------- 
-
 What do we need to know?
 
 	How deadly is the disease?
 
 	Can spread be stopped?
 
-	What resources will be needed?
+		What resources will be needed?
 
 	How much time do we have to prepare?
 
@@ -53,9 +45,19 @@ How can modelers help?
 
 ----------------------------------------------------------------------
 
+SEC How deadly?
+
+----------------------------------------------------------------------
+
+LANDFIG my_images/usmort.pdf
+
+CREDIT Dushoff, from Armstrong et al.
+
+---------------------------------------------------------------------- 
+
 Case fatality proportion
 
-	If the disease spreads around the world, most of us will get it. 
+	Worst-case scenario; most of us get the infection
 
 	Fatalities per case
 
@@ -71,7 +73,17 @@ Case fatality proportion
 
 ----------------------------------------------------------------------
 
-Age distribution
+Case-fatality proportion
+
+	Currently estimated at 2--4\%
+
+	Denominators not reported clearly
+
+	As time goes on (and we focus on general public) this number should go down
+
+----------------------------------------------------------------------
+
+1918 Age distribution
 
 FIG my_images/flu191810.png
 
@@ -79,7 +91,29 @@ CREDIT Gagnon et al. 10.1371/journal.pone.0069586
 
 ----------------------------------------------------------------------
 
-ADD Make a one-panel version of coronapair
+Influenza Age distribution
+
+FIG webpix/maW.jpg
+
+CREDIT Ma et al. 10.1016/j.jtbi.2011.08.003
+
+----------------------------------------------------------------------
+
+What do we know?
+
+HFIG 0.7 coronasingle-0.jpg
+
+CREDIT Huang et al. 10.1016/S0140-6736(20)30183-5
+
+----------------------------------------------------------------------
+
+What do we know?
+
+	80% of reported deaths age $>60$
+
+	Life expectancy, harvesting and attributable risk
+
+		The older the profile, the smaller the overall impact
 
 ----------------------------------------------------------------------
 
@@ -135,21 +169,29 @@ Lessons
 
 ----------------------------------------------------------------------
 
-TSEC Speed and strength
+Speed and strength
 
-	Current coronavirus is largely focused on inferring \Ro.
+	Current coronavirus modeling is largely focused on inferring \Ro.
+
+		The ``basic reproductive number''
 	
 	Modelers are essentially trying to infer the \emph{strength} of the epidemic
 
 	By observing the \emph{speed} of the epidemic
 
+		And making explicit or implicit assumptions about generation intervals
+
 ----------------------------------------------------------------------
 
-EXTRA put this somewhere good
+TSEC Speed of an epidemic
+
+	
+
+----------------------------------------------------------------------
 
 My life
 
-	I just realized figured out yesterday:
+	I just realized yesterday:
 	
 		the main thing I do for a living is \ldots
 		
