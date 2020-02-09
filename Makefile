@@ -106,8 +106,8 @@ pull: pardirpull
 screenroot = ~/screens
 mli = $(screenroot)/rabies
 
-## Maybe try to deprecate this; some repetition of pardirs seems fine
 ## (linked from elsewhere)
+## Maybe try to deprecate this; some repetition of pardirs seems fine
 linkdirs += rabies_R0
 rabies_R0: dir=$(mli)/R0
 rabies_R0:
@@ -117,6 +117,8 @@ linkdirs += rabies_correlations
 rabies_correlations: dir=$(mli)/correlations
 rabies_correlations:
 	$(linkdirname)
+
+pull: rabies_correlations.pull rabies_R0.pull
 
 ## Trying to avoid alling this subdirectory
 linkdirs += networkSEIR
