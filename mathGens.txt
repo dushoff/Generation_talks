@@ -192,6 +192,12 @@ Linking framework
 
 		(something to do with) epidemic strength
 
+	Strength (\Rx) is therefore (sort-of) a quotient
+
+		More quickness implies less strength
+
+		\ldots if speed is known
+
 ----------------------------------------------------------------------
 
 SS ``Effective'' generation times
@@ -271,6 +277,10 @@ Euler-Lotka equation
 
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
 
+	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
+
+		The initial ``backwards'' generation interval
+
 ----------------------------------------------------------------------
 
 Interpretation: generating functions
@@ -278,8 +288,6 @@ Interpretation: generating functions
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
 
 	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
-
-CFIG webpix/black_box.png
 
 ----------------------------------------------------------------------
 
@@ -531,11 +539,21 @@ Linking framework
 
 Evaluating
 
+BCC
+
 	Model fits to exponential case data are essentially estimating \Rx\ using
 	this quotient
 
 	Can be evaluated and compared using (implicit or explicit) estimates of $r$,
 	$\bar G$ and $\kappa_g$ 
+
+NCC
+
+CFIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
 
 ----------------------------------------------------------------------
 
@@ -566,10 +584,6 @@ FIG coronaFrame/figure2.Rout-0.pdf
 Propagating error
 
 FIG coronaFrame/figure2.Rout-1.pdf
-
-----------------------------------------------------------------------
-
-FIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -980,7 +994,7 @@ CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
 
 ----------------------------------------------------------------------
 
-Generations in space
+TSS Generations in space
 
 	How do local interactions affect realized generation intervals?
 
@@ -1027,7 +1041,7 @@ PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
 ----------------------------------------------------------------------
 
-Serial intervals
+TSS Serial intervals
 
 FIG rabies_correlations/figure/general_interval.png
 
