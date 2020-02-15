@@ -10,7 +10,9 @@ NOFRAME
 \newcommand{\years}
 	{2012--2020} 
 \newcommand{\wdate}
-	{Fields Institute
+	{
+	Mathematics of COVID-19
+	\\ Fields Institute
 	\\ Feb 2020}
 
 ----------------------------------------------------------------------
@@ -106,7 +108,7 @@ Coronavirus
 
 ----------------------------------------------------------------------
 
-Quickness: $G(\tau)$
+Quickness: $g(\tau)$
 
 BC
 
@@ -128,17 +130,17 @@ SEC Linking strength and speed
 
 ----------------------------------------------------------------------
 
-Conditional effect of generation time
+Conditional effect of quickness
 
 	\emph{Given} the reproductive number $\Rx$
 
-		faster generation time $G$ means faster growth rate $r$
+		quicker disease means faster growth rate $r$
 
 		More danger
 
 	\emph{Given} the growth rate $r$
 
-		faster generation time $G$ means \emph{smaller} \Rx
+		quicker disease means \emph{smaller} \Rx
 
 		Less danger
 
@@ -217,7 +219,7 @@ Renewal equation
 	A broad framework that covers a wide range of
 	underlying models 
 
-	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
+	$$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$$
 
 		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
 
@@ -247,7 +249,7 @@ BCC
 
 NCC
 
-FIG ss_pix/ess.Rout-2.pdf
+CFIG ss_pix/ess.Rout-2.pdf
 
 EC
 
@@ -285,15 +287,23 @@ Euler-Lotka equation
 
 Interpretation: generating functions
 
+BCC
+
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
 
 	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
 Interpretation: ``effective'' generation times
 
-	Define the effective generation time so that 
+	\emph{Define} $\hat G$
 
 		$${\Rx} = \exp(r\hat G)$$
 
@@ -368,18 +378,15 @@ Conclusions
 
 ----------------------------------------------------------------------
 
-SS Moment approximations
+SS ``Effective'' dispersion
 
 ----------------------------------------------------------------------
 
-Tangled web
+Limitations of effective time
 
-	The filtered mean is useful -- but complicated
+	The filtered mean has nice theoretical and intuitive properties
 
-		Filtering function is not scale free.
-
-	Unless the generation interval is
-	absolutely fixed, $\hat G$ will change even when $g$ does not
+	Practically, the effective generation time can be confusing
 
 	How is
 	
@@ -389,102 +396,20 @@ Tangled web
 
 		$\Rx = 1 + r \bar G$?
 
+	$\hat G$ changes with $r$, sometimes a lot
+
 ----------------------------------------------------------------------
 
-An approximation
+Gamma approximation
 
-	We connect these quantities with a moment approximation
-
-	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
-	coefficient of variation of the generation distribution
+	If $g$ has a gamma distribution, then:
 
 	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
 
-		Equal when $g(\tau)$ has a gamma distribution
+	$\kappa$ is the \emph{dispersion} (the squared coefficient of variation of
+	the generation distribution)
 
-		Simple and straightforward
-
-		When is it a useful approximation?
-
-----------------------------------------------------------------------
-
-Compound-interest interpretation
-
-	Define $\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
-
-	$X$ is the compound-interest approximation to the exponential
-
-		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
-
-		Approaches exponential as $\kappa \to 0$
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Qualitative response
-
-	For a given value of $\bar G$, smaller values of $\kappa$ mean:
-
-		less variation in generation interval
-
-		less compounding of growth
-
-		greater \Rx\ required for a given $r$
+	How good is the approximation?
 
 ----------------------------------------------------------------------
 
@@ -521,17 +446,116 @@ FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 ----------------------------------------------------------------------
 
+
+Effective dispersion
+
+	\emph{Define} $\bar\kappa$:
+
+	$\Rx = (1 + r \hat\kappa \bar G)^{1/\hat\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	Conceptually more confusing than effective generation time
+
+	Practically straightforward
+
+		For \emph{many} applications $\bar\kappa$ changes very little with $r$
+
+		Doesn't work where you wouldn't expect it to:
+
+			syphilis, sexual transmission of Ebola
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+----------------------------------------------------------------------
+
+Gamma approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Gamma approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Gamma approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Gamma approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Qualitative response
+
+	For a given value of $\bar G$, smaller values of $\kappa$ mean:
+
+		less variation in generation interval
+
+		less compounding of growth
+
+		greater \Rx\ required for a given $r$
+
+----------------------------------------------------------------------
+
 Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
 
-		(something to do with) generation speed $\times$
+		(something to do with) quickness $\times$
 
 		(something to do with) epidemic strength
 
 	In particular:
 
-		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
+		$ r \approx (1/\bar G) \times \ell(\Rx; \bar\kappa) $
 
 		$\ell$ is the inverse of $X$
 
@@ -545,15 +569,17 @@ BCC
 	this quotient
 
 	Can be evaluated and compared using (implicit or explicit) estimates of $r$,
-	$\bar G$ and $\kappa_g$ 
+	$\bar G$ and $\bar\kappa$ 
+
+	CREDIT Park et al., Epidemics DOI:10.1101/312397
 
 NCC
 
 CFIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
 
-EC
+	CREDIT Mike Li
 
-----------------------------------------------------------------------
+EC
 
 ----------------------------------------------------------------------
 
@@ -1039,6 +1065,8 @@ Outbreak estimation
 
 PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
+CREDIT Park et al. DOI: 10.1101/683326 (preprint)
+
 ----------------------------------------------------------------------
 
 TSS Serial intervals
@@ -1085,3 +1113,19 @@ FIG rabies_correlations/intervalPlots.Rout.pdf
 ----------------------------------------------------------------------
 
 FIG rabies_correlations/correlations.Rout.pdf
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Fields
+
+	Organizers
+
+	Collaborators:
+	
+		\emph{especially}: Li, Park, Weitz
+
+		\emph{proximately}: Bolker, Ma
+
+	Funders: NSERC, CIHR
