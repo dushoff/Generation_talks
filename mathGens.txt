@@ -1,0 +1,1073 @@
+NOFRAME
+
+\newcommand{\jdtitle}
+{Strength, speed and quickness: an approach to evaluating models of disease spread}
+
+\newcommand{\jdsub}
+	{}
+\newcommand{\jdauth}
+	{Jonathan Dushoff}
+\newcommand{\years}
+	{2012--2020} 
+\newcommand{\wdate}
+	{Fields Institute
+	\\ Feb 2020}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+----------------------------------------------------------------------
+
+SEC Metrics of disease spread
+
+----------------------------------------------------------------------
+
+Speed: $r$
+
+	We measure epidemic speed using little $r$:
+
+		The ratio of the \emph{change} in disease impact to the \emph{amount} of
+		disease impact
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$. Sort-of fast.
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
+
+----------------------------------------------------------------------
+
+Strength: $\Rx$
+
+	We describe epidemic strength with big \Rx
+
+	Number of potential new cases per case
+
+		Not accounting for proportion susceptible
+
+	To eliminate disease, we must:
+
+		Reduce effective reproduction by a factor of \Rx
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and equilibrium
+
+	If we have $\Rx$ new cases per case when everyone is susceptible
+
+	And 1 case per case (on average) at equilibrium:
+
+		Proportion susceptible at equilibrium is $S = 1/\Rx$
+
+		Proportion affected at equilibrium is $V = 1 - 1/\Rx$
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and control
+
+BC
+
+CFIG ss_pix/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Coronavirus
+
+	What we see clearly is $r$
+
+	What we rush to calculate is \Rx
+
+	How do we do this?
+
+	\emph{Why} do we do this?
+
+----------------------------------------------------------------------
+
+Quickness: $G(\tau)$
+
+BC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NC
+
+	The generation distribution measures generations of the disease
+
+		Interval between ``index'' infection and resulting infection
+
+	Do fast disease generations mean more danger or less danger?
+
+EC
+
+----------------------------------------------------------------------
+
+SEC Linking strength and speed
+
+----------------------------------------------------------------------
+
+Conditional effect of generation time
+
+	\emph{Given} the reproductive number $\Rx$
+
+		faster generation time $G$ means faster growth rate $r$
+
+		More danger
+
+	\emph{Given} the growth rate $r$
+
+		faster generation time $G$ means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$, $G \approx 2 \,\mathrm{week}$
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$, $G \approx 4 \,\mathrm{years}$
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		quickness $\times$
+
+		epidemic strength
+
+	WRONG
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) quickness $\times$
+
+		(something to do with) epidemic strength
+
+----------------------------------------------------------------------
+
+SS ``Effective'' generation times
+
+----------------------------------------------------------------------
+
+Box models
+
+WIDEFIG SIR_model_family/sir.four.pdf
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the proportion of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	For invasion, treat $S$ as constant
+
+----------------------------------------------------------------------
+
+Infection kernel 
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+FIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+EXTRA Euler-Lotka equation 
+
+	Model
+
+		$$i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+	Exponential phase
+
+		Disease grows with characteristic time $C=1/r$
+
+		$$i(t) = i(0) \exp(rt)$$
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	If we neglect $S$, we expect exponential growth
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+----------------------------------------------------------------------
+
+Interpretation: generating functions
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+CFIG webpix/black_box.png
+
+----------------------------------------------------------------------
+
+Interpretation: ``effective'' generation times
+
+	Define the effective generation time so that 
+
+		$${\Rx} = \exp(r\hat G)$$
+
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+		A filtered mean:
+		
+			The discounted value of $\hat G$ is the expectation of the discounted
+			values across the distribution
+
+----------------------------------------------------------------------
+
+Example: Post-death transmission and safe burial
+
+BC
+
+	How much Ebola spread occurs before vs.\ after death
+
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+NC
+
+FIG webpix/burial_team.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Standard disease model 
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/brides.four.pdf
+
+----------------------------------------------------------------------
+
+Scenarios
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Conclusions
+
+	Different parameters can produce indistinguishable early dynamics
+
+	More after-death transmission implies
+
+		Higher \Ro
+
+		Larger epidemics
+
+		Larger importance of safe burials
+
+----------------------------------------------------------------------
+
+SS Moment approximations
+
+----------------------------------------------------------------------
+
+Tangled web
+
+	The filtered mean is useful -- but complicated
+
+		Filtering function is not scale free.
+
+	Unless the generation interval is
+	absolutely fixed, $\hat G$ will change even when $g$ does not
+
+	How is
+	
+		$\Rx = \exp(r \hat G)$
+
+	Consistent with the result from ODEs
+
+		$\Rx = 1 + r \bar G$?
+
+----------------------------------------------------------------------
+
+An approximation
+
+	We connect these quantities with a moment approximation
+
+	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+	coefficient of variation of the generation distribution
+
+	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
+
+		Equal when $g(\tau)$ has a gamma distribution
+
+		Simple and straightforward
+
+		When is it a useful approximation?
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	Define $\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Qualitative response
+
+	For a given value of $\bar G$, smaller values of $\kappa$ mean:
+
+		less variation in generation interval
+
+		less compounding of growth
+
+		greater \Rx\ required for a given $r$
+
+----------------------------------------------------------------------
+
+Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+Approximating the distribution
+
+BCC
+
+WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Approximating the curve
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
+
+		$\ell$ is the inverse of $X$
+
+----------------------------------------------------------------------
+
+Evaluating
+
+	Model fits to exponential case data are essentially estimating \Rx\ using
+	this quotient
+
+	Can be evaluated and compared using (implicit or explicit) estimates of $r$,
+	$\bar G$ and $\kappa_g$ 
+
+----------------------------------------------------------------------
+
+Assumptions
+
+FIG coronaFrame/assumption_1.jpg
+
+----------------------------------------------------------------------
+
+Assumptions
+
+FIG coronaFrame/assumption_2.jpg
+
+----------------------------------------------------------------------
+
+Assumptions
+
+FIG coronaFrame/assumption_3.jpg
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/figure2.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/figure2.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+FIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
+
+----------------------------------------------------------------------
+
+TSEC A false dichotomy
+
+	Why are people scrambling to estimate \Rx\ and mostly ignoring \littler?
+
+		History
+
+		Modelers gotta model
+
+----------------------------------------------------------------------
+
+The strength paradigm
+
+	$\Rx>1$ is a threshold
+
+	If we can reduce transmission by a constant \emph{factor} of $\theta > \Rx$,
+	disease can be controlled
+
+	In general, we can define $\theta$ as a (harmonic) mean of the reduction
+	factor over the course of an infection
+	
+		weighted by the \emph{intrinsic} generation interval
+
+	Epidemic is controlled if $\theta > \Rx$
+
+	More useful in long term (tells us about final size, equilibrium)
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	$r>0$ is a threshold
+
+	If we can reduce transmission at a constant \emph{hazard rate} of $\phi >
+	r$, disease can be controlled
+
+	In general, we can define $\phi$ as a (very weird) mean of the reduction
+	factor over the course of an infection
+	
+		weighted by the \emph{backward} generation interval
+
+	Epidemic is controlled if $\phi > r$
+
+	More useful in short term (tells us about, um, speed)
+
+----------------------------------------------------------------------
+
+PSLIDE Epidemic strength
+
+BC
+
+FIG ss_pix/ess.Rout-0.pdf
+
+NC
+
+	\Rx, the epidemic strength, is the area under the curve.
+
+EC
+
+----------------------------------------------------------------------
+
+Strength of intervention
+
+BC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+NC
+
+	\ldots by what factor do I need to reduce this curve to eliminate the
+	epidemic?
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+BC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+NC
+
+	idealized vaccination
+
+	removes a fixed proportion of people 
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+BC
+
+CFIG ss_pix/ess.Rout-1.pdf
+
+NC
+
+	idealized quarantine
+
+	removes people at a fixed rate
+
+EC
+
+----------------------------------------------------------------------
+
+Epidemic speed
+
+BC
+
+PIC CFIG ss_pix/ess.Rout-0.pdf
+
+NC
+
+	$r$, the epidemic speed, is the ``discount'' rate required to balance the
+	tendency to grow
+
+EC
+
+----------------------------------------------------------------------
+
+Epidemic speed
+
+BC
+
+PIC CFIG ss_pix/ess.Rout-3.pdf
+
+NC
+
+	$k(\tau) = \exp(r\tau) b(\tau)$, where $b(\tau)$ is the initial backward
+	generation interval
+
+EC
+
+----------------------------------------------------------------------
+
+Speed of intervention
+
+BC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+NC
+
+	\ldots how \emph{quickly} do I need to reduce this curve to eliminate the
+	epidemic?
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+BC
+
+FIG ss_pix/ess.Rout-1.pdf
+
+NC
+
+	Sometimes it's easier to estimate strength, sometimes speed
+
+EC
+
+
+----------------------------------------------------------------------
+
+Measuring the intervention
+
+BCC
+
+CFIG webpix/vaccination.jpg
+
+NCC
+
+CFIG webpix/tutu.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Measuring the intervention
+
+	We imagine an intervention with potentially variable effect over the course of infection, $L(\tau)$
+
+	Assume the intervention takes
+	
+		$k(\tau) \to$ $\hat k(\tau) = k(\tau)/L(\tau)$
+
+----------------------------------------------------------------------
+
+Measuring intervention strength
+
+	Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
+	proportional amount by which the intervention reduces transmission.
+
+	$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
+
+	$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
+	distribution $g$.
+
+	Outbreak can be controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+Measuring intervention speed
+
+	Define intervention \emph{speed} $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
+
+	We then have:
+
+		$\ds 1 =
+			\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
+
+	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
+
+		Because $L(t) = \exp(ht)$ when hazard is constant
+
+	Averaged over the initial \emph{backwards} generation interval
+
+	Outbreak can be controlled if $\phi > r$.
+
+----------------------------------------------------------------------
+
+The strength paradigm
+
+	$k(\tau) = \Rx g(\tau)$
+	
+		$g$ is the intrinsic generation interval
+
+		$\Rx$ is the strength of the epidemic
+
+	If $L(\tau) \equiv L$, then $\theta=L$ is the strength of the intervention
+
+	In general, $\theta$ is a (harmonic) mean of $L$
+
+		weighted by $g(\tau)$, but not affected by \Rx.
+
+	Epidemic is controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	$k(\tau) = \exp(r\tau) b(\tau)$,
+	
+		$r$ is the speed of the epidemic
+
+		$b$ is the initial backward generation interval
+
+	If $h(\tau) \equiv h$, then $\phi=h$ is the speed of the intervention
+
+	In general, $\phi$ is a (weird) mean of $h$
+
+		weighted by $b(\tau)$, but not affected by $r$.
+
+	Epidemic is controlled if $\phi > r$
+
+----------------------------------------------------------------------
+
+HIV
+
+	The importance of transmission speed to HIV control is easier to understand
+	using the speed paradigm
+
+		We know the speed of invasion
+
+			$\approx 0.7/\mathrm{yr}$
+
+			Characteristic scale $\approx 1.4\mathrm{yr}$
+
+		And can hypothesize the speed of intervention
+
+			Or aim to go fast enough
+
+----------------------------------------------------------------------
+
+HIV test and treat
+
+FIG ss_pix/test.scen.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+HIV test and treat
+
+FIG ss_pix/test.scen.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus outbreak
+
+	What we know well is the speed of the outbreak
+
+	What do we think if the pathogen is actually quicker than we thought?
+
+		e.g., Nishiura et al.
+
+	It has less strength (easier to control by vaccination)
+
+	Control by identification and isolation may be a little harder?
+
+----------------------------------------------------------------------
+
+TSEC Measuring generation intervals
+
+BCC
+
+CFIG webpix/hammer.jpg
+
+NCC
+
+	Ad hoc methods
+
+	Error often not propagated
+
+	Importance of heterogeneity
+
+EC
+
+----------------------------------------------------------------------
+
+Generations through time
+
+	Generation intervals can be estimated by:
+
+		Observing patients:
+
+			How long does it take to become infectious?
+
+			How long does it take to recover?
+
+			What is the time profile of infectiousness/activity?
+
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become infected?
+
+			--- or ill (serial interval)?
+
+----------------------------------------------------------------------
+
+Which is the real interval?
+
+	Contact-tracing intervals look systematically different, depending on when
+	you observe them.
+
+	Observed in:
+
+		Real data, detailed simulations, simple model
+
+	Also differ from intrinsic (infector centered) estimates
+
+----------------------------------------------------------------------
+
+Types of interval
+
+	Define:
+
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
+
+		\emph{Forward interval}: When will the people infected today 
+		infect others?
+
+		\emph{Backward interval}: When did the people who infected people today
+		themselves become infected? 
+
+		\emph{Censored interval}: What do all the intervals observed up until a
+		particular time look like?
+
+			Like backward intervals, if it's early in the epidemic
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{shorter} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Generations in space
+
+	How do local interactions affect realized generation intervals?
+
+WIDEFIG tmpfigs/network.png
+
+----------------------------------------------------------------------
+
+Surprising results
+
+	We tend to think that heterogeneity leads to underestimates of $\Rx$, which
+	can be dangerous.
+
+	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
+
+		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+
+----------------------------------------------------------------------
+
+Generation-interval perspective
+
+	Modelers don't usually question the intrinsic generation interval
+
+	But spatial network structure does change generation intervals:
+
+		Local interactions
+
+		⇒ wasted contacts
+
+		⇒ shorter generation intervals
+
+		⇒ smaller estimates of \Rx.
+
+----------------------------------------------------------------------
+
+Observed and estimated intervals
+
+PIC WIDEFIG networkSEIR/fig/diagram.pdf
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+	Do serial intervals and generation intervals have the same distribution?
+
+	It seems that they should: they describe generations of the same process
+
+		But serial intervals can even be very different
+
+		Even negative! You might report to the clinic with flu before me, even
+		though I infected you
+
+	For rabies, we \emph{thought} that serial intervals and generation intervals
+	should be the same 
+
+		Symptoms are closely correlated with infectiousness
+
+----------------------------------------------------------------------
+
+PIC WIDEFIG rabies_R0/figures/interval.png
+
+----------------------------------------------------------------------
+
+Rabies
+
+	If symptoms always start \emph{before} infectiousness happens, then
+	serial interval should equal generation interval:
+
+		incubation time + extra latent time + waiting time
+
+		extra latent time + waiting time + incubation time
+
+----------------------------------------------------------------------
+
+FIG rabies_correlations/intervalPlots.Rout.pdf
+
+----------------------------------------------------------------------
+
+FIG rabies_correlations/correlations.Rout.pdf
