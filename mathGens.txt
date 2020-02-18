@@ -411,6 +411,8 @@ Gamma approximation
 
 	How good is the approximation?
 
+	CREDIT Park et al., Epidemics DOI:10.1101/312397
+
 ----------------------------------------------------------------------
 
 Fitting to Ebola
@@ -446,12 +448,12 @@ FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 ----------------------------------------------------------------------
 
-
 Effective dispersion
 
 	\emph{Define} $\bar\kappa$:
 
-	$\Rx = (1 + r \hat\kappa \bar G)^{1/\hat\kappa} \equiv X(r \bar G; 1/\kappa)$
+	$\Rx = (1 + r \hat\kappa \bar G)^{1/\hat\kappa}
+		\equiv X(r \bar G; 1/\hat\kappa)$
 
 	Conceptually more confusing than effective generation time
 
@@ -571,7 +573,7 @@ BCC
 	Can be evaluated and compared using (implicit or explicit) estimates of $r$,
 	$\bar G$ and $\bar\kappa$ 
 
-	CREDIT Park et al., Epidemics DOI:10.1101/312397
+CREDIT Park et al., DOI: 10.1101/2020.01.30.20019877 (preprint)
 
 NCC
 
