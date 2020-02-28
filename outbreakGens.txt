@@ -11,6 +11,22 @@ Is a faster epidemic more dangerous or less? It depends
 
 ----------------------------------------------------------------------
 
+EXTRA GIVEN at Mac #BioSeminar
+
+The dynamics of infectious disease outbreaks
+
+Dynamical models link individual events –  like a rabid dog biting another dog, or somebody sneezing on a bus – to population-level phenomena, like the developing coronavirus outbreak. I will discuss how dynamical modeling helps to understand what we do and don’t know about how best to control infectious-disease spread, with examples from Ebola, HIV, canine rabies and the 2019 novel coronavirus.
+
+----------------------------------------------------------------------
+
+EXTRA PLANNED for SMB somewhere in Europe
+
+Time distributions and coronavirus control
+
+Early investigations of coronavirus epidemiology have highlighted a number of practical (and interesting) questions about time distributions, including generation and serial intervals; and latent, incubation, and infectious periods. I will discussing different ways of measuring (and defining) these distributions, and implications for disease prediction and control.
+
+----------------------------------------------------------------------
+
 NOFRAME
 
 \newcommand{\jdtitle}
