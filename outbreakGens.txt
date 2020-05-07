@@ -31,7 +31,6 @@ EXTRA Completely gutted for Global Health series
 
 ----------------------------------------------------------------------
 
-
 NOFRAME
 
 \newcommand{\jdtitle}
@@ -51,129 +50,6 @@ NOFRAME
 ----------------------------------------------------------------------
 
 WORKSHOP
-
-----------------------------------------------------------------------
-
-FIG webpix/montparnasse.jpg
-
-----------------------------------------------------------------------
-
-Novel Coronavirus: What do we need to know?
-
-	How deadly is the disease?
-
-	Can spread be stopped?
-
-		What resources will be needed?
-
-	How much time do we have to prepare?
-
-	Can virus evolution be affected?
-
-----------------------------------------------------------------------
-
-How can modelers help?
-
-	Analysis of quantitative information
-
-	Propagating uncertainty
-
-	Linking local and global phenomena
-
-----------------------------------------------------------------------
-
-SEC How deadly?
-
-----------------------------------------------------------------------
-
-EXTRA
-
-ADD What's the worst that can happen?
-
-----------------------------------------------------------------------
-
-
-LANDFIG my_images/usmort.pdf
-
-CREDIT Dushoff, from Armstrong et al.
-
----------------------------------------------------------------------- 
-
-Case fatality proportion
-
-	Worst-case scenario; most of us get the infection
-
-	Fatalities per case
-
-		We know what a fatality is, but what is a case?
-
-	Denominators!
-
-		People with (detected) severe disease
-		
-		people with (detected) recognizable disease
-		
-		people who develop antibodies
-
-----------------------------------------------------------------------
-
-Case-fatality proportion
-
-	Currently estimated at 2--4%
-
-	Denominators not reported clearly
-
-	As time goes on (and we focus on general public) this number should go down
-
-----------------------------------------------------------------------
-
-1918 Age distribution
-
-FIG my_images/flu191810.png
-
-CREDIT Gagnon et al. 10.1371/journal.pone.0069586
-
-----------------------------------------------------------------------
-
-Influenza Age distribution
-
-FIG webpix/maW.jpg
-
-CREDIT Ma et al. 10.1016/j.jtbi.2011.08.003
-
-----------------------------------------------------------------------
-
-What do we know?
-
-HFIG 0.7 coronasingle-0.jpg
-
-CREDIT Huang et al. 10.1016/S0140-6736(20)30183-5
-
-----------------------------------------------------------------------
-
-What do we know?
-
-	80% of reported deaths age $>60$
-
-	Life expectancy, harvesting and attributable risk
-
-		The older the profile, the smaller the overall impact
-
-----------------------------------------------------------------------
-
-Will everyone get nCoV?
-
-	Why did everyone get the flu?
-
-		Fast generations
-
-		Pre-symptomatic and sub-clinical transmission
-
-		Effective antigenic evolution
-
-	Can we control nCoV?
-
-	How will nCoV \emph{evolve}
 
 ----------------------------------------------------------------------
 
@@ -368,7 +244,7 @@ TSS Epidemic strength
 
 ----------------------------------------------------------------------
 
-RHEAD Big Rx
+RHEAD Big \Rx
 
 BC
 
@@ -420,28 +296,10 @@ EC
 
 ----------------------------------------------------------------------
 
-EXTRA
-
-Limitations
-
-	Many conclusions from this framework make strong assumptions:
-
-		\textbf{Spatial homogeneity:} everywhere is the same
-
-		\textbf{Individual homogeneity:} everyone is the same
-
-			and everyone is everywhere
-
-		\textbf{Temporal homogeneity:}
-
-			It doesn't matter how long I've been infected, I'm either infected or
-			not
-
-----------------------------------------------------------------------
 
 TSS Linking
 
-	We're very interested in the relationship between little $r$ and \big \Rx.
+	We're very interested in the relationship between little $r$ and big \Rx.
 
 	We might have good estimates of $r$ and want to know more about equilibrium
 	burden or expected outbreak size
@@ -641,7 +499,7 @@ Approximation framework
 
 		$\Rx \approx 1+ r \bar G$ when variation is large
 
-		$\Rx$ \approx \exp(r \bar G)$ when variation is small
+		$\Rx \approx \exp(r \bar G)$ when variation is small
 
 	Key quantity is $r\bar G$: the relative length of the generation interval
 	compared to the characteristic time scale of spread

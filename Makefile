@@ -82,9 +82,9 @@ bridging.final.pdf: bridging.txt
 
 ## nCoV McMaster version Feb 2020
 ## Does not make because of data changes in HBcorona :-(
-outbreakGens.outline.pdf: outbreakGens.txt
-outbreakGens.draft.pdf: outbreakGens.txt
-outbreakGens.final.pdf: outbreakGens.txt
+## outbreakGens.outline.pdf: outbreakGens.txt
+## outbreakGens.draft.pdf: outbreakGens.draft.log outbreakGens.txt
+## outbreakGens.final.pdf: outbreakGens.txt
 
 ## nCoV Fields version Feb 2020
 mathGens.outline.pdf: mathGens.txt
