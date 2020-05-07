@@ -27,6 +27,11 @@ Early investigations of coronavirus epidemiology have highlighted a number of pr
 
 ----------------------------------------------------------------------
 
+EXTRA Completely gutted for Global Health series
+
+----------------------------------------------------------------------
+
+
 NOFRAME
 
 \newcommand{\jdtitle}
@@ -232,7 +237,7 @@ Lessons
 
 Coronavirus forecasting
 
-FIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
+FIG coronaSpread/git_push/HBcorona.jagsForecastPlot.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -246,7 +251,7 @@ BC
 
 NC
 
-CFIG coronaSpread/HBcorona.jagsForecastPlot.Rout.pdf
+CFIG coronaSpread/git_push/HBcorona.jagsForecastPlot.Rout.pdf
 
 EC
 
@@ -316,31 +321,31 @@ PICSLIDE FIG my_images/li_peace.jpg
 
 Coronavirus speed
 
-FIG coronaSpread/HBcorona.talkplot.Rout-0.pdf
+FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
 
 ----------------------------------------------------------------------
 
 Coronavirus speed
 
-FIG coronaSpread/HBcorona.talkplot.Rout-1.pdf
+NOFIG coronaSpread/git_push/HBcorona.tsplot.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
 Coronavirus speed
 
-FIG coronaSpread/HBcorona.talkplot.Rout-2.pdf
+NOFIG coronaSpread/git_push/HBcorona.tsplot.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
 Coronavirus speed
 
-FIG coronaSpread/HBcorona.talkplot.Rout-3.pdf
+NOFIG coronaSpread/git_push/HBcorona.tsplot.Rout-3.pdf
 
 ----------------------------------------------------------------------
 
 Coronavirus speed
 
-FIG coronaSpread/HBcorona.growthrate_plot.Rout.pdf
+FIG coronaSpread/git_push/HBcorona.growthrate_plot.Rout.pdf
 
 CREDIT Ma et al., 10.1007/s11538-013-9918-2
 
@@ -731,13 +736,13 @@ FIG coronaFrame/assumption_3.jpg
 
 Propagating error
 
-FIG coronaFrame/figure2.Rout-0.pdf
+FIG coronaFrame/propagate_pix-0.pdf
 
 ----------------------------------------------------------------------
 
 Propagating error
 
-FIG coronaFrame/figure2.Rout-1.pdf
+FIG coronaFrame/propagate_pix-1.pdf
 
 ----------------------------------------------------------------------
 
