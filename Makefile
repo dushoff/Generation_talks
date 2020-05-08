@@ -82,6 +82,8 @@ bridging.final.pdf: bridging.txt
 
 ## nCoV McMaster version Feb 2020
 ## Does not make because of data changes in HBcorona :-(
+## Deleted tons of possibly good stuff for Baumann
+## Probably lots of overlap as well ☹
 ## outbreakGens.outline.pdf: outbreakGens.txt
 ## outbreakGens.draft.pdf: outbreakGens.draft.log outbreakGens.txt
 ## outbreakGens.final.pdf: outbreakGens.txt
@@ -214,6 +216,22 @@ tmpfigs:
 
 tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
 	$(copy)
+
+######################################################################
+
+## Baumann deadline
+
+Ignore += bbmisc_peak
+## cp -r ~/screens/projects/bbmisc/peak_I_simple_files/figure-html/ bbmisc_peak
+
+Ignore += Korea
+## ln -s ~/screens/outbreak/Korea . ##
+
+Ignore += plateaus
+## ln -s ~/gitroot/covid19-git-plateaus/ plateaus ##
+
+shields/dynamics_top.png: shields/dynamics.png Makefile
+	convert -crop 748x748+0+0 $< $@
 
 ######################################################################
 
