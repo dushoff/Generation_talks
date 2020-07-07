@@ -1,150 +1,27 @@
 ## This is Generation_talks, a screens project directory
-## Workshops/generations
+## Importing to listdirs paradigm
 
-## deptarget:
 current: target
 -include target.mk
 
-# include makestuff/perl.def
-
 ######################################################################
 
-# Content
-
-vim_session:
-	bash -cl "vmt"
-
-######################################################################
-
-## Moved original Generation_talks to "legacy" 2019 Oct 27 (Sun)
-## Even earlier stuff is possibly in bitbucket talks directory
-Sources += Makefile legacy.mk
+Sources += Makefile legacy.mk content.mk
 
 Sources += $(wildcard *.txt)
 
-## Talk for SMB Jul 2017
-## Also in push
-smb.outline.pdf: smb.txt
-smb.draft.pdf: smb.txt
-smb.final.pdf: smb.txt
+## Directories (see content.mk)
 
-## smb.draft.tex: smb.txt
+subdirs += rabies_R0
+rabies_R0: link=../research/rabies_R0
+rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
-## SMB 2019 Time-since-infection overview
-overview.outline.pdf: overview.txt
-overview.draft.pdf: overview.txt
-overview.final.pdf: overview.txt
+## NOTE: subdirs are assumed to be _linked_ (and alled at home)
+## Rejected parallel for now because we want people to be able to clone one directory
+$(subdirs):
+	$(LN) $(link) $@ || git clone $(url) $@
 
-## Tokyo 2019
-generations.outline.pdf: generations.txt
-generations.draft.pdf: generations.txt ## generations.draft.log
-generations.final.pdf: generations.txt
-generations.handouts.pdf: generations.txt
-
-ebola.outline.pdf: ebola.txt
-ebola.draft.pdf: ebola.txt
-ebola.final.pdf: ebola.txt
-ebola.complete.pdf: ebola.txt
-
-## Legacy directory
-Ignore += Ebola_math
-
-Ebola_math: dir=~/Dropbox/academicWW/
-Ebola_math:
-	$(linkdir)
-
-######################################################################
-
-## Cancelled talks (father illness)
-
-## Taiwan AIMS (overlap with SMB/hetero? what else?)
-Sources += aims.abs
-
-## SMB 2018
-Sources += hetero.abs
-hetero.outline.pdf: hetero.txt
-hetero.draft.pdf: hetero.txt
-hetero.final.pdf: hetero.txt
-
-######################################################################
-
-## Forecasting talk (developing for U. Chicago 2018 Oct 26 (Fri))
-## Glasgow Oct 2019 (half me/half Mike); marked out a bunch of stuff, moved thanks to beginning
-## Used to be callled fido
-genEst.outline.pdf: genEst.txt
-genEst.draft.pdf: genEst.txt
-genEst.final.pdf: genEst.txt
-
-## The super-fast Banff talk is a version of bridging
-bridging.outline.pdf: bridging.txt
-bridging.draft.pdf: bridging.txt
-bridging.final.pdf: bridging.txt
-
-## nCoV McMaster version Feb 2020
-## Does not make because of data changes in HBcorona :-(
-## Deleted tons of possibly good stuff for Baumann
-## Probably lots of overlap as well ☹
-## outbreakGens.outline.pdf: outbreakGens.txt
-## outbreakGens.draft.pdf: outbreakGens.draft.log outbreakGens.txt
-## outbreakGens.final.pdf: outbreakGens.txt
-
-## nCoV Fields version Feb 2020
-mathGens.outline.pdf: mathGens.txt
-mathGens.draft.pdf: mathGens.txt
-mathGens.final.pdf: mathGens.txt
-
-######################################################################
-
-## Paths (could be modularized in case there's another user)
-
-screenroot = ~/screens
-legacy = ~/gitroot
-
-######################################################################
-
-## Directories
-
-pardirs += Generation_distributions Endemic_curves Disease_data link_calculations trace coronaSpread coronaFrame
-pardirs += SIR_model_family WA_Ebola_Outbreak SIR_simulations ss_pix
-
-hotdirs += $(pardirs)
-
-pull: pardirpull
-
-screenroot = ~/screens
-mli = $(screenroot)/rabies
-
-## (linked from elsewhere)
-## Maybe try to deprecate this; some repetition of pardirs seems fine
-linkdirs += rabies_R0
-rabies_R0: dir=$(mli)/R0
-rabies_R0:
-	$(linkdirname)
-
-linkdirs += rabies_correlations
-rabies_correlations: dir=$(mli)/correlations
-rabies_correlations:
-	$(linkdirname)
-
-pull: rabies_correlations.pull rabies_R0.pull
-
-## Trying to avoid alling this subdirectory
-linkdirs += networkSEIR
-networkSEIR: dir=$(legacy)
-networkSEIR:
-	$(linkdir)
-
-networkSEIR/fig/diagram.pdf:
-	$(MAKE) networkSEIR
-	cd networkSEIR/fig && pdflatex diagram
-
-linkdirs += notebook
-notebook: dir=$(screenroot)/admin
-notebook:
-	$(linkdir)
-
-Ignore += $(linkdirs)
-colddirs += $(linkdirs)
+Ignore += $(subdirs)
 
 ######################################################################
 
