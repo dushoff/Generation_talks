@@ -10,6 +10,13 @@ Sources += Makefile legacy.mk content.mk
 
 Sources += $(wildcard *.txt)
 
+## uncertainty talk (joint with David Earn for Leah Keshet)
+uncertainty.outline.pdf: uncertainty.txt
+uncertainty.draft.pdf: uncertainty.txt
+uncertainty.final.pdf: uncertainty.txt
+
+######################################################################
+
 ## Directories (see content.mk)
 
 subdirs += rabies_R0
