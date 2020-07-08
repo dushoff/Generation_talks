@@ -34,6 +34,10 @@ and some of the challenges and limitations of epidemic forecasting.
 
 ----------------------------------------------------------------------
 
+FIG webpix/hourglass.jpg
+
+----------------------------------------------------------------------
+
 Coronavirus time series
 
 	What affects spread?
@@ -62,19 +66,19 @@ Weather
 
 ----------------------------------------------------------------------
 
-DEFHEAD \Rt
+DEFHEAD \Rt\ and \rt
 
 BCC
 
 HFIG 0.7 my_images/jhu_se_200708.png
 
-CREDIT {https://coronavirus.jhu.edu/map.html} 2020 Jul 08
+CREDIT {https://coronavirus.jhu.edu} 2020 Jul 08
 
 NCC
 
 HFIG 0.7 my_images/rt_200708.png ##
 
-CREDIT {https://rt.live/} 2020 Jul 08
+CREDIT {https://rt.live} 2020 Jul 08
 
 EC
 
@@ -88,7 +92,7 @@ HIV in sub-Saharan Africa
 
 FIG SIR_simulations/za_gens.Rout-0.pdf
 
-$C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
+$C = 1/r_0 \approx 18 \,\mathrm{month}$. Horrifyingly fast.
 
 ----------------------------------------------------------------------
 
@@ -96,9 +100,55 @@ Ebola outbreak
 
 FIG my_images/weitz_full.pdf
 
-$C = 1/r \approx 1 \,\mathrm{month}$. Not so bad.
+$C = 1/r_0 \approx 1 \,\mathrm{month}$. Not so bad.
 
 ----------------------------------------------------------------------
+
+Speed
+
+	We measure epidemic speed using little $r$:
+
+		The ratio of the \emph{change} in disease impact to the \emph{amount} of
+		disease impact
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+----------------------------------------------------------------------
+
+Strength
+
+	We describe epidemic strength with big \Rx
+
+		Average number of new cases per case
+
+		Unitless
+
+		$\Rx>1$ for spread
+
+----------------------------------------------------------------------
+
+Strength of epidemics
+
+BC
+
+CFIG my_images/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Generation intervals link strength and speed
+
+----------------------------------------------------------------------
+
 
 How much does it matter?
 

@@ -23,12 +23,18 @@ subdirs += rabies_R0
 rabies_R0: link=../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
+## Not processed!
+
+subdirs += SIR_simulations ss_pix
+
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory
 $(subdirs):
-	$(LN) $(link) $@ || git clone $(url) $@
+	(ls -d ../$@ && $(LN) ../$@) || $(LN) $(link) $@ || git clone $(url) $@
 
 Ignore += $(subdirs) generations_mark1
+
+colddirs += $(subdirs)
 
 ######################################################################
 
@@ -75,31 +81,10 @@ coronasingle-0.jpg: coronasingle.jpg ;
 
 ######################################################################
 
-legacy:
-	git clone https://github.com/dushoff/Generation_talks_prescreens.git $@
-	cd $@ && chmod a-w Makefile *.*
-
-## cp legacy/copy.tex . ##
-
-######################################################################
 
 -include makestuff/newtalk.def
 
 Ignore += beamer.tmp local.txt.format
-
-######################################################################
-
-## Keep deprecating whatever this is! 2020 Feb 05 (Wed)
-
-Ignore += tmpfigs
-tmpfigs:
-	$(mkdir)
-
-%.png: %.svg
-	$(convert)
-
-tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
-	$(copy)
 
 ######################################################################
 

@@ -372,7 +372,6 @@ $C \approx 18 \,\mathrm{month}$, $G \approx 4 \,\mathrm{years}$
 
 ----------------------------------------------------------------------
 
-
 Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
