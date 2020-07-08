@@ -28,7 +28,7 @@ rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 $(subdirs):
 	$(LN) $(link) $@ || git clone $(url) $@
 
-Ignore += $(subdirs)
+Ignore += $(subdirs) generations_mark1
 
 ######################################################################
 
