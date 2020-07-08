@@ -1,4 +1,15 @@
 
+
+EXTRA
+
+Hourglass
+
+MacPan
+
+Not ready!
+
+----------------------------------------------------------------------
+
 PICSLIDE
 
 \vspace*{-0.3mm}
@@ -66,6 +77,26 @@ HFIG 0.7 my_images/rt_200708.png ##
 CREDIT {https://rt.live/} 2020 Jul 08
 
 EC
+
+----------------------------------------------------------------------
+
+SEC Foundations
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C = 1/r \approx 1 \,\mathrm{month}$. Not so bad.
 
 ----------------------------------------------------------------------
 
