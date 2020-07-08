@@ -20,15 +20,15 @@ uncertainty.final.pdf: uncertainty.txt
 ## Directories (see content.mk)
 
 subdirs += rabies_R0
-rabies_R0: link=../research/rabies_R0
+rabies_R0: link=../../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
 subdirs += coronaFrame
-coronaFrame: link=../research/exponential_framework
+coronaFrame: link=../../research/exponential_framework
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family WA_Ebola_Outbreak
+subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family WA_Ebola_Outbreak trace
 
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory
