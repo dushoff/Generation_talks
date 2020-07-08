@@ -28,7 +28,7 @@ coronaFrame: link=../research/exponential_framework
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family
+subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family WA_Ebola_Outbreak
 
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory
