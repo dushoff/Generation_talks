@@ -1,26 +1,17 @@
 
-Analyzing the past and forecasting the future -- Part 2
+PICSLIDE
 
-\vfill
-
-UBC Distinguished Speakers in Math Biology seminar \\ June 2020
-
-\vfill
-
-Jonathan Dushoff  \\ McMaster University
-
-\vfill
-
-\url{https://mac-theobio.github.io/}
-
-\url{https://github.com/dushoff/Generation_talks}
-
-\vfill
+\vspace*{-0.3mm}
+\hspace*{-42mm}
+\includegraphics[height=\paperheight]{my_images/Earnflu.png}
 
 ----------------------------------------------------------------------
 
 EXTRA Abstract
 
+UBC Distinguished Speakers in Math Biology seminar \\ June 2020
+
+Analyzing the past and forecasting the future -- Part 2
 
 Comparisons are constantly being made between the 1918 influenza pandemic
 and the present COVID-19 pandemic.  We will discuss our previous work on
@@ -30,28 +21,58 @@ COVID-19 pandemic is easier in some respects and harder in others.  We
 will describe our current approach to modelling the spread of COVID-19,
 and some of the challenges and limitations of epidemic forecasting.
 
+----------------------------------------------------------------------
 
-Mathematical modeling plays a key role in forecasting epidemics, and in planning interventions. Two key measures are "big ℛ" and "little r", which I will interpret as measuring epidemic "strength" and "speed". I will discuss how these two quantities are linked by generation-interval distributions, and interpret this link using approximations and "filtered means". I will talk about measuring the strength and speed of interventions, on the same scale that we measure strength and speed of epidemics, and argue that little r is under-rated – in particular, that there are strong parallels between the interpretation of big ℛ as a measure of how difficult an epidemic is to control, and an analogous interpretation of little r.
+Coronavirus time series
+
+	What affects spread?
 
 ----------------------------------------------------------------------
 
-SEC Introduction
+Immunity
+
+	How much?
+
+	How effective?
+
+	How long?
 
 ----------------------------------------------------------------------
 
-Infectious diseases
-
-FIG webpix/flu_masks.jpg
+Policies
 
 ----------------------------------------------------------------------
 
-FIG webpix/burial_team.jpg
+Public response
 
 ----------------------------------------------------------------------
 
-EXTRA
-
-FIG Disease_data/us2000.Rout.pdf
+Weather
 
 ----------------------------------------------------------------------
+
+DEFHEAD \Rt
+
+BCC
+
+HFIG 0.7 my_images/jhu_se_200708.png
+
+CREDIT {https://coronavirus.jhu.edu/map.html} 2020 Jul 08
+
+NCC
+
+HFIG 0.7 my_images/rt_200708.png ##
+
+CREDIT {https://rt.live/} 2020 Jul 08
+
+EC
+
+----------------------------------------------------------------------
+
+How much does it matter?
+
+	It's all averaging
+
+	Simulation-based validation
+
 
