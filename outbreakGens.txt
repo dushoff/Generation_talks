@@ -374,6 +374,7 @@ Modeling responses
 FIG plateaus/scripts/figseir_Speak_k2_noname.pdf
 
 CREDIT Weitz et al., https://github.com/jsweitz/covid19-git-plateaus
+
 ----------------------------------------------------------------------
 
 Modeling responses

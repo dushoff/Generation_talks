@@ -1,5 +1,5 @@
 ## This is Generation_talks, a screens project directory
-## Importing to listdirs paradigm
+## Importing to listdirs paradigm 2020 Jul 08 (Wed)
 
 current: target
 -include target.mk
@@ -23,9 +23,12 @@ subdirs += rabies_R0
 rabies_R0: link=../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
+subdirs += coronaFrame
+coronaFrame: link=../research/exponential_framework
+
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations ss_pix Generation_distributions
+subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family
 
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory
@@ -37,6 +40,10 @@ Ignore += $(subdirs) generations_mark1
 colddirs += $(subdirs)
 
 ######################################################################
+
+## Super temp!
+
+## ln -fs ~dushoff/gitroot/covid19-git-plateaus// plateaus ##
 
 ## Copyright
 

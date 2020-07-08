@@ -2,11 +2,21 @@
 
 EXTRA
 
-Hourglass
+Do
 
-MacPan
+	Hourglass
 
-Not ready!
+Say
+
+	MacPan
+
+	Not ready!
+
+Tech
+
+	Move endemic from a WW to ss_pix
+
+	Move effkappa commands
 
 ----------------------------------------------------------------------
 
@@ -145,6 +155,30 @@ EC
 
 ----------------------------------------------------------------------
 
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Generation intervals
+
+BCC
+
+CFIG webpix/spending.jpg
+
+NCC
+
+	Sort of the poor relations of disease-modeling world
+
+	Ad hoc methods
+
+	Error often not propagated
+
+EC
+
+----------------------------------------------------------------------
+
 Generation intervals link strength and speed
 
 BC
@@ -152,10 +186,6 @@ BC
 CFIG Generation_distributions/gamHist.Rout-4.pdf
 
 NC
-
-	Length of a disease generation
-
-		From infection to infection
 
 	Do fast generations mean more danger or less?
 
@@ -285,13 +315,13 @@ EC
 
 Inverting
 
-	$\Rx = 1 + r\bar G
+	$\Rx = 1 + r\bar G$
 
-	$\Rx = \exp(r\bar G)
+	$\Rx = \exp(r\bar G)$
 
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$ (Euler-Lotka)
 
-	$\Rx = 
+	$\Rx = 1/M(-r\bar G)$
 
 		CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
 
@@ -299,14 +329,14 @@ Inverting
 
 Compound-interest interpretation
 
-\newcommand{\kappa}{\ensuremath{\hat\kappa}}
+\newcommand{\effkappa}{\ensuremath{\hat\kappa}}
 \newcommand{\squaredCV}{\ensuremath{\mbox{CV}^2}}
 
 	Define the \emph{effective dispersion} \effkappa\ \emph{so that}
 
 	$\Rx = (1 + r \effkappa \bar G)^{1/\effkappa} \equiv X(r \bar G; 1/\effkappa)$
 
-	\effkappa\ is in fact a measure of variation (if $k$ is gamma distributed, \effkappa\ is exactly the \squaredCV
+	\effkappa\ is in fact a measure of variation (if $k$ is gamma distributed, \effkappa\ is exactly the \squaredCV)
 
 	$X$ is the compound-interest approximation to the exponential
 
@@ -322,10 +352,104 @@ FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 ----------------------------------------------------------------------
 
-How much does it matter?
+Propagating error for coronavirus
+
+FIG coronaFrame/propagate_pix-1.pdf
+
+CREDIT Park et al., DOI: 10.1101/2020.01.30.20019877 (preprint)
+
+----------------------------------------------------------------------
+
+SEC Defining and measuring
+
+----------------------------------------------------------------------
+
+Generation intervals need to be defined
+
+	Intrinsic
+
+	Temporal effects
+
+	Spatial effects
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{shorter} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+What about \Rt?
+
+----------------------------------------------------------------------
+
+Modeling responses
+
+FIG plateaus/scripts/figseir_Speak_k2_noname.pdf
+
+CREDIT Weitz et al., https://github.com/jsweitz/covid19-git-plateaus
+
+----------------------------------------------------------------------
+
+Modeling responses
+
+WIDEFIG plateaus/deaths/national_death.pdf
+
+CREDIT Weitz et al., https://github.com/jsweitz/covid19-git-plateaus
+
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+
+How important is interval estimation?
 
 	It's all averaging
 
 	Simulation-based validation
 
+----------------------------------------------------------------------
 
+Thanks
+
+	UBC and the organizers
+
+	Collaborators:
+	
+		Li, Park, Weitz, Bolker, Earn, others
+
+	Funders: NSERC, CIHR, PHAC, WHO
