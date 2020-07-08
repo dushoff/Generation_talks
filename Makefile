@@ -25,7 +25,7 @@ rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations ss_pix
+subdirs += SIR_simulations ss_pix Generation_distributions
 
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory

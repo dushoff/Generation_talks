@@ -147,8 +147,180 @@ EC
 
 Generation intervals link strength and speed
 
+BC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NC
+
+	Length of a disease generation
+
+		From infection to infection
+
+	Do fast generations mean more danger or less?
+
+EC
+
 ----------------------------------------------------------------------
 
+Conditional effect of generation time
+
+	\emph{Given} the reproductive number $\Rx$
+
+		faster generation time $G$ means faster growth rate $r$
+
+		More danger
+
+	\emph{Given} the growth rate $r$
+
+		faster generation time $G$ means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
+
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+EXTRA Generations and \Rx
+
+BCC
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+NCC
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		generation speed $\times$
+
+		epidemic strength
+
+	WRONG
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r = (1/\hat G) \times \log(\Rx) $
+
+		$ \hat G$ is the effective mean generation time
+
+----------------------------------------------------------------------
+
+Box models
+
+WIDEFIG SIR_model_family/sir.four.pdf
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	For invasion, treat $k$ as constant.
+
+	More generally, we often say $k(t) = \hat k(t) S/N$
+
+----------------------------------------------------------------------
+
+Infection kernel 
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+FIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Inverting
+
+	$\Rx = 1 + r\bar G
+
+	$\Rx = \exp(r\bar G)
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$ (Euler-Lotka)
+
+	$\Rx = 
+
+		CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+\newcommand{\kappa}{\ensuremath{\hat\kappa}}
+\newcommand{\squaredCV}{\ensuremath{\mbox{CV}^2}}
+
+	Define the \emph{effective dispersion} \effkappa\ \emph{so that}
+
+	$\Rx = (1 + r \effkappa \bar G)^{1/\effkappa} \equiv X(r \bar G; 1/\effkappa)$
+
+	\effkappa\ is in fact a measure of variation (if $k$ is gamma distributed, \effkappa\ is exactly the \squaredCV
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\effkappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\effkappa \to 0$
+
+----------------------------------------------------------------------
+
+Ebola example
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
 
 How much does it matter?
 
