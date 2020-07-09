@@ -23,6 +23,10 @@ subdirs += rabies_R0
 rabies_R0: link=../../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
+subdirs += rabies_correlations
+rabies_correlations: link=../../research/rabies_correlations
+rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git
+
 subdirs += coronaFrame
 coronaFrame: link=../../research/exponential_framework
 

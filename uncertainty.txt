@@ -48,13 +48,21 @@ FIG webpix/hourglass.jpg
 
 ----------------------------------------------------------------------
 
-Coronavirus time series
+What factors affect spread?
 
-	What affects spread?
+WIDEFIG my_images/covid_canada_shot.png
+
+CREDIT https://wzmli.github.io/COVID19-Canada/
 
 ----------------------------------------------------------------------
 
 Immunity
+
+BC
+
+CFIG webpix/bcell.jpg
+
+NC
 
 	How much?
 
@@ -62,17 +70,24 @@ Immunity
 
 	How long?
 
+EC
 ----------------------------------------------------------------------
 
 Policies
+
+FIG webpix/school_closure.jpg
 
 ----------------------------------------------------------------------
 
 Public response
 
+FIG webpix/flu_masks.jpg
+
 ----------------------------------------------------------------------
 
 Weather
+
+FIG webpix/denali_weather.jpg
 
 ----------------------------------------------------------------------
 
@@ -209,7 +224,6 @@ Conditional effect of generation time
 
 ----------------------------------------------------------------------
 
-
 Generations and \Rx
 
 FIG Generation_distributions/steps.Rout-1.pdf
@@ -336,7 +350,7 @@ Compound-interest interpretation
 
 	$\Rx = (1 + r \effkappa \bar G)^{1/\effkappa} \equiv X(r \bar G; 1/\effkappa)$
 
-	\effkappa\ is in fact a measure of variation (if $k$ is gamma distributed, \effkappa\ is exactly the \squaredCV)
+	\effkappa\ is in fact a measure of variation (if $g$ is gamma distributed, \effkappa\ is exactly the \squaredCV)
 
 	$X$ is the compound-interest approximation to the exponential
 
@@ -354,9 +368,11 @@ FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 Propagating error for coronavirus
 
-FIG coronaFrame/propagate_pix-1.pdf
+FIG my_images/propagate_frame_shot.png
 
-CREDIT Park et al., DOI: 10.1101/2020.01.30.20019877 (preprint)
+RESTING FIG coronaFrame/propagate_pix-1.pdf
+
+CREDIT Park et al., DOI: 10.1101/2020.01.30.20019877 (in press, JRSI)
 
 ----------------------------------------------------------------------
 
@@ -364,13 +380,58 @@ SEC Defining and measuring
 
 ----------------------------------------------------------------------
 
-Generation intervals need to be defined
+Generations through time
 
-	Intrinsic
+	Generation intervals can be estimated by:
 
-	Temporal effects
+		Observing patients:
 
-	Spatial effects
+			How long does it take to become infectious?
+
+			How long does it take to recover?
+
+			What is the time profile of infectiousness/activity?
+
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become infected?
+
+			--- or ill (serial interval)?
+
+----------------------------------------------------------------------
+
+Which is the real interval?
+
+	Contact-tracing intervals look systematically different, depending on when
+	you observe them.
+
+	Observed in:
+
+		Real data, detailed simulations, simple model
+
+	Also differ from intrinsic (infector centered) estimates
+
+----------------------------------------------------------------------
+
+Types of interval
+
+	Define:
+
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
+
+		\emph{Forward interval}: When will the people infected today 
+		infect others?
+
+		\emph{Backward interval}: When did the people who infected people today
+		themselves become infected? 
+
+		\emph{Censored interval}: What do all the intervals observed up until a
+		particular time look like?
+
+			Like backward intervals, if it's early in the epidemic
 
 ----------------------------------------------------------------------
 
@@ -383,6 +444,8 @@ BC
 		A disproportionate number of people are infectious right now
 
 		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
 
 NC
 
@@ -402,19 +465,115 @@ CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
 
 ----------------------------------------------------------------------
 
+TSS Generations in space
+
+	How do local interactions affect realized generation intervals?
+
+WIDEFIG my_images/network.png
+
+----------------------------------------------------------------------
+
+Surprising results
+
+	We tend to think that heterogeneity leads to underestimates of $\Rx$, which
+	can be dangerous.
+
+	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
+
+		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+
+----------------------------------------------------------------------
+
+Generation-interval perspective
+
+	Modelers don't usually question the intrinsic generation interval
+
+	But spatial network structure does change generation intervals:
+
+		Local interactions
+
+		⇒ wasted contacts
+
+		⇒ shorter generation intervals
+
+		⇒ smaller estimates of \Rx.
+
+----------------------------------------------------------------------
+
+Observed and estimated intervals
+
+PIC WIDEFIG generations_mark1/networkSEIR/fig/diagram.pdf
+
+----------------------------------------------------------------------
+
 Outbreak estimation
 
 PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
+CREDIT Park et al. DOI: 10.1101/683326 (preprint)
+
 ----------------------------------------------------------------------
 
-Serial intervals
+TSS Serial intervals
 
 FIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
+Serial intervals
+
+	Do serial intervals and generation intervals have the same distribution?
+
+	It seems that they should: they describe generations of the same process
+
+		But serial intervals can even be very different
+
+		Even negative! You might report to the clinic with flu before me, even
+		though I infected you
+
+----------------------------------------------------------------------
+
+Serial intervals with no asymptomatic spread
+
+PIC WIDEFIG rabies_R0/figures/interval.png
+
+----------------------------------------------------------------------
+
+Serial intervals with asymptomatic spread
+
+FIG my_images/serial_shot.png
+
+----------------------------------------------------------------------
+
+SEC Moving forward
+
+----------------------------------------------------------------------
+
 What about \Rt?
+
+BCC
+
+HFIG 0.7 my_images/jhu_se_200708.png
+
+CREDIT {https://coronavirus.jhu.edu} 2020 Jul 08
+
+NCC
+
+HFIG 0.7 my_images/rt_200708.png ##
+
+CREDIT {https://rt.live} 2020 Jul 08
+
+EC
+
+----------------------------------------------------------------------
+
+Mechanistic modeling
+
+WIDEFIG webpix/stanford_diagram.png
+
+CREDIT Childs et al., http://covid-measures.stanford.edu/
+
+CREDIT Macpan: https://github.com/bbolker/McMasterPandemic
 
 ----------------------------------------------------------------------
 
@@ -434,6 +593,32 @@ CREDIT Weitz et al., https://github.com/jsweitz/covid19-git-plateaus
 
 ----------------------------------------------------------------------
 
+Direct calculation
+
+HFIG 0.5 my_images/epiEstim.png
+
+CREDIT EpiEstim, https://cran.r-project.org/web/packages/EpiEstim/vignettes/demo.html
+
+CREDIT Wallinga and Teunis, https://doi.org/10.1098/rsif.2010.0679
+
+CREDIT Goldstein et al., https://doi.org/10.1073/pnas.0902958106
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_R_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
 ----------------------------------------------------------------------
 
 How important is interval estimation?
@@ -450,6 +635,6 @@ Thanks
 
 	Collaborators:
 	
-		Li, Park, Weitz, Bolker, Earn, others
+		Li, Park, Weitz, Bolker, Earn, Champredon \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO
