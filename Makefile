@@ -115,6 +115,11 @@ shields/dynamics_top.png: shields/dynamics.png Makefile
 
 ######################################################################
 
+cachestuff:
+	$(LN) ../TalkArchive/ $@
+
+######################################################################
+
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 Makefile: makestuff/Makefile
@@ -123,11 +128,14 @@ makestuff/Makefile:
 	ls $@
 
 -include makestuff/os.mk
--include makestuff/git.mk
 -include makestuff/visual.mk
--include makestuff/projdir.mk
+
 -include makestuff/newtalk.mk
 -include makestuff/texdeps.mk
--include makestuff/wrapR.mk
+-include makestuff/makeR.mk
 -include makestuff/webpix.mk
 -include makestuff/hotcold.mk
+-include makestuff/cacherepo.mk
+-include makestuff/cacheflow.mk
+
+-include makestuff/git.mk
