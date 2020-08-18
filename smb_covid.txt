@@ -1,6 +1,12 @@
 
 EXTRA Abstract
 
+Set up screen
+
+Close window
+
+Add Lipsitch and R(t)
+
 ----------------------------------------------------------------------
 
 NOFRAME
@@ -18,15 +24,15 @@ WORKSHOP
 
 TSEC Speed and strength are dual paradigms
 
-	Speed is better for some applications, and strength for others
-
-	Or you may see different things
+WIDEFIG my_images/restrained.png
 
 	$ \Rx || \littler $
 
 	h/t John Horton Conway 1937--2020
 
-WIDEFIG my_images/restrained.png
+	Speed is better for some applications, and strength for others
+
+	Or you may see different things
 
 CREDIT On Numbers and Games
 
@@ -104,7 +110,7 @@ The speed paradigm
 
 		Epidemic controlled when $\phi > \littler$
 
-	CREDIT https://www.biorxiv.org/content/10.1101/2020.03.02.974048v1
+	CREDIT \url{https://www.biorxiv.org/content/10.1101/2020.03.02.974048v1}
 
 ----------------------------------------------------------------------
 
@@ -124,7 +130,7 @@ Linking
 
 WIDEFIG my_images/Powers.png
 
-CREDIT Powers et al., https://www.pnas.org/content/111/45/15867
+CREDIT Powers et al., \url{https://www.pnas.org/content/111/45/15867}
 
 ----------------------------------------------------------------------
 
@@ -150,7 +156,7 @@ Renewal equation
 		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
 		after becoming infected
 
-	For invasion, treat $S$ as constant
+	CREDIT {doi: 10.1137/18M1186411}
 
 ----------------------------------------------------------------------
 
@@ -242,7 +248,7 @@ Effective dispersion
 
 	$\hat\kappa$ often relatively insensitive to \littler.
 
-	CREDIT doi: 10.1016/j.epidem.2018.12.002
+	CREDIT doi: \url{10.1016/j.epidem.2018.12.002}
 
 ----------------------------------------------------------------------
 
@@ -263,7 +269,7 @@ Comparing estimates
 
 	But it doesn't matter: studies can be compared based on their inferences or assumptions about \littler, $\bar G$ and $\hat \kappa$
 
-CREDIT doi: 10.1098/rsif.2020.0144
+CREDIT doi: \url{10.1098/rsif.2020.0144}
 
 ----------------------------------------------------------------------
 
@@ -277,13 +283,13 @@ Asymptomatic transmission
 
 FIG my_images/asympHeat.png
 
-CREDIT doi: 10.1016/j.epidem.2020.100392
+CREDIT doi: \url{10.1016/j.epidem.2020.100392}
 
 ----------------------------------------------------------------------
 
 Transmission routes, speed and strength
 
-	If more SARS-CoV-2 transmission is presymptomatic or asymptomatic
+	What if more SARS-CoV-2 is presymptomatic?
 
 	$G$ may be faster than we think
 
@@ -377,7 +383,7 @@ Backward intervals
 
 WIDEFIG backward.jpg
 
-CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+CREDIT Champredon and Dushoff, 2015. \url{DOI:10.1098/rspb.2015.2026}
 
 ----------------------------------------------------------------------
 
@@ -396,7 +402,7 @@ Surprising results
 
 	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
 
-		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+		CREDIT Trapman et al., 2016. JRS Interface \url{DOI:10.1098/rsif.2016.0288}
 
 ----------------------------------------------------------------------
 
@@ -404,7 +410,7 @@ Outbreak estimation
 
 PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
-CREDIT Park et al. DOI: doi: 10.1098/rsif.2019.0719
+CREDIT Park et al. \url{doi: 10.1098/rsif.2019.0719}
 
 ----------------------------------------------------------------------
 
@@ -433,9 +439,17 @@ PIC WIDEFIG rabies_R0/figures/interval.png
 
 ----------------------------------------------------------------------
 
+Host heterogeneity
+
+FIG my_images/rabies_corr.pdf
+
+----------------------------------------------------------------------
+
 Serial intervals with asymptomatic spread
 
 FIG my_images/serial_shot.png
+
+CREDIT \url{https://doi.org/10.1101/2020.06.04.20122713}
 
 ----------------------------------------------------------------------
 
@@ -443,23 +457,25 @@ TSEC There is much to be done
 
 WIDEFIG my_images/elephant_serial.png
 
-CREDIT 
+CREDIT \url{https://doi.org/10.1101/2020.06.04.20122713}
+
+CREDIT Data from \url{https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article}
 
 ----------------------------------------------------------------------
 
-What is \Rt doing now?
+What is \Rt\ doing now?
 
 BCC
 
 HFIG 0.7 my_images/jhu_se_200708.png
 
-CREDIT {https://coronavirus.jhu.edu} 2020 Jul 08
+CREDIT \url{https://coronavirus.jhu.edu} 2020 Jul 08
 
 NCC
 
 HFIG 0.7 my_images/rt_200708.png ##
 
-CREDIT {https://rt.live} 2020 Jul 08
+CREDIT \url{https://rt.live} 2020 Jul 08
 
 EC
 
@@ -469,9 +485,9 @@ Mechanistic modeling
 
 WIDEFIG webpix/stanford_diagram.png
 
-CREDIT Childs et al., http://covid-measures.stanford.edu/
+CREDIT Childs et al., \url{http://covid-measures.stanford.edu/}
 
-CREDIT Macpan: https://github.com/bbolker/McMasterPandemic
+CREDIT Macpan:\url{ https://github.com/bbolker/McMasterPandemic}
 
 ----------------------------------------------------------------------
 
@@ -479,11 +495,11 @@ Direct calculation
 
 HFIG 0.5 my_images/epiEstim.png
 
-CREDIT EpiEstim, https://cran.r-project.org/web/packages/EpiEstim/vignettes/demo.html
+CREDIT EpiEstim,\url{ https://cran.r-project.org/web/packages/EpiEstim/vignettes/demo.html}
 
-CREDIT Wallinga and Teunis, https://doi.org/10.1098/rsif.2010.0679
+CREDIT Wallinga and Teunis,\url{ https://doi.org/10.1098/rsif.2010.0679}
 
-CREDIT Goldstein et al., https://doi.org/10.1073/pnas.0902958106
+CREDIT Goldstein et al.,\url{ https://doi.org/10.1073/pnas.0902958106}
 
 ----------------------------------------------------------------------
 
@@ -491,7 +507,7 @@ Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
 
-CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+CREDIT \url{https://jamanetwork.com/journals/jama/fullarticle/2764658}
 
 ----------------------------------------------------------------------
 
@@ -499,15 +515,56 @@ Wuhan control measures
 
 WIDEFIG my_images/pan_R_shot.png
 
-CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+CREDIT \url{https://jamanetwork.com/journals/jama/fullarticle/2764658}
 
 ----------------------------------------------------------------------
 
-How important is interval estimation?
+Time-varying reproductive numbers
+
+	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
+
+		How many people will get infected by a case infected at time $t$?
+
+		$i(t) = \sum \Rx(t-\tau) g(\tau) i(t-\tau)$
+
+	Instantaneous reproductive number $\Rx_c$ (e.g., Cori et al.)
+
+		What overall reproductive number predicts what I'm seeing now?
+
+		$i(t) = \sum \Rx(t) g(\tau) i(t-\tau)$
+
+	Speed vs.~strength
+
+		What if $g$ is changing?	
+
+		Are $r$-based tools available?
+
+----------------------------------------------------------------------
+
+Developing practical methods
+
+WIDEFIG my_images/gostic_delays.png
+
+CREDIT Gostic et al., \url{https://doi.org/10.1101/2020.06.18.20134858}
+
+----------------------------------------------------------------------
+
+REPSLIDE Wuhan control measures
+
+WIDEFIG my_images/pan_R_shot.png
+
+CREDIT \url{https://dushoff.github.io/notebook/shifts.html}
+
+----------------------------------------------------------------------
+
+
+How important are these subtleties?
 
 	We don't know yet
 
-	It's all averaging
+	In some sense, it's all averaging
+
+		Do something sensible and track how it's changing
 
 	Simulation-based validation
 

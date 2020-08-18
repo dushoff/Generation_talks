@@ -15,7 +15,9 @@ Sources += $(wildcard *.txt)
 ## are always a disaster
 
 ## Intervals and control SMB 2020
+## smb_covid.final.pdf: smb_covid.txt
 ## smb_covid.draft.pdf: smb_covid.txt
+## smb_covid.draft.pdf.cache: 
 
 ## uncertainty talk (joint with David Earn for Leah Keshet)
 uncertainty.outline.pdf: uncertainty.txt
