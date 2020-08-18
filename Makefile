@@ -10,6 +10,13 @@ Sources += Makefile legacy.mk content.mk
 
 Sources += $(wildcard *.txt)
 
+## 2020 Aug 17 (Mon)
+## It's bad how I always do talks under pressure and my talk directories
+## are always a disaster
+
+## Intervals and control SMB 2020
+## smb_covid.draft.pdf: smb_covid.txt
+
 ## uncertainty talk (joint with David Earn for Leah Keshet)
 uncertainty.outline.pdf: uncertainty.txt
 uncertainty.draft.pdf: uncertainty.txt
@@ -32,8 +39,9 @@ coronaFrame: link=../../research/exponential_framework
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family WA_Ebola_Outbreak trace
+subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family WA_Ebola_Outbreak trace Disease_data
 
+## early 2020
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory
 $(subdirs):

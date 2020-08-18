@@ -1,0 +1,260 @@
+
+EXTRA Abstract
+
+----------------------------------------------------------------------
+
+NOFRAME
+
+\newcommand{\jdtitle} {Time distributions and coronavirus control}
+\newcommand{\jdsub} {}
+\newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
+\newcommand{\wdate} {SMB, Aug 2020}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+---------------------------------------------------------------------- 
+
+Speed and strength are dual paradigms
+
+BC
+
+SIDEFIG my_images/restrained.png
+
+CREDIT On Numbers and Games
+ 
+NC
+
+	 $ \Rx || \littler $
+
+	 h/t John Horton Conway 1937--2020
+
+EC
+
+----------------------------------------------------------------------
+
+Observing strength
+
+FIG Disease_data/ewmeas.Rout.pdf
+
+----------------------------------------------------------------------
+
+Observing speed
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Strength-like interventions
+
+BCC
+
+CFIG webpix/vaccination.jpg
+
+NCC
+
+CFIG ss_pix/ess.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Speed-like interventions
+
+BCC
+
+CFIG webpix/tutu.jpg
+
+NCC
+
+CFIG ss_pix/ess.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and control
+
+BC
+
+CFIG ss_pix/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	We can define the strength of an intervention so that it can be naturally
+	compared to \Rx
+
+		Epidemic controlled when $\theta > \Rx$
+
+	We can define the \emph{speed} of an intervention so that it can be naturally
+	compared to \littler
+
+		Epidemic controlled when $\phi > \littler$
+
+	CREDIT https://www.biorxiv.org/content/10.1101/2020.03.02.974048v1
+
+----------------------------------------------------------------------
+
+Generation intervals link speed with strength
+
+WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Generation intervals
+
+FIG Generation_distributions/gamHist.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Estimating \Rx
+
+	Differential equation approach: $\Rx = 1 + r\bar G$
+
+	Discrete generation approach: $\Rx = \exp(r G)$
+
+	Euler-Lotka equation
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the proportion of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	For invasion, treat $S$ as constant
+
+----------------------------------------------------------------------
+
+Infection kernel 
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+SIDEFIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Filtered mean approach
+
+	\textbf{Define} $\hat G$ so that $${\Rx} = \exp(r\hat G)$$
+
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+		A filtered mean:
+		
+			The discounted value of $\hat G$ is the expectation of the discounted
+			values across the distribution
+
+	Intuitively useful, but usually not practical
+
+		$\hat G$ can depend strongly on \littler, which is not what you want
+
+----------------------------------------------------------------------
+
+Gamma approximation
+
+	When $g$ is gamma distributed, the \rR\ link is given by a compound-interest
+	approximation to the exponential:
+
+	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} $
+
+		$\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+		coefficient of variation
+
+	Matches the ODE formula ($\kappa = 1$), and the discrete-time formula
+	$\kappa \to 0$
+
+----------------------------------------------------------------------
+
+Effective dispersion
+
+	\textbf{Define} $\hat \kappa$ so that 
+	$\Rx  (1 + r \hat\kappa \bar G)^{1/\hat\kappa} $
+
+	This is a dispersion in the sense that it increases as variation in the
+	generation interval increases
+
+	Hard to think about, but \emph{usually} practical
+
+	$\hat\kappa$ often relatively insensitive to \littler.
+
+	CREDIT doi: 10.1016/j.epidem.2018.12.002
+
+----------------------------------------------------------------------
+
+Comparing estimates 
+
+	Early-outbreak estimates of \Rx\ from exponential growth are effectively
+	using the compount-interest approximation
+
+	Typically without even ``effective'' dispersion, because 
+
+	HERE
+
+----------------------------------------------------------------------
+
+Asymptomatic transmission
+
+----------------------------------------------------------------------
+
+Transmission routes, speed and strength
+
+----------------------------------------------------------------------
+
+Generation intervals from serial intervals
+
+----------------------------------------------------------------------
+
+How intervals change through time
+
+----------------------------------------------------------------------
+
+Generation intervals in space
+
+----------------------------------------------------------------------
+
+Generation intervals and heterogeneity
+
+----------------------------------------------------------------------
+
+Estimating \Rt
+
+----------------------------------------------------------------------
+
