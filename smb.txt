@@ -463,7 +463,7 @@ EXTRA Euler-Lotka equation
 
 Euler-Lotka equation 
 
-	If we neglect $S$, we expect exponential growth
+	If we neglect changes in $S$, we expect exponential growth
 
 	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
 

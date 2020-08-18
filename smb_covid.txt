@@ -16,21 +16,19 @@ WORKSHOP
 
 ---------------------------------------------------------------------- 
 
-Speed and strength are dual paradigms
+TSEC Speed and strength are dual paradigms
 
-BC
+	Speed is better for some applications, and strength for others
 
-SIDEFIG my_images/restrained.png
+	Or you may see different things
+
+	$ \Rx || \littler $
+
+	h/t John Horton Conway 1937--2020
+
+WIDEFIG my_images/restrained.png
 
 CREDIT On Numbers and Games
- 
-NC
-
-	 $ \Rx || \littler $
-
-	 h/t John Horton Conway 1937--2020
-
-EC
 
 ----------------------------------------------------------------------
 
@@ -54,7 +52,7 @@ CFIG webpix/vaccination.jpg
 
 NCC
 
-CFIG ss_pix/ess.Rout-1.pdf
+CFIG ss_pix/ess.Rout-2.pdf
 
 EC
 
@@ -68,9 +66,15 @@ CFIG webpix/tutu.jpg
 
 NCC
 
-CFIG ss_pix/ess.Rout-1.pdf
+CFIG ss_pix/ess.Rout-3.pdf
 
 EC
+
+----------------------------------------------------------------------
+
+Comparison
+
+FIG ss_pix/ess.Rout-3.pdf
 
 ----------------------------------------------------------------------
 
@@ -104,7 +108,7 @@ The speed paradigm
 
 ----------------------------------------------------------------------
 
-Generation intervals link speed with strength
+TSEC Generation intervals link speed with strength
 
 WIDEFIG my_images/generation_girls.png
 
@@ -116,13 +120,19 @@ FIG Generation_distributions/gamHist.Rout-4.pdf
 
 ----------------------------------------------------------------------
 
+Linking
+
+WIDEFIG my_images/Powers.png
+
+CREDIT Powers et al., https://www.pnas.org/content/111/45/15867
+
+----------------------------------------------------------------------
+
 Estimating \Rx
 
 	Differential equation approach: $\Rx = 1 + r\bar G$
 
 	Discrete generation approach: $\Rx = \exp(r G)$
-
-	Euler-Lotka equation
 
 ----------------------------------------------------------------------
 
@@ -167,6 +177,21 @@ EC
 
 ----------------------------------------------------------------------
 
+Euler-Lotka equation 
+
+	If we neglect changes in $S$, we expect exponential growth
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	This beautiful equation underlies both the filtered mean approach (below)
+	and the concept of speed of interventions
+
+----------------------------------------------------------------------
+
 Filtered mean approach
 
 	\textbf{Define} $\hat G$ so that $${\Rx} = \exp(r\hat G)$$
@@ -193,13 +218,15 @@ Gamma approximation
 	When $g$ is gamma distributed, the \rR\ link is given by a compound-interest
 	approximation to the exponential:
 
-	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} $
+	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
 
-		$\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
-		coefficient of variation
+	$\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+	coefficient of variation
 
 	Matches the ODE formula ($\kappa = 1$), and the discrete-time formula
 	$\kappa \to 0$
+
+	Why does more dispersion reduce \Rx?
 
 ----------------------------------------------------------------------
 
@@ -219,42 +246,280 @@ Effective dispersion
 
 ----------------------------------------------------------------------
 
+Ebola example
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
 Comparing estimates 
 
 	Early-outbreak estimates of \Rx\ from exponential growth are effectively
 	using the compount-interest approximation
 
-	Typically without even ``effective'' dispersion, because 
+	Typically, studies explicitly use gamma distributions
 
-	HERE
+		e.g., fixed generation, SEIR with equal delays, SIR, a gamma fit \ldots
+
+	But it doesn't matter: studies can be compared based on their inferences or assumptions about \littler, $\bar G$ and $\hat \kappa$
+
+CREDIT doi: 10.1098/rsif.2020.0144
+
+----------------------------------------------------------------------
+
+Propagating error for coronavirus
+
+FIG my_images/propagate_frame_shot.png
 
 ----------------------------------------------------------------------
 
 Asymptomatic transmission
 
+FIG my_images/asympHeat.png
+
+CREDIT doi: 10.1016/j.epidem.2020.100392
+
 ----------------------------------------------------------------------
 
 Transmission routes, speed and strength
 
-----------------------------------------------------------------------
+	If more SARS-CoV-2 transmission is presymptomatic or asymptomatic
 
-Generation intervals from serial intervals
+	$G$ may be faster than we think
 
-----------------------------------------------------------------------
+	\Rx\ may be \emph{lower} than we think
 
-How intervals change through time
+	Early estimates of $r$ and the required \emph{speed} of intervention are not
+	affected
 
-----------------------------------------------------------------------
-
-Generation intervals in space
-
-----------------------------------------------------------------------
-
-Generation intervals and heterogeneity
+	How about estimates of the \emph{achieved} speed of intervention?
 
 ----------------------------------------------------------------------
 
-Estimating \Rt
+TSEC Generation intervals are complicated
+
+	Generation intervals can be estimated by:
+
+		Observing patients:
+
+			How long does it take to become infectious?
+
+			How long does it take to recover?
+
+			What is the time profile of infectiousness/activity?
+
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become infected?
+
+			--- or ill (serial interval)?
 
 ----------------------------------------------------------------------
+
+Which is the real interval?
+
+	Contact-tracing intervals look systematically different, depending on when
+	you observe them.
+
+	Observed in:
+
+		Real data, detailed simulations, simple model
+
+	Also differ from intrinsic (infector centered) estimates
+
+----------------------------------------------------------------------
+
+Types of interval
+
+	Define:
+
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
+
+		\emph{Forward interval}: When will the people infected today 
+		infect others?
+
+		\emph{Backward interval}: When did the people who infected people today
+		themselves become infected? 
+
+		\emph{Censored interval}: What do all the intervals observed up until a
+		particular time look like?
+
+			Like backward intervals, if it's early in the epidemic
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{shorter} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Generations in space
+
+	How do local interactions affect realized generation intervals?
+
+WIDEFIG my_images/network.png
+
+----------------------------------------------------------------------
+
+Surprising results
+
+	We tend to think that heterogeneity leads to underestimates of $\Rx$, which
+	can be dangerous.
+
+	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
+
+		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
+
+CREDIT Park et al. DOI: doi: 10.1098/rsif.2019.0719
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+	Do serial intervals and generation intervals have the same distribution?
+
+	It seems that they should: they describe generations of the same process
+
+		But serial intervals can even be very different
+
+		Even negative! You might report to the clinic with flu before me, even
+		though I infected you
+
+----------------------------------------------------------------------
+
+Serial intervals with no asymptomatic spread
+
+PIC WIDEFIG rabies_R0/figures/interval.png
+
+----------------------------------------------------------------------
+
+Serial intervals with asymptomatic spread
+
+FIG my_images/serial_shot.png
+
+----------------------------------------------------------------------
+
+TSEC There is much to be done
+
+WIDEFIG my_images/elephant_serial.png
+
+CREDIT 
+
+----------------------------------------------------------------------
+
+What is \Rt doing now?
+
+BCC
+
+HFIG 0.7 my_images/jhu_se_200708.png
+
+CREDIT {https://coronavirus.jhu.edu} 2020 Jul 08
+
+NCC
+
+HFIG 0.7 my_images/rt_200708.png ##
+
+CREDIT {https://rt.live} 2020 Jul 08
+
+EC
+
+----------------------------------------------------------------------
+
+Mechanistic modeling
+
+WIDEFIG webpix/stanford_diagram.png
+
+CREDIT Childs et al., http://covid-measures.stanford.edu/
+
+CREDIT Macpan: https://github.com/bbolker/McMasterPandemic
+
+----------------------------------------------------------------------
+
+Direct calculation
+
+HFIG 0.5 my_images/epiEstim.png
+
+CREDIT EpiEstim, https://cran.r-project.org/web/packages/EpiEstim/vignettes/demo.html
+
+CREDIT Wallinga and Teunis, https://doi.org/10.1098/rsif.2010.0679
+
+CREDIT Goldstein et al., https://doi.org/10.1073/pnas.0902958106
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_R_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+How important is interval estimation?
+
+	We don't know yet
+
+	It's all averaging
+
+	Simulation-based validation
+
+----------------------------------------------------------------------
+
+Thanks
+
+	SMB and SMB-mathepi
+
+	Collaborators:
+	
+		Li, Park, Weitz, Bolker, Earn, Champredon \ldots
+
+	Funders: NSERC, CIHR, PHAC, WHO
 
