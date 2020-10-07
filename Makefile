@@ -8,7 +8,7 @@ current: target
 
 Sources += Makefile legacy.mk content.mk
 
-Sources += $(wildcard *.txt)
+Sources += $(wildcard *.txt *.abs)
 
 ## 2020 Aug 17 (Mon)
 ## It's bad how I always do talks under pressure and my talk directories
