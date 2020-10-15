@@ -14,8 +14,18 @@ Sources += $(wildcard *.txt *.abs)
 ## It's bad how I always do talks under pressure and my talk directories
 ## are always a disaster
 
-## Cornell version
-## Needs more background
+## Current versions
+## generations.txt Tachikawa
+## genEst.txt Glasgow
+## mathGens.txt Fields
+## origins.txt
+## smb.txt Plenary
+## smb_covid.txt
+## uncertainty.txt UBC (June 2020)
+## bridging.txt (BIRS 2018)
+## covid_colloq.txt (Cornell 2020)
+## ebola.txt Tachikawa
+## outbreakGens.txt BioSeminar ⇒ global health
 
 covid_colloq.draft.pdf: covid_colloq.txt
 covid_colloq.outline.pdf: covid_colloq.txt
@@ -42,12 +52,24 @@ subdirs += rabies_correlations
 rabies_correlations: link=../../research/rabies_correlations
 rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git
 
+subdirs += coronaSpread
+coronaSpread: link=../../Workshops/coronaSpread
+coronaSpread: url=https://github.com/wzmli/corona.git
+
 subdirs += coronaFrame
 coronaFrame: link=../../research/exponential_framework
+coronaFrame: url=https://github.com/parksw3/wuhan.git
+
+subdirs += ss_pix
+ss_pix: link=../ss_pix
+
+subdirs += networkSEIR
+networkSEIR: link=generations_mark1/networkSEIR
+networkSEIR: url=https://github.com/parksw3/networkSEIR.git
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations ss_pix Generation_distributions SIR_model_family WA_Ebola_Outbreak trace Disease_data
+subdirs += SIR_simulations Generation_distributions SIR_model_family WA_Ebola_Outbreak trace Disease_data
 
 ## early 2020
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
@@ -107,7 +129,6 @@ coronasingle.jpg: webpix/coronapair.jpg
 coronasingle-0.jpg: coronasingle.jpg ;
 
 ######################################################################
-
 
 -include makestuff/newtalk.def
 

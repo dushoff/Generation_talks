@@ -1,7 +1,12 @@
 
-EXTRA
+DON'T try to make. Look for a copy of the pdf in a subdirectory!
 
 ----------------------------------------------------------------------
+
+END
+
+----------------------------------------------------------------------
+
 
 EXTRA GIVEN at Mac #BioSeminar
 
