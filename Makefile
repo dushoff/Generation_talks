@@ -14,6 +14,12 @@ Sources += $(wildcard *.txt *.abs)
 ## It's bad how I always do talks under pressure and my talk directories
 ## are always a disaster
 
+## Cornell version
+## Needs more background
+
+covid_colloq.draft.pdf: covid_colloq.txt
+covid_colloq.outline.pdf: covid_colloq.txt
+
 ## Intervals and control SMB 2020
 ## smb_covid.final.pdf: smb_covid.txt
 ## smb_covid.draft.pdf: smb_covid.txt

@@ -1,0 +1,78 @@
+
+EXTRA Cornell Abstract
+
+Delay distributions and coronavirus control
+
+The spread of epidemics is structured by delay distributions, including the now-famous “serial interval” between the symptom-onset times of an infector and an infectee (often conflated with the “generation interval” between infection times). Clearly defining these time distributions, and describing how they relate to each other, and to key parameters of disease spread, poses interesting theoretical and practical questions, some of which are still open.
+
+I will discuss how transmission intervals link the “speed” and “strength” of epidemics, issues in their estimation, and their role in helping monitor changes in the parameters underlying the spread of COVID-19 disease.
+
+
+----------------------------------------------------------------------
+
+EXTRA
+
+Set up screen
+
+Close window
+
+Add Lipsitch and R(t)
+
+----------------------------------------------------------------------
+
+NOFRAME
+
+\newcommand{\jdtitle} {Time distributions and coronavirus control}
+\newcommand{\jdsub} {}
+\newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
+\newcommand{\wdate} {Cornell CAM Colloquium, Oct 2020}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+---------------------------------------------------------------------- 
+
+EXTRA SEC Introduction
+
+----------------------------------------------------------------------
+
+Covid questions
+
+----------------------------------------------------------------------
+
+SEC Modeling disease spread
+
+----------------------------------------------------------------------
+
+Box models
+
+----------------------------------------------------------------------
+
+Fill in 
+
+Original SMB intro stuff?
+
+Bauman stuff?
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+----------------------------------------------------------------------
+
+SEC Linking strength and speed 
+
+----------------------------------------------------------------------
+
+SEC Estimating transmission intervals
+
+----------------------------------------------------------------------
+
+SEC The speed paradigm
+
+----------------------------------------------------------------------
+
+SEC Real-time evaluation
+
+----------------------------------------------------------------------
