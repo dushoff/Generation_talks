@@ -1,34 +1,6 @@
 
 EXTRA To do 
 
-Nishiura argument (coronavirus intervention)
-
-Covid time series from Mike /ADD
-
-Infection kernel bleeds off to the right
-
-Picture of a bus
-
-Serial intervals 
-
-Bus answers
-
-Better threshold picture /aedes
-
-Picture for second question
-
-Better transmission pix -- what talk did these come from ‽
-
-Check hammer transition //Estimating
-
-Add Champredon forward intervals /disproportionate
-
-683326 update cite (and picture?)
-
-Better rabies explanation
-
-Clean up last section
-
 ----------------------------------------------------------------------
 
 EXTRA Cornell Abstract
@@ -76,13 +48,22 @@ REP DBFIG 0.7 my_images/trans.jpg 1 Disease_data/ewmeas.Rout.pdf
 
 Covid modeling questions
 
+BCC
+
 	How far and fast would it spread if unchecked?
 
 	How hard is it to eliminate?
 
 	How are we doing on control in a particular place and time?
 
-	ADD picture
+NCC
+
+CFIG my_images/ontario.Rout.pdf
+
+CREDIT https://wzmli.github.io/COVID19-Canada
+
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -209,7 +190,7 @@ BCC
 
 NCC
 
-FIG ss_pix/ess.Rout-2.pdf
+CFIG ss_pix/ess.Rout-2.pdf
 
 EC
 
@@ -231,7 +212,37 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-Bus
+How long until the bus comes?
+
+WIDEFIG webpix/bus.jpg
+
+----------------------------------------------------------------------
+
+Mean of a self-weighted quantity
+
+	Infectious period of an infector
+
+	Activity level of an interactor
+
+	$\mu(1+\frac{\sigma^2}{\mu^2}) = \mu(1+\kappa)$
+
+	Time until bus comes: $\mu(1+\kappa)/2$
+
+----------------------------------------------------------------------
+
+Generation interval
+
+	One generation:
+	
+		Latent period (time until infectiousness) + 
+
+		Infectious waiting time (time until infection)
+
+	Infectious waiting time
+
+		Drawn at random from infectious period
+
+		Equal to infectious period \emph{only} when we assume a Markovian process
 
 ----------------------------------------------------------------------
 
@@ -263,7 +274,7 @@ DEFHEAD $\Rx$ and control
 
 BC
 
-CFIG ss_pix/endemic.Rout-0.png
+CFIG ss_pix/endemic.Rout.pdf
 
 NC
 
@@ -378,6 +389,13 @@ EC
 
 ----------------------------------------------------------------------
 
+Danger?
+
+WIDEFIG webpix/robot.jpg
+
+----------------------------------------------------------------------
+
+
 Conditional effect of quickness
 
 	\emph{Given} the reproductive number $\Rx$
@@ -415,6 +433,12 @@ Linking framework
 		More quickness implies less strength
 
 		\ldots if speed is known
+
+----------------------------------------------------------------------
+
+Speed and strength
+
+REP DBFIG 0.9 SIR_simulations/za_gens.Rout-0.pdf 1 Disease_data/ewmeas.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -479,13 +503,13 @@ FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 Propagating error
 
-FIG coronaFrame/figure2.Rout-0.pdf
+FIG coronaFrame/propagate_pix-0.pdf
 
 ----------------------------------------------------------------------
 
 Propagating error
 
-FIG coronaFrame/figure2.Rout-1.pdf
+FIG coronaFrame/propagate_pix-1.pdf
 
 ----------------------------------------------------------------------
 
@@ -495,7 +519,7 @@ FIG webpix/hammer.jpg
 
 ----------------------------------------------------------------------
 
-Generations through time
+TSS Generations through time
 
 	Generation intervals can be estimated by:
 
@@ -588,7 +612,7 @@ WIDEFIG webpix/network.png
 
 ----------------------------------------------------------------------
 
-Surprising results
+EXTRA Surprising results
 
 	We tend to think that heterogeneity leads to underestimates of $\Rx$, which
 	can be dangerous.
@@ -625,7 +649,7 @@ Outbreak estimation
 
 PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
-CREDIT Park et al. DOI: 10.1101/683326 (preprint)
+CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
 
 ----------------------------------------------------------------------
 
@@ -641,29 +665,10 @@ Serial intervals
 
 	It seems that they should: they describe generations of the same process
 
-		But serial intervals can even be very different
+		But serial intervals can be very different
 
 		Even negative! You might report to the clinic with flu before me, even
 		though I infected you
-
-	For rabies, we \emph{thought} that serial intervals and generation intervals
-	should be the same 
-
-		Symptoms are closely correlated with infectiousness
-
-----------------------------------------------------------------------
-
-Serial intervals with no asymptomatic spread
-
-PIC WIDEFIG rabies_R0/figures/interval.png
-
-----------------------------------------------------------------------
-
-Serial intervals with asymptomatic spread
-
-FIG my_images/serial_shot.png
-
-CREDIT https://doi.org/10.1101/2020.06.04.20122713
 
 ----------------------------------------------------------------------
 
@@ -682,24 +687,30 @@ FIG rabies_correlations/intervalPlots.Rout.pdf
 
 ----------------------------------------------------------------------
 
+Serial interval anomaly
+
+WFIG 0.85 rabies_correlations/figure/general_interval.png
+
+What if individuals aren't homogeneous?
+
+----------------------------------------------------------------------
+
+Observed intervals
+
+PIC WIDEFIG rabies_R0/figures/interval.png
+
+----------------------------------------------------------------------
+
 FIG rabies_correlations/correlations.Rout.pdf
 
 ----------------------------------------------------------------------
 
-TSS Serial and generation
+The link paradox
 
-----------------------------------------------------------------------
+	Imagine a renewal process where symptoms in the infector cause symptoms in
+	the infectee
 
-Serial intervals
-
-FIG rabies_correlations/figure/general_interval.png
-
-----------------------------------------------------------------------
-
-The paradox
-
-	Imagine a process where symptoms in the infector cause symptoms in the
-	infectee
+		Assume homogeneity
 
 	This has to match the same \rR\ link as the true process
 
@@ -713,6 +724,14 @@ The forward serial interval
 WIDEFIG my_images/serial_incubation.png
 
 	Dynamical effects mean that the forward serial interval is shortened!
+
+----------------------------------------------------------------------
+
+Observed epidemiological intervals
+
+HFIG 0.75 my_images/serial_shot.png
+
+CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
 
 ----------------------------------------------------------------------
 
@@ -737,12 +756,13 @@ The strength paradigm
 
 	In general, we can define $\theta$ as a (harmonic) mean of the reduction
 	factor over the course of an infection
-	
+
 		weighted by the \emph{intrinsic} generation interval
 
 	Epidemic is controlled if $\theta > \Rx$
 
-	More useful in long term (tells us about final size, equilibrium)
+	More direct information about long term (tells us about final size,
+	equilibrium)
 
 ----------------------------------------------------------------------
 
@@ -755,12 +775,12 @@ The speed paradigm
 
 	In general, we can define $\phi$ as a (very weird) mean of the reduction
 	factor over the course of an infection
-	
+
 		weighted by the \emph{backward} generation interval
 
 	Epidemic is controlled if $\phi > r$
 
-	More useful in short term (tells us about, um, speed)
+	More direct information about short term (tells us about, um, speed)
 
 ----------------------------------------------------------------------
 
@@ -793,7 +813,7 @@ EC
 
 ----------------------------------------------------------------------
 
-PSLIDE Different interventions
+Strength-like interventions
 
 BC
 
@@ -803,13 +823,13 @@ NC
 
 	idealized vaccination
 
-	removes a fixed proportion of people 
+	removes a fixed proportion of people
 
 EC
 
 ----------------------------------------------------------------------
 
-PSLIDE Different interventions
+Speed-like interventions
 
 BC
 
@@ -901,11 +921,15 @@ EC
 
 Measuring the intervention
 
-	We imagine an intervention with potentially variable effect over the course of infection, $L(\tau)$
+	We imagine an intervention that takesj
 
 	Assume the intervention takes
-	
-		$k(\tau) \to$ $\hat k(\tau) = k(\tau)/L(\tau)$
+
+		$k(\tau) \to$ $\hat k(\tau)$
+
+	Instantaneous strength of intervention is $L(\tau) = k(\tau)/\hat k(\tau)$
+
+	Instantaneous speed of intervention is $h(\tau) = \frac{dL(\tau)}{L(\tau)d\tau}$
 
 ----------------------------------------------------------------------
 
@@ -926,7 +950,7 @@ EXTRA Measuring intervention strength
 EXTRA Measuring intervention speed
 
 	Define intervention \emph{speed} $\phi = r-\hat r$ -- the
-	amount by which the intervention slows down spread. 
+	amount by which the intervention slows down spread.
 
 	We then have:
 
@@ -946,7 +970,7 @@ EXTRA Measuring intervention speed
 The strength paradigm
 
 	$k(\tau) = \Rx g(\tau)$
-	
+
 		$g$ is the intrinsic generation interval
 
 		$\Rx$ is the strength of the epidemic
@@ -964,7 +988,7 @@ The strength paradigm
 The speed paradigm
 
 	$k(\tau) = \exp(r\tau) b(\tau)$,
-	
+
 		$r$ is the speed of the epidemic
 
 		$b$ is the initial backward generation interval
@@ -1012,15 +1036,21 @@ Coronavirus outbreak
 
 	What do we think if the pathogen is actually quicker than we thought?
 
-		e.g., more pre-symptomatic transmission 
+		e.g., more pre-symptomatic transmission
+
+	Initial speed is well known ⇒
 
 	Estimate of invasion strength goes down
-	
+
 		easier to control by universal changes like masking
 
 	Does not change estimate of invasion speed
 
 		Puts more \emph{weight} on what happens earlier in infection
+
+		Good news for event-based screening
+
+		Bad news for symptom-based screening
 
 ----------------------------------------------------------------------
 
@@ -1038,7 +1068,7 @@ CREDIT {https://coronavirus.jhu.edu} 2020 Jul 08
 
 NCC
 
-HFIG 0.7 my_images/rt_200708.png ##
+HFIG 0.7 my_images/rt_200708.png
 
 CREDIT {https://rt.live} 2020 Jul 08
 
@@ -1050,7 +1080,7 @@ Using available data
 
 	Time distributions are hard to measure
 
-		Infection date ⇒ 
+		Infection date ⇒
 		Symptom onset date ⇒
 		Sample collection date ⇒
 		Test conducted ⇒
@@ -1070,7 +1100,7 @@ CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 Time-varying reproductive numbers
 
-	Instantaneous \Ri\ (Cori): 
+	Instantaneous \Ri\ (Cori):
 
 		$i(t) = \int{\Ri(t) g(\tau)i(t-\tau) \,d\tau}$
 
@@ -1138,7 +1168,7 @@ Thanks
 	CAM and the organizers
 
 	Collaborators:
-	
-		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst \ldots
+
+		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst, Hampson \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO

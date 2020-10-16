@@ -79,6 +79,7 @@ $(subdirs):
 
 Ignore += $(subdirs) generations_mark1
 
+## Should try sometimes with hot to reduce technical debt!
 colddirs += $(subdirs)
 
 ######################################################################
