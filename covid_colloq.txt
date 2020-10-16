@@ -1,4 +1,36 @@
 
+EXTRA To do 
+
+Nishiura argument (coronavirus intervention)
+
+Covid time series from Mike /ADD
+
+Infection kernel bleeds off to the right
+
+Picture of a bus
+
+Serial intervals 
+
+Bus answers
+
+Better threshold picture /aedes
+
+Picture for second question
+
+Better transmission pix -- what talk did these come from ‽
+
+Check hammer transition //Estimating
+
+Add Champredon forward intervals /disproportionate
+
+683326 update cite (and picture?)
+
+Better rabies explanation
+
+Clean up last section
+
+----------------------------------------------------------------------
+
 EXTRA Cornell Abstract
 
 Delay distributions and coronavirus control
@@ -6,17 +38,6 @@ Delay distributions and coronavirus control
 The spread of epidemics is structured by delay distributions, including the now-famous “serial interval” between the symptom-onset times of an infector and an infectee (often conflated with the “generation interval” between infection times). Clearly defining these time distributions, and describing how they relate to each other, and to key parameters of disease spread, poses interesting theoretical and practical questions, some of which are still open.
 
 I will discuss how transmission intervals link the “speed” and “strength” of epidemics, issues in their estimation, and their role in helping monitor changes in the parameters underlying the spread of COVID-19 disease.
-
-
-----------------------------------------------------------------------
-
-EXTRA
-
-Set up screen
-
-Close window
-
-Add Lipsitch and R(t)
 
 ----------------------------------------------------------------------
 
@@ -85,7 +106,12 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
-	ADD ODEs
+\begin{eqnarray*}
+	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
+	\frac{dI}{dt}  &=& \beta \frac{SI}{N}- \gamma I  -\mu R \\
+	\frac{dR}{dt}  &=& \gamma I -\mu R
+\end{eqnarray*}
+
 
 ----------------------------------------------------------------------
 
@@ -109,11 +135,30 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-ODEs
+DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-Not ODEs
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{eqnarray*}
+	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
+	\frac{dI}{dt}  &=& \beta \frac{SI}{N}- \gamma I  -\mu R \\
+	\frac{dR}{dt}  &=& \gamma I -\mu R
+\end{eqnarray*}
+
+----------------------------------------------------------------------
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{center}\begin{tabular}{lll}
+	{\bf Event} & {\bf transition} &{\bf rate}\\
+	\hline
+	Infection &$S \to I$  &$R_0 SI/N$\\
+	Recovery & $I \to R$ & $(1-\rho)I$\\
+	Rebirth &  $R \to S$ & $\rho R$\\
+	Rebirth & $I \to S$ & $\rho I$
+\end{tabular}\end{center}
 
 ----------------------------------------------------------------------
 
@@ -196,6 +241,12 @@ SEC Linking strength and speed
 
 Lessons from simple models
 
+	Exponential invasion potential
+
+	Tendency to oscillate
+
+	Thresholds
+
 ----------------------------------------------------------------------
 
 Strength
@@ -253,7 +304,7 @@ HIV in sub-Saharan Africa
 
 FIG SIR_simulations/za_gens.Rout-0.pdf
 
-Faster than expected.
+$C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 ----------------------------------------------------------------------
 
@@ -268,6 +319,8 @@ $C \approx 1 \,\mathrm{month}$. Slower than expected.
 Coronavirus speed
 
 FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
+
+$C \approx 5 \,\mathrm{day}$. Coronavirus!
 
 ----------------------------------------------------------------------
 
@@ -325,10 +378,6 @@ EC
 
 ----------------------------------------------------------------------
 
-SEC Linking strength and speed
-
-----------------------------------------------------------------------
-
 Conditional effect of quickness
 
 	\emph{Given} the reproductive number $\Rx$
@@ -347,13 +396,9 @@ Conditional effect of quickness
 
 Generations and \Rx
 
-FIG Generation_distributions/steps.Rout-1.pdf
+WIDEFIG my_images/Powers.png
 
-----------------------------------------------------------------------
-
-Generations and \Rx
-
-FIG Generation_distributions/steps.Rout-0.pdf
+CREDIT Powers et al., \url{https://www.pnas.org/content/111/45/15867}
 
 ----------------------------------------------------------------------
 
@@ -394,6 +439,8 @@ Interpretation: generating functions
 BCC
 
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	$\Rx = 1/M(-r)$
 
 	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
 
@@ -442,21 +489,9 @@ FIG coronaFrame/figure2.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-SEC Estimating transmission intervals
+TSEC Estimating transmission intervals
 
-BCC
-
-CFIG webpix/hammer.jpg
-
-NCC
-
-	Ad hoc methods
-
-	Error often not propagated
-
-	Importance of heterogeneity
-
-EC
+FIG webpix/hammer.jpg
 
 ----------------------------------------------------------------------
 
@@ -651,40 +686,6 @@ FIG rabies_correlations/correlations.Rout.pdf
 
 ----------------------------------------------------------------------
 
-----------------------------------------------------------------------
-
-TSS Forward and backward
-
-----------------------------------------------------------------------
-
-Growing epidemics
-
-BC
-
-	Generation intervals look \emph{shorter} at the beginning of an epidemic
-
-		A disproportionate number of people are infectious right now
-
-		They haven't finished all of their transmitting
-
-NC
-
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
-
-CFIG SIR_simulations/za_gens.Rout-0.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Backward intervals
-
-WIDEFIG backward.jpg
-
-CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
-
-----------------------------------------------------------------------
-
 TSS Serial and generation
 
 ----------------------------------------------------------------------
@@ -697,9 +698,21 @@ FIG rabies_correlations/figure/general_interval.png
 
 The paradox
 
+	Imagine a process where symptoms in the infector cause symptoms in the
+	infectee
+
+	This has to match the same \rR\ link as the true process
+
+	But it also can't (because the serial interval is in general broader than
+	the generation interval)
+
 ----------------------------------------------------------------------
 
-Changes through time
+The forward serial interval
+
+WIDEFIG my_images/serial_incubation.png
+
+	Dynamical effects mean that the forward serial interval is shortened!
 
 ----------------------------------------------------------------------
 
@@ -896,7 +909,7 @@ Measuring the intervention
 
 ----------------------------------------------------------------------
 
-Measuring intervention strength
+EXTRA Measuring intervention strength
 
 	Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
 	proportional amount by which the intervention reduces transmission.
@@ -910,7 +923,7 @@ Measuring intervention strength
 
 ----------------------------------------------------------------------
 
-Measuring intervention speed
+EXTRA Measuring intervention speed
 
 	Define intervention \emph{speed} $\phi = r-\hat r$ -- the
 	amount by which the intervention slows down spread. 
@@ -997,15 +1010,17 @@ FIG ss_pix/test.scen.Rout-5.pdf
 
 Coronavirus outbreak
 
-	What we know well is the speed of the outbreak
-
 	What do we think if the pathogen is actually quicker than we thought?
 
-		e.g., Nishiura et al.
+		e.g., more pre-symptomatic transmission 
 
-	It has less strength (easier to control by vaccination)
+	Estimate of invasion strength goes down
+	
+		easier to control by universal changes like masking
 
-	Control by identification and isolation may be a little harder?
+	Does not change estimate of invasion speed
+
+		Puts more \emph{weight} on what happens earlier in infection
 
 ----------------------------------------------------------------------
 
@@ -1031,6 +1046,20 @@ EC
 
 ----------------------------------------------------------------------
 
+Using available data
+
+	Time distributions are hard to measure
+
+		Infection date ⇒ 
+		Symptom onset date ⇒
+		Sample collection date ⇒
+		Test conducted ⇒
+		Test result recorded
+
+	Deconvolution is hard
+
+----------------------------------------------------------------------
+
 Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
@@ -1039,11 +1068,68 @@ CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
+Time-varying reproductive numbers
+
+	Instantaneous \Ri\ (Cori): 
+
+		$i(t) = \int{\Ri(t) g(\tau)i(t-\tau) \,d\tau}$
+
+		Counterfactual: how many cases per case if conditions were frozen at time
+		$t$
+
+	Case \Rc\ (Wallinga):
+
+		$i(t) =  \int{\Rc(t=\tau) g(\tau)i(t-\tau) \,d\tau}$
+
+----------------------------------------------------------------------
+
 Wuhan control measures
 
 WIDEFIG my_images/pan_R_shot.png
 
 CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+Shifts
+
+	We could best evaluate current conditions by calculating \Ri\ using
+	\emph{incidence} data
+
+		Requires deconvolution
+
+	If transmission is centered at ``report'' time, using \Rc\ with report data
+	may be ``second-best''
+
+----------------------------------------------------------------------
+
+Assumptions
+
+	All current methods assume that (some version of) the generation interval
+	does not change through time!
+
+	This is a good match for `strength-like' interventions (movement
+	restrictions, masks for all)
+
+	It's a bad match for `speed-like' interventions (tracing, testing and
+	isolation)
+
+----------------------------------------------------------------------
+
+New results
+
+	Speed-like changes cannot be distinguished from strength-like changes using
+	incidence data
+
+		They can give identical results
+
+	$\Ri(t)$ based on incidence data gives a good measure of effectiveness of
+	strength-like interventions
+
+	$r(t)$ based on incidence data gives a good measure of effectiveness of
+	speed-like interventions
+
+	These insights do not solve the delay and deconvolution problems
 
 ----------------------------------------------------------------------
 
