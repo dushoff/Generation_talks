@@ -28,6 +28,7 @@ Sources += $(wildcard *.txt *.abs)
 ## outbreakGens.txt BioSeminar ⇒ global health
 
 covid_colloq.draft.pdf: covid_colloq.txt
+covid_colloq.final.pdf: covid_colloq.txt
 covid_colloq.outline.pdf: covid_colloq.txt
 
 ## Intervals and control SMB 2020
