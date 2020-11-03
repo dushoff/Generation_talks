@@ -1,0 +1,319 @@
+NOFRAME
+
+\newcommand{\jdtitle} {Time distributions and coronavirus modeling}
+\newcommand{\jdsub} {}
+\newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
+\newcommand{\wdate} {Cornell CAM Colloquium, Oct 2020}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+----------------------------------------------------------------------
+
+Covid modeling questions
+
+BCC
+
+	How far and fast would it spread if unchecked?
+
+	How hard is it to eliminate?
+
+	How are we doing on control in a particular place and time?
+
+NCC
+
+CFIG my_images/ontario.Rout.pdf
+
+CREDIT https://wzmli.github.io/COVID19-Canada
+
+
+EC
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT \url{https://jamanetwork.com/journals/jama/fullarticle/2764658}
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_R_shot.png
+
+CREDIT \url{https://jamanetwork.com/journals/jama/fullarticle/2764658}
+
+----------------------------------------------------------------------
+
+Time-varying reproductive numbers
+
+	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
+
+		How many people will get infected by a case infected at time $t$?
+
+		$i(t) = \sum \Rx(t-\tau) g(\tau) i(t-\tau)$
+
+	Instantaneous reproductive number $\Rx_c$ (e.g., Cori et al.)
+
+		What overall reproductive number predicts what I'm seeing now?
+
+		$i(t) = \sum \Rx(t) g(\tau) i(t-\tau)$
+
+	Speed vs.~strength
+
+		What if $g$ is changing?	
+
+		Are $r$-based tools available?
+
+----------------------------------------------------------------------
+
+Developing practical methods
+
+WIDEFIG my_images/gostic_delays.png
+
+CREDIT Gostic et al., \url{https://doi.org/10.1101/2020.06.18.20134858}
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
+
+$C \approx 5 \,\mathrm{day}$. Coronavirus!
+
+----------------------------------------------------------------------
+
+Coronavirus
+
+	What we see clearly is $r$
+
+	What we rush to calculate is \Rx
+
+	How do we do this?
+
+	\emph{Why} do we do this?
+
+----------------------------------------------------------------------
+
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Quickness: $g(\tau)$
+
+BC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NC
+
+	The generation distribution measures generations of the disease
+
+		Interval between ``index'' infection and resulting infection
+
+	Does ``quick'' disease (short generations) mean more danger or less danger?
+
+EC
+
+----------------------------------------------------------------------
+
+Danger?
+
+WIDEFIG webpix/robot.jpg
+
+----------------------------------------------------------------------
+
+
+Conditional effect of quickness
+
+	\emph{Given} the reproductive number $\Rx$
+
+		quicker disease means faster growth rate $r$
+
+		More danger
+
+	\emph{Given} the growth rate $r$
+
+		quicker disease means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+WIDEFIG my_images/Powers.png
+
+CREDIT Powers et al., \url{https://www.pnas.org/content/111/45/15867}
+
+----------------------------------------------------------------------
+
+Approximating the \rR\ relationship
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-0.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-1.pdf
+
+----------------------------------------------------------------------
+
+Backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
+
+CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
+
+----------------------------------------------------------------------
+
+Strength and speed
+
+	Why are people scrambling to estimate \Rx\ and mostly ignoring \littler?
+
+		History
+
+		Equilibrium and herd immunity
+
+		Modelers gotta model
+
+----------------------------------------------------------------------
+
+The strength paradigm
+
+	$\Rx>1$ is a threshold
+
+	If we can reduce transmission by a constant \emph{factor} of $\theta > \Rx$,
+	disease can be controlled
+
+	In general, we can define $\theta$ as a (harmonic) mean of the reduction
+	factor over the course of an infection
+
+		weighted by the \emph{intrinsic} generation interval
+
+	Epidemic is controlled if $\theta > \Rx$
+
+	More direct information about long term (tells us about final size,
+	equilibrium)
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	$r>0$ is a threshold
+
+	If we can reduce transmission at a constant \emph{hazard rate} of $\phi >
+	r$, disease can be controlled
+
+	In general, we can define $\phi$ as a (very weird) mean of the reduction
+	factor over the course of an infection
+
+		weighted by the \emph{backward} generation interval
+
+	Epidemic is controlled if $\phi > r$
+
+	More direct information about short term (tells us about, um, speed)
+
+----------------------------------------------------------------------
+
+The forward serial interval
+
+WIDEFIG my_images/serial_incubation.png
+
+	Dynamical effects mean that the forward serial interval is shortened!
+
+----------------------------------------------------------------------
+
+
+
+REPSLIDE Wuhan control measures
+
+WIDEFIG my_images/pan_R_shot.png
+
+CREDIT \url{https://dushoff.github.io/notebook/shifts.html}
+
+----------------------------------------------------------------------
+
+How important are these subtleties?
+
+	We don't know yet
+
+	In some sense, it's all averaging
+
+		Do something sensible and track how it's changing
+
+	Simulation-based validation
+
+----------------------------------------------------------------------
+
+Shifts
+
+	We could best evaluate current conditions by calculating \Ri\ using
+	\emph{incidence} data
+
+		Requires deconvolution
+
+	If transmission is centered at ``report'' time, using \Rc\ with report data
+	may be ``second-best''
+
+----------------------------------------------------------------------
+
+Assumptions
+
+	All current methods assume that (some version of) the generation interval
+	does not change through time!
+
+	This is a good match for `strength-like' interventions (movement
+	restrictions, masks for all)
+
+	It's a bad match for `speed-like' interventions (tracing, testing and
+	isolation)
+
+----------------------------------------------------------------------
+
+New results
+
+	Speed-like changes cannot be distinguished from strength-like changes using
+	incidence data
+
+		They can give identical results
+
+	$\Ri(t)$ based on incidence data gives a good measure of effectiveness of
+	strength-like interventions
+
+	$r(t)$ based on incidence data gives a good measure of effectiveness of
+	speed-like interventions
+
+	These insights do not solve the delay and deconvolution problems
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Organizers
+
+	Collaborators:
+
+		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst, Hampson \ldots
+
+	Funders: NSERC, CIHR, PHAC, WHO

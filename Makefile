@@ -27,6 +27,8 @@ Sources += $(wildcard *.txt *.abs)
 ## ebola.txt Tachikawa
 ## outbreakGens.txt BioSeminar ⇒ global health
 
+covid_disc.draft.pdf: covid_disc.txt
+
 covid_colloq.draft.pdf: covid_colloq.txt
 covid_colloq.final.pdf: covid_colloq.txt
 covid_colloq.outline.pdf: covid_colloq.txt

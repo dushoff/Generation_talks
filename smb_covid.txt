@@ -578,16 +578,3 @@ How important are these subtleties?
 		Do something sensible and track how it's changing
 
 	Simulation-based validation
-
-----------------------------------------------------------------------
-
-Thanks
-
-	SMB and SMB-mathepi
-
-	Collaborators:
-	
-		Li, Park, Weitz, Bolker, Earn, Champredon \ldots
-
-	Funders: NSERC, CIHR, PHAC, WHO
-
