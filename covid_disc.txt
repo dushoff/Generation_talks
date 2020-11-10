@@ -3,7 +3,7 @@ NOFRAME
 \newcommand{\jdtitle} {Time distributions and coronavirus modeling}
 \newcommand{\jdsub} {}
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
-\newcommand{\wdate} {Cornell CAM Colloquium, Oct 2020}
+\newcommand{\wdate} {Georgia Tech COVID Incubator, Nov 2020}
 
 ----------------------------------------------------------------------
 
