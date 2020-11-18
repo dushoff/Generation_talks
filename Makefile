@@ -33,6 +33,8 @@ covid_colloq.draft.pdf: covid_colloq.txt
 covid_colloq.final.pdf: covid_colloq.txt
 covid_colloq.outline.pdf: covid_colloq.txt
 
+covid_eeb.draft.pdf: covid_eeb.txt
+
 ## Intervals and control SMB 2020
 ## smb_covid.final.pdf: smb_covid.txt
 ## smb_covid.draft.pdf: smb_covid.txt
