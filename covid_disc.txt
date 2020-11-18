@@ -244,8 +244,6 @@ WIDEFIG my_images/serial_incubation.png
 
 ----------------------------------------------------------------------
 
-
-
 REPSLIDE Wuhan control measures
 
 WIDEFIG my_images/pan_R_shot.png
@@ -310,7 +308,7 @@ New results
 
 Thanks
 
-	Organizers
+	Reuven and EEB
 
 	Collaborators:
 

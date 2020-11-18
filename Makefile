@@ -33,7 +33,10 @@ covid_colloq.draft.pdf: covid_colloq.txt
 covid_colloq.final.pdf: covid_colloq.txt
 covid_colloq.outline.pdf: covid_colloq.txt
 
+covid_eeb.final.pdf: covid_eeb.txt
 covid_eeb.draft.pdf: covid_eeb.txt
+
+temp.draft.pdf: temp.txt
 
 ## Intervals and control SMB 2020
 ## smb_covid.final.pdf: smb_covid.txt
@@ -67,6 +70,9 @@ coronaFrame: url=https://github.com/parksw3/wuhan.git
 
 subdirs += ss_pix
 ss_pix: link=../ss_pix
+
+subdirs += Endemic_curves
+Endemic_curves: link=../Endemic_curves
 
 subdirs += networkSEIR
 networkSEIR: link=generations_mark1/networkSEIR
