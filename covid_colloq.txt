@@ -1,11 +1,11 @@
 
-EXTRA To do 
+NOTES To do 
 
 https://github.com/dushoff/Generation_talks/blob/master/git_push/covid_colloq.draft.pdf 
 
 ----------------------------------------------------------------------
 
-EXTRA Cornell Abstract
+NOTES Cornell Abstract
 
 Time distributions and coronavirus control
 
@@ -21,6 +21,7 @@ NOFRAME
 \newcommand{\jdsub} {}
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
 \newcommand{\wdate} {UNAM Seminar Series: COVID-19 \\ December 2020}
+\renewcommand{\wdate} {}
 
 ----------------------------------------------------------------------
 
@@ -117,11 +118,15 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-GENERAL DIAGRAM SIR_model_family/sir.three.pdf
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-GENERAL DIAGRAM SIR_model_family/sir.three.pdf
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
 
 \begin{eqnarray*}
 	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
@@ -131,7 +136,9 @@ GENERAL DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-GENERAL DIAGRAM SIR_model_family/sir.three.pdf
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
 
 \begin{center}\begin{tabular}{lll}
 	{\bf Event} & {\bf transition} &{\bf rate}\\
@@ -1017,8 +1024,8 @@ The speed paradigm
 
 BONUS HIV
 
-	The importance of transmission speed to HIV control is easier to understand
-	using the speed paradigm
+	The importance of transmission speed to HIV control is easier to
+	understand using the speed paradigm
 
 		We know the speed of invasion
 
@@ -1041,6 +1048,8 @@ FIG ss_pix/test.scen.Rout-4.pdf
 HIV test and treat
 
 FIG ss_pix/test.scen.Rout-5.pdf
+
+ADD Backward GI pix; also, units for this one
 
 ----------------------------------------------------------------------
 
