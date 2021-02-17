@@ -59,6 +59,8 @@ BCC
 
 	How effective is control in a particular place and time?
 
+	What is the role of new variants?
+
 NCC
 
 CFIG my_images/ontario.Rout.pdf
