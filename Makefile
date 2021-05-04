@@ -10,6 +10,14 @@ Sources += Makefile legacy.mk content.mk
 
 Sources += $(wildcard *.txt *.abs)
 
+######################################################################
+
+## New for technical Tuesday
+
+technical.draft.pdf: technical.txt
+
+######################################################################
+
 ## 2020 Aug 17 (Mon)
 ## It's bad how I always do talks under pressure and my talk directories
 ## are always a disaster
@@ -52,6 +60,14 @@ uncertainty.final.pdf: uncertainty.txt
 
 ## Directories (see content.mk)
 
+subdirs += ssvariant
+ssvariant: link=../../research/ssvariant
+
+subdirs += notebook
+notebook: link=../../web/notebook
+
+### Add url above
+
 subdirs += rabies_R0
 rabies_R0: link=../../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
@@ -78,6 +94,8 @@ subdirs += networkSEIR
 networkSEIR: link=generations_mark1/networkSEIR
 networkSEIR: url=https://github.com/parksw3/networkSEIR.git
 
+######################################################################
+
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
 subdirs += SIR_simulations Generation_distributions SIR_model_family WA_Ebola_Outbreak trace Disease_data
@@ -91,7 +109,7 @@ $(subdirs):
 Ignore += $(subdirs) generations_mark1
 
 ## Should try sometimes with hot to reduce technical debt!
-colddirs += $(subdirs)
+hotdirs += $(subdirs)
 
 ######################################################################
 

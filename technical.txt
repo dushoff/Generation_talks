@@ -1,0 +1,197 @@
+
+----------------------------------------------------------------------
+
+
+NOFRAME
+
+\newcommand{\jdtitle} {Transmission-interval distributions and coronavirus control}
+\newcommand{\jdsub} {}
+\newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
+\newcommand{\wdate} {PHAC Technical Tuesday \\ May 2020}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+----------------------------------------------------------------------
+
+Transmission intervals drive epidemics
+
+	Population-level speed of spread $r$ is a product:
+
+		Strength \Rx\ × \ldots
+
+		Individual-level speed of transmission $g(\tau)$
+
+----------------------------------------------------------------------
+
+Generation-interval picture
+
+----------------------------------------------------------------------
+
+Exponential growth picture
+
+----------------------------------------------------------------------
+
+Danger tradeoff
+
+----------------------------------------------------------------------
+
+Transmission intervals
+
+	Generation interval: infection ⇒ infection
+
+		Drives epidemic, often unobserved
+
+	Serial interval: symptoms ⇒ symptoms
+
+		Observable…, may be hard to define
+
+	Other:
+
+		diagnosis ⇒ diagnosis
+
+		notification ⇒ notification
+
+----------------------------------------------------------------------
+
+Steps
+
+	Generation interval:
+
+		Latent + infectious waiting
+
+	Serial interval
+
+		Incubation + symptomatic waiting
+
+	Report
+
+		I should make up names
+
+----------------------------------------------------------------------
+
+SEC Linking \rR
+
+----------------------------------------------------------------------
+
+Renewal-equation framework
+
+----------------------------------------------------------------------
+
+Euler's equation
+
+----------------------------------------------------------------------
+
+Effective generation time
+
+----------------------------------------------------------------------
+
+Effective dispersion
+
+----------------------------------------------------------------------
+
+Propagating error
+
+----------------------------------------------------------------------
+
+Types of generation interval
+
+	Intrinsic
+
+	Forward
+
+	Backward
+
+----------------------------------------------------------------------
+
+Forward intervals give the \rR\ link
+
+	At least at a particular time
+
+----------------------------------------------------------------------
+
+Backward intervals do not match forward intervals
+
+----------------------------------------------------------------------
+
+Forward intervals do not match intrinsic intervals
+
+	Spatial effects
+
+----------------------------------------------------------------------
+
+Observed data and serial intervals
+
+----------------------------------------------------------------------
+
+Serial-interval distributions
+
+	Should match generation-interval distributions?
+
+		No, they are broader
+
+		No, something about heterogeneity
+
+----------------------------------------------------------------------
+
+Forward serial-interval distributions
+
+	Drive observed cases
+
+	Paradox
+
+----------------------------------------------------------------------
+
+Forward serial-interval distributions change with $r$
+
+----------------------------------------------------------------------
+
+Strength-like and speed-like interventions
+
+----------------------------------------------------------------------
+
+Estimating $r$ vs.~\Rx
+
+----------------------------------------------------------------------
+
+Unidentifiability
+
+----------------------------------------------------------------------
+
+Implications for intervention
+
+----------------------------------------------------------------------
+
+SEC Variants
+
+----------------------------------------------------------------------
+
+Relationship between $\delta$ and \Rwt
+
+FIG notebook/VoCcomp.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Variant has faster generations
+
+FIG notebook/VoCcomp.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Variant has slower generations
+
+FIG notebook/VoCcomp.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Organizers and audience
+
+	Collaborators:
+
+		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst,
+		Hampson \ldots
+
+	Funders: NSERC, CIHR, PHAC, WHO, McMaster
