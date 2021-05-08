@@ -15,6 +15,8 @@ Sources += $(wildcard *.txt *.abs)
 ## New for technical Tuesday
 
 technical.draft.pdf: technical.txt
+technical.final.pdf: technical.txt
+
 
 ######################################################################
 
@@ -60,6 +62,12 @@ uncertainty.final.pdf: uncertainty.txt
 
 ## Directories (see content.mk)
 
+subdirs += ssintervention
+ssintervention: link=../../research/gamma
+
+subdirs += speedfigs
+speedfigs: link=../../research/speed_public/code
+
 subdirs += ssvariant
 ssvariant: link=../../research/ssvariant
 
@@ -104,7 +112,9 @@ subdirs += SIR_simulations Generation_distributions SIR_model_family WA_Ebola_Ou
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
 ## Rejected parallel for now because we want people to be able to clone one directory
 $(subdirs):
-	(ls -d ../$@ && $(LN) ../$@) || $(LN) $(link) $@ || git clone $(url) $@
+	(ls -d ../$@ && $(LN) ../$@) \
+	|| (ls -d $(link) && $(LN) $(link) $@) \
+	|| git clone $(url) $@
 
 Ignore += $(subdirs) generations_mark1
 

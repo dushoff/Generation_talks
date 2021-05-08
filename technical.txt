@@ -15,9 +15,51 @@ WORKSHOP
 
 ----------------------------------------------------------------------
 
+Transmission intervals
+
+BCC
+
+CFIG webpix/spending.jpg
+
+NCC
+
+	Sort of the poor relations of disease-modeling world
+
+	Ad hoc methods
+
+	Error often not propagated
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Generation-interval distributions
+
+BC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NC
+
+	The generation distribution measures generations of the disease
+
+		Interval between ``index'' infection and resulting infection
+
+	Link $r$ (exponential growth rate) and \Rx\ (effective reproductive number)
+
+EC
+
+----------------------------------------------------------------------
+
 Transmission intervals drive epidemics
 
-	Population-level speed of spread $r$ is a product:
+	Population-level speed of spread $r$ is a product (sort of):
 
 		Strength \Rx\ × \ldots
 
@@ -25,15 +67,61 @@ Transmission intervals drive epidemics
 
 ----------------------------------------------------------------------
 
-Generation-interval picture
+Mechanistic perspective
+
+BCC
+
+	\Rx\ is known
+
+	Quicker generations ⇒ faster population-level spread
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
-Exponential growth picture
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 ----------------------------------------------------------------------
 
-Danger tradeoff
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$. Slower than expected.
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
+
+$C \approx 5 \,\mathrm{day}$. Coronavirus!
+
+----------------------------------------------------------------------
+
+Phenomenological perspective
+
+BCC
+
+	Population-level speed $r$ is observed
+
+	Quicker generations (low $\bar G$) ⇒ \emph{lower} \Rx
+
+NCC
+
+CFIG my_images/Powers.png
+
+CREDIT Powers et al., \url{https://www.pnas.org/content/111/45/15867}
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -53,6 +141,14 @@ Transmission intervals
 
 		notification ⇒ notification
 
+	Some cases are never symptomatic, or never diagnosed
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
+
 ----------------------------------------------------------------------
 
 Steps
@@ -61,13 +157,15 @@ Steps
 
 		Latent + infectious waiting
 
-	Serial interval
+	Serial interval:
 
 		Incubation + symptomatic waiting
 
 	Report
 
-		I should make up names
+		Are there good names for these intervals?
+
+		e.g., infection to recorded date
 
 ----------------------------------------------------------------------
 
@@ -75,95 +173,380 @@ SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-Renewal-equation framework
+Renewal-equation 
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the proportion of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	$k$ changes through time
+
+		proportion infected, control measures
+
+	But we mainly focus on a particular profile $k(\tau)$
 
 ----------------------------------------------------------------------
 
-Euler's equation
+Infection kernel
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
-Effective generation time
+Euler-Lotka equation 
+
+	If we neglect $S$, we expect exponential growth
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
+
+		The initial ``backwards'' generation interval
 
 ----------------------------------------------------------------------
 
-Effective dispersion
+Interpretation: generating functions
+
+BCC
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	$\Rx = 1/M(-r)$
+
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$\kappa$ is the `effective dispersion'
+
+		Equal to the squared coefficient of variation when $G$ is
+		gamma-distributed
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
+
+	CREDIT Park et al., Epidemics DOI:10.1101/312397
+
+----------------------------------------------------------------------
+
+Approximating the \rR\ relationship
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 ----------------------------------------------------------------------
 
 Propagating error
 
-----------------------------------------------------------------------
-
-Types of generation interval
-
-	Intrinsic
-
-	Forward
-
-	Backward
+FIG coronaFrame/propagate_pix-0.pdf
 
 ----------------------------------------------------------------------
 
-Forward intervals give the \rR\ link
+Propagating error
 
-	At least at a particular time
-
-----------------------------------------------------------------------
-
-Backward intervals do not match forward intervals
+FIG coronaFrame/propagate_pix-1.pdf
 
 ----------------------------------------------------------------------
 
-Forward intervals do not match intrinsic intervals
+Types of interval
 
-	Spatial effects
+	Define:
 
-----------------------------------------------------------------------
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
 
-Observed data and serial intervals
+		\emph{Forward interval}: When will the people infected today 
+		infect others?
 
-----------------------------------------------------------------------
+		\emph{Backward interval}: When did the people who infected people today
+		themselves become infected? 
 
-Serial-interval distributions
+		\emph{Censored interval}: What do all the intervals observed up until a
+		particular time look like?
 
-	Should match generation-interval distributions?
-
-		No, they are broader
-
-		No, something about heterogeneity
-
-----------------------------------------------------------------------
-
-Forward serial-interval distributions
-
-	Drive observed cases
-
-	Paradox
+			Like backward intervals, if it's early in the epidemic
 
 ----------------------------------------------------------------------
 
-Forward serial-interval distributions change with $r$
+Growing epidemics
+
+BC
+
+	Measured generation intervals look \emph{shorter} at the beginning of an
+	epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Correcting backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+Generations in space
+
+BC
+
+	Local interactions
+
+	⇒ wasted contacts
+
+	⇒ realized generation intervals smaller than intrinsic
+
+	⇒ intrinsic GIs over-estimate \Rx
+
+	CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+
+NC
+
+CFIG webpix/network.png
+
+EC
+
+----------------------------------------------------------------------
+
+Observed and estimated intervals
+
+PIC WIDEFIG networkSEIR/fig/simple.pdf
+
+----------------------------------------------------------------------
+
+Outbreak estimation
+
+PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
+
+CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
+
+----------------------------------------------------------------------
+
+TSEC Serial-interval distributions
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+The serial-mean paradox
+
+	Serial intervals measure generations of the same process as generation
+	intervals
+
+		Should have the same mean
+
+		But often larger variance
+
+	Empirically, even the means are not the same!
+
+----------------------------------------------------------------------
+
+Heterogeneity
+
+BC
+
+CFIG rabies_correlations/intervalPlots.Rout.pdf
+
+NC
+
+	Generation intervals include latent period of infectors only (weighted
+	average)
+
+	Serial intervals average over infectees (everyone is infected once)
+
+	Coronavirus: people diagnosed early are less likely to transmit
+
+EC
+
+----------------------------------------------------------------------
+
+The link paradox
+
+	Imagine a renewal process where symptoms in the infector cause symptoms in
+	the infectee
+
+		Assume homogeneity
+
+	This has to match the same \rR\ link as the true process
+
+	But it also can't (because the serial interval is in general broader than
+	the generation interval)
+
+		All else equal, a broader interval means lower \Rx.
+
+----------------------------------------------------------------------
+
+The forward serial interval
+
+WIDEFIG my_images/serial_incubation.png
+
+	Dynamical effects mean that the forward serial interval is shortened!
+
+----------------------------------------------------------------------
+
+Observed epidemiological intervals
+
+HFIG 0.75 my_images/serial_shot.png
+
+CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
+
+----------------------------------------------------------------------
+
+SEC Evaluating interventions
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+Time-varying reproductive numbers
+
+	Instantaneous \Ri\ (Cori):
+
+		$i(t) = \int{\Ri(t) g(\tau)i(t-\tau) \,d\tau}$
+
+		Counterfactual: how many cases per case if conditions were frozen at time
+		$t$
+
+	Case \Rc\ (Wallinga):
+
+		$i(t) =  \int{\Rc(t=\tau) g(\tau)i(t-\tau) \,d\tau}$
+
+	Moving from reports to infections
+
+		Deconvolution
 
 ----------------------------------------------------------------------
 
 Strength-like and speed-like interventions
 
+BC
+
+FRAMEFIG speedfigs/gencolumn.Rout.pdf
+
+NC
+
+	Strength-like: lockdown, vaccination
+
+	Speed-like: diagnosis, contact tracing
+
+	CREDIT Dushoff and Park, DOI: 10.1098/rspb.2020.1556
+
+EC
+
 ----------------------------------------------------------------------
 
 Estimating $r$ vs.~\Rx
+
+	$r$ is easier to estimate from time series
+
+	$r$ is a better indicator if changes are speed-like
+
+	\Rx\ is a better indicator if changes are strength-like
+
+		and if it can be estimated well
+
+	Both approaches require deconvolution
 
 ----------------------------------------------------------------------
 
 Unidentifiability
 
+BC
+
+HFIG 0.87 ssintervention/scenarios.pdf
+
+NC
+
+	Strength-like and speed-like interventions can give exactly the same
+	incidence curves
+
+EC
+
 ----------------------------------------------------------------------
 
 Implications for intervention
 
+FIG speedfigs/coronaPlot.Rout-1.pdf
+
 ----------------------------------------------------------------------
 
-SEC Variants
+Implications for intervention
+
+FIG speedfigs/coronaPlot.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+TSEC Variants
+
+	The clearest view is of the rate of logistic growth of variant proportion
+
+		$\delta = \Rv - \Rwt$
+
+	Unaffected by sampling intensity
+
+		Also by ``speed-like'' changes in transmission intensity
 
 ----------------------------------------------------------------------
 
@@ -192,6 +575,6 @@ Thanks
 	Collaborators:
 
 		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst,
-		Hampson \ldots
+		Hampson, So \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
