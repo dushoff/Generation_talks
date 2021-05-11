@@ -1,0 +1,30 @@
+TSEC Variants
+
+	The clearest view is of the rate of logistic growth of variant proportion
+
+		$\delta = \Rv - \Rwt$
+
+	Unaffected by sampling intensity
+
+		Also by ``speed-like'' changes in transmission intensity
+
+----------------------------------------------------------------------
+
+Relationship between $\delta$ and \Rwt
+
+FIG notebook/VoCcomp.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Variant has faster generations
+
+FIG notebook/VoCcomp.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Variant has slower generations
+
+FIG notebook/VoCcomp.Rout-2.pdf
+
+----------------------------------------------------------------------
+

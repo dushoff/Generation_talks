@@ -1,0 +1,15 @@
+NOFRAME
+
+\newcommand{\jdtitle} {Transmission intervals and coronavirus control}
+\newcommand{\jdsub} {}
+\newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
+\newcommand{\wdate} {UT COVID-19 Consortium Colloquium (CCC), May 2021}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+----------------------------------------------------------------------
+
+
+

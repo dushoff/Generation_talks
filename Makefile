@@ -12,6 +12,25 @@ Sources += $(wildcard *.txt *.abs)
 
 ######################################################################
 
+## Insane paradigm
+## Convention: line break at the end
+
+cgfiles += cgTitle.txt
+cgfiles += cgInterval.txt
+cgfiles += cgLink.txt
+cgfiles += cgSerial.txt
+## cgfiles += cgVariants.txt
+## cgfiles += cgIntervention.txt
+cgfiles += cgThanks.txt
+
+## covidGens.draft.pdf: cgInterval.txt
+## covidGens.draft.pdf: cgLink.txt
+
+covidGens.txt: $(cgfiles)
+	$(catro)
+
+######################################################################
+
 ## New for technical Tuesday
 
 # Future:  doi: https://doi.org/10.1101/2021.05.03.21256545
@@ -38,6 +57,9 @@ technical.final.pdf: technical.txt
 ## ebola.txt Tachikawa
 ## outbreakGens.txt BioSeminar ⇒ global health
 
+## Discussion (?)
+## UBC informal? GA Tech "incubator", EEB (!)
+## UT Austin weird session May 2021
 covid_disc.draft.pdf: covid_disc.txt
 
 covid_colloq.draft.pdf: covid_colloq.txt

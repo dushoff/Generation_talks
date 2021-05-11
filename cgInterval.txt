@@ -1,0 +1,153 @@
+
+Transmission intervals
+
+BCC
+
+CFIG webpix/spending.jpg
+
+NCC
+
+	Sort of the poor relations of disease-modeling world
+
+	Ad hoc methods
+
+	Error often not propagated
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
+
+----------------------------------------------------------------------
+
+Generation-interval distributions
+
+BC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NC
+
+	The generation distribution measures generations of the disease
+
+		Interval between ``index'' infection and resulting infection
+
+	Link $r$ (exponential growth rate) and \Rx\ (effective reproductive number)
+
+EC
+
+----------------------------------------------------------------------
+
+Transmission intervals drive epidemics
+
+	Population-level speed of spread $r$ is a product (sort of):
+
+		Strength \Rx\ × \ldots
+
+		Individual-level speed of transmission $g(\tau)$
+
+----------------------------------------------------------------------
+
+Mechanistic perspective
+
+BCC
+
+	\Rx\ is known
+
+	Quicker generations ⇒ faster population-level spread
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$. Faster than expected.
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$. Slower than expected.
+
+----------------------------------------------------------------------
+
+Coronavirus speed
+
+FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
+
+$C \approx 5 \,\mathrm{day}$. Coronavirus!
+
+----------------------------------------------------------------------
+
+Phenomenological perspective
+
+BCC
+
+	Population-level speed $r$ is observed
+
+	Quicker generations (low $\bar G$) ⇒ \emph{lower} \Rx
+
+NCC
+
+CFIG my_images/Powers.png
+
+CREDIT Powers et al., \url{https://www.pnas.org/content/111/45/15867}
+
+EC
+
+----------------------------------------------------------------------
+
+Transmission intervals
+
+	Generation interval: infection ⇒ infection
+
+		Drives epidemic, often unobserved
+
+	Serial interval: symptoms ⇒ symptoms
+
+		Observable…, may be hard to define
+
+	Other:
+
+		diagnosis ⇒ diagnosis
+
+		notification ⇒ notification
+
+	Some cases are never symptomatic, or never diagnosed
+
+----------------------------------------------------------------------
+
+Serial intervals
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+Steps
+
+	Generation interval:
+
+		Latent + infectious waiting
+
+	Serial interval:
+
+		Symptomatic waiting + Incubation
+
+	Observation intervals
+
+	Report-date intervals
+
+----------------------------------------------------------------------
+

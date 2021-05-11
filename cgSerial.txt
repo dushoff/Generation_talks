@@ -1,0 +1,79 @@
+
+TSEC Serial-interval distributions
+
+FIG rabies_correlations/figure/general_interval.png
+
+----------------------------------------------------------------------
+
+The serial-mean paradox
+
+	Serial intervals measure generations of the same process as generation
+	intervals
+
+		Should have the same mean
+
+		But often larger variance (flu example)
+
+	Empirically, even the means are not the same!
+
+	Generation interval:
+
+		Latent + infectious waiting … of infector
+
+	Serial interval:
+
+		Symptomatic waiting (infector) + Incubation (infectee)
+
+----------------------------------------------------------------------
+
+Heterogeneity
+
+BC
+
+CFIG rabies_correlations/intervalPlots.Rout.pdf
+
+NC
+
+	Generation intervals include latent period of infectors only (often strongly
+	weighted)
+
+	Serial intervals average over infectees (everyone is infected once)
+
+	Coronavirus: people diagnosed early are less likely to transmit
+
+EC
+
+----------------------------------------------------------------------
+
+The link paradox
+
+	Imagine a renewal process where symptoms in the infector cause symptoms in
+	the infectee
+
+		Assume homogeneity
+
+	This has to match the same \rR\ link as the true process
+
+	But it also can't (because the serial interval is in general broader than
+	the generation interval)
+
+		All else equal, a broader interval means lower \Rx.
+
+----------------------------------------------------------------------
+
+The forward serial interval
+
+WIDEFIG my_images/serial_incubation.png
+
+	Dynamical effects mean that the forward serial interval is shortened!
+
+----------------------------------------------------------------------
+
+Observed epidemiological intervals
+
+HFIG 0.75 my_images/serial_shot.png
+
+CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
+
+----------------------------------------------------------------------
+

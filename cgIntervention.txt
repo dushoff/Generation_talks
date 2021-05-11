@@ -1,0 +1,90 @@
+
+SEC Evaluating interventions
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+Time-varying reproductive numbers
+
+	Instantaneous \Ri\ (Cori):
+
+		$i(t) = \int{\Ri(t) g(\tau)i(t-\tau) \,d\tau}$
+
+		Counterfactual: how many cases per case if conditions were frozen at time
+		$t$
+
+	Case \Rc\ (Wallinga):
+
+		$i(t) =  \int{\Rc(t=\tau) g(\tau)i(t-\tau) \,d\tau}$
+
+	Moving from reports to infections
+
+		Deconvolution
+
+----------------------------------------------------------------------
+
+Strength-like and speed-like interventions
+
+BC
+
+FRAMEFIG speedfigs/gencolumn.Rout.pdf
+
+NC
+
+	Strength-like: lockdown, vaccination
+
+	Speed-like: diagnosis, contact tracing
+
+	CREDIT Dushoff and Park, DOI: 10.1098/rspb.2020.1556
+
+EC
+
+----------------------------------------------------------------------
+
+Estimating $r$ vs.~\Rx
+
+	$r$ is easier to estimate from time series
+
+	$r$ is a better indicator if changes are speed-like
+
+	\Rx\ is a better indicator if changes are strength-like
+
+		and if it can be estimated well
+
+	Both approaches require deconvolution
+
+----------------------------------------------------------------------
+
+Unidentifiability
+
+BC
+
+HFIG 0.87 ssintervention/scenarios.pdf
+
+NC
+
+	Strength-like and speed-like interventions can give exactly the same
+	incidence curves
+
+EC
+
+----------------------------------------------------------------------
+
+Implications for intervention
+
+FIG speedfigs/coronaPlot.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Implications for intervention
+
+FIG speedfigs/coronaPlot.Rout-2.pdf
+
+----------------------------------------------------------------------
