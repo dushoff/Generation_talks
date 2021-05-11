@@ -14,9 +14,10 @@ Sources += $(wildcard *.txt *.abs)
 
 ## New for technical Tuesday
 
+# Future:  doi: https://doi.org/10.1101/2021.05.03.21256545
+
 technical.draft.pdf: technical.txt
 technical.final.pdf: technical.txt
-
 
 ######################################################################
 

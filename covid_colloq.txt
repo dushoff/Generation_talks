@@ -5,11 +5,11 @@ https://github.com/dushoff/Generation_talks/blob/master/git_push/covid_colloq.dr
 
 ----------------------------------------------------------------------
 
-NOTES Cornell Abstract
+NOTES Abstract (updated for SMB)
 
-Time distributions and coronavirus control
+"Defining, estimating and applying transmission-interval distributions"
 
-The spread of epidemics is structured by delay distributions, including the now-famous “serial interval” between the symptom-onset times of an infector and an infectee (often conflated with the “generation interval” between infection times). Defining these time distributions clearly, and describing how they relate to each othe, and to key parameters of disease spread, poses interesting theoretical and practical questions, some of which are still open.
+The spread of epidemics is structured by delay distributions, including the now-famous “serial interval” between the symptom-onset times of an infector and an infectee (often conflated with the “generation interval” between infection times). Defining these time distributions clearly, and describing how they relate to each other, and to key parameters of disease spread, poses interesting theoretical and practical questions, some of which are still open.
 
 I will discuss how transmission intervals link the “speed” and “strength” of epidemics, issues in their estimation, and their role in helping monitor changes in the parameters underlying the spread of COVID-19 disease.
 
