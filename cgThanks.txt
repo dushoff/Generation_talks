@@ -1,4 +1,19 @@
 
+Summary
+
+	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
+	growth and control
+
+	Transmission intervals are key to linking these measurements
+
+		Clear definitions
+
+		Combining different sources of information
+
+		Propagating error
+
+----------------------------------------------------------------------
+
 Thanks
 
 	Organizers and audience

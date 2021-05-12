@@ -11,16 +11,14 @@ Renewal-equation
 
 		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
 
-		$S(t)$ is the proportion of the population susceptible
-
 		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
 		after becoming infected
 
 	$k$ changes through time
 
-		proportion infected, control measures
+		proportion susceptible, control measures
 
-	But we mainly focus on a particular profile $k(\tau)$
+		we often think about fixed $k(\tau)$ though
 
 ----------------------------------------------------------------------
 
@@ -44,6 +42,18 @@ NCC
 CFIG ss_pix/ess.Rout-2.pdf
 
 EC
+
+----------------------------------------------------------------------
+
+Estimation framework
+
+	$k(\tau, t)$ is basically everything we want to know
+
+	Usually unobservable, though
+
+	Typically try to observe $r$ or \Rx
+
+	and something about $g(\tau)$
 
 ----------------------------------------------------------------------
 
@@ -99,6 +109,18 @@ Compound-interest interpretation
 	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
 
 	CREDIT Park et al., Epidemics DOI:10.1101/312397
+
+----------------------------------------------------------------------
+
+Product framework
+
+	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
+
+		⇒ Weaker \Rx\ for fixed $r$
+
+	More variation $\kappa$ means more ``compounding'' of infections
+
+		⇒ quicker spread, when epidemic is growing 
 
 ----------------------------------------------------------------------
 

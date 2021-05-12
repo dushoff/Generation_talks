@@ -14,6 +14,57 @@ WORKSHOP
 
 
 
+Covid modeling questions
+
+BCC
+
+	How far and fast would it spread if unchecked?
+
+	How hard is it to eliminate?
+
+	How are we doing on control in a particular place and time?
+
+NCC
+
+CFIG my_images/ontario.Rout.pdf
+
+CREDIT https://wzmli.github.io/COVID19-Canada
+
+
+EC
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT \url{https://jamanetwork.com/journals/jama/fullarticle/2764658}
+
+----------------------------------------------------------------------
+
+Time-varying reproductive numbers
+
+	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
+
+		How many people will get infected by a case infected at time $t$?
+
+		$i(t) = \sum \Rx(t-\tau) g(\tau) i(t-\tau)$
+
+	Instantaneous reproductive number $\Rx_c$ (e.g., Cori et al.)
+
+		What overall reproductive number predicts what I'm seeing now?
+
+		$i(t) = \sum \Rx(t) g(\tau) i(t-\tau)$
+
+	Speed vs.~strength
+
+		What if $g$ is changing?	
+
+		Are $r$-based tools available?
+
+----------------------------------------------------------------------
+
 Transmission intervals
 
 BCC
@@ -58,11 +109,14 @@ EC
 
 Transmission intervals drive epidemics
 
-	Population-level speed of spread $r$ is a product (sort of):
+	Population-level \emph{Speed} of spread $r$ is a product:
 
-		Strength \Rx\ × \ldots
+		Something about \emph{Strength} \Rx\
 
-		Individual-level speed of transmission $g(\tau)$
+		× 
+
+		Something about \emph{Quickness}: Individual-level speed of transmission
+		$g(\tau)$
 
 ----------------------------------------------------------------------
 
@@ -124,6 +178,42 @@ EC
 
 ----------------------------------------------------------------------
 
+Generation interval
+
+	One generation:
+	
+		Latent period (time until infectiousness) + 
+
+		Infectious waiting time (time until infection)
+
+	Infectious waiting time
+
+		Drawn at random from infectious period
+
+		Equal to infectious period \emph{only} when we assume a Markovian process
+
+----------------------------------------------------------------------
+
+How long until the bus comes?
+
+WIDEFIG webpix/bus.jpg
+
+----------------------------------------------------------------------
+
+ENHANCED Mean of a self-weighted quantity
+
+	Infectious period of an infector
+
+	Activity level of an interactor
+
+	$\mu(1+\frac{\sigma^2}{\mu^2}) = \mu(1+\kappa)$
+
+	Time until bus comes: $\mu(1+\kappa)/2$
+
+	Exponential distribution: $\kappa = 1$
+
+----------------------------------------------------------------------
+
 Transmission intervals
 
 	Generation interval: infection ⇒ infection
@@ -152,6 +242,8 @@ FIG rabies_correlations/figure/general_interval.png
 
 Steps
 
+BCC
+
 	Generation interval:
 
 		Latent + infectious waiting
@@ -160,10 +252,11 @@ Steps
 
 		Symptomatic waiting + Incubation
 
-	Observation intervals
+NCC
 
-	Report-date intervals
+CFIG rabies_correlations/figure/general_interval.png
 
+EC
 ----------------------------------------------------------------------
 
 SEC Linking \rR
@@ -179,16 +272,14 @@ Renewal-equation
 
 		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
 
-		$S(t)$ is the proportion of the population susceptible
-
 		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
 		after becoming infected
 
 	$k$ changes through time
 
-		proportion infected, control measures
+		proportion susceptible, control measures
 
-	But we mainly focus on a particular profile $k(\tau)$
+		we often think about fixed $k(\tau)$ though
 
 ----------------------------------------------------------------------
 
@@ -212,6 +303,18 @@ NCC
 CFIG ss_pix/ess.Rout-2.pdf
 
 EC
+
+----------------------------------------------------------------------
+
+Estimation framework
+
+	$k(\tau, t)$ is basically everything we want to know
+
+	Usually unobservable, though
+
+	Typically try to observe $r$ or \Rx
+
+	and something about $g(\tau)$
 
 ----------------------------------------------------------------------
 
@@ -267,6 +370,18 @@ Compound-interest interpretation
 	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
 
 	CREDIT Park et al., Epidemics DOI:10.1101/312397
+
+----------------------------------------------------------------------
+
+Product framework
+
+	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
+
+		⇒ Weaker \Rx\ for fixed $r$
+
+	More variation $\kappa$ means more ``compounding'' of infections
+
+		⇒ quicker spread, when epidemic is growing 
 
 ----------------------------------------------------------------------
 
@@ -454,6 +569,21 @@ CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
 
 ----------------------------------------------------------------------
 
+
+Summary
+
+	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
+	growth and control
+
+	Transmission intervals are key to linking these measurements
+
+		Clear definitions
+
+		Combining different sources of information
+
+		Propagating error
+
+----------------------------------------------------------------------
 
 Thanks
 

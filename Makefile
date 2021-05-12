@@ -25,6 +25,7 @@ cgfiles += cgThanks.txt
 
 ## covidGens.draft.pdf: cgInterval.txt
 ## covidGens.draft.pdf: cgLink.txt
+## covidGens.final.pdf: cgLink.txt
 
 covidGens.txt: $(cgfiles)
 	$(catro)
