@@ -12,7 +12,7 @@ Sources += $(wildcard *.txt *.abs)
 
 ######################################################################
 
-## Insane paradigm 
+## Insane paradigm: talk chunks and control words
 ## Convention: slide break at the end
 ## U Texas 21_05
 
@@ -218,8 +218,11 @@ shields/dynamics_top.png: shields/dynamics.png Makefile
 
 ######################################################################
 
-cachestuff:
-	$(LN) ../TalkArchive/ $@
+../TalkArchive:
+	$(justmakethere)
+
+cachestuff: ../TalkArchive
+	$(ln)
 
 ######################################################################
 
