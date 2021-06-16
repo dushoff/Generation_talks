@@ -218,6 +218,7 @@ shields/dynamics_top.png: shields/dynamics.png Makefile
 
 ######################################################################
 
+## Does not chain right!
 ../TalkArchive:
 	$(justmakethere)
 
