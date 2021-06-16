@@ -1,15 +1,13 @@
 NOFRAME
 
-\newcommand{\jdtitle} {Transmission intervals and coronavirus control}
+\newcommand{\jdtitle}{Defining, estimating and applying transmission-interval distributions}
 \newcommand{\jdsub} {}
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
-\newcommand{\wdate} {UT COVID-19 Consortium Colloquium (CCC), May 2021}
+\newcommand{\wdate}{SMB 2021: Modeling containment and mitigation of COVID-19 }
 
 ----------------------------------------------------------------------
 
 WORKSHOP
 
 ----------------------------------------------------------------------
-
-
 

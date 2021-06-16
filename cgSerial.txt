@@ -28,11 +28,11 @@ The serial-mean paradox
 
 Heterogeneity
 
-BC
+BCC
 
 CFIG rabies_correlations/intervalPlots.Rout.pdf
 
-NC
+NCC
 
 	Generation intervals include latent period of infectors only (often strongly
 	weighted)
@@ -40,6 +40,8 @@ NC
 	Serial intervals average over infectees (everyone is infected once)
 
 	Coronavirus: people diagnosed early are less likely to transmit
+
+		⇒ longer generation intervals (higher \Rx)
 
 EC
 
@@ -61,11 +63,33 @@ The link paradox
 
 ----------------------------------------------------------------------
 
+BRIDGE Types of interval
+
+	Define:
+
+		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
+		after infection?
+
+		\emph{Forward interval}: When will the people infected today 
+		infect others?
+
+		\emph{Backward interval}: When did the people who infected people today
+		themselves become infected? 
+
+		\emph{Censored interval}: What do all the intervals observed up until a
+		particular time look like?
+
+			Like backward intervals, if it's early in the epidemic
+
+----------------------------------------------------------------------
+
 The forward serial interval
 
 WIDEFIG my_images/serial_incubation.png
 
-	Dynamical effects mean that the forward serial interval is shortened!
+	Early in the epidemic, backward incubation periods are short
+
+	⇒ forward serial intervals are long
 
 ----------------------------------------------------------------------
 

@@ -2,7 +2,7 @@ SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-Renewal-equation 
+Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -215,9 +215,15 @@ EC
 
 ----------------------------------------------------------------------
 
-Observed and estimated intervals
+EXTRA Observed and estimated intervals
 
 PIC WIDEFIG networkSEIR/fig/simple.pdf
+
+PIC WIDEFIG networkSEIR/fig/simple.png
+
+ADD This figure needs to be "rescued" from screenbox; networkSEIR does not all
+
+ADD png is a screenshot! in case I suddenly decide I want it. Only on 4.5
 
 ----------------------------------------------------------------------
 

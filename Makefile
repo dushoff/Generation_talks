@@ -12,15 +12,16 @@ Sources += $(wildcard *.txt *.abs)
 
 ######################################################################
 
-## Insane paradigm
-## Convention: line break at the end
+## Insane paradigm 
+## Convention: slide break at the end
+## U Texas 21_05
 
 cgfiles += cgTitle.txt
 cgfiles += cgInterval.txt
 cgfiles += cgLink.txt
 cgfiles += cgSerial.txt
-## cgfiles += cgVariants.txt
-## cgfiles += cgIntervention.txt
+cgfiles += cgVariants.txt
+cgfiles += cgIntervention.txt
 cgfiles += cgThanks.txt
 
 ## covidGens.draft.pdf: cgInterval.txt
@@ -104,12 +105,13 @@ subdirs += rabies_R0
 rabies_R0: link=../../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
+## Note: not yet piped to pipelines (see Makefile)
 subdirs += rabies_correlations
-rabies_correlations: link=../../research/rabies_correlations
+rabies_correlations: link= ../../rabies/
 rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git
 
 subdirs += coronaSpread
-coronaSpread: link=../../Workshops/coronaSpread
+coronaSpread: link=../../outbreak/corona
 coronaSpread: url=https://github.com/wzmli/corona.git
 
 subdirs += coronaFrame
@@ -232,7 +234,7 @@ makestuff/Makefile:
 -include makestuff/visual.mk
 
 -include makestuff/newtalk.mk
--include makestuff/texdeps.mk
+-include makestuff/texi.mk
 -include makestuff/makeR.mk
 -include makestuff/webpix.mk
 -include makestuff/hotcold.mk

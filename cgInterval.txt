@@ -9,6 +9,8 @@ BCC
 
 	How are we doing on control in a particular place and time?
 
+	How do we think emerging variants will affect our predictions?
+
 NCC
 
 CFIG my_images/ontario.Rout.pdf
@@ -47,6 +49,26 @@ Time-varying reproductive numbers
 		What if $g$ is changing?	
 
 		Are $r$-based tools available?
+
+----------------------------------------------------------------------
+
+BRIDGE Renewal-equation framework
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	$k$ changes through time
+
+		proportion susceptible, control measures
+
+		we often think about fixed $k(\tau)$ though
 
 ----------------------------------------------------------------------
 
@@ -103,6 +125,12 @@ Transmission intervals drive epidemics
 		Something about \emph{Quickness}: Individual-level speed of transmission
 		$g(\tau)$
 
+	To be exact:
+
+		$ r = (1/\hat G) \times \log(\Rx) $
+
+		$\hat G$ is the effective mean generation time
+
 ----------------------------------------------------------------------
 
 Mechanistic perspective
@@ -129,7 +157,7 @@ $C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 ----------------------------------------------------------------------
 
-Ebola outbreak
+REGULAR Ebola outbreak
 
 FIG my_images/weitz_full.pdf
 
@@ -137,11 +165,13 @@ $C \approx 1 \,\mathrm{month}$. Slower than expected.
 
 ----------------------------------------------------------------------
 
-Coronavirus speed
+REGULAR Coronavirus speed
 
 FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
 
 $C \approx 5 \,\mathrm{day}$. Coronavirus!
+
+ADD Ancient repo
 
 ----------------------------------------------------------------------
 
@@ -177,6 +207,8 @@ Generation interval
 
 		Equal to infectious period \emph{only} when we assume a Markovian process
 
+		Common source of confusion
+
 ----------------------------------------------------------------------
 
 How long until the bus comes?
@@ -199,7 +231,7 @@ ENHANCED Mean of a self-weighted quantity
 
 ----------------------------------------------------------------------
 
-Transmission intervals
+REGULAR Transmission intervals
 
 	Generation interval: infection ⇒ infection
 
@@ -242,5 +274,6 @@ NCC
 CFIG rabies_correlations/figure/general_interval.png
 
 EC
+
 ----------------------------------------------------------------------
 

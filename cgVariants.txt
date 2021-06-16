@@ -12,19 +12,19 @@ TSEC Variants
 
 Relationship between $\delta$ and \Rwt
 
-FIG notebook/VoCcomp.Rout-0.pdf
+HIGHFIG notebook/VoCcomp.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
 Variant has faster generations
 
-FIG notebook/VoCcomp.Rout-1.pdf
+HIGHFIG notebook/VoCcomp.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
 Variant has slower generations
 
-FIG notebook/VoCcomp.Rout-2.pdf
+HIGHFIG notebook/VoCcomp.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
