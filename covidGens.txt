@@ -127,7 +127,7 @@ EC
 
 ----------------------------------------------------------------------
 
-Transmission intervals drive epidemics
+REGULAR Transmission intervals drive epidemics
 
 	Population-level \emph{Speed} of spread $r$ is a product:
 
@@ -290,243 +290,6 @@ EC
 
 ----------------------------------------------------------------------
 
-SEC Linking \rR
-
-----------------------------------------------------------------------
-
-Renewal-equation framework
-
-	A broad framework that covers a wide range of
-	underlying models 
-
-	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
-
-		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
-
-		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
-		after becoming infected
-
-	$k$ changes through time
-
-		proportion susceptible, control measures
-
-		we often think about fixed $k(\tau)$ though
-
-----------------------------------------------------------------------
-
-Infection kernel
-
-BCC
-
-	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
-	being infected
-
-	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
-
-		\Rx\, the effective reproductive number
-
-	$k(\tau)/\Rx$ is a distribution:
-
-		$g(\tau)$, the \emph{intrinsic} generation distribution
-
-NCC
-
-CFIG ss_pix/ess.Rout-2.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Estimation framework
-
-	$k(\tau, t)$ is basically everything we want to know
-
-	Usually unobservable, though
-
-	Typically try to observe $r$ or \Rx
-
-	and something about $g(\tau)$
-
-----------------------------------------------------------------------
-
-Euler-Lotka equation 
-
-	If we assume $k$ is not changing through time, we expect exponential growth
-
-	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
-
-		i.e., the total of \emph{discounted} contributions is 1
-
-	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
-
-	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
-
-		The initial ``backwards'' generation interval
-
-----------------------------------------------------------------------
-
-Interpretation: generating functions
-
-BCC
-
-	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
-
-	$\Rx = 1/M(-r)$
-
-	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
-
-NCC
-
-CFIG ss_pix/ess.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Compound-interest interpretation
-
-	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
-
-	$\kappa$ is the `effective dispersion'
-
-		Equal to the squared coefficient of variation when $G$ is
-		gamma-distributed
-
-	$X$ is the compound-interest approximation to the exponential
-
-		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
-
-		Approaches exponential as $\kappa \to 0$
-
-	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
-
-	CREDIT Park et al., Epidemics DOI:10.1101/312397
-
-----------------------------------------------------------------------
-
-Product framework
-
-	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
-
-		⇒ Weaker \Rx\ for fixed $r$
-
-	More variation $\kappa$ means more ``compounding'' of infections
-
-		⇒ quicker spread, when epidemic is growing 
-
-----------------------------------------------------------------------
-
-Approximating the \rR\ relationship
-
-FIG Generation_distributions/lognormal.curve.Rout.pdf
-
-----------------------------------------------------------------------
-
-Propagating error
-
-FIG coronaFrame/propagate_pix-0.pdf
-
-----------------------------------------------------------------------
-
-Propagating error
-
-FIG coronaFrame/propagate_pix-1.pdf
-
-----------------------------------------------------------------------
-
-Types of interval
-
-	Define:
-
-		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
-		after infection?
-
-		\emph{Forward interval}: When will the people infected today 
-		infect others?
-
-		\emph{Backward interval}: When did the people who infected people today
-		themselves become infected? 
-
-		\emph{Censored interval}: What do all the intervals observed up until a
-		particular time look like?
-
-			Like backward intervals, if it's early in the epidemic
-
-----------------------------------------------------------------------
-
-Growing epidemics
-
-BC
-
-	Measured generation intervals look \emph{shorter} at the beginning of an
-	epidemic
-
-		A disproportionate number of people are infectious right now
-
-		They haven't finished all of their transmitting
-
-		We are biased towards observing faster events
-
-NC
-
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
-
-CFIG SIR_simulations/za_gens.Rout-0.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Correcting backward intervals
-
-WIDEFIG backward.jpg
-
-CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
-
-----------------------------------------------------------------------
-
-Generations in space
-
-BC
-
-	Local interactions
-
-	⇒ wasted contacts
-
-	⇒ realized generation intervals smaller than intrinsic
-
-	⇒ intrinsic GIs over-estimate \Rx
-
-	CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
-
-NC
-
-CFIG webpix/network.png
-
-EC
-
-----------------------------------------------------------------------
-
-EXTRA Observed and estimated intervals
-
-PIC WIDEFIG networkSEIR/fig/simple.pdf
-
-PIC WIDEFIG networkSEIR/fig/simple.png
-
-ADD This figure needs to be "rescued" from screenbox; networkSEIR does not all
-
-ADD png is a screenshot! in case I suddenly decide I want it. Only on 4.5
-
-----------------------------------------------------------------------
-
-Outbreak estimation
-
-PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
-
-CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
-
-----------------------------------------------------------------------
-
 
 TSEC Serial-interval distributions
 
@@ -534,7 +297,13 @@ FIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-The serial-mean paradox
+Serial intervals are proxies
+
+BC
+
+CFIG rabies_correlations/figure/general_interval.png
+
+NC
 
 	Serial intervals measure generations of the same process as generation
 	intervals
@@ -542,6 +311,19 @@ The serial-mean paradox
 		Should have the same mean
 
 		But often larger variance (flu example)
+
+EC
+
+----------------------------------------------------------------------
+
+The serial-mean paradox
+
+BCC
+
+CFIG rabies_correlations/figure/general_interval.png
+
+NCC
+
 
 	Empirically, even the means are not the same!
 
@@ -552,6 +334,8 @@ The serial-mean paradox
 	Serial interval:
 
 		Symptomatic waiting (infector) + Incubation (infectee)
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -570,7 +354,7 @@ NCC
 
 	Coronavirus: people diagnosed early are less likely to transmit
 
-		⇒ longer generation intervals (higher \Rx)
+		could bias GI estimates
 
 EC
 
@@ -585,10 +369,14 @@ The link paradox
 
 	This has to match the same \rR\ link as the true process
 
-	But it also can't (because the serial interval is in general broader than
-	the generation interval)
+	But it also can't when the serial interval is in broader than
+	the generation interval
 
 		All else equal, a broader interval means lower \Rx.
+
+		Broader ⇒ more compounding ⇒ more quickness
+
+		⇒ less strength required to achieve observed speed
 
 ----------------------------------------------------------------------
 
@@ -639,6 +427,14 @@ TSEC Variants
 	Unaffected by sampling intensity
 
 		Also by ``speed-like'' changes in transmission intensity
+
+----------------------------------------------------------------------
+
+Delta variant in the UK
+
+FIG my_images/uklog.png
+
+CREDIT Mike Li, PHAC
 
 ----------------------------------------------------------------------
 
@@ -737,15 +533,17 @@ A kernel framework (current work)
 
 Mix and match
 
-	Constant-strength interventions reduce \Rx\ by the strength of
+	Constant-strength interventions reduce \Ri\ by the strength of
 	control \PP.
 
 	Constant-hazard interventions reduce $r$ by the hazard of
 	control \PP.
 
+		Over some time scale
+
 	These can be combined \ldots
 
-		But realistic interventions are more complicated still
+	But realistic interventions are more complicated still
 
 ----------------------------------------------------------------------
 

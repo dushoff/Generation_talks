@@ -5,7 +5,13 @@ FIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-The serial-mean paradox
+Serial intervals are proxies
+
+BC
+
+CFIG rabies_correlations/figure/general_interval.png
+
+NC
 
 	Serial intervals measure generations of the same process as generation
 	intervals
@@ -13,6 +19,19 @@ The serial-mean paradox
 		Should have the same mean
 
 		But often larger variance (flu example)
+
+EC
+
+----------------------------------------------------------------------
+
+The serial-mean paradox
+
+BCC
+
+CFIG rabies_correlations/figure/general_interval.png
+
+NCC
+
 
 	Empirically, even the means are not the same!
 
@@ -23,6 +42,8 @@ The serial-mean paradox
 	Serial interval:
 
 		Symptomatic waiting (infector) + Incubation (infectee)
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -41,7 +62,7 @@ NCC
 
 	Coronavirus: people diagnosed early are less likely to transmit
 
-		⇒ longer generation intervals (higher \Rx)
+		could bias GI estimates
 
 EC
 
@@ -56,10 +77,14 @@ The link paradox
 
 	This has to match the same \rR\ link as the true process
 
-	But it also can't (because the serial interval is in general broader than
-	the generation interval)
+	But it also can't when the serial interval is in broader than
+	the generation interval
 
 		All else equal, a broader interval means lower \Rx.
+
+		Broader ⇒ more compounding ⇒ more quickness
+
+		⇒ less strength required to achieve observed speed
 
 ----------------------------------------------------------------------
 

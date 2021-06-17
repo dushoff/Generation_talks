@@ -18,7 +18,7 @@ Sources += $(wildcard *.txt *.abs)
 
 cgfiles += cgTitle.txt
 cgfiles += cgInterval.txt
-cgfiles += cgLink.txt
+## cgfiles += cgLink.txt
 cgfiles += cgSerial.txt
 cgfiles += cgVariants.txt
 cgfiles += cgIntervention.txt
@@ -106,6 +106,7 @@ rabies_R0: link=../../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
 ## Note: not yet piped to pipelines (see Makefile)
+Ignore += tz_pipelines ## Fix this up
 subdirs += rabies_correlations
 rabies_correlations: link= ../../rabies/
 rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git

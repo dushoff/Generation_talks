@@ -10,6 +10,14 @@ TSEC Variants
 
 ----------------------------------------------------------------------
 
+Delta variant in the UK
+
+FIG my_images/uklog.png
+
+CREDIT Mike Li, PHAC
+
+----------------------------------------------------------------------
+
 Relationship between $\delta$ and \Rwt
 
 HIGHFIG notebook/VoCcomp.Rout-0.pdf
