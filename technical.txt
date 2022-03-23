@@ -7,7 +7,7 @@ NOFRAME
 \newcommand{\jdtitle} {Transmission-interval distributions and coronavirus control}
 \newcommand{\jdsub} {}
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
-\newcommand{\wdate} {PHAC Technical Tuesday \\ May 2020}
+\newcommand{\wdate} {PHAC Technical Tuesday \\ May 2021}
 
 ----------------------------------------------------------------------
 

@@ -25,6 +25,7 @@ cgfiles += cgIntervention.txt
 cgfiles += cgThanks.txt
 
 ## covidGens.draft.pdf: cgInterval.txt
+## covidGens.draft.pdf: cgInterval.txt
 ## covidGens.draft.pdf: cgLink.txt
 ## covidGens.final.pdf: cgLink.txt
 
@@ -125,6 +126,8 @@ ss_pix: link=../ss_pix
 subdirs += Endemic_curves
 Endemic_curves: link=../Endemic_curves
 
+## This is not a JD directory and does not work well with hotdirs
+## make the figures subdirectory into a pardir at some point
 subdirs += networkSEIR
 networkSEIR: link=generations_mark1/networkSEIR
 networkSEIR: url=https://github.com/parksw3/networkSEIR.git
@@ -145,7 +148,7 @@ $(subdirs):
 
 Ignore += $(subdirs) generations_mark1
 
-## Should try sometimes with hot to reduce technical debt!
+## hot to reduce technical debt, cold for emergencies
 hotdirs += $(subdirs)
 
 ######################################################################
