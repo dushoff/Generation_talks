@@ -5,7 +5,21 @@ NOFRAME
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
 \newcommand{\wdate}{SMB 2021: Modeling containment and mitigation of COVID-19 }
 
+\renewcommand{\jdtitle}{Transmission intervals and COVID control}
+\renewcommand{\wdate}{University of Florida Mathematical Biology Seminar}
+
 ----------------------------------------------------------------------
+
+EXTRA
+
+Transmission intervals and COVID control
+
+The spread of epidemics is structured by delay distributions, including the now-famous “serial interval” between the symptom-onset times of an infector and an infectee (often conflated with the “generation interval” between infection times). Defining these time distributions clearly, and describing how they relate to each other, and to key parameters of disease spread, poses interesting theoretical and practical questions, some of which are still open.
+
+I will discuss how transmission intervals link the “speed” and “strength” of epidemics, issues in their estimation, and their role in helping monitor changes in the parameters underlying the spread of COVID-19 disease.
+
+----------------------------------------------------------------------
+
 
 WORKSHOP
 
