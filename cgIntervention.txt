@@ -52,7 +52,7 @@ EC
 
 ----------------------------------------------------------------------
 
-A kernel framework (current work)
+A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 

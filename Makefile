@@ -15,6 +15,7 @@ Sources += $(wildcard *.txt *.abs)
 ## Insane paradigm: talk chunks and control words
 ## Convention: slide break at the end
 ## U Texas 21_05
+## Control words are listed (but not discussed) in local.txt.format
 
 cgfiles += cgTitle.txt
 cgfiles += cgInterval.txt
@@ -26,8 +27,6 @@ cgfiles += cgThanks.txt
 
 ## covidGens.draft.pdf: cgInterval.txt
 ## covidGens.draft.pdf: cgInterval.txt
-## covidGens.draft.pdf: cgLink.txt
-## covidGens.final.pdf: cgLink.txt
 
 covidGens.txt: $(cgfiles)
 	$(catro)

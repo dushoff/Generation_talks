@@ -6,7 +6,8 @@ NOFRAME
 \newcommand{\wdate}{SMB 2021: Modeling containment and mitigation of COVID-19 }
 
 \renewcommand{\jdtitle}{Transmission intervals and COVID control}
-\renewcommand{\wdate}{University of Florida Mathematical Biology Seminar}
+\renewcommand{\wdate}{University of Florida Mathematical Biology Seminar 
+\\ March 2022}
 
 ----------------------------------------------------------------------
 
@@ -53,7 +54,7 @@ Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
 
-CREDIT \url{https://jamanetwork.com/journals/jama/fullarticle/2764658}
+CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
@@ -178,7 +179,7 @@ EC
 
 HIV in sub-Saharan Africa
 
-FIG SIR_simulations/za_gens.Rout-0.pdf
+HFIG 0.85 SIR_simulations/za_gens.Rout-0.pdf
 
 $C \approx 18 \,\mathrm{month}$. Faster than expected.
 
@@ -186,7 +187,7 @@ $C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 REGULAR Ebola outbreak
 
-FIG my_images/weitz_full.pdf
+HFIG 0.85 my_images/weitz_full.pdf
 
 $C \approx 1 \,\mathrm{month}$. Slower than expected.
 
@@ -194,7 +195,7 @@ $C \approx 1 \,\mathrm{month}$. Slower than expected.
 
 REGULAR Coronavirus speed
 
-FIG coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
+HFIG 0.85 coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
 
 $C \approx 5 \,\mathrm{day}$. Coronavirus!
 
@@ -248,7 +249,7 @@ ENHANCED Mean of a self-weighted quantity
 
 	Infectious period of an infector
 
-	Activity level of an interactor
+		Activity level of an interactor, in HIV models
 
 	$\mu(1+\frac{\sigma^2}{\mu^2}) = \mu(1+\kappa)$
 
@@ -280,7 +281,7 @@ REGULAR Transmission intervals
 
 Serial intervals
 
-FIG rabies_correlations/figure/general_interval.png
+WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
@@ -307,7 +308,7 @@ EC
 
 TSEC Serial-interval distributions
 
-FIG rabies_correlations/figure/general_interval.png
+WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
@@ -381,9 +382,10 @@ The link paradox
 
 		Assume homogeneity
 
-	This has to match the same \rR\ link as the true process
+	This has to match the same \rR\ link as the true (generation-interval
+	driven) process
 
-	But it also can't when the serial interval is in broader than
+	But it also can't when the serial interval is broader than
 	the generation interval
 
 		All else equal, a broader interval means lower \Rx.
@@ -524,7 +526,7 @@ EC
 
 ----------------------------------------------------------------------
 
-A kernel framework (current work)
+A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 

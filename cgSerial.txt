@@ -1,7 +1,7 @@
 
 TSEC Serial-interval distributions
 
-FIG rabies_correlations/figure/general_interval.png
+WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
@@ -75,9 +75,10 @@ The link paradox
 
 		Assume homogeneity
 
-	This has to match the same \rR\ link as the true process
+	This has to match the same \rR\ link as the true (generation-interval
+	driven) process
 
-	But it also can't when the serial interval is in broader than
+	But it also can't when the serial interval is broader than
 	the generation interval
 
 		All else equal, a broader interval means lower \Rx.

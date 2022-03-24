@@ -1,9 +1,28 @@
 NOTES NULLSLIDE
 
+######################################################################
+
+## Control words; edit for specific talks
+
+## Change in source file: for things that can be skipped if discussed elsewhere in same talk
+BRIDGE ^DEFHEAD %%
+draft: ^DEFHEAD BRIDGE %%
+
+NOBRIDGE ^DEFHEAD %%
+draft: ^DEFHEAD BRIDGE %%
+
+## Can be skipped for time
+REGULAR NULLSLIDE
+draft: ^DEFHEAD REGULAR %%
+
+## Can be skipped, period
+ENHANCED NULLSLIDE
+draft: ^DEFHEAD ENHANCED %%
+
+## Older version of enhanced? See covid_colloq.txt
 BONUS ^DEFHEAD %%
 draft: ^DEFHEAD BONUS %%
 
+## Also older? Suppressed for technical audiences?
 GENERAL NULLSLIDE
 draft: ^DEFHEAD GENERAL %%
-
-ENHANCED NULLSLIDE

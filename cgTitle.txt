@@ -6,7 +6,8 @@ NOFRAME
 \newcommand{\wdate}{SMB 2021: Modeling containment and mitigation of COVID-19 }
 
 \renewcommand{\jdtitle}{Transmission intervals and COVID control}
-\renewcommand{\wdate}{University of Florida Mathematical Biology Seminar}
+\renewcommand{\wdate}{University of Florida Mathematical Biology Seminar 
+\\ March 2022}
 
 ----------------------------------------------------------------------
 
