@@ -107,7 +107,7 @@ Unidentifiability
 
 BC
 
-CFIG ssintervention/outputs/scenarios.png
+CFIG ssintervention/outputs/scenarios.pdf
 
 NC
 
