@@ -202,7 +202,8 @@ coronasingle-0.jpg: coronasingle.jpg ;
 
 -include makestuff/newtalk.def
 
-Ignore += beamer.tmp local.txt.format
+Ignore += beamer.tmp
+Sources += local.txt.format
 
 ######################################################################
 

@@ -1,9 +1,35 @@
-https://doi.org/10.1098/rspb.2020.1556
-https://doi.org/10.1101/2020.06.04.20122713
-https://doi.org/10.1101/2021.05.03.21256545
-
-newcommand{\jdtitle}{Defining, estimating and applying transmission-interval distributions}
-\newcommand{\jdsub} {}
-\newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
-\newcommand{\wdate}{SMB 2021: Modeling containment and mitigation of COVID-19 }
-
+bridging.txt:FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
+cgInterval.txt:FIG rabies_correlations/figure/general_interval.png
+cgInterval.txt:CFIG rabies_correlations/figure/general_interval.png
+cgSerial.txt:FIG rabies_correlations/figure/general_interval.png
+cgSerial.txt:CFIG rabies_correlations/figure/general_interval.png
+cgSerial.txt:CFIG rabies_correlations/figure/general_interval.png
+cgSerial.txt:CFIG rabies_correlations/intervalPlots.Rout.pdf
+covid_colloq.txt:FIG rabies_correlations/figure/general_interval.png
+covid_colloq.txt:FIG rabies_correlations/intervalPlots.Rout.pdf
+covid_colloq.txt:WFIG 0.85 rabies_correlations/figure/general_interval.png
+covid_colloq.txt:FIG rabies_correlations/correlations.Rout.pdf
+covidGens.txt:FIG rabies_correlations/figure/general_interval.png
+covidGens.txt:CFIG rabies_correlations/figure/general_interval.png
+covidGens.txt:FIG rabies_correlations/figure/general_interval.png
+covidGens.txt:CFIG rabies_correlations/figure/general_interval.png
+covidGens.txt:CFIG rabies_correlations/figure/general_interval.png
+covidGens.txt:CFIG rabies_correlations/intervalPlots.Rout.pdf
+genEst.txt:FIG rabies_correlations/figure/general_interval.png
+genEst.txt:EXTRA FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
+mathGens.txt:FIG rabies_correlations/figure/general_interval.png
+mathGens.txt:FIG rabies_correlations/intervalPlots.Rout.pdf
+mathGens.txt:FIG rabies_correlations/correlations.Rout.pdf
+outbreakGens.txt:FIG rabies_correlations/figure/general_interval.png
+smb_covid.txt:FIG rabies_correlations/figure/general_interval.png
+technical.txt:FIG rabies_correlations/figure/general_interval.png
+technical.txt:FIG rabies_correlations/figure/general_interval.png
+technical.txt:CFIG rabies_correlations/intervalPlots.Rout.pdf
+temp.txt:FIG rabies_correlations/figure/general_interval.png
+temp.txt:FIG rabies_correlations/intervalPlots.Rout.pdf
+temp.txt:WFIG 0.85 rabies_correlations/figure/general_interval.png
+temp.txt:FIG rabies_correlations/correlations.Rout.pdf
+uncertainty.txt:FIG rabies_correlations/figure/general_interval.png
+cp rabies_correlations/correlations.Rout.pdf my_images
+rabies_correlations/Dogs_correlations.Rout.pdf
+cp rabies_correlations/intervalPlots.Rout.pdf my_images ##
