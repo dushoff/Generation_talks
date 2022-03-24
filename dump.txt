@@ -30,3 +30,6 @@ temp.txt:FIG rabies_correlations/intervalPlots.Rout.pdf
 temp.txt:WFIG 0.85 rabies_correlations/figure/general_interval.png
 temp.txt:FIG rabies_correlations/correlations.Rout.pdf
 uncertainty.txt:FIG rabies_correlations/figure/general_interval.png
+cp rabies_correlations/correlations.Rout.pdf my_images
+rabies_correlations/Dogs_correlations.Rout.pdf
+cp rabies_correlations/intervalPlots.Rout.pdf my_images ##
