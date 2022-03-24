@@ -48,7 +48,7 @@ Time-varying reproductive numbers
 
 		What if $g$ is changing?	
 
-		Are $r$-based tools available?
+		Can we look at the instantaneous Malthusian rate of growth $r$?
 
 ----------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ BRIDGE Renewal-equation framework
 
 		proportion susceptible, control measures
 
-		we often think about fixed $k(\tau)$ though
+		we often think about counterfactuals with fixed $k(\tau)$
 
 ----------------------------------------------------------------------
 
@@ -207,7 +207,7 @@ Generation interval
 
 		Equal to infectious period \emph{only} when we assume a Markovian process
 
-		Common source of confusion
+		Common source of confusion for people with ODE background
 
 ----------------------------------------------------------------------
 
@@ -251,19 +251,21 @@ REGULAR Transmission intervals
 
 ----------------------------------------------------------------------
 
-Serial intervals
+NOBRIDGE Serial intervals
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-Steps
+NOBRIDGE Steps
 
 BCC
 
 	Generation interval:
 
-		Latent + infectious waiting
+		Latent + infectious waiting, or
+
+		Incubation + Symptomatic waiting
 
 	Serial interval:
 

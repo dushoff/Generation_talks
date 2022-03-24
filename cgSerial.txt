@@ -37,7 +37,9 @@ NCC
 
 	Generation interval:
 
-		Latent + infectious waiting … of infector
+		Latent + infectious waiting, or
+
+		Incubation + Symptomatic waiting … of infector
 
 	Serial interval:
 

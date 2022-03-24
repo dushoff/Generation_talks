@@ -18,15 +18,16 @@ Sources += $(wildcard *.txt *.abs)
 ## Control words are listed (but not discussed) in local.txt.format
 
 cgfiles += cgTitle.txt
-cgfiles += cgInterval.txt
-## cgfiles += cgLink.txt
+cgfiles += cgInterval.txt ## rR links, phenomonology, bus waiting
+cgfiles += ## cgLink.txt ## Generalized exponential, renewal equation, propagation of error
+cgfiles += corrections.txt ## Champredon and 
 cgfiles += cgSerial.txt
 cgfiles += cgVariants.txt
 cgfiles += cgIntervention.txt
 cgfiles += cgThanks.txt
 
 ## covidGens.draft.pdf: cgInterval.txt
-## covidGens.draft.pdf: cgInterval.txt
+## covidGens.final.pdf: cgInterval.txt
 
 covidGens.txt: $(cgfiles)
 	$(catro)

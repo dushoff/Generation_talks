@@ -12,11 +12,11 @@ NOBRIDGE ^DEFHEAD %%
 draft: ^DEFHEAD BRIDGE %%
 
 ## Can be skipped for time
-REGULAR NULLSLIDE
+REGULAR ^DEFHEAD %%
 draft: ^DEFHEAD REGULAR %%
 
 ## Can be skipped, period
-ENHANCED NULLSLIDE
+ENHANCED ^DEFHEAD BONUS: %%
 draft: ^DEFHEAD ENHANCED %%
 
 ## Older version of enhanced? See covid_colloq.txt

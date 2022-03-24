@@ -12,7 +12,7 @@ TSEC Variants
 
 Delta variant in the UK
 
-FIG my_images/uklog.png
+WIDEFIG my_images/uklog.png
 
 CREDIT Mike Li, PHAC
 
