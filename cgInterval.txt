@@ -72,6 +72,22 @@ BRIDGE Renewal-equation framework
 
 ----------------------------------------------------------------------
 
+BRIDGE Transmission kernel
+
+BC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+NC
+
+	Area is \Rx
+
+	Distribution is the generation interval
+
+EC
+
+----------------------------------------------------------------------
+
 Transmission intervals
 
 BCC

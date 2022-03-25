@@ -91,7 +91,7 @@ The link paradox
 
 ----------------------------------------------------------------------
 
-BRIDGE Types of interval
+NOBRIDGE Types of interval
 
 	Define:
 
