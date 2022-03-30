@@ -17,6 +17,7 @@ Sources += $(wildcard *.txt *.abs)
 ## U Texas 21_05
 ## Control words are listed (but not discussed) in local.txt.format
 
+## cgAbs.txt
 cgfiles += cgTitle.txt
 cgfiles += cgInterval.txt ## rR links, phenomonology, bus waiting
 cgfiles += ## cgLink.txt ## Generalized exponential, renewal equation, propagation of error
