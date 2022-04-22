@@ -127,47 +127,6 @@ EC
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Cohort modeling
-
-DIAGRAM SIR_model_family/sir.three.pdf
-
-	Create ODEs to follow a \emph{cohort} of people infected at the same
-	time
-
-	Transform ODE model to renewal-equation model
-
-----------------------------------------------------------------------
-
-NOBRIDGE Cohort modeling
-
-WIDEFIG webpix/stanford_diagram.png
-
-CREDIT Childs et al., http://covid-measures.stanford.edu/
-
-----------------------------------------------------------------------
-
-NOBRIDGE Generation interval
-
-	One generation:
-	
-		Latent period (time until infectiousness) + 
-
-		Infectious waiting time (time until infection)
-
-	Infectious waiting time
-
-		Drawn at random from infectious period
-
-		Equal to infectious period \emph{only} when we assume a Markovian process
-
-----------------------------------------------------------------------
-
-NOBRIDGE How long until the bus comes?
-
-WIDEFIG webpix/bus.jpg
-
-----------------------------------------------------------------------
-
 BRIDGE Renewal-equation framework
 
 	A broad framework that covers a wide range of
@@ -185,6 +144,25 @@ BRIDGE Renewal-equation framework
 		proportion susceptible, control measures
 
 		we often think about counterfactuals with fixed $k(\tau)$
+
+----------------------------------------------------------------------
+
+MATH Cohort modeling
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+	Create ODEs to follow a \emph{cohort} of people infected at the same
+	time
+
+	Transform ODE model to renewal-equation model
+
+----------------------------------------------------------------------
+
+MATH Cohort modeling
+
+WIDEFIG webpix/stanford_diagram.png
+
+CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 

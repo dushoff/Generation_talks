@@ -98,9 +98,17 @@ BCC
 
 CFIG ss_pix/ess.Rout-2.pdf
 
+	$ k(\tau) = \Rx g(\tau)$
+
+	Strength decomposition
+
 NCC
 
 CFIG ss_pix/ess.Rout-3.pdf
+
+	$ k(\tau) = \exp(r\tau) b(\tau)$
+
+	Speed decomposition
 
 EC
 
@@ -121,8 +129,6 @@ Compound-interest interpretation
 
 		Approaches exponential as $\kappa \to 0$
 
-	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
-
 	CREDIT Park et al., Epidemics DOI:10.1101/312397
 
 ----------------------------------------------------------------------
@@ -136,6 +142,65 @@ Product framework
 	More variation $\kappa$ means more ``compounding'' of infections
 
 		⇒ quicker spread, when epidemic is growing 
+
+	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $ is the sense in
+	which $r$ is actually a product
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
