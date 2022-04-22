@@ -51,6 +51,11 @@ REGULAR Transmission intervals drive epidemics
 		Something about \emph{Quickness}: Individual-level speed of transmission
 		$g(\tau)$
 
+
+----------------------------------------------------------------------
+
+EXTRA Driving
+
 	To be exact:
 
 		$ r = (1/\hat G) \times \log(\Rx) $

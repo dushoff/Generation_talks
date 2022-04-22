@@ -297,6 +297,11 @@ REGULAR Transmission intervals drive epidemics
 		Something about \emph{Quickness}: Individual-level speed of transmission
 		$g(\tau)$
 
+
+----------------------------------------------------------------------
+
+EXTRA Driving
+
 	To be exact:
 
 		$ r = (1/\hat G) \times \log(\Rx) $
@@ -534,6 +539,20 @@ BCC
 	$\Rx = 1/M(-r)$
 
 	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Interpretation: strength and speed
+
+BCC
+
+CFIG ss_pix/ess.Rout-2.pdf
 
 NCC
 
@@ -845,19 +864,7 @@ SEC Applications
 
 Unmitigated estimates
 
-WIDEFIG my_images/senderPDF.png
-
-CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
-
-----------------------------------------------------------------------
-
-Unmitigated estimates
-
 BCC
-
-CFIG my_images/senderPDF.png
-
-NCC
 
 	Carefully curated pre-intervention intervals
 
@@ -865,10 +872,69 @@ NCC
 
 	Account for dynamical biases
 
+NCC
+
+CFIG my_images/senderPDF.png
+
 EC
 
 ----------------------------------------------------------------------
 
+Unmitigated estimates
+
+WIDEFIG my_images/senderPDF.png
+
+CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
+
+----------------------------------------------------------------------
+
+Intervals from Denmark
+
+FIG my_images/dkCases.pdf
+
+CREDIT Park et al., in prep
+
+----------------------------------------------------------------------
+
+Fitted incubation periods
+
+FIG my_images/dkIncubation-0.pdf
+
+----------------------------------------------------------------------
+
+Dynamical correction
+
+FIG my_images/dkIncubation-1.pdf
+
+----------------------------------------------------------------------
+
+Observed and fitted transmission intervals
+
+BCC
+
+CFIG my_images/dkTrans-0.pdf
+
+NCC
+
+CFIG my_images/dkTrans-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Observed and fitted transmission intervals
+
+BCC
+
+CFIG my_images/dkTrans-1.pdf
+
+NCC
+
+CFIG my_images/dkTrans-3.pdf
+
+EC
+
+----------------------------------------------------------------------
 
 
 TSEC Summary

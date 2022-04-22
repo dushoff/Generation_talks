@@ -1,0 +1,49 @@
+
+Intervals from Denmark
+
+FIG my_images/dkCases.pdf
+
+CREDIT Park et al., in prep
+
+----------------------------------------------------------------------
+
+Fitted incubation periods
+
+FIG my_images/dkIncubation-0.pdf
+
+----------------------------------------------------------------------
+
+Dynamical correction
+
+FIG my_images/dkIncubation-1.pdf
+
+----------------------------------------------------------------------
+
+Observed and fitted transmission intervals
+
+BCC
+
+CFIG my_images/dkTrans-0.pdf
+
+NCC
+
+CFIG my_images/dkTrans-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Observed and fitted transmission intervals
+
+BCC
+
+CFIG my_images/dkTrans-1.pdf
+
+NCC
+
+CFIG my_images/dkTrans-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+

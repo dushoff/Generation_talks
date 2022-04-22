@@ -5,19 +5,7 @@ SEC Applications
 
 Unmitigated estimates
 
-WIDEFIG my_images/senderPDF.png
-
-CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
-
-----------------------------------------------------------------------
-
-Unmitigated estimates
-
 BCC
-
-CFIG my_images/senderPDF.png
-
-NCC
 
 	Carefully curated pre-intervention intervals
 
@@ -25,8 +13,18 @@ NCC
 
 	Account for dynamical biases
 
+NCC
+
+CFIG my_images/senderPDF.png
+
 EC
 
 ----------------------------------------------------------------------
 
+Unmitigated estimates
 
+WIDEFIG my_images/senderPDF.png
+
+CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
+
+----------------------------------------------------------------------

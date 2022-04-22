@@ -92,6 +92,20 @@ EC
 
 ----------------------------------------------------------------------
 
+Interpretation: strength and speed
+
+BCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
 Compound-interest interpretation
 
 	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
