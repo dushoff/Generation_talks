@@ -9,6 +9,19 @@ NOFRAME
 \renewcommand{\wdate}{University of Florida Mathematical Biology Seminar 
 \\ March 2022}
 
+\renewcommand{\jdtitle}{Transmission intervals and COVID control}
+\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
+\\ April 2022}
+
+\renewcommand{\jdtitle}{Transmission intervals and COVID control}
+\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
+\\ April 2022}
+
+\renewcommand{\jdtitle}{ Speed and strength: Perspectives on modeling the spread of COVID}
+\renewcommand{\wdate}{SACEMA Center of Excellence Seminar
+\\ Stellenbosch University
+\\ April 2022}
+
 ----------------------------------------------------------------------
 
 EXTRA
@@ -20,7 +33,6 @@ The spread of epidemics is structured by delay distributions, including the now-
 I will discuss how transmission intervals link the “speed” and “strength” of epidemics, issues in their estimation, and their role in helping monitor changes in the parameters underlying the spread of COVID-19 disease.
 
 ----------------------------------------------------------------------
-
 
 WORKSHOP
 

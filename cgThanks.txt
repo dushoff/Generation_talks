@@ -1,5 +1,5 @@
 
-Summary
+TSEC Summary
 
 	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
 	growth and control
@@ -22,6 +22,8 @@ Thanks
 
 		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst,
 		Hampson, So \ldots
+
+		ICI3D and SACEMA
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
 

@@ -1,0 +1,55 @@
+
+NOBRIDGE Covid modeling questions
+
+BCC
+
+	How far and fast would it spread if unchecked?
+
+	How hard is it to eliminate?
+
+	How are we doing on control in a particular place and time?
+
+	How do we think emerging variants will affect our predictions?
+
+NCC
+
+CFIG my_images/ontario.Rout.pdf
+
+CREDIT https://wzmli.github.io/COVID19-Canada
+
+
+EC
+
+----------------------------------------------------------------------
+
+NOBRIDGE Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+NOBRIDGE Time-varying reproductive numbers
+
+	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
+
+		How many people will get infected by a case infected at time $t$?
+
+		$i(t) = \sum \Rx(t-\tau) g(\tau) i(t-\tau)$
+
+	Instantaneous reproductive number $\Rx_c$ (e.g., Cori et al.)
+
+		What overall reproductive number predicts what I'm seeing now?
+
+		$i(t) = \sum \Rx(t) g(\tau) i(t-\tau)$
+
+	Speed vs.~strength
+
+		What if $g$ is changing?	
+
+		Can we look at the instantaneous Malthusian rate of growth $r$?
+
+----------------------------------------------------------------------
+
+

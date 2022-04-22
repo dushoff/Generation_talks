@@ -1,0 +1,206 @@
+
+EXTRA
+
+ADD boxcar picture from ICI3D
+
+----------------------------------------------------------------------
+
+SEC Modeling approaches
+
+----------------------------------------------------------------------
+
+Simple dynamical models use compartments
+
+SUBH Divide people into categories:
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+	Susceptible $\to$ Infectious $\to$ Recovered
+
+	Individuals recover independently
+
+	Individuals are infected by infectious people
+
+----------------------------------------------------------------------
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{eqnarray*}
+	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
+	\frac{dI}{dt}  &=& \beta \frac{SI}{N}- \gamma I  -\mu R \\
+	\frac{dR}{dt}  &=& \gamma I -\mu R
+\end{eqnarray*}
+
+----------------------------------------------------------------------
+
+Delayed infectiousness
+
+DIAGRAM SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Ebola
+
+DIAGRAM SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus
+
+WIDEFIG webpix/stanford_diagram.png
+
+CREDIT Childs et al., http://covid-measures.stanford.edu/
+
+----------------------------------------------------------------------
+
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+----------------------------------------------------------------------
+
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{eqnarray*}
+	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
+	\frac{dI}{dt}  &=& \beta \frac{SI}{N}- \gamma I  -\mu R \\
+	\frac{dR}{dt}  &=& \gamma I -\mu R
+\end{eqnarray*}
+
+----------------------------------------------------------------------
+
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{center}\begin{tabular}{lll}
+	{\bf Event} & {\bf transition} &{\bf rate}\\
+	\hline
+	Infection &$S \to I$  &$R_0 SI/N$\\
+	Recovery & $I \to R$ & $(1-\rho)I$\\
+	Rebirth &  $R \to S$ & $\rho R$\\
+	Rebirth & $I \to S$ & $\rho I$
+\end{tabular}\end{center}
+
+----------------------------------------------------------------------
+
+NOBRIDGE Renewal equation
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the proportion of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	For invasion, treat $S$ as constant
+
+----------------------------------------------------------------------
+
+NOBRIDGE Infection kernel
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+NOBRIDGE Cohort modeling
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+	Create ODEs to follow a \emph{cohort} of people infected at the same
+	time
+
+	Transform ODE model to renewal-equation model
+
+----------------------------------------------------------------------
+
+NOBRIDGE Cohort modeling
+
+WIDEFIG webpix/stanford_diagram.png
+
+CREDIT Childs et al., http://covid-measures.stanford.edu/
+
+----------------------------------------------------------------------
+
+NOBRIDGE Generation interval
+
+	One generation:
+	
+		Latent period (time until infectiousness) + 
+
+		Infectious waiting time (time until infection)
+
+	Infectious waiting time
+
+		Drawn at random from infectious period
+
+		Equal to infectious period \emph{only} when we assume a Markovian process
+
+----------------------------------------------------------------------
+
+NOBRIDGE How long until the bus comes?
+
+WIDEFIG webpix/bus.jpg
+
+----------------------------------------------------------------------
+
+BRIDGE Renewal-equation framework
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	$k$ changes through time
+
+		proportion susceptible, control measures
+
+		we often think about counterfactuals with fixed $k(\tau)$
+
+----------------------------------------------------------------------
+
+BRIDGE Transmission kernel
+
+BC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+NC
+
+	Area is \Rx
+
+	Distribution is the generation interval
+
+EC
+
+----------------------------------------------------------------------
+

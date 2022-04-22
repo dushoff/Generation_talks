@@ -9,6 +9,19 @@ NOFRAME
 \renewcommand{\wdate}{University of Florida Mathematical Biology Seminar 
 \\ March 2022}
 
+\renewcommand{\jdtitle}{Transmission intervals and COVID control}
+\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
+\\ April 2022}
+
+\renewcommand{\jdtitle}{Transmission intervals and COVID control}
+\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
+\\ April 2022}
+
+\renewcommand{\jdtitle}{ Speed and strength: Perspectives on modeling the spread of COVID}
+\renewcommand{\wdate}{SACEMA Center of Excellence Seminar
+\\ Stellenbosch University
+\\ April 2022}
+
 ----------------------------------------------------------------------
 
 EXTRA
@@ -21,62 +34,177 @@ I will discuss how transmission intervals link the “speed” and “strength�
 
 ----------------------------------------------------------------------
 
-
 WORKSHOP
 
 ----------------------------------------------------------------------
 
 
-Covid modeling questions
+EXTRA
+
+ADD boxcar picture from ICI3D
+
+----------------------------------------------------------------------
+
+SEC Modeling approaches
+
+----------------------------------------------------------------------
+
+Simple dynamical models use compartments
+
+SUBH Divide people into categories:
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+	Susceptible $\to$ Infectious $\to$ Recovered
+
+	Individuals recover independently
+
+	Individuals are infected by infectious people
+
+----------------------------------------------------------------------
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{eqnarray*}
+	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
+	\frac{dI}{dt}  &=& \beta \frac{SI}{N}- \gamma I  -\mu R \\
+	\frac{dR}{dt}  &=& \gamma I -\mu R
+\end{eqnarray*}
+
+----------------------------------------------------------------------
+
+Delayed infectiousness
+
+DIAGRAM SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Ebola
+
+DIAGRAM SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Coronavirus
+
+WIDEFIG webpix/stanford_diagram.png
+
+CREDIT Childs et al., http://covid-measures.stanford.edu/
+
+----------------------------------------------------------------------
+
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+----------------------------------------------------------------------
+
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{eqnarray*}
+	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
+	\frac{dI}{dt}  &=& \beta \frac{SI}{N}- \gamma I  -\mu R \\
+	\frac{dR}{dt}  &=& \gamma I -\mu R
+\end{eqnarray*}
+
+----------------------------------------------------------------------
+
+GENERAL
+
+DIAGRAM SIR_model_family/sir.three.pdf
+
+\begin{center}\begin{tabular}{lll}
+	{\bf Event} & {\bf transition} &{\bf rate}\\
+	\hline
+	Infection &$S \to I$  &$R_0 SI/N$\\
+	Recovery & $I \to R$ & $(1-\rho)I$\\
+	Rebirth &  $R \to S$ & $\rho R$\\
+	Rebirth & $I \to S$ & $\rho I$
+\end{tabular}\end{center}
+
+----------------------------------------------------------------------
+
+NOBRIDGE Renewal equation
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the proportion of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	For invasion, treat $S$ as constant
+
+----------------------------------------------------------------------
+
+NOBRIDGE Infection kernel
 
 BCC
 
-	How far and fast would it spread if unchecked?
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
 
-	How hard is it to eliminate?
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
 
-	How are we doing on control in a particular place and time?
+		\Rx\, the effective reproductive number
 
-	How do we think emerging variants will affect our predictions?
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
 
 NCC
 
-CFIG my_images/ontario.Rout.pdf
-
-CREDIT https://wzmli.github.io/COVID19-Canada
-
+CFIG ss_pix/ess.Rout-2.pdf
 
 EC
 
 ----------------------------------------------------------------------
 
-Wuhan control measures
+NOBRIDGE Cohort modeling
 
-WIDEFIG my_images/pan_time_shot.png
+DIAGRAM SIR_model_family/sir.three.pdf
 
-CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
+	Create ODEs to follow a \emph{cohort} of people infected at the same
+	time
+
+	Transform ODE model to renewal-equation model
 
 ----------------------------------------------------------------------
 
-Time-varying reproductive numbers
+NOBRIDGE Cohort modeling
 
-	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
+WIDEFIG webpix/stanford_diagram.png
 
-		How many people will get infected by a case infected at time $t$?
+CREDIT Childs et al., http://covid-measures.stanford.edu/
 
-		$i(t) = \sum \Rx(t-\tau) g(\tau) i(t-\tau)$
+----------------------------------------------------------------------
 
-	Instantaneous reproductive number $\Rx_c$ (e.g., Cori et al.)
+NOBRIDGE Generation interval
 
-		What overall reproductive number predicts what I'm seeing now?
+	One generation:
+	
+		Latent period (time until infectiousness) + 
 
-		$i(t) = \sum \Rx(t) g(\tau) i(t-\tau)$
+		Infectious waiting time (time until infection)
 
-	Speed vs.~strength
+	Infectious waiting time
 
-		What if $g$ is changing?	
+		Drawn at random from infectious period
 
-		Can we look at the instantaneous Malthusian rate of growth $r$?
+		Equal to infectious period \emph{only} when we assume a Markovian process
+
+----------------------------------------------------------------------
+
+NOBRIDGE How long until the bus comes?
+
+WIDEFIG webpix/bus.jpg
 
 ----------------------------------------------------------------------
 
@@ -116,7 +244,7 @@ EC
 
 ----------------------------------------------------------------------
 
-Transmission intervals
+TSEC Transmission intervals
 
 BCC
 
@@ -215,8 +343,6 @@ HFIG 0.85 coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
 
 $C \approx 5 \,\mathrm{day}$. Coronavirus!
 
-ADD Ancient repo
-
 ----------------------------------------------------------------------
 
 Phenomenological perspective
@@ -255,13 +381,13 @@ Generation interval
 
 ----------------------------------------------------------------------
 
-How long until the bus comes?
+MATH How long until the bus comes?
 
 WIDEFIG webpix/bus.jpg
 
 ----------------------------------------------------------------------
 
-ENHANCED Mean of a self-weighted quantity
+MATH Mean of a self-weighted quantity
 
 	Infectious period of an infector
 
@@ -323,6 +449,164 @@ EC
 
 ----------------------------------------------------------------------
 
+
+SEC Linking \rR
+
+----------------------------------------------------------------------
+
+NOBRIDGE Renewal-equation framework
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	$k$ changes through time
+
+		proportion susceptible, control measures
+
+		we often think about fixed $k(\tau)$ though
+
+----------------------------------------------------------------------
+
+NOBRIDGE Infection kernel
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+NOBRIDGE Estimation framework
+
+	$k(\tau, t)$ is basically everything we want to know
+
+	Usually unobservable, though
+
+	Typically try to observe $r$ or \Rx
+
+	and something about $g(\tau)$
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	If we assume $k$ is not changing through time, we expect exponential growth
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
+
+		The initial ``backwards'' generation interval
+
+----------------------------------------------------------------------
+
+MATH Interpretation: generating functions
+
+BCC
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	$\Rx = 1/M(-r)$
+
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$\kappa$ is the `effective dispersion'
+
+		Equal to the squared coefficient of variation when $G$ is
+		gamma-distributed
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
+
+	CREDIT Park et al., Epidemics DOI:10.1101/312397
+
+----------------------------------------------------------------------
+
+Product framework
+
+	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
+
+		⇒ Weaker \Rx\ for fixed $r$
+
+	More variation $\kappa$ means more ``compounding'' of infections
+
+		⇒ quicker spread, when epidemic is growing 
+
+----------------------------------------------------------------------
+
+Approximating the \rR\ relationship
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Heuristics for \Rx
+
+	Mechanistic: $\Rx = DcpS/N$
+
+		Duration of infectiousness, contact rate, probability of transmission,
+		proportion susceptible
+
+	Phenomenological: $X(r \bar G; 1/\kappa)$
+
+		Rate of exponential growth, mean generation interval, effective
+		dispersion of generation interval
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-0.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-1.pdf
+
+----------------------------------------------------------------------
 
 SEC Intrinsic and realized intervals
 
@@ -554,178 +838,40 @@ CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
 
 ----------------------------------------------------------------------
 
-TSEC Variants
 
-	The clearest view is of the rate of logistic growth of variant proportion
-
-		$\delta = \Rv - \Rwt$
-
-	Unaffected by sampling intensity
-
-		Also by ``speed-like'' changes in transmission intensity
+SEC Applications
 
 ----------------------------------------------------------------------
 
-Delta variant in the UK
+Unmitigated estimates
 
-WIDEFIG my_images/uklog.png
+WIDEFIG my_images/senderPDF.png
 
-CREDIT Mike Li, PHAC
-
-----------------------------------------------------------------------
-
-Relationship between $\delta$ and \Rwt
-
-HIGHFIG notebook/VoCcomp.Rout-0.pdf
+CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
 
 ----------------------------------------------------------------------
 
-Variant has faster generations
+Unmitigated estimates
 
-HIGHFIG notebook/VoCcomp.Rout-1.pdf
+BCC
 
-----------------------------------------------------------------------
+CFIG my_images/senderPDF.png
 
-Variant has slower generations
+NCC
 
-HIGHFIG notebook/VoCcomp.Rout-2.pdf
+	Carefully curated pre-intervention intervals
 
-----------------------------------------------------------------------
+	Bivariate fit to generation intervals and incubation periods
 
-
-SEC Evaluating interventions
-
-\newcommand{\II}{\ensuremath{\mathcal I}}
-\newcommand{\HH}{\ensuremath{\mathcal H}}
-\newcommand{\PP}{\ensuremath{\mathcal P}}
-
-----------------------------------------------------------------------
-
-Wuhan control measures
-
-WIDEFIG my_images/pan_time_shot.png
-
-CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
-
-----------------------------------------------------------------------
-
-Time-varying reproductive numbers
-
-	Instantaneous \Ri\ (Cori):
-
-		$i(t) = \int{\Ri(t) g(\tau)i(t-\tau) \,d\tau}$
-
-		Counterfactual: how many cases per case if conditions were frozen at time
-		$t$
-
-	Case \Rc\ (Wallinga):
-
-		$i(t) =  \int{\Rc(t=\tau) g(\tau)i(t-\tau) \,d\tau}$
-
-	Moving from reports to infections
-
-		Deconvolution
-
-----------------------------------------------------------------------
-
-Strength-like and speed-like interventions
-
-BC
-
-FRAMEFIG speedfigs/gencolumn.Rout.pdf
-
-NC
-
-	Strength-like: lockdown, vaccination
-
-	Speed-like: diagnosis, contact tracing
-
-	CREDIT Dushoff and Park, DOI: 10.1098/rspb.2020.1556
+	Account for dynamical biases
 
 EC
 
 ----------------------------------------------------------------------
 
-A kernel framework
-
-	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
-
-	Imagine the kernel changes due to intervention (and intrinsic changes like
-	accumulation of natural immunity): 
-
-		$$ \hat k(t, \tau) = k_0(\tau) \II(t, \tau) $$
-
-	Standard (sometimes implicit) constant-strength assumption:
-
-		$$ \II(t, \tau) = 1 / \PP(t) $$
-
-	Constant-speed assumption
-
-		$$ \II(t, \tau) = \HH(t, \tau) $$
-
-		$$ \HH(t, \tau) = \exp \left(- \int_0^\tau h(t-\tau+\sigma) d\sigma \right) $$
-
-----------------------------------------------------------------------
-
-Mix and match
-
-	Constant-strength interventions reduce \Ri\ by the strength of
-	control \PP.
-
-	Constant-hazard interventions reduce $r$ by the hazard of
-	control \PP.
-
-		Over some time scale
-
-	These can be combined \ldots
-
-	But realistic interventions are more complicated still
-
-----------------------------------------------------------------------
-
-Estimating $r$ vs.~\Rx
-
-	$r$ is easier to estimate from time series
-
-	$r$ is a better indicator if changes are speed-like
-
-	\Rx\ is a better indicator if changes are strength-like
-
-		and if it can be estimated well
-
-	Both approaches require deconvolution
-
-----------------------------------------------------------------------
-
-Unidentifiability
-
-BC
-
-CFIG ssintervention/outputs/scenarios.pdf
-
-NC
-
-	Strength-like and speed-like interventions can give exactly the same
-	incidence curves
-
-EC
-
-----------------------------------------------------------------------
-
-REGULAR Implications for intervention
-
-FIG speedfigs/coronaPlot.Rout-1.pdf
-
-----------------------------------------------------------------------
-
-Implications for intervention
-
-FIG speedfigs/coronaPlot.Rout-2.pdf
-
-----------------------------------------------------------------------
 
 
-Summary
+TSEC Summary
 
 	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
 	growth and control
@@ -748,6 +894,8 @@ Thanks
 
 		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst,
 		Hampson, So \ldots
+
+		ICI3D and SACEMA
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
 

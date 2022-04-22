@@ -8,15 +8,16 @@ NOTES NULLSLIDE
 BRIDGE ^DEFHEAD %%
 draft: ^DEFHEAD BRIDGE %%
 
-NOBRIDGE NULLSLIDE %%
-draft: ^DEFHEAD NOBRIDGE %%
+NOBRIDGE NULLSLIDE
+## draft: ^DEFHEAD NOBRIDGE %%
 
 ## Can be skipped for time
 REGULAR ^DEFHEAD %%
 draft: ^DEFHEAD REGULAR %%
 
 ## Can be skipped, period
-ENHANCED ^DEFHEAD BONUS: %%
+ENHANCED ^DEFHEAD BONUS %%
+ENHANCED NULLSLIDE
 draft: ^DEFHEAD ENHANCED %%
 
 ## Older version of enhanced? See covid_colloq.txt
@@ -25,4 +26,6 @@ draft: ^DEFHEAD BONUS %%
 
 ## Also older? Suppressed for technical audiences?
 GENERAL NULLSLIDE
-draft: ^DEFHEAD GENERAL %%
+## draft: ^DEFHEAD GENERAL %%
+
+MATH NULLSLIDE

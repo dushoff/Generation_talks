@@ -1,8 +1,9 @@
+
 SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-Renewal-equation framework
+NOBRIDGE Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -22,7 +23,7 @@ Renewal-equation framework
 
 ----------------------------------------------------------------------
 
-Infection kernel
+NOBRIDGE Infection kernel
 
 BCC
 
@@ -45,7 +46,7 @@ EC
 
 ----------------------------------------------------------------------
 
-Estimation framework
+NOBRIDGE Estimation framework
 
 	$k(\tau, t)$ is basically everything we want to know
 
@@ -73,7 +74,7 @@ Euler-Lotka equation
 
 ----------------------------------------------------------------------
 
-Interpretation: generating functions
+MATH Interpretation: generating functions
 
 BCC
 
@@ -127,6 +128,20 @@ Product framework
 Approximating the \rR\ relationship
 
 FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Heuristics for \Rx
+
+	Mechanistic: $\Rx = DcpS/N$
+
+		Duration of infectiousness, contact rate, probability of transmission,
+		proportion susceptible
+
+	Phenomenological: $X(r \bar G; 1/\kappa)$
+
+		Rate of exponential growth, mean generation interval, effective
+		dispersion of generation interval
 
 ----------------------------------------------------------------------
 
