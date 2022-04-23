@@ -39,8 +39,7 @@ cgfiles += cgSerial.txt
 cgfiles += cgSender.txt
 ## cgSender.draft.pdf: cgSender.txt
 
-cgfiles += cgDenmark.txt
-## cgDenmark.draft.pdf: cgDenmark.txt
+cgfiles += cgNL.txt
 
 ## cgfiles += cgVariants.txt
 ## cgfiles += cgIntervention.txt
