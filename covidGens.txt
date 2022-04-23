@@ -888,7 +888,7 @@ CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
 
 ----------------------------------------------------------------------
 
-Intervals from Denmark
+Intervals from the Netherlands
 
 FIG my_images/dkCases.pdf
 
