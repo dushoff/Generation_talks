@@ -19,16 +19,25 @@ Sources += $(wildcard *.txt *.abs)
 
 ## cgAbs.txt
 cgfiles += cgTitle.txt
+
 ## cgfiles += cgRtiming.txt ## Questions about intervention, Case vs. instantaneous R
-cgfiles += cgBox.txt ## Modeling aproaches
+
+## Modeling aproaches
+cgfiles += cgBox.txt
+
 cgfiles += cgInterval.txt ## rR links, phenomonology, bus waiting
-cgfiles += cgLink.txt ## Generalized exponential, renewal equation, propagation of error
+
+## Generalized exponential, renewal equation, propagation of error
+cgfiles += cgLink.txt 
+## cgLink.draft.pdf: cgLink.txt
+
 cgfiles += cgCorrections.txt ## Champredon and Barcelona
+
 cgfiles += cgSerial.txt
 
 ## Wuhan unmitigated
-## cgSender.draft.pdf: cgSender.txt
 cgfiles += cgSender.txt
+## cgSender.draft.pdf: cgSender.txt
 
 cgfiles += cgDenmark.txt
 ## cgDenmark.draft.pdf: cgDenmark.txt

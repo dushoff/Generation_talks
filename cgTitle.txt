@@ -9,17 +9,13 @@ NOFRAME
 \renewcommand{\wdate}{University of Florida Mathematical Biology Seminar 
 \\ March 2022}
 
-\renewcommand{\jdtitle}{Transmission intervals and COVID control}
-\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
-\\ April 2022}
-
-\renewcommand{\jdtitle}{Transmission intervals and COVID control}
-\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
-\\ April 2022}
-
 \renewcommand{\jdtitle}{ Speed and strength: Perspectives on modeling the spread of COVID}
 \renewcommand{\wdate}{SACEMA Center of Excellence Seminar
 \\ Stellenbosch University
+\\ April 2022}
+
+\renewcommand{\jdtitle}{Transmission intervals and COVID control}
+\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
 \\ April 2022}
 
 ----------------------------------------------------------------------
