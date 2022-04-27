@@ -164,7 +164,7 @@ subdirs += SIR_simulations Generation_distributions SIR_model_family WA_Ebola_Ou
 ## Rejected parallel for now because we want people to be able to clone one directory
 $(subdirs):
 	(ls -d ../$@ && $(LN) ../$@) \
-	|| (ls -d $(link) && $(LN) $(link) $@) \
+	|| (ls -d $(loc)/Makefile && $(LN) $(loc) $@) \
 	|| git clone $(url) $@
 
 Ignore += $(subdirs) generations_mark1
