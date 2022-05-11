@@ -20,10 +20,10 @@ Thanks
 
 	Collaborators:
 
-		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst,
-		Hampson, So \ldots
+		Park, Weitz 
 
-		ICI3D and SACEMA
+		Li, Bolker, Earn, Champredon, Gharouni, Papst,
+		Hampson, So \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
 

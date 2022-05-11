@@ -18,6 +18,11 @@ NOFRAME
 \renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
 \\ April 2022}
 
+\renewcommand{\jdtitle}{Transmission intervals in Disease Modeling}
+\renewcommand{\wdate}{IBENS Minisymposium
+\\ Modeling Epidemics and Behaviour
+\\ May 2022, Paris}
+
 ----------------------------------------------------------------------
 
 EXTRA
@@ -33,6 +38,80 @@ I will discuss how transmission intervals link the “speed” and “strength�
 WORKSHOP
 
 ----------------------------------------------------------------------
+
+
+Jonathan Dushoff
+
+	Math undergrad, trained as a theoretical ecologist
+
+	Interests
+
+		Disease modeling, bridging to data, statistical philosophy
+
+		Canine rabies, HIV, influenza, \textbf{COVID-19}
+
+	McMaster University
+
+	International Clinics on Infectious Disease Dynamics and Data
+
+		CURL http://www.ici3d.org
+
+
+----------------------------------------------------------------------
+
+
+BRIDGE Covid modeling questions
+
+BCC
+
+	How far and fast would it spread if unchecked?
+
+	How hard is it to eliminate?
+
+	How are we doing on control in a particular place and time?
+
+	How do we think emerging variants will affect our predictions?
+
+NCC
+
+CFIG my_images/ontario.Rout.pdf
+
+CREDIT https://wzmli.github.io/COVID19-Canada
+
+EC
+
+----------------------------------------------------------------------
+
+BRIDGE Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+BRIDGE Time-varying reproductive numbers
+
+	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
+
+		How many people will get infected by a case infected at time $t$?
+
+		$i(t) = \sum \Rx(t-\tau) g(\tau) i(t-\tau)$
+
+	Instantaneous reproductive number $\Rx_c$ (e.g., Cori et al.)
+
+		What overall reproductive number predicts what I'm seeing now?
+
+		$i(t) = \sum \Rx(t) g(\tau) i(t-\tau)$
+
+	Speed vs.~strength
+
+		What if $g$ is changing?	
+
+		Can we look at the instantaneous Malthusian rate of growth $r$?
+
+----------------------------------------------------------------------
+
 
 
 EXTRA
@@ -429,243 +508,6 @@ EC
 ----------------------------------------------------------------------
 
 
-SEC Linking \rR
-
-----------------------------------------------------------------------
-
-NOBRIDGE Renewal-equation framework
-
-	A broad framework that covers a wide range of
-	underlying models 
-
-	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
-
-		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
-
-		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
-		after becoming infected
-
-	$k$ changes through time
-
-		proportion susceptible, control measures
-
-		we often think about fixed $k(\tau)$ though
-
-----------------------------------------------------------------------
-
-NOBRIDGE Infection kernel
-
-BCC
-
-	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
-	being infected
-
-	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
-
-		\Rx\, the effective reproductive number
-
-	$k(\tau)/\Rx$ is a distribution:
-
-		$g(\tau)$, the \emph{intrinsic} generation distribution
-
-NCC
-
-CFIG ss_pix/ess.Rout-2.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-NOBRIDGE Estimation framework
-
-	$k(\tau, t)$ is basically everything we want to know
-
-	Usually unobservable, though
-
-	Typically try to observe $r$ or \Rx
-
-	and something about $g(\tau)$
-
-----------------------------------------------------------------------
-
-Euler-Lotka equation 
-
-	If we assume $k$ is not changing through time, we expect exponential growth
-
-	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
-
-		i.e., the total of \emph{discounted} contributions is 1
-
-	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
-
-	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
-
-		The initial ``backwards'' generation interval
-
-----------------------------------------------------------------------
-
-MATH Interpretation: generating functions
-
-BCC
-
-	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
-
-	$\Rx = 1/M(-r)$
-
-	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
-
-NCC
-
-CFIG ss_pix/ess.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Interpretation: strength and speed
-
-BCC
-
-CFIG ss_pix/ess.Rout-2.pdf
-
-	$ k(\tau) = \Rx g(\tau)$
-
-	Strength decomposition
-
-NCC
-
-CFIG ss_pix/ess.Rout-3.pdf
-
-	$ k(\tau) = \exp(r\tau) b(\tau)$
-
-	Speed decomposition
-
-EC
-
-----------------------------------------------------------------------
-
-Compound-interest interpretation
-
-	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
-
-	$\kappa$ is the `effective dispersion'
-
-		Equal to the squared coefficient of variation when $G$ is
-		gamma-distributed
-
-	$X$ is the compound-interest approximation to the exponential
-
-		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
-
-		Approaches exponential as $\kappa \to 0$
-
-	CREDIT Park et al., Epidemics DOI:10.1101/312397
-
-----------------------------------------------------------------------
-
-Product framework
-
-	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
-
-		⇒ Weaker \Rx\ for fixed $r$
-
-	More variation $\kappa$ means more ``compounding'' of infections
-
-		⇒ quicker spread, when epidemic is growing 
-
-	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $ is the sense in
-	which $r$ is actually a product
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Approximating the \rR\ relationship
-
-FIG Generation_distributions/lognormal.curve.Rout.pdf
-
-----------------------------------------------------------------------
-
-Heuristics for \Rx
-
-	Mechanistic: $\Rx = DcpS/N$
-
-		Duration of infectiousness, contact rate, probability of transmission,
-		proportion susceptible
-
-	Phenomenological: $X(r \bar G; 1/\kappa)$
-
-		Rate of exponential growth, mean generation interval, effective
-		dispersion of generation interval
-
-----------------------------------------------------------------------
-
-Propagating error
-
-FIG coronaFrame/propagate_pix-0.pdf
-
-----------------------------------------------------------------------
-
-Propagating error
-
-FIG coronaFrame/propagate_pix-1.pdf
-
-----------------------------------------------------------------------
-
 SEC Intrinsic and realized intervals
 
 ----------------------------------------------------------------------
@@ -766,216 +608,6 @@ CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
 
 
 
-TSEC Serial-interval distributions
-
-WIDEFIG rabies_correlations/figure/general_interval.png
-
-----------------------------------------------------------------------
-
-Serial intervals are proxies
-
-BC
-
-CFIG rabies_correlations/figure/general_interval.png
-
-NC
-
-	Serial intervals measure generations of the same process as generation
-	intervals
-
-		Should have the same mean
-
-		But often larger variance (flu example)
-
-EC
-
-----------------------------------------------------------------------
-
-The serial-mean paradox
-
-BCC
-
-CFIG rabies_correlations/figure/general_interval.png
-
-NCC
-
-
-	Empirically, even the means are not the same!
-
-	Generation interval:
-
-		Latent + infectious waiting, or
-
-		Incubation + Symptomatic waiting … of infector
-
-	Serial interval:
-
-		Symptomatic waiting (infector) + Incubation (infectee)
-
-EC
-
-----------------------------------------------------------------------
-
-Heterogeneity
-
-BCC
-
-CFIG rabies_correlations/intervalPlots.Rout.pdf
-
-NCC
-
-	Generation intervals include latent period of infectors only (often strongly
-	weighted)
-
-	Serial intervals average over infectees (everyone is infected once)
-
-	Coronavirus: people diagnosed early are less likely to transmit
-
-		could bias GI estimates
-
-EC
-
-----------------------------------------------------------------------
-
-The link paradox
-
-	Imagine a renewal process where symptoms in the infector cause symptoms in
-	the infectee
-
-		Assume homogeneity
-
-	This has to match the same \rR\ link as the true (generation-interval
-	driven) process
-
-	But it also can't when the serial interval is broader than
-	the generation interval
-
-		All else equal, a broader interval means lower \Rx.
-
-		Broader ⇒ more compounding ⇒ more quickness
-
-		⇒ less strength required to achieve observed speed
-
-----------------------------------------------------------------------
-
-NOBRIDGE Types of interval
-
-	Define:
-
-		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
-		after infection?
-
-		\emph{Forward interval}: When will the people infected today 
-		infect others?
-
-		\emph{Backward interval}: When did the people who infected people today
-		themselves become infected? 
-
-		\emph{Censored interval}: What do all the intervals observed up until a
-		particular time look like?
-
-			Like backward intervals, if it's early in the epidemic
-
-----------------------------------------------------------------------
-
-The forward serial interval
-
-WIDEFIG my_images/serial_incubation.png
-
-	Early in the epidemic, backward incubation periods are short
-
-	⇒ forward serial intervals are long
-
-----------------------------------------------------------------------
-
-Observed epidemiological intervals
-
-HFIG 0.75 my_images/serial_shot.png
-
-CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
-
-----------------------------------------------------------------------
-
-
-SEC Applications
-
-----------------------------------------------------------------------
-
-Unmitigated estimates
-
-BCC
-
-	Carefully curated pre-intervention intervals
-
-	Bivariate fit to generation intervals and incubation periods
-
-	Account for dynamical biases
-
-NCC
-
-CFIG my_images/senderPDF.png
-
-EC
-
-----------------------------------------------------------------------
-
-Unmitigated estimates
-
-WIDEFIG my_images/senderPDF.png
-
-CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
-
-----------------------------------------------------------------------
-
-Intervals from the Netherlands
-
-FIG my_images/dkCases.pdf
-
-CREDIT Park et al., in prep
-
-----------------------------------------------------------------------
-
-Fitted incubation periods
-
-FIG my_images/dkIncubation-0.pdf
-
-----------------------------------------------------------------------
-
-Dynamical correction
-
-FIG my_images/dkIncubation-1.pdf
-
-----------------------------------------------------------------------
-
-Observed and fitted transmission intervals
-
-BCC
-
-CFIG my_images/dkTrans-0.pdf
-
-NCC
-
-CFIG my_images/dkTrans-2.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Observed and fitted transmission intervals
-
-BCC
-
-CFIG my_images/dkTrans-1.pdf
-
-NCC
-
-CFIG my_images/dkTrans-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-
 TSEC Summary
 
 	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
@@ -997,10 +629,10 @@ Thanks
 
 	Collaborators:
 
-		Li, Park, Weitz, Bolker, Earn, Champredon, Gharouni, Papst,
-		Hampson, So \ldots
+		Park, Weitz 
 
-		ICI3D and SACEMA
+		Li, Bolker, Earn, Champredon, Gharouni, Papst,
+		Hampson, So \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
 

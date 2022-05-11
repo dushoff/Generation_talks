@@ -18,6 +18,11 @@ NOFRAME
 \renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
 \\ April 2022}
 
+\renewcommand{\jdtitle}{Transmission intervals in Disease Modeling}
+\renewcommand{\wdate}{IBENS Minisymposium
+\\ Modeling Epidemics and Behaviour
+\\ May 2022, Paris}
+
 ----------------------------------------------------------------------
 
 EXTRA
