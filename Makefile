@@ -41,6 +41,7 @@ cgfiles += cgCorrections.txt ## Champredon and Barcelona
 ## cgfiles += cgSender.txt
 ## cgSender.draft.pdf: cgSender.txt
 
+## Wallinga/Park intervals and corrections
 ## cgfiles += cgNL.txt
 
 ## cgfiles += cgVariants.txt
