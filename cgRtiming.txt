@@ -1,5 +1,5 @@
 
-BRIDGE Covid modeling questions
+Covid modeling questions
 
 BCC
 
@@ -21,7 +21,7 @@ EC
 
 ----------------------------------------------------------------------
 
-BRIDGE Wuhan control measures
+Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
 
@@ -29,7 +29,7 @@ CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
-BRIDGE Time-varying reproductive numbers
+NOBRIDGE Time-varying reproductive numbers
 
 	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
 

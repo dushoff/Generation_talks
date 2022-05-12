@@ -129,6 +129,8 @@ Compound-interest interpretation
 
 		Approaches exponential as $\kappa \to 0$
 
+	Compounding underlying $\Rx$ is dual to dynamical compounding
+
 	CREDIT Park et al., Epidemics DOI:10.1101/312397
 
 ----------------------------------------------------------------------
@@ -217,7 +219,7 @@ Heuristics for \Rx
 		Duration of infectiousness, contact rate, probability of transmission,
 		proportion susceptible
 
-	Phenomenological: $X(r \bar G; 1/\kappa)$
+	Phenomenological: $\Rx = X(r \bar G; 1/\kappa)$
 
 		Rate of exponential growth, mean generation interval, effective
 		dispersion of generation interval

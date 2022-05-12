@@ -18,3 +18,21 @@ Jonathan Dushoff
 
 ----------------------------------------------------------------------
 
+PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
+
+\vspace{-5ex} What is the pattern of Pythagorean triples of integers $a^2 + b^2 = c^2$?
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
+
+Divide a square and a circle each into two complementary subsets that are pairwise similar
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/average.Rout.pdf
+
+How many at-bats does it take to get a given batting average?
+
+----------------------------------------------------------------------
+

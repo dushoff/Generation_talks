@@ -30,11 +30,10 @@ cgfiles += cgBox.txt
 cgfiles += cgInterval.txt ## rR links, phenomonology, bus waiting
 
 ## Generalized exponential, renewal equation, propagation of error
-## cgfiles += cgLink.txt 
+cgfiles += cgLink.txt 
 ## cgLink.draft.pdf: cgLink.txt
 
-cgfiles += cgCorrections.txt ## Champredon and Barcelona
-
+## cgfiles += cgCorrections.txt ## Champredon and Barcelona
 ## cgfiles += cgSerial.txt
 
 ## Wuhan unmitigated
@@ -45,7 +44,10 @@ cgfiles += cgCorrections.txt ## Champredon and Barcelona
 ## cgfiles += cgNL.txt
 
 ## cgfiles += cgVariants.txt
-## cgfiles += cgIntervention.txt
+
+cgfiles += cgIntervention.txt
+## cgIntervention.draft.pdf: cgIntervention.txt
+
 cgfiles += cgThanks.txt
 
 ## covidGens.outline.pdf: cgInterval.txt

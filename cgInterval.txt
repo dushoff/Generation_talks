@@ -110,6 +110,8 @@ BCC
 
 	Population-level speed $r$ is observed
 
+	Generation-interval distribution $g(\tau)$ can be estimated
+
 	Quicker generations (low $\bar G$) ⇒ \emph{lower} \Rx
 
 NCC

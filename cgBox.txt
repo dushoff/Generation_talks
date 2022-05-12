@@ -143,7 +143,7 @@ BRIDGE Renewal-equation framework
 
 		proportion susceptible, control measures
 
-		we often think about counterfactuals with fixed $k(\tau)$
+		we often think about \emph{counterfactuals} with \emph{fixed} $k(\tau)$
 
 ----------------------------------------------------------------------
 

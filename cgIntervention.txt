@@ -52,7 +52,7 @@ EC
 
 ----------------------------------------------------------------------
 
-A kernel framework
+NOBRIDGE A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 
@@ -73,23 +73,25 @@ A kernel framework
 
 ----------------------------------------------------------------------
 
-Mix and match
+Measuring interventions
 
-	Constant-strength interventions reduce \Ri\ by the strength of
-	control \PP.
+	Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
+	proportional amount by which the intervention reduces transmission.
 
-	Constant-hazard interventions reduce $r$ by the hazard of
-	control \PP.
+		Outbreak can be controlled if $\theta > \Rx$
 
-		Over some time scale
+		Easy to estimate for generalized interventions
 
-	These can be combined \ldots
+	Define intervention \emph{speed} $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
 
-	But realistic interventions are more complicated still
+		Outbreak can be controlled if $\phi > r$.
+
+		Easy to estimate for some surveillance-based interventions
 
 ----------------------------------------------------------------------
 
-Estimating $r$ vs.~\Rx
+NOBRIDGE Estimating $r$ vs.~\Rx
 
 	$r$ is easier to estimate from time series
 
@@ -99,7 +101,39 @@ Estimating $r$ vs.~\Rx
 
 		and if it can be estimated well
 
-	Both approaches require deconvolution
+	Both approaches require estimating \emph{infections}
+
+		Deconvolution
+
+----------------------------------------------------------------------
+
+Measuring the epidemic
+
+	$r_0$ is easier to estimate from early time series
+
+	\Ro\ may be easier to estimate for an established disease
+
+	$r$ is a better indicator if changes are speed-like
+
+	\Rx\ is a better indicator if changes are strength-like
+
+	Both approaches require estimating \emph{infections}
+
+		Deconvolution
+
+----------------------------------------------------------------------
+
+Mix and match
+
+	Constant-strength interventions reduce \Ri\ by the strength of
+	control \PP.
+
+	Constant-hazard interventions reduce $r$ by the hazard of
+	control \HH.
+
+	These can be combined \ldots
+
+	Realistic interventions are more complicated still
 
 ----------------------------------------------------------------------
 
@@ -120,13 +154,13 @@ EC
 
 REGULAR Implications for intervention
 
-FIG speedfigs/coronaPlot.Rout-1.pdf
+FIG speedfigs/coronaPlot.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
 Implications for intervention
 
-FIG speedfigs/coronaPlot.Rout-2.pdf
+FIG speedfigs/coronaPlot.Rout-1.pdf
 
 ----------------------------------------------------------------------
 

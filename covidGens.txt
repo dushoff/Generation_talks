@@ -59,8 +59,26 @@ Jonathan Dushoff
 
 ----------------------------------------------------------------------
 
+PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
 
-BRIDGE Covid modeling questions
+\vspace{-5ex} What is the pattern of Pythagorean triples of integers $a^2 + b^2 = c^2$?
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
+
+Divide a square and a circle each into two complementary subsets that are pairwise similar
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/average.Rout.pdf
+
+How many at-bats does it take to get a given batting average?
+
+----------------------------------------------------------------------
+
+
+Covid modeling questions
 
 BCC
 
@@ -82,7 +100,7 @@ EC
 
 ----------------------------------------------------------------------
 
-BRIDGE Wuhan control measures
+Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
 
@@ -90,7 +108,7 @@ CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
-BRIDGE Time-varying reproductive numbers
+NOBRIDGE Time-varying reproductive numbers
 
 	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
 
@@ -258,7 +276,7 @@ BRIDGE Renewal-equation framework
 
 		proportion susceptible, control measures
 
-		we often think about counterfactuals with fixed $k(\tau)$
+		we often think about \emph{counterfactuals} with \emph{fixed} $k(\tau)$
 
 ----------------------------------------------------------------------
 
@@ -409,6 +427,8 @@ BCC
 
 	Population-level speed $r$ is observed
 
+	Generation-interval distribution $g(\tau)$ can be estimated
+
 	Quicker generations (low $\bar G$) ⇒ \emph{lower} \Rx
 
 NCC
@@ -508,104 +528,409 @@ EC
 ----------------------------------------------------------------------
 
 
-SEC Intrinsic and realized intervals
+SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-Growing epidemics
+NOBRIDGE Renewal-equation framework
 
-BC
+	A broad framework that covers a wide range of
+	underlying models 
 
-	Measured generation intervals look \emph{shorter} at the beginning of an
-	epidemic
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 
-		A disproportionate number of people are infectious right now
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
 
-		They haven't finished all of their transmitting
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
 
-		We are biased towards observing faster events
+	$k$ changes through time
 
-NC
+		proportion susceptible, control measures
 
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+		we often think about fixed $k(\tau)$ though
 
-CFIG SIR_simulations/za_gens.Rout-0.pdf
+----------------------------------------------------------------------
+
+NOBRIDGE Infection kernel
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
 
 EC
 
 ----------------------------------------------------------------------
 
-Types of interval
+NOBRIDGE Estimation framework
 
-	Define:
+	$k(\tau, t)$ is basically everything we want to know
 
-		\emph{Intrinsic interval}: How infectious is a patient at time $\tau$
-		after infection?
+	Usually unobservable, though
 
-		\emph{Forward interval}: When will the people infected today 
-		infect others?
+	Typically try to observe $r$ or \Rx
 
-		\emph{Backward interval}: When did the people who infected people today
-		themselves become infected? 
-
-		\emph{Censored interval}: What do all the intervals observed up until a
-		particular time look like?
-
-			Like backward intervals, if it's early in the epidemic
+	and something about $g(\tau)$
 
 ----------------------------------------------------------------------
 
+Euler-Lotka equation 
 
-Correcting backward intervals
+	If we assume $k$ is not changing through time, we expect exponential growth
 
-WIDEFIG backward.jpg
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
 
-CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
+
+		The initial ``backwards'' generation interval
 
 ----------------------------------------------------------------------
 
-Generations in space
+MATH Interpretation: generating functions
 
-BC
+BCC
 
-	Local interactions
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
 
-	⇒ wasted contacts
+	$\Rx = 1/M(-r)$
 
-	⇒ realized generation intervals smaller than intrinsic
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
 
-	⇒ intrinsic GIs over-estimate \Rx
+NCC
 
-	CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
-
-NC
-
-CFIG webpix/network.png
+CFIG ss_pix/ess.Rout-3.pdf
 
 EC
 
 ----------------------------------------------------------------------
 
-EXTRA Observed and estimated intervals
+Interpretation: strength and speed
 
-PIC WIDEFIG networkSEIR/fig/simple.pdf
+BCC
 
-PIC WIDEFIG networkSEIR/fig/simple.png
+CFIG ss_pix/ess.Rout-2.pdf
 
-ADD This figure needs to be "rescued" from screenbox; networkSEIR does not all
+	$ k(\tau) = \Rx g(\tau)$
 
-ADD png is a screenshot! in case I suddenly decide I want it. Only on 4.5
+	Strength decomposition
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+	$ k(\tau) = \exp(r\tau) b(\tau)$
+
+	Speed decomposition
+
+EC
 
 ----------------------------------------------------------------------
 
-Outbreak estimation
+Compound-interest interpretation
 
-PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
+	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
 
-CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
+	$\kappa$ is the `effective dispersion'
+
+		Equal to the squared coefficient of variation when $G$ is
+		gamma-distributed
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+	Compounding underlying $\Rx$ is dual to dynamical compounding
+
+	CREDIT Park et al., Epidemics DOI:10.1101/312397
 
 ----------------------------------------------------------------------
 
+Product framework
+
+	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
+
+		⇒ Weaker \Rx\ for fixed $r$
+
+	More variation $\kappa$ means more ``compounding'' of infections
+
+		⇒ quicker spread, when epidemic is growing 
+
+	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $ is the sense in
+	which $r$ is actually a product
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Approximating the \rR\ relationship
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Heuristics for \Rx
+
+	Mechanistic: $\Rx = DcpS/N$
+
+		Duration of infectiousness, contact rate, probability of transmission,
+		proportion susceptible
+
+	Phenomenological: $\Rx = X(r \bar G; 1/\kappa)$
+
+		Rate of exponential growth, mean generation interval, effective
+		dispersion of generation interval
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-0.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-1.pdf
+
+----------------------------------------------------------------------
+
+SEC Evaluating interventions
+
+\newcommand{\II}{\ensuremath{\mathcal I}}
+\newcommand{\HH}{\ensuremath{\mathcal H}}
+\newcommand{\PP}{\ensuremath{\mathcal P}}
+
+----------------------------------------------------------------------
+
+Wuhan control measures
+
+WIDEFIG my_images/pan_time_shot.png
+
+CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
+
+----------------------------------------------------------------------
+
+Time-varying reproductive numbers
+
+	Instantaneous \Ri\ (Cori):
+
+		$i(t) = \int{\Ri(t) g(\tau)i(t-\tau) \,d\tau}$
+
+		Counterfactual: how many cases per case if conditions were frozen at time
+		$t$
+
+	Case \Rc\ (Wallinga):
+
+		$i(t) =  \int{\Rc(t=\tau) g(\tau)i(t-\tau) \,d\tau}$
+
+	Moving from reports to infections
+
+		Deconvolution
+
+----------------------------------------------------------------------
+
+Strength-like and speed-like interventions
+
+BC
+
+FRAMEFIG speedfigs/gencolumn.Rout.pdf
+
+NC
+
+	Strength-like: lockdown, vaccination
+
+	Speed-like: diagnosis, contact tracing
+
+	CREDIT Dushoff and Park, DOI: 10.1098/rspb.2020.1556
+
+EC
+
+----------------------------------------------------------------------
+
+NOBRIDGE A kernel framework
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+	Imagine the kernel changes due to intervention (and intrinsic changes like
+	accumulation of natural immunity): 
+
+		$$ \hat k(t, \tau) = k_0(\tau) \II(t, \tau) $$
+
+	Standard (sometimes implicit) constant-strength assumption:
+
+		$$ \II(t, \tau) = 1 / \PP(t) $$
+
+	Constant-speed assumption
+
+		$$ \II(t, \tau) = \HH(t, \tau) $$
+
+		$$ \HH(t, \tau) = \exp \left(- \int_0^\tau h(t-\tau+\sigma) d\sigma \right) $$
+
+----------------------------------------------------------------------
+
+Measuring interventions
+
+	Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
+	proportional amount by which the intervention reduces transmission.
+
+		Outbreak can be controlled if $\theta > \Rx$
+
+		Easy to estimate for generalized interventions
+
+	Define intervention \emph{speed} $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
+
+		Outbreak can be controlled if $\phi > r$.
+
+		Easy to estimate for some surveillance-based interventions
+
+----------------------------------------------------------------------
+
+NOBRIDGE Estimating $r$ vs.~\Rx
+
+	$r$ is easier to estimate from time series
+
+	$r$ is a better indicator if changes are speed-like
+
+	\Rx\ is a better indicator if changes are strength-like
+
+		and if it can be estimated well
+
+	Both approaches require estimating \emph{infections}
+
+		Deconvolution
+
+----------------------------------------------------------------------
+
+Measuring the epidemic
+
+	$r_0$ is easier to estimate from early time series
+
+	\Ro\ may be easier to estimate for an established disease
+
+	$r$ is a better indicator if changes are speed-like
+
+	\Rx\ is a better indicator if changes are strength-like
+
+	Both approaches require estimating \emph{infections}
+
+		Deconvolution
+
+----------------------------------------------------------------------
+
+Mix and match
+
+	Constant-strength interventions reduce \Ri\ by the strength of
+	control \PP.
+
+	Constant-hazard interventions reduce $r$ by the hazard of
+	control \HH.
+
+	These can be combined \ldots
+
+	Realistic interventions are more complicated still
+
+----------------------------------------------------------------------
+
+Unidentifiability
+
+BC
+
+CFIG ssintervention/outputs/scenarios.pdf
+
+NC
+
+	Strength-like and speed-like interventions can give exactly the same
+	incidence curves
+
+EC
+
+----------------------------------------------------------------------
+
+REGULAR Implications for intervention
+
+FIG speedfigs/coronaPlot.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Implications for intervention
+
+FIG speedfigs/coronaPlot.Rout-1.pdf
+
+----------------------------------------------------------------------
 
 
 TSEC Summary
