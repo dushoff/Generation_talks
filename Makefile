@@ -114,47 +114,47 @@ uncertainty.final.pdf: uncertainty.txt
 ## Directories (see content.mk)
 
 subdirs += ssintervention
-ssintervention: link=../../research/gamma
+ssintervention: loc=../../research/gamma
 
 subdirs += speedfigs
-speedfigs: link=../../research/speed_public/code
+speedfigs: loc=../../research/speed_public/code
 
 subdirs += ssvariant
-ssvariant: link=../../research/ssvariant
+ssvariant: loc=../../research/ssvariant
 
 subdirs += notebook
-notebook: link=../../web/notebook
+notebook: loc=../../web/notebook
 
 ### Add url above
 
 subdirs += rabies_R0
-rabies_R0: link=../../research/rabies_R0
+rabies_R0: loc=../../research/rabies_R0
 rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
 ## Note: not yet piped to pipelines (see Makefile)
 Ignore += tz_pipelines ## Fix this up
 subdirs += rabies_correlations
-rabies_correlations: link= ../../rabies/correlations
+rabies_correlations: loc= ../../rabies/correlations
 rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git
 
 subdirs += coronaSpread
-coronaSpread: link=../../outbreak/corona
+coronaSpread: loc=../../outbreak/corona
 coronaSpread: url=https://github.com/wzmli/corona.git
 
 subdirs += coronaFrame
-coronaFrame: link=../../research/exponential_framework
+coronaFrame: loc=../../research/exponential_framework
 coronaFrame: url=https://github.com/parksw3/wuhan.git
 
 subdirs += ss_pix
-ss_pix: link=../ss_pix
+ss_pix: loc=../ss_pix
 
 subdirs += Endemic_curves
-Endemic_curves: link=../Endemic_curves
+Endemic_curves: loc=../Endemic_curves
 
 ## This is not a JD directory and does not work well with hotdirs
 ## make the figures subdirectory into a pardir at some point
 subdirs += networkSEIR
-networkSEIR: link=generations_mark1/networkSEIR
+networkSEIR: loc=generations_mark1/networkSEIR
 networkSEIR: url=https://github.com/parksw3/networkSEIR.git
 
 ######################################################################
