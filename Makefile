@@ -35,6 +35,7 @@ cgfiles += cgLink.txt
 
 ## cgfiles += cgCorrections.txt ## Champredon and Barcelona
 ## cgfiles += cgSerial.txt
+## cgSerial.draft.pdf: cgSerial.txt
 
 ## Wuhan unmitigated
 ## cgfiles += cgSender.txt
