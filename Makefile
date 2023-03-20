@@ -6,7 +6,10 @@ current: target
 
 ######################################################################
 
-Sources += Makefile legacy.mk content.mk
+vim_session:
+	bash -cl "vmt README.md"
+
+Sources += Makefile legacy.mk content.mk README.md
 
 Sources += $(wildcard *.txt *.abs)
 
@@ -60,55 +63,12 @@ covidGens.txt: $(cgfiles)
 
 ######################################################################
 
-## New for technical Tuesday
-
-# Future:  doi: https://doi.org/10.1101/2021.05.03.21256545
-
-technical.draft.pdf: technical.txt
-technical.final.pdf: technical.txt
-
-######################################################################
+## Re-added 2023 Mar 20 (Mon) to look at ideas for Taiwan talks
+bridging.draft.pdf: bridging.txt
 
 ## 2020 Aug 17 (Mon)
 ## It's bad how I always do talks under pressure and my talk directories
 ## are always a disaster
-
-## Current versions
-## generations.txt Tachikawa
-## genEst.txt Glasgow
-## mathGens.txt Fields
-## origins.txt
-## smb.txt Plenary
-## smb_covid.txt
-## uncertainty.txt UBC (June 2020)
-## bridging.txt (BIRS 2018)
-## covid_colloq.txt (Cornell 2020)
-## ebola.txt Tachikawa
-## outbreakGens.txt BioSeminar ⇒ global health
-
-## Discussion (?)
-## UBC informal? GA Tech "incubator", EEB (!)
-## UT Austin weird session May 2021
-covid_disc.draft.pdf: covid_disc.txt
-
-covid_colloq.draft.pdf: covid_colloq.txt
-covid_colloq.final.pdf: covid_colloq.txt
-covid_colloq.outline.pdf: covid_colloq.txt
-
-covid_eeb.final.pdf: covid_eeb.txt
-covid_eeb.draft.pdf: covid_eeb.txt
-
-temp.draft.pdf: temp.txt
-
-## Intervals and control SMB 2020
-## smb_covid.final.pdf: smb_covid.txt
-## smb_covid.draft.pdf: smb_covid.txt
-## smb_covid.draft.pdf.cache: 
-
-## uncertainty talk (joint with David Earn for Leah Keshet)
-uncertainty.outline.pdf: uncertainty.txt
-uncertainty.draft.pdf: uncertainty.txt
-uncertainty.final.pdf: uncertainty.txt
 
 ######################################################################
 
@@ -157,6 +117,10 @@ Endemic_curves: loc=../Endemic_curves
 subdirs += networkSEIR
 networkSEIR: loc=generations_mark1/networkSEIR
 networkSEIR: url=https://github.com/parksw3/networkSEIR.git
+colddirs += networkSEIR/fig
+
+subdirs += link_calculations
+Endemic_curves: loc=../link_calculations
 
 ######################################################################
 
@@ -182,6 +146,7 @@ hotdirs += $(subdirs)
 ## Super temp!
 
 ## ln -fs ~dushoff/gitroot/covid19-git-plateaus// plateaus ##
+## This is from Weitz, and is in the research screendir
 
 ## Copyright
 

@@ -26,6 +26,7 @@ NOFRAME
 
 \newcommand{\jdtitle}
 	{Generation intervals and outbreak fitting}
+\newcommand{\jdsub}{}
 \newcommand{\jdauth}
 	{Jonathan Dushoff, McMaster University}
 \newcommand{\years}
@@ -215,7 +216,7 @@ Limitations
 
 TSEC The \rR\ relationship
 
-	We're very interested in the relationship between little $r$ and \big \Rx.
+	We're very interested in the relationship between little $r$ and big \Rx.
 
 	We might have good estimates of $r$ only
 
@@ -713,7 +714,7 @@ Generations in space
 
 	How do local interactions affect realized generation intervals?
 
-WIDEFIG tmpfigs/network.png
+WIDEFIG webpix/network.png
 
 ----------------------------------------------------------------------
 
@@ -787,11 +788,11 @@ FIG rabies_R0/figures/interval.png
 
 ----------------------------------------------------------------------
 
-FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
+FIG rabies_R0/git_push/Dogs_SIestPlots.Rout.pdf
 
 ----------------------------------------------------------------------
 
-FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
+FIG rabies_correlations/git_push/Dogs_correlations.Rout-1.pdf
 
 ----------------------------------------------------------------------
 

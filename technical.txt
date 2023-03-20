@@ -1,7 +1,6 @@
 
 ----------------------------------------------------------------------
 
-
 NOFRAME
 
 \newcommand{\jdtitle} {Transmission-interval distributions and coronavirus control}
