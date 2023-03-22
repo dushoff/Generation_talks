@@ -3,6 +3,9 @@ content.mk ## Old
 legacy.mk ## Older, and with comments about something older yet
 
 ## Patch paradigm (pandemic craziness)
+covidGens.txt
+* Started at IBENS and given at least five times!
+
 cgAbs.txt
 dushoff.txt
 cgBox.txt
@@ -29,9 +32,6 @@ covid_eeb.txt; covid_disc.txt
 * Gatech “incubator”; Mac EEB draft? Probably closely related
 ## UBC informal? GA Tech "incubator", EEB (!)
 ## UT Austin weird session May 2021
-
-covidGens.txt
-* Started at IBENS and given at least five times!
 
 mathGens.txt ## Fields 2020
 smb_covid.txt ## 2020, bizarrely contains a “Cornell abstract
