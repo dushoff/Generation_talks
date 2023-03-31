@@ -73,6 +73,7 @@ bridging.draft.pdf: bridging.txt
 ######################################################################
 
 ## Directories (see content.mk)
+## Redo as pardirs!!!
 
 subdirs += ssintervention
 ssintervention: loc=../../research/gamma
