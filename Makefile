@@ -1,8 +1,8 @@
 ## This is Generation_talks, a screens project directory
-## Importing to listdirs paradigm 2020 Jul 08 (Wed)
 
 current: target
 -include target.mk
+-include makestuff/perl.def
 
 ######################################################################
 
@@ -12,6 +12,39 @@ vim_session:
 Sources += Makefile legacy.mk content.mk README.md
 
 Sources += $(wildcard *.txt *.abs)
+
+######################################################################
+
+## Newer insane paradigm 台灣 2023
+## Big talks and lots of control words
+
+allcg += cgTitle.txt
+allcg += dushoff.txt ## Who am I
+allcg += cgRtiming.txt ## Questions about intervention, Case vs. instantaneous R
+allcg += cgBox.txt
+allcg += cgInterval.txt ## rR links, phenomonology, bus waiting
+allcg += cgLink.txt 
+allcg += cgCorrections.txt ## Champredon and Barcelona
+allcg += cgSerial.txt
+allcg += cgSender.txt
+allcg += cgNL.txt
+allcg += cgVariants.txt
+allcg += cgIntervention.txt
+allcg += cgThanks.txt
+
+Sources += filehead.pl
+## cgBox.file.txt.compare: cgBox.txt filehead.pl
+## cgBox.file.txt: cgBox.txt filehead.pl
+%.file.txt: %.txt filehead.pl
+	$(PUSH)
+
+filecg = $(allcg:.txt=.file.txt)
+
+bigtalk.txt: $(filecg)
+	$(cat)
+
+## bigtalk.draft.tex.pdf: bigtalk.txt bigtalk.draft.tex
+## bigtalk.draft.pdf: bigtalk.txt bigtalk.draft.tex
 
 ######################################################################
 
@@ -210,7 +243,7 @@ Ignore += Korea
 Ignore += plateaus
 ## ln -s ~/gitroot/covid19-git-plateaus/ plateaus ##
 
-shields/dynamics_top.png: shields/dynamics.png Makefile
+shields/dynamics_top.png: shields/dynamics.png
 	convert -crop 748x748+0+0 $< $@
 
 ######################################################################
@@ -236,9 +269,9 @@ makestuff/Makefile:
 
 -include makestuff/newtalk.mk
 -include makestuff/texi.mk
--include makestuff/makeR.mk
 -include makestuff/webpix.mk
 -include makestuff/hotcold.mk
+-include makestuff/compare.mk
 -include makestuff/cacherepo.mk
 -include makestuff/cacheflow.mk
 
