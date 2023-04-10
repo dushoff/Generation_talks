@@ -18,30 +18,11 @@ Sources += $(wildcard *.txt *.abs)
 ## Newer insane paradigm 台灣 2023
 ## Big talks and lots of control words
 
-allcg += cgTitle.txt
-allcg += dushoff.txt ## Who am I
-allcg += cgRtiming.txt ## Questions about intervention, Case vs. instantaneous R
-allcg += cgBox.txt
-allcg += cgInterval.txt ## rR links, phenomonology, bus waiting
-allcg += cgLink.txt 
-allcg += cgCorrections.txt ## Champredon and Barcelona
-allcg += cgSerial.txt
-allcg += cgSender.txt
-allcg += cgNL.txt
-allcg += cgVariants.txt
-allcg += cgIntervention.txt
-allcg += cgThanks.txt
-
 Sources += filehead.pl
-## cgBox.file.txt.compare: cgBox.txt filehead.pl
-## cgBox.file.txt: cgBox.txt filehead.pl
-%.file.txt: %.txt filehead.pl
-	$(PUSH)
-
-filecg = $(allcg:.txt=.file.txt)
-
-bigtalk.txt: $(filecg)
-	$(cat)
+## How bigtalk was made; filehead could still be used to put in new pieces I think
+## %.file.txt: %.txt filehead.pl; $(PUSH)
+## filecg = $(allcg:.txt=.file.txt)
+## bigtalk.txt: $(filecg); $(cat)
 
 ## bigtalk.draft.tex.pdf: bigtalk.txt bigtalk.draft.tex
 ## bigtalk.draft.pdf: bigtalk.txt bigtalk.draft.tex
