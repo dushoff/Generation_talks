@@ -1,4 +1,4 @@
-TITLECOM NOFRAME
+TITLE NOFRAME
 
 \newcommand{\jdtitle}{Defining, estimating and applying transmission-interval distributions}
 \newcommand{\jdsub} {}
@@ -25,7 +25,7 @@ TITLECOM NOFRAME
 
 ----------------------------------------------------------------------
 
-TITLECOM EXTRA
+TITLE EXTRA
 
 Transmission intervals and COVID control
 
@@ -35,7 +35,7 @@ I will discuss how transmission intervals link the “speed” and “strength�
 
 ----------------------------------------------------------------------
 
-TITLECOM WORKSHOP
+TITLE WORKSHOP
 
 ----------------------------------------------------------------------
 
@@ -60,19 +60,19 @@ DUSHOFF Jonathan Dushoff
 
 ----------------------------------------------------------------------
 
-DUSHOFFCOM PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
+DUSHOFF PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
 
 \vspace{-5ex} What is the pattern of Pythagorean triples of integers $a^2 + b^2 = c^2$?
 
 ----------------------------------------------------------------------
 
-DUSHOFFCOM PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
+DUSHOFF PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
 
 Divide a square and a circle each into two complementary subsets that are pairwise similar
 
 ----------------------------------------------------------------------
 
-DUSHOFFCOM PICSLIDE FIG notebook/average.Rout.pdf
+DUSHOFF PICSLIDE FIG notebook/average.Rout.pdf
 
 How many at-bats does it take to get a given batting average?
 
@@ -110,7 +110,7 @@ CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
-RTIMINGCOM NOBRIDGE Time-varying reproductive numbers
+RTIMING NOBRIDGE Time-varying reproductive numbers
 
 	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
 
@@ -135,13 +135,13 @@ RTIMINGCOM NOBRIDGE Time-varying reproductive numbers
 
 
 
-BOXCOM EXTRA
+BOX EXTRA
 
 ADD boxcar picture from ICI3D
 
 ----------------------------------------------------------------------
 
-BOXCOM SEC Modeling approaches
+BOX SEC Modeling approaches
 
 ----------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM DIAGRAM SIR_model_family/sir.three.pdf
+BOX DIAGRAM SIR_model_family/sir.three.pdf
 
 \begin{eqnarray*}
 	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
@@ -189,13 +189,13 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-BOXCOM GENERAL
+BOX GENERAL
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM GENERAL
+BOX GENERAL
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
@@ -207,7 +207,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM GENERAL
+BOX GENERAL
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
@@ -222,7 +222,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM NOBRIDGE Renewal equation
+BOX NOBRIDGE Renewal equation
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -240,7 +240,7 @@ BOXCOM NOBRIDGE Renewal equation
 
 ----------------------------------------------------------------------
 
-BOXCOM NOBRIDGE Infection kernel
+BOX NOBRIDGE Infection kernel
 
 BCC
 
@@ -263,7 +263,7 @@ EC
 
 ----------------------------------------------------------------------
 
-BOXCOM BRIDGE Renewal-equation framework
+BOX BRIDGE Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -283,7 +283,7 @@ BOXCOM BRIDGE Renewal-equation framework
 
 ----------------------------------------------------------------------
 
-BOXCOM MATH Cohort modeling
+BOX MATH Cohort modeling
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
@@ -294,7 +294,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM MATH Cohort modeling
+BOX MATH Cohort modeling
 
 WIDEFIG webpix/stanford_diagram.png
 
@@ -302,7 +302,7 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-BOXCOM BRIDGE Transmission kernel
+BOX BRIDGE Transmission kernel
 
 BC
 
@@ -319,7 +319,7 @@ EC
 ----------------------------------------------------------------------
 
 
-INTERVALCOM TSEC Transmission intervals
+INTERVAL TSEC Transmission intervals
 
 BCC
 
@@ -337,7 +337,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVALCOM PSLIDE How long is a disease generation?
+INTERVAL PSLIDE How long is a disease generation?
 
 PIC WIDEFIG my_images/generation_girls.png
 
@@ -361,7 +361,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVALCOM REGULAR Transmission intervals drive epidemics
+INTERVAL REGULAR Transmission intervals drive epidemics
 
 	Population-level \emph{Speed} of spread $r$ is a product:
 
@@ -375,7 +375,7 @@ INTERVALCOM REGULAR Transmission intervals drive epidemics
 
 ----------------------------------------------------------------------
 
-INTERVALCOM EXTRA Driving
+INTERVAL EXTRA Driving
 
 	To be exact:
 
@@ -409,7 +409,7 @@ $C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 ----------------------------------------------------------------------
 
-INTERVALCOM REGULAR Ebola outbreak
+INTERVAL REGULAR Ebola outbreak
 
 HFIG 0.85 my_images/weitz_full.pdf
 
@@ -417,7 +417,7 @@ $C \approx 1 \,\mathrm{month}$. Slower than expected.
 
 ----------------------------------------------------------------------
 
-INTERVALCOM REGULAR Coronavirus speed
+INTERVAL REGULAR Coronavirus speed
 
 HFIG 0.85 coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
 
@@ -463,13 +463,13 @@ INTERVAL Generation interval
 
 ----------------------------------------------------------------------
 
-INTERVALCOM MATH How long until the bus comes?
+INTERVAL MATH How long until the bus comes?
 
 WIDEFIG webpix/bus.jpg
 
 ----------------------------------------------------------------------
 
-INTERVALCOM MATH Mean of a self-weighted quantity
+INTERVAL MATH Mean of a self-weighted quantity
 
 	Infectious period of an infector
 
@@ -483,7 +483,7 @@ INTERVALCOM MATH Mean of a self-weighted quantity
 
 ----------------------------------------------------------------------
 
-INTERVALCOM REGULAR Transmission intervals
+INTERVAL REGULAR Transmission intervals
 
 	Generation interval: infection ⇒ infection
 
@@ -503,13 +503,13 @@ INTERVALCOM REGULAR Transmission intervals
 
 ----------------------------------------------------------------------
 
-INTERVALCOM NOBRIDGE Serial intervals
+INTERVAL NOBRIDGE Serial intervals
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-INTERVALCOM NOBRIDGE Steps
+INTERVAL NOBRIDGE Steps
 
 BCC
 
@@ -533,11 +533,11 @@ EC
 
 
 
-LINKCOM SEC Linking \rR
+LINK SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-LINKCOM NOBRIDGE Renewal-equation framework
+LINK NOBRIDGE Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -557,7 +557,7 @@ LINKCOM NOBRIDGE Renewal-equation framework
 
 ----------------------------------------------------------------------
 
-LINKCOM NOBRIDGE Infection kernel
+LINK NOBRIDGE Infection kernel
 
 BCC
 
@@ -580,7 +580,7 @@ EC
 
 ----------------------------------------------------------------------
 
-LINKCOM NOBRIDGE Estimation framework
+LINK NOBRIDGE Estimation framework
 
 	$k(\tau, t)$ is basically everything we want to know
 
@@ -608,7 +608,7 @@ LINK Euler-Lotka equation
 
 ----------------------------------------------------------------------
 
-LINKCOM MATH Interpretation: generating functions
+LINK MATH Interpretation: generating functions
 
 BCC
 
@@ -772,7 +772,8 @@ FIG coronaFrame/propagate_pix-1.pdf
 
 ----------------------------------------------------------------------
 
-CORRECTIONSCOM SEC Intrinsic and realized intervals
+
+CORRECTIONS SEC Intrinsic and realized intervals
 
 ----------------------------------------------------------------------
 
@@ -850,7 +851,7 @@ EC
 
 ----------------------------------------------------------------------
 
-CORRECTIONSCOM EXTRA Observed and estimated intervals
+CORRECTIONS EXTRA Observed and estimated intervals
 
 PIC WIDEFIG networkSEIR/fig/simple.pdf
 
@@ -873,7 +874,7 @@ CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
 
 
 
-SERIALCOM TSEC Serial-interval distributions
+SERIAL TSEC Serial-interval distributions
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
@@ -965,7 +966,7 @@ SERIAL The link paradox
 
 ----------------------------------------------------------------------
 
-SERIALCOM NOBRIDGE Types of interval
+SERIAL NOBRIDGE Types of interval
 
 	Define:
 
@@ -1005,7 +1006,7 @@ CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
 
 
 
-SENDERCOM SEC Applications
+SENDER SEC Applications
 
 ----------------------------------------------------------------------
 
@@ -1085,7 +1086,7 @@ EC
 ----------------------------------------------------------------------
 
 
-VARIANTSCOM TSEC Variants
+VARIANTS TSEC Variants
 
 	The clearest view is of the rate of logistic growth of variant proportion
 
@@ -1123,7 +1124,9 @@ HIGHFIG notebook/VoCcomp.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM SEC Evaluating interventions
+
+
+INTERVENTION SEC Evaluating interventions
 
 \newcommand{\II}{\ensuremath{\mathcal I}}
 \newcommand{\HH}{\ensuremath{\mathcal H}}
@@ -1176,7 +1179,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM NOBRIDGE A kernel framework
+INTERVENTION NOBRIDGE A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 
@@ -1215,7 +1218,7 @@ INTERVENTION Measuring interventions
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM NOBRIDGE Estimating $r$ vs.~\Rx
+INTERVENTION NOBRIDGE Estimating $r$ vs.~\Rx
 
 	$r$ is easier to estimate from time series
 
@@ -1276,7 +1279,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM REGULAR Implications for intervention
+INTERVENTION REGULAR Implications for intervention
 
 FIG speedfigs/coronaPlot.Rout-0.pdf
 
@@ -1290,7 +1293,7 @@ FIG speedfigs/coronaPlot.Rout-1.pdf
 
 
 
-THANKSCOM TSEC Summary
+THANKS TSEC Summary
 
 	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
 	growth and control
