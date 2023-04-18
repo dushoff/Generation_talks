@@ -1,34 +1,8 @@
-BOX ^DEFHEAD
-CORRECTIONS ^DEFHEAD
-DUSHOFF ^DEFHEAD
-INTERVAL ^DEFHEAD
-INTERVENTION ^DEFHEAD
-LINK ^DEFHEAD
-NL ^DEFHEAD
-RTIMING ^DEFHEAD
-SENDER ^DEFHEAD
-SERIAL ^DEFHEAD
-THANKS ^DEFHEAD
-TITLE ^DEFHEAD
-VARIANTS ^DEFHEAD
-
-BOXCOM ^%%
-CORRECTIONSCOM ^%%
-DUSHOFFCOM ^%%
-INTERVALCOM ^%%
-INTERVENTIONCOM ^%%
-LINKCOM ^%%
-NLCOM ^%%
-RTIMINGCOM ^%%
-SENDERCOM ^%%
-SERIALCOM ^%%
-THANKSCOM ^%%
-TITLECOM ^%%
-VARIANTSCOM ^%%
-
-######################################################################
 
 NOTES NULLSLIDE
+
+TALKSEC NULLSLIDE
+## draft: ^DEFHEAD Talk Section: %%
 
 ######################################################################
 
@@ -39,11 +13,12 @@ BRIDGE ^DEFHEAD %%
 draft: ^DEFHEAD BRIDGE %%
 
 NOBRIDGE NULLSLIDE
-## draft: ^DEFHEAD NOBRIDGE %%
+draft: ^DEFHEAD NOBRIDGE %%
 
 ## Can be skipped for time
 REGULAR ^DEFHEAD %%
 draft: ^DEFHEAD REGULAR %%
+REGULAR NULLSLIDE
 
 ## Can be skipped, period
 ENHANCED ^DEFHEAD BONUS %%
@@ -56,7 +31,8 @@ draft: ^DEFHEAD BONUS %%
 
 ## Also older? Suppressed for technical audiences?
 GENERAL NULLSLIDE
-## draft: ^DEFHEAD GENERAL %%
+draft: ^DEFHEAD GENERAL %%
+draft: NULLSLIDE
 
 MATH ^DEFHEAD %%
 draft: ^DEFHEAD MATH %%

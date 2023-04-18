@@ -7,7 +7,7 @@ current: target
 ######################################################################
 
 vim_session:
-	bash -cl "vmt README.md"
+	bash -cl "vmt README.md local.txt.format"
 
 Sources += Makefile legacy.mk content.mk README.md
 
@@ -19,13 +19,46 @@ Sources += $(wildcard *.txt *.abs)
 ## Big talks and lots of control words
 
 Sources += filehead.pl
-## How bigtalk was made; filehead could still be used to put in new pieces I think
+## How bigtalk was made; filehead could still be used to put in new pieces I think (Apr 2023, under pressure (surprise!))
 ## %.file.txt: %.txt filehead.pl; $(PUSH)
 ## filecg = $(allcg:.txt=.file.txt)
 ## bigtalk.txt: $(filecg); $(cat)
 
+## bigtalk.draft.tex.log: bigtalk.txt bigtalk.draft.tex
 ## bigtalk.draft.tex.pdf: bigtalk.txt bigtalk.draft.tex
 ## bigtalk.draft.pdf: bigtalk.txt bigtalk.draft.tex
+
+## ntnu.md
+
+######################################################################
+
+## Make a better-sectioned version
+
+## all.talk.TXT.compare: allselect.pl
+Ignore += *.TXT
+all.talk.TXT: bigtalk.txt allselect.pl
+	$(PUSH)
+
+######################################################################
+
+## New big talk copied from all.talk.TXT
+alltalk.draft.pdf: alltalk.txt
+
+Sources += *.select
+%.select.TXT: %.select alltalk.txt talkselect.pl
+	$(PUSH)
+
+## now.select.draft.pdf: now.select alltalk.txt
+## now.select.draft.tex: 
+
+## Overview aimed at math undergrads, developed for 師大 talk 2023
+## The first-ever select-based talk
+## mathgen.select.draft.pdf: mathgen.select alltalk.txt
+## mathgen.select.draft.tex:
+
+######################################################################
+
+genEst.draft.pdf: genEst.txt
 
 ######################################################################
 
@@ -33,6 +66,7 @@ Sources += filehead.pl
 ## Convention: slide break at the end
 ## U Texas 21_05
 ## Control words are listed (but not discussed) in local.txt.format
+## Deprecated for newer insane paradigm Apr 2023
 
 ## cgAbs.txt
 cgfiles += cgTitle.txt
@@ -235,6 +269,12 @@ shields/dynamics_top.png: shields/dynamics.png
 
 cachestuff: ../TalkArchive
 	$(ln)
+
+######################################################################
+
+texi = xelatex
+latex = xelatex
+texir = $(texi) $(job) $<
 
 ######################################################################
 

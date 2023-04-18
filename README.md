@@ -1,4 +1,8 @@
 
+## post-pandemic craziness: build everything from alltalk.txt using .select files
+
+----------------------------------------------------------------------
+
 content.mk ## Old
 legacy.mk ## Older, and with comments about something older yet
 

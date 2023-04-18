@@ -1,46 +1,35 @@
 
-TITLECOM NOFRAME
+TALKSEC TITLE
 
+----------------------------------------------------------------------
+
+NOFRAME
+
+\useChinese
 \newcommand{\jdtitle}{Defining, estimating and applying transmission-interval distributions}
 \newcommand{\jdsub} {}
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
 \newcommand{\wdate}{SMB 2021: Modeling containment and mitigation of COVID-19 }
 
-\renewcommand{\jdtitle}{Transmission intervals and COVID control}
-\renewcommand{\wdate}{University of Florida Mathematical Biology Seminar 
-\\ March 2022}
-
-\renewcommand{\jdtitle}{ Speed and strength: Perspectives on modeling the spread of COVID}
-\renewcommand{\wdate}{SACEMA Center of Excellence Seminar
-\\ Stellenbosch University
-\\ April 2022}
-
-\renewcommand{\jdtitle}{Transmission intervals and COVID control}
-\renewcommand{\wdate}{Arizona State University Mathematical Biology Seminar 
-\\ April 2022}
-
-\renewcommand{\jdtitle}{Transmission intervals in Disease Modeling}
-\renewcommand{\wdate}{IBENS Minisymposium
-\\ Modeling Epidemics and Behaviour
-\\ May 2022, Paris}
+\renewcommand{\jdtitle}{Mathematical modeling of infectious diseases}
+\renewcommand{\jdsub} {Insights and limitations}
+\renewcommand{\wdate}{2023}
 
 ----------------------------------------------------------------------
 
-TITLECOM EXTRA
+EXTRA
 
-Transmission intervals and COVID control
-
-The spread of epidemics is structured by delay distributions, including the now-famous “serial interval” between the symptom-onset times of an infector and an infectee (often conflated with the “generation interval” between infection times). Defining these time distributions clearly, and describing how they relate to each other, and to key parameters of disease spread, poses interesting theoretical and practical questions, some of which are still open.
-
-I will discuss how transmission intervals link the “speed” and “strength” of epidemics, issues in their estimation, and their role in helping monitor changes in the parameters underlying the spread of COVID-19 disease.
+Taiwan never really had a good abstract
 
 ----------------------------------------------------------------------
 
-TITLECOM WORKSHOP
+WORKSHOP
 
 ----------------------------------------------------------------------
 
-DUSHOFF Jonathan Dushoff
+Jonathan Dushoff \chinese{(黃友森)}
+
+	\chinese{會講國語嗎?}
 
 	Math undergrad, trained as a theoretical ecologist
 
@@ -56,30 +45,85 @@ DUSHOFF Jonathan Dushoff
 
 		CURL http://www.ici3d.org
 
-
 ----------------------------------------------------------------------
 
-DUSHOFFCOM PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
+PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
 
 \vspace{-5ex} What is the pattern of Pythagorean triples of integers $a^2 + b^2 = c^2$?
 
 ----------------------------------------------------------------------
 
-DUSHOFFCOM PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
+PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
 
 Divide a square and a circle each into two complementary subsets that are pairwise similar
 
 ----------------------------------------------------------------------
 
-DUSHOFFCOM PICSLIDE FIG notebook/average.Rout.pdf
+Batting average \chinese{(安打率)}
+
+PIC FIG notebook/average.Rout.pdf
 
 How many at-bats does it take to get a given batting average?
 
+ADD 
+
+How many at-bats per game?
+
 ----------------------------------------------------------------------
 
+TALKSEC ModelWorlds
 
+----------------------------------------------------------------------
 
-RTIMING Covid modeling questions
+SEC What is dynamical modeling?
+
+----------------------------------------------------------------------
+
+Dynamical modeling connects scales
+
+SUBH Measles reports
+
+PIC DBFIG 0.7 my_images/trans.jpg 1 Disease_data/ewmeas.Rout.pdf
+
+	Start with rules about how things change in short time steps
+
+		Usually based on \emph{individuals}
+
+	Calculate results over longer time periods
+
+		Usually about \emph{populations}
+
+	Also known as “mechanistic” or “mathematical”
+
+----------------------------------------------------------------------
+
+Model worlds
+
+BC
+
+	A dynamical model is based on a model world
+
+	The model world has \emph{enough} assumptions to allow us to calculate
+	dynamics
+
+	The model world is \emph{simpler} than the real world
+
+	Essentially, all models are wrong, but some are useful.  -- Box and
+	Draper (1987), \emph{Empirical Model Building \ldots}
+
+NC
+
+SIDEFIG webpix/flat.png
+
+EC
+
+----------------------------------------------------------------------
+
+TALKSEC RTIMING
+
+----------------------------------------------------------------------
+
+Covid modeling questions
 
 BCC
 
@@ -101,7 +145,7 @@ EC
 
 ----------------------------------------------------------------------
 
-RTIMING Wuhan control measures
+Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
 
@@ -109,7 +153,7 @@ CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
-RTIMING NOBRIDGE Time-varying reproductive numbers
+NOBRIDGE Time-varying reproductive numbers
 
 	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
 
@@ -131,17 +175,15 @@ RTIMING NOBRIDGE Time-varying reproductive numbers
 
 ----------------------------------------------------------------------
 
-BOXCOM EXTRA
-
-ADD boxcar picture from ICI3D
+TALKSEC BOX
 
 ----------------------------------------------------------------------
 
-BOXCOM SEC Modeling approaches
+SEC Modeling approaches
 
 ----------------------------------------------------------------------
 
-BOX Simple dynamical models use compartments
+Simple dynamical models use compartments
 
 SUBH Divide people into categories:
 
@@ -155,7 +197,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM DIAGRAM SIR_model_family/sir.three.pdf
+DIAGRAM SIR_model_family/sir.three.pdf
 
 \begin{eqnarray*}
 	\frac{dS}{dt}  &=&  \mu N- \beta \frac{SI}{N} -\mu S \\
@@ -165,19 +207,19 @@ BOXCOM DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOX Delayed infectiousness
+Delayed infectiousness
 
 DIAGRAM SIR_model_family/seir.four.pdf
 
 ----------------------------------------------------------------------
 
-BOX Ebola
+Ebola \chinese{伊波拉}
 
 DIAGRAM SIR_model_family/seird.four.pdf
 
 ----------------------------------------------------------------------
 
-BOX Coronavirus
+COVID-19
 
 WIDEFIG webpix/stanford_diagram.png
 
@@ -185,13 +227,13 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-BOX GENERAL
+GENERAL
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOX GENERAL
+GENERAL
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
@@ -203,7 +245,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOX GENERAL
+GENERAL
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
@@ -218,7 +260,127 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOXCOM NOBRIDGE Renewal equation
+Lessons
+
+	Exponential invasion potential
+
+	Tendency to oscillate
+
+	Thresholds
+
+----------------------------------------------------------------------
+
+Big \Rx
+
+	$\Rx$ is the number of people who would be infected by an
+	infectious individual \emph{in a fully susceptible population.}
+
+	$\Rx = \beta/\gamma = \beta D = (cp) D$
+
+		$c$: Contact Rate
+
+		$p$: Probability of transmission (infectivity)
+
+		$D$: Average duration of infection
+
+	A disease can invade a population if and only if $\Rx>1$.
+
+	Often focus on initial period (may also say $\Ro$)
+
+----------------------------------------------------------------------
+
+REGULAR RHEAD Homogeneous endemic curve
+
+BCC
+
+CFIG Endemic_curves/propCurves.Rout-0.pdf
+
+NCC
+
+	Threshold value
+
+	Sharp response to changes in factors underlying transmission 
+
+	Works -- sometimes
+
+		Sometimes predicts unrealistic sensitivity
+
+EC
+
+----------------------------------------------------------------------
+
+Yellow fever in Panama
+
+BC
+
+CFIG Endemic_curves/propCurves.Rout-0.pdf
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+Exponential growth
+
+	Diseases have a tendency to grow exponentially at first
+
+		I infect three people, they each infect 3 people \ldots
+
+		How fast does disease grow?
+
+		How quickly do we need to respond?
+
+----------------------------------------------------------------------
+
+little $r$
+
+	We measure epidemic \emph{speed} using little $r$:
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+		Ebola, $C \approx 1 \mathrm{month}$
+
+		HIV in SSA, $C \approx 18 \mathrm{month}$
+
+	Often focus on initial period (may also say $r_0$)
+
+----------------------------------------------------------------------
+
+RHEAD little $r$
+
+FIG SIR_simulations/hiv_plot.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+REGULAR Limitations
+
+	Many conclusions from this framework make strong assumptions:
+
+		\textbf{Spatial homogeneity:} everywhere is the same
+
+		\textbf{Individual homogeneity:} everyone is the same
+
+			and everyone is everywhere
+
+		\textbf{Temporal homogeneity:}
+
+			It doesn't matter how long I've been infected, I'm either infected or
+			not
+
+----------------------------------------------------------------------
+
+TALKSEC RENEWAL
+
+----------------------------------------------------------------------
+
+NOBRIDGE Renewal equation
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -236,7 +398,7 @@ BOXCOM NOBRIDGE Renewal equation
 
 ----------------------------------------------------------------------
 
-BOX NOBRIDGE Infection kernel
+NOBRIDGE Infection kernel
 
 BCC
 
@@ -259,7 +421,7 @@ EC
 
 ----------------------------------------------------------------------
 
-BOXCOM BRIDGE Renewal-equation framework
+BRIDGE Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -279,7 +441,7 @@ BOXCOM BRIDGE Renewal-equation framework
 
 ----------------------------------------------------------------------
 
-BOX MATH Cohort modeling
+MATH Cohort modeling
 
 DIAGRAM SIR_model_family/sir.three.pdf
 
@@ -290,7 +452,7 @@ DIAGRAM SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-BOX MATH Cohort modeling
+MATH Cohort modeling
 
 WIDEFIG webpix/stanford_diagram.png
 
@@ -298,7 +460,7 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-BOXCOM BRIDGE Transmission kernel
+BRIDGE Transmission kernel
 
 BC
 
@@ -314,7 +476,11 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVALCOM TSEC Transmission intervals
+TALKSEC INTERVAL
+
+----------------------------------------------------------------------
+
+TSEC Transmission intervals
 
 BCC
 
@@ -332,13 +498,13 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVAL PSLIDE How long is a disease generation?
+PSLIDE How long is a disease generation?
 
 PIC WIDEFIG my_images/generation_girls.png
 
 ----------------------------------------------------------------------
 
-INTERVAL Generation-interval distributions
+Generation-interval distributions
 
 BC
 
@@ -356,7 +522,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVAL REGULAR Transmission intervals drive epidemics
+REGULAR Transmission intervals drive epidemics
 
 	Population-level \emph{Speed} of spread $r$ is a product:
 
@@ -367,10 +533,9 @@ INTERVAL REGULAR Transmission intervals drive epidemics
 		Something about \emph{Quickness}: Individual-level speed of transmission
 		$g(\tau)$
 
-
 ----------------------------------------------------------------------
 
-INTERVALCOM EXTRA Driving
+EXTRA Driving
 
 	To be exact:
 
@@ -380,7 +545,7 @@ INTERVALCOM EXTRA Driving
 
 ----------------------------------------------------------------------
 
-INTERVAL Mechanistic perspective
+Mechanistic perspective
 
 BCC
 
@@ -396,7 +561,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVAL HIV in sub-Saharan Africa
+HIV in sub-Saharan Africa
 
 HFIG 0.85 SIR_simulations/za_gens.Rout-0.pdf
 
@@ -404,7 +569,7 @@ $C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 ----------------------------------------------------------------------
 
-INTERVAL REGULAR Ebola outbreak
+REGULAR Ebola outbreak
 
 HFIG 0.85 my_images/weitz_full.pdf
 
@@ -412,15 +577,15 @@ $C \approx 1 \,\mathrm{month}$. Slower than expected.
 
 ----------------------------------------------------------------------
 
-INTERVAL REGULAR Coronavirus speed
+REGULAR COVID-19 speed
 
 HFIG 0.85 coronaSpread/git_push/HBcorona.tsplot.Rout.pdf
 
-$C \approx 5 \,\mathrm{day}$. Coronavirus!
+$C \approx 5 \,\mathrm{day}$.
 
 ----------------------------------------------------------------------
 
-INTERVAL Phenomenological perspective
+Phenomenological perspective
 
 BCC
 
@@ -440,7 +605,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVAL Generation interval
+Generation interval
 
 	One generation:
 	
@@ -458,13 +623,25 @@ INTERVAL Generation interval
 
 ----------------------------------------------------------------------
 
-INTERVAL MATH How long until the bus comes?
+MATH How long until the bus comes?
 
-WIDEFIG webpix/bus.jpg
+BCC
+
+	Bus leaves the station every 10 minutes on average
+
+	Exponential distribution (no memory)
+
+	How long will you wait at the bus stop?
+
+NCC
+
+CFIG webpix/bus.jpg
+
+EC
 
 ----------------------------------------------------------------------
 
-INTERVAL MATH Mean of a self-weighted quantity
+MATH Mean of a self-weighted quantity
 
 	Infectious period of an infector
 
@@ -478,9 +655,9 @@ INTERVAL MATH Mean of a self-weighted quantity
 
 ----------------------------------------------------------------------
 
-INTERVAL REGULAR Transmission intervals
+DEFHEAD Transmission intervals
 
-	Generation interval: infection ⇒ infection
+	Generation interval: transmission ⇒ transmission
 
 		Drives epidemic, often unobserved
 
@@ -498,13 +675,13 @@ INTERVAL REGULAR Transmission intervals
 
 ----------------------------------------------------------------------
 
-INTERVALCOM NOBRIDGE Serial intervals
+NOBRIDGE Serial intervals
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-INTERVALCOM NOBRIDGE Steps
+NOBRIDGE Steps
 
 BCC
 
@@ -526,252 +703,15 @@ EC
 
 ----------------------------------------------------------------------
 
-
-
-LINKCOM SEC Linking \rR
+TALKSEC CORRECTIONS
 
 ----------------------------------------------------------------------
 
-LINKCOM NOBRIDGE Renewal-equation framework
-
-	A broad framework that covers a wide range of
-	underlying models 
-
-	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
-
-		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
-
-		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
-		after becoming infected
-
-	$k$ changes through time
-
-		proportion susceptible, control measures
-
-		we often think about fixed $k(\tau)$ though
+SEC Intrinsic and realized intervals
 
 ----------------------------------------------------------------------
 
-LINKCOM NOBRIDGE Infection kernel
-
-BCC
-
-	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
-	being infected
-
-	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
-
-		\Rx\, the effective reproductive number
-
-	$k(\tau)/\Rx$ is a distribution:
-
-		$g(\tau)$, the \emph{intrinsic} generation distribution
-
-NCC
-
-CFIG ss_pix/ess.Rout-2.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-LINKCOM NOBRIDGE Estimation framework
-
-	$k(\tau, t)$ is basically everything we want to know
-
-	Usually unobservable, though
-
-	Typically try to observe $r$ or \Rx
-
-	and something about $g(\tau)$
-
-----------------------------------------------------------------------
-
-LINK Euler-Lotka equation 
-
-	If we assume $k$ is not changing through time, we expect exponential growth
-
-	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
-
-		i.e., the total of \emph{discounted} contributions is 1
-
-	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
-
-	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
-
-		The initial ``backwards'' generation interval
-
-----------------------------------------------------------------------
-
-LINK MATH Interpretation: generating functions
-
-BCC
-
-	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
-
-	$\Rx = 1/M(-r)$
-
-	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
-
-NCC
-
-CFIG ss_pix/ess.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-LINK Interpretation: strength and speed
-
-BCC
-
-CFIG ss_pix/ess.Rout-2.pdf
-
-	$ k(\tau) = \Rx g(\tau)$
-
-	Strength decomposition
-
-NCC
-
-CFIG ss_pix/ess.Rout-3.pdf
-
-	$ k(\tau) = \exp(r\tau) b(\tau)$
-
-	Speed decomposition
-
-EC
-
-----------------------------------------------------------------------
-
-LINK Compound-interest interpretation
-
-	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
-
-	$\kappa$ is the `effective dispersion'
-
-		Equal to the squared coefficient of variation when $G$ is
-		gamma-distributed
-
-	$X$ is the compound-interest approximation to the exponential
-
-		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
-
-		Approaches exponential as $\kappa \to 0$
-
-	Compounding underlying $\Rx$ is dual to dynamical compounding
-
-	CREDIT Park et al., Epidemics DOI:10.1101/312397
-
-----------------------------------------------------------------------
-
-LINK Product framework
-
-	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
-
-		⇒ Weaker \Rx\ for fixed $r$
-
-	More variation $\kappa$ means more ``compounding'' of infections
-
-		⇒ quicker spread, when epidemic is growing 
-
-	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $ is the sense in
-	which $r$ is actually a product
-
-----------------------------------------------------------------------
-
-LINK Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-LINK Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-LINK Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-LINK Moment approximation
-
-BCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
-
-NCC
-
-WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-LINK Approximating the \rR\ relationship
-
-FIG Generation_distributions/lognormal.curve.Rout.pdf
-
-----------------------------------------------------------------------
-
-LINK Heuristics for \Rx
-
-	Mechanistic: $\Rx = DcpS/N$
-
-		Duration of infectiousness, contact rate, probability of transmission,
-		proportion susceptible
-
-	Phenomenological: $\Rx = X(r \bar G; 1/\kappa)$
-
-		Rate of exponential growth, mean generation interval, effective
-		dispersion of generation interval
-
-----------------------------------------------------------------------
-
-LINK Propagating error
-
-FIG coronaFrame/propagate_pix-0.pdf
-
-----------------------------------------------------------------------
-
-LINK Propagating error
-
-FIG coronaFrame/propagate_pix-1.pdf
-
-----------------------------------------------------------------------
-
-CORRECTIONSCOM SEC Intrinsic and realized intervals
-
-----------------------------------------------------------------------
-
-CORRECTIONS Growing epidemics
+Growing epidemics
 
 BC
 
@@ -794,7 +734,7 @@ EC
 
 ----------------------------------------------------------------------
 
-CORRECTIONS Types of interval
+Types of interval
 
 	Define:
 
@@ -814,8 +754,7 @@ CORRECTIONS Types of interval
 
 ----------------------------------------------------------------------
 
-
-CORRECTIONS Correcting backward intervals
+Correcting backward intervals
 
 WIDEFIG backward.jpg
 
@@ -823,7 +762,7 @@ CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
 
 ----------------------------------------------------------------------
 
-CORRECTIONS Generations in space
+Generations in space
 
 BC
 
@@ -845,7 +784,7 @@ EC
 
 ----------------------------------------------------------------------
 
-CORRECTIONSCOM EXTRA Observed and estimated intervals
+EXTRA Observed and estimated intervals
 
 PIC WIDEFIG networkSEIR/fig/simple.pdf
 
@@ -855,9 +794,11 @@ ADD This figure needs to be "rescued" from screenbox; networkSEIR does not all
 
 ADD png is a screenshot! in case I suddenly decide I want it. Only on 4.5
 
+ADD Pix are both there, but I don't know why 2023 Apr 18 (Tue)
+
 ----------------------------------------------------------------------
 
-CORRECTIONS Outbreak estimation
+Outbreak estimation
 
 PIC WIDEFIG trace/fig/cmp_reproductive_seminr.pdf
 
@@ -865,16 +806,261 @@ CREDIT Park et al. JRSI, DOI: 10.1098/rsif.2019.0719
 
 ----------------------------------------------------------------------
 
+TALKSEC LINK
+
+----------------------------------------------------------------------
+
+SEC Linking \rR
+
+----------------------------------------------------------------------
+
+NOBRIDGE Renewal-equation framework
+
+	A broad framework that covers a wide range of
+	underlying models 
+
+	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+	$k$ changes through time
+
+		proportion susceptible, control measures
+
+		we often think about fixed $k(\tau)$ though
+
+----------------------------------------------------------------------
+
+NOBRIDGE Infection kernel
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+NOBRIDGE Estimation framework
+
+	$k(\tau, t)$ is basically everything we want to know
+
+	Usually unobservable, though
+
+	Typically try to observe $r$ or \Rx
+
+	and something about $g(\tau)$
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	If we assume $k$ is not changing through time, we expect exponential growth
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	Note that $b(\tau) = k(\tau)\exp(-r\tau)$ is also a distribution
+
+		The initial ``backwards'' generation interval
+
+----------------------------------------------------------------------
+
+MATH Interpretation: generating functions
+
+BCC
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	$\Rx = 1/M(-r)$
+
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Interpretation: strength and speed
+
+BCC
+
+CFIG ss_pix/ess.Rout-2.pdf
+
+	$ k(\tau) = \Rx g(\tau)$
+
+	Strength decomposition
+
+NCC
+
+CFIG ss_pix/ess.Rout-3.pdf
+
+	$ k(\tau) = \exp(r\tau) b(\tau)$
+
+	Speed decomposition
+
+EC
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	$\Rx = (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$\kappa$ is the “effective dispersion”
+
+		Equal to the squared coefficient of variation when $G$ is
+		gamma-distributed
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
+
+	Compounding underlying $\Rx$ is dual to dynamical compounding
+
+	CREDIT Park et al., Epidemics DOI:10.1101/312397
+
+----------------------------------------------------------------------
+
+Product framework
+
+	Quicker generations (small $\bar G$) mean faster $r$ for fixed \Rx
+
+		⇒ Weaker \Rx\ for fixed $r$
+
+	More variation $\kappa$ means more ``compounding'' of infections
+
+		⇒ quicker spread, when epidemic is growing 
+
+	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $ is the sense in
+	which $r$ is actually a product
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Approximating the \rR\ relationship
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Heuristics for \Rx
+
+	Mechanistic: $\Rx = DcpS/N$
+
+		Duration of infectiousness, contact rate, probability of transmission,
+		proportion susceptible
+
+	Phenomenological: $\Rx = X(r \bar G; 1/\kappa)$
+
+		Rate of exponential growth, mean generation interval, effective
+		dispersion of generation interval
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-0.pdf
+
+----------------------------------------------------------------------
+
+Propagating error
+
+FIG coronaFrame/propagate_pix-1.pdf
+
+----------------------------------------------------------------------
 
 
+TALKSEC SERIAL
 
-SERIALCOM TSEC Serial-interval distributions
+----------------------------------------------------------------------
+
+TSEC Serial-interval distributions
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-SERIAL Serial intervals are proxies
+Serial intervals are proxies
 
 BC
 
@@ -893,14 +1079,13 @@ EC
 
 ----------------------------------------------------------------------
 
-SERIAL The serial-mean paradox
+The serial-mean paradox
 
 BCC
 
 CFIG rabies_correlations/figure/general_interval.png
 
 NCC
-
 
 	Empirically, even the means are not the same!
 
@@ -918,7 +1103,7 @@ EC
 
 ----------------------------------------------------------------------
 
-SERIAL Heterogeneity
+Heterogeneity
 
 BCC
 
@@ -931,7 +1116,7 @@ NCC
 
 	Serial intervals average over infectees (everyone is infected once)
 
-	Coronavirus: people diagnosed early are less likely to transmit
+	COVID-19: people diagnosed early are less likely to transmit
 
 		could bias GI estimates
 
@@ -939,7 +1124,7 @@ EC
 
 ----------------------------------------------------------------------
 
-SERIAL The link paradox
+The link paradox
 
 	Imagine a renewal process where symptoms in the infector cause symptoms in
 	the infectee
@@ -960,7 +1145,7 @@ SERIAL The link paradox
 
 ----------------------------------------------------------------------
 
-SERIALCOM NOBRIDGE Types of interval
+NOBRIDGE Types of interval
 
 	Define:
 
@@ -980,7 +1165,7 @@ SERIALCOM NOBRIDGE Types of interval
 
 ----------------------------------------------------------------------
 
-SERIAL The forward serial interval
+The forward serial interval
 
 WIDEFIG my_images/serial_incubation.png
 
@@ -990,7 +1175,7 @@ WIDEFIG my_images/serial_incubation.png
 
 ----------------------------------------------------------------------
 
-SERIAL Observed epidemiological intervals
+Observed epidemiological intervals
 
 HFIG 0.75 my_images/serial_shot.png
 
@@ -998,13 +1183,15 @@ CREDIT Park et al. https://doi.org/10.1101/2020.06.04.20122713
 
 ----------------------------------------------------------------------
 
-
-
-SENDERCOM SEC Applications
+TALKSEC SENDER
 
 ----------------------------------------------------------------------
 
-SENDER Unmitigated estimates
+SEC Applications
+
+----------------------------------------------------------------------
+
+Unmitigated estimates
 
 BCC
 
@@ -1022,7 +1209,7 @@ EC
 
 ----------------------------------------------------------------------
 
-SENDER Unmitigated estimates
+Unmitigated estimates
 
 WIDEFIG my_images/senderPDF.png
 
@@ -1030,8 +1217,11 @@ CREDIT https://www.medrxiv.org/content/10.1101/2021.11.17.21266051v2
 
 ----------------------------------------------------------------------
 
+TALKSEC NL
 
-NL Intervals from the Netherlands
+----------------------------------------------------------------------
+
+Intervals from the Netherlands
 
 FIG my_images/dkCases.pdf
 
@@ -1039,19 +1229,19 @@ CREDIT Park et al., in prep
 
 ----------------------------------------------------------------------
 
-NL Fitted incubation periods
+Fitted incubation periods
 
 FIG my_images/dkIncubation-0.pdf
 
 ----------------------------------------------------------------------
 
-NL Dynamical correction
+Dynamical correction
 
 FIG my_images/dkIncubation-1.pdf
 
 ----------------------------------------------------------------------
 
-NL Observed and fitted transmission intervals
+Observed and fitted transmission intervals
 
 BCC
 
@@ -1065,7 +1255,7 @@ EC
 
 ----------------------------------------------------------------------
 
-NL Observed and fitted transmission intervals
+Observed and fitted transmission intervals
 
 BCC
 
@@ -1079,8 +1269,11 @@ EC
 
 ----------------------------------------------------------------------
 
+TALKSEC VARIANTS
 
-VARIANTSCOM TSEC Variants
+----------------------------------------------------------------------
+
+TSEC Variants
 
 	The clearest view is of the rate of logistic growth of variant proportion
 
@@ -1092,7 +1285,7 @@ VARIANTSCOM TSEC Variants
 
 ----------------------------------------------------------------------
 
-VARIANTS Delta variant in the UK
+Delta variant in the UK
 
 WIDEFIG my_images/uklog.png
 
@@ -1100,19 +1293,19 @@ CREDIT Mike Li, PHAC
 
 ----------------------------------------------------------------------
 
-VARIANTS Relationship between $\delta$ and \Rwt
+Relationship between $\delta$ and \Rwt
 
 HIGHFIG notebook/VoCcomp.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-VARIANTS Variant has faster generations
+Variant has faster generations
 
 HIGHFIG notebook/VoCcomp.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-VARIANTS Variant has slower generations
+Variant has slower generations
 
 HIGHFIG notebook/VoCcomp.Rout-2.pdf
 
@@ -1126,11 +1319,15 @@ NOFRAME
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM SEC Evaluating interventions
+TALKSEC INTERVENTION
 
 ----------------------------------------------------------------------
 
-INTERVENTION Wuhan control measures
+SEC Evaluating interventions
+
+----------------------------------------------------------------------
+
+Wuhan control measures
 
 WIDEFIG my_images/pan_time_shot.png
 
@@ -1138,7 +1335,7 @@ CREDIT https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
-INTERVENTION Time-varying reproductive numbers
+Time-varying reproductive numbers
 
 	Instantaneous \Ri\ (Cori):
 
@@ -1157,7 +1354,7 @@ INTERVENTION Time-varying reproductive numbers
 
 ----------------------------------------------------------------------
 
-INTERVENTION Strength-like and speed-like interventions
+Strength-like and speed-like interventions
 
 BC
 
@@ -1175,7 +1372,7 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM NOBRIDGE A kernel framework
+NOBRIDGE A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 
@@ -1196,7 +1393,7 @@ INTERVENTIONCOM NOBRIDGE A kernel framework
 
 ----------------------------------------------------------------------
 
-INTERVENTION Measuring interventions
+Measuring interventions
 
 	Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
 	proportional amount by which the intervention reduces transmission.
@@ -1214,7 +1411,7 @@ INTERVENTION Measuring interventions
 
 ----------------------------------------------------------------------
 
-INTERVENTIONCOM NOBRIDGE Estimating $r$ vs.~\Rx
+NOBRIDGE Estimating $r$ vs.~\Rx
 
 	$r$ is easier to estimate from time series
 
@@ -1230,7 +1427,7 @@ INTERVENTIONCOM NOBRIDGE Estimating $r$ vs.~\Rx
 
 ----------------------------------------------------------------------
 
-INTERVENTION Measuring the epidemic
+Measuring the epidemic
 
 	$r_0$ is easier to estimate from early time series
 
@@ -1246,7 +1443,7 @@ INTERVENTION Measuring the epidemic
 
 ----------------------------------------------------------------------
 
-INTERVENTION Mix and match
+Mix and match
 
 	Constant-strength interventions reduce \Ri\ by the strength of
 	control \PP.
@@ -1260,7 +1457,7 @@ INTERVENTION Mix and match
 
 ----------------------------------------------------------------------
 
-INTERVENTION Unidentifiability
+Unidentifiability
 
 BC
 
@@ -1275,21 +1472,23 @@ EC
 
 ----------------------------------------------------------------------
 
-INTERVENTION REGULAR Implications for intervention
+REGULAR Implications for intervention
 
 FIG speedfigs/coronaPlot.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-INTERVENTION Implications for intervention
+Implications for intervention
 
 FIG speedfigs/coronaPlot.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
+TALKSEC THANKS
 
+----------------------------------------------------------------------
 
-THANKSCOM TSEC Summary
+TSEC Summary
 
 	Strength \Rx\ and speed $r$ are complementary ways to understand epidemic
 	growth and control
@@ -1304,7 +1503,7 @@ THANKSCOM TSEC Summary
 
 ----------------------------------------------------------------------
 
-THANKS Thanks
+Thanks
 
 	Organizers and audience
 
@@ -1316,6 +1515,4 @@ THANKS Thanks
 		Hampson, So \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
-
-
 

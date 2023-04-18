@@ -806,7 +806,7 @@ Generations in space
 
 	How do local interactions affect realized generation intervals?
 
-WIDEFIG tmpfigs/network.png
+WIDEFIG my_images/network.png
 
 ----------------------------------------------------------------------
 
