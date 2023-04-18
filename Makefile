@@ -9,16 +9,16 @@ current: target
 vim_session:
 	bash -cl "vmt README.md local.txt.format"
 
-Sources += Makefile legacy.mk content.mk README.md
+Sources += Makefile legacy.mk content.mk
 
-Sources += $(wildcard *.txt *.abs)
+Sources += $(wildcard *.txt *.abs *.md)
 
 ######################################################################
 
 ## Newer insane paradigm 台灣 2023
 ## Big talks and lots of control words
 
-Sources += filehead.pl
+Sources += $(wildcard *.pl)
 ## How bigtalk was made; filehead could still be used to put in new pieces I think (Apr 2023, under pressure (surprise!))
 ## %.file.txt: %.txt filehead.pl; $(PUSH)
 ## filecg = $(allcg:.txt=.file.txt)
