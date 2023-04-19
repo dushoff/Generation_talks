@@ -335,6 +335,8 @@ Lessons
 
 Big \Rx
 
+	We measure epidemic \emph{strength} using big \Rx.
+
 	$\Rx$ is the expected (average) number of people infected by an
 	infectious individual
 
@@ -348,7 +350,7 @@ Big \Rx
 
 	A disease can invade a population if and only if $\Rx>1$.
 
-	Often focus on initial period (may also say $\Ro$)
+	RESTING Often focus on initial period (may also say $\Ro$)
 
 ----------------------------------------------------------------------
 
