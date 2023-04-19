@@ -3,6 +3,12 @@ TALKSEC TITLE
 
 ----------------------------------------------------------------------
 
+EXTRA
+
+Check RESTING, ADD, NTNUSKIP, TAIWAN, etc.
+
+----------------------------------------------------------------------
+
 NOFRAME
 
 \useChinese
@@ -27,9 +33,17 @@ WORKSHOP
 
 ----------------------------------------------------------------------
 
-Jonathan Dushoff \chinese{(黃友森)}
+TALKSEC DUSHOFF
 
-	\chinese{會講國語嗎?}
+----------------------------------------------------------------------
+
+NOFRAME
+
+\useChinese
+
+----------------------------------------------------------------------
+
+Jonathan Dushoff \chinese{(黃友森)}
 
 	Math undergrad, trained as a theoretical ecologist
 
@@ -45,7 +59,26 @@ Jonathan Dushoff \chinese{(黃友森)}
 
 		CURL http://www.ici3d.org
 
+	\chinese{會講國語嗎?}
+
 ----------------------------------------------------------------------
+
+PICSLIDE WIDEFIG webpix/independenceHall.jpg
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG webpix/mantenga.jpg
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG webpix/lugangLane.jpg
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG webpix/hamiltonSkyline.jpg
+
+----------------------------------------------------------------------
+
 
 PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
 
@@ -82,22 +115,52 @@ SEC What is dynamical modeling?
 Dynamical modeling connects scales
 
 SUBH Measles reports
+\chinese{麻疹病例報告}
 
 PIC DBFIG 0.7 my_images/trans.jpg 1 Disease_data/ewmeas.Rout.pdf
 
-	Start with rules about how things change in short time steps
+	Start with rules \chinese{(規則)}about how things change in short time steps
 
 		Usually based on \emph{individuals}
 
-	Calculate results over longer time periods
+	Calculate results \chinese{(結果)}over longer time periods
+
 
 		Usually about \emph{populations}
 
-	Also known as “mechanistic” or “mathematical”
+	RESTING Also known as “mechanistic” or “mathematical”
 
 ----------------------------------------------------------------------
 
-Model worlds
+Dynamical modeling bridges from individuals to populations
+
+BC
+
+	We can learn about the result from the rules
+
+	Or about the rules from the result
+
+	What do we think happened?
+
+	What do we expect to happen if we change something?
+
+NC
+
+CFIG webpix/bridge.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+TAIWANPIC WIDEFIG my_images/fct.png
+
+----------------------------------------------------------------------
+
+TAIWANPIC WIDEFIG my_images/lxh.png
+
+----------------------------------------------------------------------
+
+NTNUSKIP Model worlds
 
 BC
 
@@ -272,8 +335,8 @@ Lessons
 
 Big \Rx
 
-	$\Rx$ is the number of people who would be infected by an
-	infectious individual \emph{in a fully susceptible population.}
+	$\Rx$ is the expected (average) number of people infected by an
+	infectious individual
 
 	$\Rx = \beta/\gamma = \beta D = (cp) D$
 
@@ -320,6 +383,8 @@ NC
 CFIG webpix/aedes.jpg
 
 EC
+
+	Taiwan \chinese{登革熱}
 
 ----------------------------------------------------------------------
 
@@ -506,11 +571,11 @@ PIC WIDEFIG my_images/generation_girls.png
 
 Generation-interval distributions
 
-BC
+BCC
 
 CFIG Generation_distributions/gamHist.Rout-4.pdf
 
-NC
+NCC
 
 	The generation distribution measures generations of the disease
 
@@ -518,34 +583,45 @@ NC
 
 	Link $r$ (exponential growth rate) and \Rx\ (effective reproductive number)
 
+	What happens when our generation estimate changes?
+
 EC
 
 ----------------------------------------------------------------------
 
-REGULAR Transmission intervals drive epidemics
+EXTRA
 
-	Population-level \emph{Speed} of spread $r$ is a product:
-
-		Something about \emph{Strength} \Rx\
-
-		× 
-
-		Something about \emph{Quickness}: Individual-level speed of transmission
-		$g(\tau)$
+We should be able to do alternatives, like this quick version of the product explication, and a quizzier one. Can be done either with selection (and therefore disjoint slide sets), or fmt, or both
 
 ----------------------------------------------------------------------
 
-EXTRA Driving
+Example: Post-death transmission and safe burial
 
-	To be exact:
+BC
 
-		$ r = (1/\hat G) \times \log(\Rx) $
+	How much Ebola spread occurs before vs.\ after death
 
-		$\hat G$ is the effective mean generation time
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+	\chinese{傳染比我們認為的慢}
+
+		\chinese{那是好事嗎?}
+
+NC
+
+FIG webpix/burial_team.jpg
+
+EC
 
 ----------------------------------------------------------------------
 
 Mechanistic perspective
+
+SUBH \chinese{知道了是規則}
 
 BCC
 
@@ -561,7 +637,7 @@ EC
 
 ----------------------------------------------------------------------
 
-HIV in sub-Saharan Africa
+NTNUSKIP HIV in sub-Saharan Africa
 
 HFIG 0.85 SIR_simulations/za_gens.Rout-0.pdf
 
@@ -569,11 +645,11 @@ $C \approx 18 \,\mathrm{month}$. Faster than expected.
 
 ----------------------------------------------------------------------
 
-REGULAR Ebola outbreak
+Ebola outbreak
 
 HFIG 0.85 my_images/weitz_full.pdf
 
-$C \approx 1 \,\mathrm{month}$. Slower than expected.
+RESTING $C \approx 1 \,\mathrm{month}$. Slower than expected.
 
 ----------------------------------------------------------------------
 
@@ -586,6 +662,8 @@ $C \approx 5 \,\mathrm{day}$.
 ----------------------------------------------------------------------
 
 Phenomenological perspective
+
+SUBH \chinese{知道了是結果}
 
 BCC
 
@@ -605,6 +683,19 @@ EC
 
 ----------------------------------------------------------------------
 
+Transmission intervals drive epidemics
+
+	Population-level \emph{Speed} of spread $r$ is a product \chinese{(乘積)}:
+
+		Something about \emph{Strength} \Rx\
+
+		× 
+
+		Something about \emph{Quickness}: Individual-level speed of transmission
+		$g(\tau)$
+
+----------------------------------------------------------------------
+
 Generation interval
 
 	One generation:
@@ -619,7 +710,7 @@ Generation interval
 
 		Equal to infectious period \emph{only} when we assume a Markovian process
 
-		Common source of confusion for people with ODE background
+		RESTING Common source of confusion for people with ODE background
 
 ----------------------------------------------------------------------
 
@@ -630,8 +721,11 @@ BCC
 	Bus leaves the station every 10 minutes on average
 
 	Exponential distribution (no memory)
+	\chinese{公車彼此獨立}
 
 	How long will you wait at the bus stop?
+
+	How long between buses?
 
 NCC
 
@@ -657,31 +751,33 @@ MATH Mean of a self-weighted quantity
 
 DEFHEAD Transmission intervals
 
-	Generation interval: transmission ⇒ transmission
+	Generation interval: transmission ⇒ transmission \chinese{傳染到}
 
 		Drives epidemic, often unobserved
 
-	Serial interval: symptoms ⇒ symptoms
+	Serial interval: symptoms ⇒ symptoms \chinese{(生病)}
 
 		Observable…, may be hard to define
 
 	Other:
 
 		diagnosis ⇒ diagnosis
+		\chinese{(診斷)}
 
 		notification ⇒ notification
+		\chinese{(報告)}
 
 	Some cases are never symptomatic, or never diagnosed
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Serial intervals
+NTNUSKIP NOBRIDGE Serial intervals
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Steps
+NTNUSKIP NOBRIDGE Steps
 
 BCC
 
@@ -703,7 +799,7 @@ EC
 
 ----------------------------------------------------------------------
 
-TALKSEC CORRECTIONS
+TALKSEC TIMECORR
 
 ----------------------------------------------------------------------
 
@@ -759,6 +855,16 @@ Correcting backward intervals
 WIDEFIG backward.jpg
 
 CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+TALKSEC SPACECORR
+
+----------------------------------------------------------------------
+
+NOFRAME
+
+\useChinese
 
 ----------------------------------------------------------------------
 
@@ -885,7 +991,7 @@ Euler-Lotka equation
 
 ----------------------------------------------------------------------
 
-MATH Interpretation: generating functions
+NTNUSKIP MATH Interpretation: generating functions
 
 BCC
 
@@ -956,8 +1062,11 @@ Product framework
 
 		⇒ quicker spread, when epidemic is growing 
 
-	COMMENT $ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $ is the sense in
-	which $r$ is actually a product
+	$ r = (1/\bar G) \times \ell(\Rx; \bar\kappa) $
+
+		RESTING is the sense in which $r$ is actually a product
+
+		$\ell$ is the inverse of $X$
 
 ----------------------------------------------------------------------
 
@@ -1060,7 +1169,9 @@ WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-Serial intervals are proxies
+NTNUSKIP Serial intervals are proxies
+
+ADD Maybe not a great slide
 
 BC
 
@@ -1079,7 +1190,41 @@ EC
 
 ----------------------------------------------------------------------
 
+Serial-interval variance
+
+	Serial intervals usually have \emph{more} variation than generation interavls
+
+		Example: influenza \chinese{(流刑感冒)})
+
+	But we expect them to have the same mean
+
+		Generations of the same process
+
+----------------------------------------------------------------------
+
 The serial-mean paradox
+
+BC
+
+	Rabies \chinese{(狂犬病)}
+
+		We can observe generation interval directly (bites)
+
+		Generation intervals are longer than serial intervals
+
+			transmission generations are longer than symptom generations
+
+NC
+
+CFIG rabies_correlations/intervalPlots.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+NTNUSKIP
+
+ADD Not sure about this slide either. 
 
 BCC
 
@@ -1105,9 +1250,11 @@ EC
 
 Heterogeneity
 
+SUBH Differences between individuals
+
 BCC
 
-CFIG rabies_correlations/intervalPlots.Rout.pdf
+CFIG rabies_correlations/figure/general_interval.png
 
 NCC
 
@@ -1131,6 +1278,8 @@ The link paradox
 
 		Assume homogeneity
 
+			No differences between individuals
+
 	This has to match the same \rR\ link as the true (generation-interval
 	driven) process
 
@@ -1145,7 +1294,7 @@ The link paradox
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Types of interval
+SHORTTYPES Types of interval
 
 	Define:
 

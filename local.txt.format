@@ -6,6 +6,18 @@ TALKSEC NULLSLIDE
 
 ######################################################################
 
+## In flux, pay attention
+
+NTNUSKIP NULLSLIDE
+
+## Very abbreviated interjection about interval types; not sure how that worked
+SHORTTYPES NULLSLIDE
+
+TAIWANPIC ^PICSLIDE %%
+TAIWAN DEFHEAD %%
+
+######################################################################
+
 ## Control words; edit for specific talks
 
 ## Change in source file: for things that can be skipped if discussed elsewhere in same talk

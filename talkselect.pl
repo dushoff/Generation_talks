@@ -17,6 +17,7 @@ for (split /\s+/, $s){
 
 open(T, $tf);
 my $t = <T>;
+$t =~ s/\bENDTALK\b.*//s;
 my @t = split/TALKSEC\s+/, $t;
 shift @t;
 

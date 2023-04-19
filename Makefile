@@ -17,6 +17,7 @@ Sources += $(wildcard *.txt *.abs *.md)
 
 ## Newer insane paradigm 台灣 2023
 ## Big talks and lots of control words
+## Also, two levels of selection, because wtf not?
 
 Sources += $(wildcard *.pl)
 ## How bigtalk was made; filehead could still be used to put in new pieces I think (Apr 2023, under pressure (surprise!))
@@ -44,6 +45,8 @@ all.talk.TXT: bigtalk.txt allselect.pl
 ## New big talk copied from all.talk.TXT
 alltalk.draft.pdf: alltalk.txt
 
+## talkselect uses .select to select TALKSEC-marked sections (keeping order from .txt file)
+## recognizes magic word ENDTALK
 Sources += *.select
 %.select.TXT: %.select alltalk.txt talkselect.pl
 	$(PUSH)
@@ -54,7 +57,8 @@ Sources += *.select
 ## Overview aimed at math undergrads, developed for 師大 talk 2023
 ## The first-ever select-based talk
 ## mathgen.select.draft.pdf: mathgen.select alltalk.txt
-## mathgen.select.draft.tex:
+## mathgen.select.draft.tex: mathgen.select.draft.log
+## mathgen.select.final.pdf: mathgen.select alltalk.txt
 
 ######################################################################
 
