@@ -9,6 +9,7 @@ current: target
 vim_session:
 	bash -cl "vmt README.md local.txt.format"
 
+## Oh my goodness!
 Sources += Makefile legacy.mk content.mk
 
 Sources += $(wildcard *.txt *.abs *.md)
@@ -25,12 +26,6 @@ Sources += $(wildcard *.pl)
 ## filecg = $(allcg:.txt=.file.txt)
 ## bigtalk.txt: $(filecg); $(cat)
 
-## bigtalk.draft.tex.log: bigtalk.txt bigtalk.draft.tex
-## bigtalk.draft.tex.pdf: bigtalk.txt bigtalk.draft.tex
-## bigtalk.draft.pdf: bigtalk.txt bigtalk.draft.tex
-
-## ntnu.md
-
 ######################################################################
 
 ## Make a better-sectioned version
@@ -39,6 +34,10 @@ Sources += $(wildcard *.pl)
 Ignore += *.TXT
 all.talk.TXT: bigtalk.txt allselect.pl
 	$(PUSH)
+
+.PRECIOUS: %.select
+%.select:
+	$(CP) big.select $@
 
 ######################################################################
 
@@ -59,6 +58,16 @@ Sources += *.select
 ## mathgen.select.draft.pdf: mathgen.select alltalk.txt
 ## mathgen.select.draft.tex: mathgen.select.draft.log
 ## mathgen.select.final.pdf: mathgen.select alltalk.txt
+
+## Short, techy version, started for HK trip.
+## How long is it?
+
+## gentech.select.draft.pdf: gentech.select local.txt.format alltalk.txt
+## gentech.select.final.pdf: gentech.select local.txt.format alltalk.txt
+## gentech.select.TXT: gentech.select talkselect.pl
+
+## science.select.draft.pdf: science.select local.txt.format alltalk.txt
+## science.select.final.pdf: science.select local.txt.format alltalk.txt
 
 ######################################################################
 

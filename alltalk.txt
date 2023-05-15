@@ -5,13 +5,12 @@ TALKSEC TITLE
 
 EXTRA
 
-Check RESTING, ADD, NTNUSKIP, TAIWAN, etc.
+Check RESTING, ADD, etc.
 
 ----------------------------------------------------------------------
 
 NOFRAME
 
-\useChinese
 \newcommand{\jdtitle}{Defining, estimating and applying transmission-interval distributions}
 \newcommand{\jdsub} {}
 \newcommand{\jdauth} {Jonathan Dushoff, McMaster University}
@@ -20,6 +19,17 @@ NOFRAME
 \renewcommand{\jdtitle}{Mathematical modeling of infectious diseases}
 \renewcommand{\jdsub} {Insights and limitations}
 \renewcommand{\wdate}{2023}
+
+\renewcommand{\jdtitle}{Thoughts about generation intervals}
+\renewcommand{\jdsub}{Cowling meeting}
+\renewcommand{\wdate}{2023}
+
+\renewcommand{\jdauth} {Jonathan Dushoff \yeschinese{黃友森}\\ McMaster University}
+\renewcommand{\jdtitle}{Transmission intervals in disease modeling}
+\renewcommand{\jdsub}{}
+\renewcommand{\wdate}{HKPU, May 2023}
+
+\nochinese
 
 ----------------------------------------------------------------------
 
@@ -34,12 +44,6 @@ WORKSHOP
 ----------------------------------------------------------------------
 
 TALKSEC DUSHOFF
-
-----------------------------------------------------------------------
-
-NOFRAME
-
-\useChinese
 
 ----------------------------------------------------------------------
 
@@ -59,7 +63,7 @@ Jonathan Dushoff \chinese{(黃友森)}
 
 		CURL http://www.ici3d.org
 
-	\chinese{會講國語嗎?}
+	CHINESE 會講國語嗎?
 
 ----------------------------------------------------------------------
 
@@ -98,8 +102,6 @@ PIC FIG notebook/average.Rout.pdf
 
 How many at-bats does it take to get a given batting average?
 
-ADD 
-
 How many at-bats per game?
 
 ----------------------------------------------------------------------
@@ -114,8 +116,7 @@ SEC What is dynamical modeling?
 
 Dynamical modeling connects scales
 
-SUBH Measles reports
-\chinese{麻疹病例報告}
+SUBH Measles reports \chinese{麻疹病例報告}
 
 PIC DBFIG 0.7 my_images/trans.jpg 1 Disease_data/ewmeas.Rout.pdf
 
@@ -125,10 +126,9 @@ PIC DBFIG 0.7 my_images/trans.jpg 1 Disease_data/ewmeas.Rout.pdf
 
 	Calculate results \chinese{(結果)}over longer time periods
 
-
 		Usually about \emph{populations}
 
-	RESTING Also known as “mechanistic” or “mathematical”
+	OFFLINE Also known as “mechanistic” or “mathematical”
 
 ----------------------------------------------------------------------
 
@@ -160,7 +160,7 @@ TAIWANPIC WIDEFIG my_images/lxh.png
 
 ----------------------------------------------------------------------
 
-NTNUSKIP Model worlds
+Model worlds
 
 BC
 
@@ -216,7 +216,7 @@ CURL https://jamanetwork.com/journals/jama/fullarticle/2764658
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Time-varying reproductive numbers
+OFF Time-varying reproductive numbers
 
 	Case reproductive number $\Rx_c$ (e.g., Wallinga and Teunis)
 
@@ -350,8 +350,6 @@ Big \Rx
 
 	A disease can invade a population if and only if $\Rx>1$.
 
-	RESTING Often focus on initial period (may also say $\Ro$)
-
 ----------------------------------------------------------------------
 
 REGULAR RHEAD Homogeneous endemic curve
@@ -447,7 +445,7 @@ TALKSEC RENEWAL
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Renewal equation
+OFF Renewal equation
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -465,7 +463,7 @@ NOBRIDGE Renewal equation
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Infection kernel
+OFF Infection kernel
 
 BCC
 
@@ -488,7 +486,7 @@ EC
 
 ----------------------------------------------------------------------
 
-BRIDGE Renewal-equation framework
+OFF Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -527,7 +525,7 @@ CREDIT Childs et al., http://covid-measures.stanford.edu/
 
 ----------------------------------------------------------------------
 
-BRIDGE Transmission kernel
+OFF Transmission kernel
 
 BC
 
@@ -609,9 +607,9 @@ BC
 
 	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
 
-	\chinese{傳染比我們認為的慢}
+	CHINESE 傳染比我們認為的慢
 
-		\chinese{那是好事嗎?}
+	CHINESE 那是好事嗎?
 
 NC
 
@@ -639,7 +637,7 @@ EC
 
 ----------------------------------------------------------------------
 
-NTNUSKIP HIV in sub-Saharan Africa
+HIV in sub-Saharan Africa
 
 HFIG 0.85 SIR_simulations/za_gens.Rout-0.pdf
 
@@ -722,8 +720,7 @@ BCC
 
 	Bus leaves the station every 10 minutes on average
 
-	Exponential distribution (no memory)
-	\chinese{公車彼此獨立}
+	Exponential distribution (no memory) \chinese{公車彼此獨立}
 
 	How long will you wait at the bus stop?
 
@@ -763,23 +760,21 @@ DEFHEAD Transmission intervals
 
 	Other:
 
-		diagnosis ⇒ diagnosis
-		\chinese{(診斷)}
+		diagnosis ⇒ diagnosis \chinese{(診斷)}
 
-		notification ⇒ notification
-		\chinese{(報告)}
+		notification ⇒ notification \chinese{(報告)}
 
 	Some cases are never symptomatic, or never diagnosed
 
 ----------------------------------------------------------------------
 
-NTNUSKIP NOBRIDGE Serial intervals
+OFF Serial intervals
 
 WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-NTNUSKIP NOBRIDGE Steps
+OFF Steps
 
 BCC
 
@@ -864,12 +859,6 @@ TALKSEC SPACECORR
 
 ----------------------------------------------------------------------
 
-NOFRAME
-
-\useChinese
-
-----------------------------------------------------------------------
-
 Generations in space
 
 BC
@@ -892,11 +881,15 @@ EC
 
 ----------------------------------------------------------------------
 
-EXTRA Observed and estimated intervals
+Observed and estimated intervals
 
 PIC WIDEFIG networkSEIR/fig/simple.pdf
 
 PIC WIDEFIG networkSEIR/fig/simple.png
+
+----------------------------------------------------------------------
+
+EXTRA
 
 ADD This figure needs to be "rescued" from screenbox; networkSEIR does not all
 
@@ -922,7 +915,7 @@ SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Renewal-equation framework
+OFF Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -942,7 +935,7 @@ NOBRIDGE Renewal-equation framework
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Infection kernel
+OFF Infection kernel
 
 BCC
 
@@ -965,7 +958,7 @@ EC
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Estimation framework
+OFF Estimation framework
 
 	$k(\tau, t)$ is basically everything we want to know
 
@@ -993,7 +986,7 @@ Euler-Lotka equation
 
 ----------------------------------------------------------------------
 
-NTNUSKIP MATH Interpretation: generating functions
+MATH Interpretation: generating functions
 
 BCC
 
@@ -1171,26 +1164,6 @@ WIDEFIG rabies_correlations/figure/general_interval.png
 
 ----------------------------------------------------------------------
 
-NTNUSKIP Serial intervals are proxies
-
-ADD Maybe not a great slide
-
-BC
-
-CFIG rabies_correlations/figure/general_interval.png
-
-NC
-
-	Serial intervals measure generations of the same process as generation
-	intervals
-
-		Should have the same mean
-
-		But often larger variance (flu example)
-
-EC
-
-----------------------------------------------------------------------
 
 Serial-interval variance
 
@@ -1224,31 +1197,6 @@ EC
 
 ----------------------------------------------------------------------
 
-NTNUSKIP
-
-ADD Not sure about this slide either. 
-
-BCC
-
-CFIG rabies_correlations/figure/general_interval.png
-
-NCC
-
-	Empirically, even the means are not the same!
-
-	Generation interval:
-
-		Latent + infectious waiting, or
-
-		Incubation + Symptomatic waiting … of infector
-
-	Serial interval:
-
-		Symptomatic waiting (infector) + Incubation (infectee)
-
-EC
-
-----------------------------------------------------------------------
 
 Heterogeneity
 
@@ -1462,13 +1410,6 @@ HIGHFIG notebook/VoCcomp.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
-NOFRAME
-
-\newcommand{\II}{\ensuremath{\mathcal I}}
-\newcommand{\HH}{\ensuremath{\mathcal H}}
-\newcommand{\PP}{\ensuremath{\mathcal P}}
-
-----------------------------------------------------------------------
 
 TALKSEC INTERVENTION
 
@@ -1523,7 +1464,15 @@ EC
 
 ----------------------------------------------------------------------
 
-NOBRIDGE A kernel framework
+NOFRAME
+
+\newcommand{\II}{\ensuremath{\mathcal I}}
+\newcommand{\HH}{\ensuremath{\mathcal H}}
+\newcommand{\PP}{\ensuremath{\mathcal P}}
+
+----------------------------------------------------------------------
+
+OFF A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 
@@ -1562,7 +1511,7 @@ Measuring interventions
 
 ----------------------------------------------------------------------
 
-NOBRIDGE Estimating $r$ vs.~\Rx
+OFF Estimating $r$ vs.~\Rx
 
 	$r$ is easier to estimate from time series
 

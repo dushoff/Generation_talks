@@ -1,4 +1,14 @@
 
+## Todo
+
+Probably replace select framework with lots of detailed keywords for each freaking slide: sectionName_audience_context. Context would be stuff like introducing a skipped section
+
+Add more speed-strength stuff (where is it?)
+
+More citations (and update them!)
+
+----------------------------------------------------------------------
+
 ## post-pandemic craziness: build everything from alltalk.txt using .select files
 
 ----------------------------------------------------------------------

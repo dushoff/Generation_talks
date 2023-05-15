@@ -1,4 +1,6 @@
 
+CHINESE %!
+
 NOTES NULLSLIDE
 
 TALKSEC NULLSLIDE
@@ -13,19 +15,28 @@ NTNUSKIP NULLSLIDE
 ## Very abbreviated interjection about interval types; not sure how that worked
 SHORTTYPES NULLSLIDE
 
-TAIWANPIC ^PICSLIDE %%
-TAIWAN DEFHEAD %%
+TAIWANPIC ^TAIWAN PICSLIDE %%
+TAIWAN NULLSLIDE %%
+
+ADD %!
+draft: ADD %%
 
 ######################################################################
 
 ## Control words; edit for specific talks ## NO mismatched omissions!
 
 ## Change in source file: for things that can be skipped if discussed elsewhere in same talk
-BRIDGE ^DEFHEAD %%
-draft: ^DEFHEAD BRIDGE %%
+OFF NULLSLIDE
+draft: ^DEFHEAD OFF %%
 
-NOBRIDGE NULLSLIDE
-draft: ^DEFHEAD NOBRIDGE %%
+ON ^DEFHEAD %%
+draft: ^DEFHEAD ON %%
+
+ONLINE ^%%
+OFFLINE %!
+draft: OFF %%
+
+######################################################################
 
 ## Can be skipped for time
 REGULAR ^DEFHEAD %%
@@ -33,7 +44,6 @@ draft: ^DEFHEAD REGULAR %%
 REGULAR NULLSLIDE
 
 ## Can be skipped, period
-ENHANCED ^DEFHEAD BONUS %%
 ENHANCED NULLSLIDE
 draft: ^DEFHEAD ENHANCED %%
 
@@ -42,9 +52,6 @@ BONUS ^DEFHEAD %%
 draft: ^DEFHEAD BONUS %%
 
 ## Also older? Suppressed for technical audiences?
-GENERAL NULLSLIDE
-draft: ^DEFHEAD GENERAL %%
-draft: NULLSLIDE
+GENERAL ^OFF GENERAL %%
 
-MATH ^DEFHEAD %%
-draft: ^DEFHEAD MATH %%
+MATH ^OFF %%

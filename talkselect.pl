@@ -10,6 +10,7 @@ my %keys;
 
 open(S, $sf);
 my $s = <S>;
+$s =~ s/#.*//g;
 
 for (split /\s+/, $s){
 	$keys{$_} = 0;
