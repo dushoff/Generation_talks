@@ -42,6 +42,7 @@ all.talk.TXT: bigtalk.txt allselect.pl
 ######################################################################
 
 ## New big talk copied from all.talk.TXT
+## Not everything is here, maybe, like filtered means and Portnoy means
 alltalk.draft.pdf: alltalk.txt
 
 ## talkselect uses .select to select TALKSEC-marked sections (keeping order from .txt file)
@@ -50,6 +51,7 @@ Sources += *.select
 %.select.TXT: %.select alltalk.txt talkselect.pl
 	$(PUSH)
 
+## Just for testing I guess
 ## now.select.draft.pdf: now.select alltalk.txt
 ## now.select.draft.tex: 
 
