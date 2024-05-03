@@ -4,7 +4,8 @@ CHINESE %!
 NOTES NULLSLIDE
 
 TALKSEC NULLSLIDE
-## draft: ^DEFHEAD Talk Section: %%
+draft: ^DEFHEAD Talk Section: %%
+draft: NULLSLIDE
 
 ######################################################################
 
@@ -28,6 +29,7 @@ draft: ADD %%
 ## Change in source file: for things that can be skipped if discussed elsewhere in same talk
 OFF NULLSLIDE
 draft: ^DEFHEAD OFF %%
+draft: NULLSLIDE
 
 ON ^DEFHEAD %%
 draft: ^DEFHEAD ON %%
@@ -54,4 +56,4 @@ draft: ^DEFHEAD BONUS %%
 ## Also older? Suppressed for technical audiences?
 GENERAL ^OFF GENERAL %%
 
-MATH ^OFF %%
+MATH ^ON %%

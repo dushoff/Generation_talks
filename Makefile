@@ -21,6 +21,7 @@ Sources += $(wildcard *.txt *.abs *.md)
 ## Also, two levels of selection, because wtf not?
 
 Sources += $(wildcard *.pl)
+## bigtalk is probably deprecated (and matches too many things in grep)
 ## How bigtalk was made; filehead could still be used to put in new pieces I think (Apr 2023, under pressure (surprise!))
 ## %.file.txt: %.txt filehead.pl; $(PUSH)
 ## filecg = $(allcg:.txt=.file.txt)
@@ -73,6 +74,16 @@ Sources += *.select
 
 ######################################################################
 
+## New paradigm 2024 Apr 29 (Mon), College Park
+## A single, well-commented “current” file
+
+# current.select.draft.pdf: current.select local.txt.format alltalk.txt
+# current.select.final.pdf: current.select local.txt.format alltalk.txt
+
+######################################################################
+
+## Does not make currently (something from Daniel's trace)
+## Last given 2019, maybe don't wory for now
 genEst.draft.pdf: genEst.txt
 
 ######################################################################
