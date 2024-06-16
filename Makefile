@@ -21,6 +21,7 @@ Sources += $(wildcard *.txt *.abs *.md)
 ## Also, two levels of selection, because wtf not?
 
 Sources += $(wildcard *.pl)
+## bigtalk is probably deprecated (and matches too many things in grep)
 ## How bigtalk was made; filehead could still be used to put in new pieces I think (Apr 2023, under pressure (surprise!))
 ## %.file.txt: %.txt filehead.pl; $(PUSH)
 ## filecg = $(allcg:.txt=.file.txt)
@@ -42,6 +43,7 @@ all.talk.TXT: bigtalk.txt allselect.pl
 ######################################################################
 
 ## New big talk copied from all.talk.TXT
+## Not everything is here, maybe, like filtered means and Portnoy means
 alltalk.draft.pdf: alltalk.txt
 
 ## talkselect uses .select to select TALKSEC-marked sections (keeping order from .txt file)
@@ -50,6 +52,7 @@ Sources += *.select
 %.select.TXT: %.select alltalk.txt talkselect.pl
 	$(PUSH)
 
+## Just for testing I guess
 ## now.select.draft.pdf: now.select alltalk.txt
 ## now.select.draft.tex: 
 
@@ -71,6 +74,16 @@ Sources += *.select
 
 ######################################################################
 
+## New paradigm 2024 Apr 29 (Mon), College Park
+## A single, well-commented “current” file
+
+# current.select.draft.pdf: current.select local.txt.format alltalk.txt
+# current.select.final.pdf: current.select local.txt.format alltalk.txt
+
+######################################################################
+
+## Does not make currently (something from Daniel's trace)
+## Last given 2019, maybe don't wory for now
 genEst.draft.pdf: genEst.txt
 
 ######################################################################
