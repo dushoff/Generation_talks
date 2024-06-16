@@ -156,9 +156,7 @@ rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
 ## Note: not yet piped to pipelines (see Makefile)
 Ignore += tz_pipelines ## Fix this up
-subdirs += rabies_correlations
-rabies_correlations: loc= ../../rabies/correlations
-rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git
+pardirs += rabies_correlations
 
 subdirs += coronaSpread
 coronaSpread: loc=../../outbreak/corona
@@ -168,17 +166,17 @@ subdirs += coronaFrame
 coronaFrame: loc=../../research/exponential_framework
 coronaFrame: url=https://github.com/parksw3/wuhan.git
 
-subdirs += ss_pix
-ss_pix: loc=../ss_pix
+pardirs += ss_pix
+## ss_pix: loc=../ss_pix
 
 subdirs += Endemic_curves
 Endemic_curves: loc=../Endemic_curves
 
 ## This is not a JD directory and does not work well with hotdirs
 ## make the figures subdirectory into a pardir at some point
-subdirs += networkSEIR
-networkSEIR: loc=generations_mark1/networkSEIR
-networkSEIR: url=https://github.com/parksw3/networkSEIR.git
+## subdirs += networkSEIR
+## networkSEIR: loc=generations_mark1/networkSEIR
+## networkSEIR: url=https://github.com/parksw3/networkSEIR.git
 colddirs += networkSEIR/fig
 
 subdirs += link_calculations
@@ -188,7 +186,9 @@ Endemic_curves: loc=../link_calculations
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations Generation_distributions SIR_model_family WA_Ebola_Outbreak trace Disease_data
+subdirs += SIR_simulations Generation_distributions SIR_model_family trace Disease_data
+
+pardirs += WA_Ebola_Outbreak 
 
 ## early 2020
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
@@ -201,7 +201,8 @@ $(subdirs):
 Ignore += $(subdirs) generations_mark1
 
 ## hot to reduce technical debt, cold for emergencies
-hotdirs += $(subdirs)
+hotdirs += $(pardirs)
+hotdirs += $(subdirs) 
 
 ######################################################################
 
