@@ -320,7 +320,7 @@ makestuff/Makefile:
 -include makestuff/webpix.mk
 -include makestuff/hotcold.mk
 -include makestuff/compare.mk
--include makestuff/cacherepo.mk
--include makestuff/cacheflow.mk
+## -include makestuff/cacherepo.mk
+## -include makestuff/cacheflow.mk
 
 -include makestuff/git.mk
