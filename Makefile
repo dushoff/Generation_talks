@@ -191,6 +191,7 @@ Endemic_curves: loc=../Endemic_curves
 ## networkSEIR: loc=generations_mark1/networkSEIR
 ## networkSEIR: url=https://github.com/parksw3/networkSEIR.git
 colddirs += networkSEIR/fig
+Ignore += networkSEIR
 
 subdirs += link_calculations
 Endemic_curves: loc=../link_calculations
@@ -211,7 +212,7 @@ $(subdirs):
 	|| (ls -d $(loc)/Makefile && $(LN) $(loc) $@) \
 	|| git clone $(url) $@
 
-Ignore += $(subdirs) generations_mark1
+Ignore += $(subdirs) generations_mark1 $(pardirs)
 
 ## hot to reduce technical debt, cold for emergencies
 hotdirs += $(pardirs)
