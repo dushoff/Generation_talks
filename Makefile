@@ -291,10 +291,12 @@ shields/dynamics_top.png: shields/dynamics.png
 
 ######################################################################
 
+## tf is this? 2025 Mar 18 (Tue)
 ## Does not chain right!
 ../TalkArchive:
 	$(justmakethere)
 
+Ignore += cachestuff
 cachestuff: ../TalkArchive
 	$(ln)
 
