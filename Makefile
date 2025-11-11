@@ -74,6 +74,10 @@ Sources += *.select
 
 ######################################################################
 
+## Stuff I just randomly want to look at 2025 Nov 11 (Tue)
+
+## covid_colloq.draft.pdf: covid_colloq.txt
+
 ## New paradigm 2024 Apr 29 (Mon), College Park
 ## A single, well-commented “current” file
 
