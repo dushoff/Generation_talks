@@ -24,10 +24,10 @@ NOFRAME
 \renewcommand{\jdsub}{Cowling meeting}
 \renewcommand{\wdate}{2023}
 
-\renewcommand{\jdauth} {Jonathan Dushoff \yeschinese{黃友森}\\ McMaster University}
+\renewcommand{\jdauth} {Jonathan Dushoff \chinese{黃友森}\\ McMaster University}
 \renewcommand{\jdtitle}{Transmission intervals in disease modeling}
 \renewcommand{\jdsub}{}
-\renewcommand{\wdate}{HKPU, May 2023}
+\renewcommand{\wdate}{UMD Math Bio seminar, Apr 2024}
 
 \nochinese
 
@@ -83,7 +83,6 @@ PICSLIDE FIG webpix/hamiltonSkyline.jpg
 
 ----------------------------------------------------------------------
 
-
 PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
 
 \vspace{-5ex} What is the pattern of Pythagorean triples of integers $a^2 + b^2 = c^2$?
@@ -91,8 +90,6 @@ PICSLIDE WFIG 0.8 notebook/pythagoras.Rout.pdf
 ----------------------------------------------------------------------
 
 PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
-
-\yeschinese{國內}
 
 ----------------------------------------------------------------------
 
@@ -384,11 +381,11 @@ CFIG webpix/aedes.jpg
 
 EC
 
-	Taiwan \chinese{登革熱}
+	 \chinese{Taiwan 登革熱}
 
 ----------------------------------------------------------------------
 
-Exponential growth
+GENERAL Exponential growth
 
 	Diseases have a tendency to grow exponentially at first
 
@@ -766,6 +763,8 @@ DEFHEAD Transmission intervals
 
 	Some cases are never symptomatic, or never diagnosed
 
+	COMMENT Avoid going off on a terminology rant!
+
 ----------------------------------------------------------------------
 
 OFF Serial intervals
@@ -915,7 +914,7 @@ SEC Linking \rR
 
 ----------------------------------------------------------------------
 
-OFF Renewal-equation framework
+MATH Renewal-equation framework
 
 	A broad framework that covers a wide range of
 	underlying models 
@@ -1169,7 +1168,7 @@ Serial-interval variance
 
 	Serial intervals usually have \emph{more} variation than generation interavls
 
-		Example: influenza \chinese{(流刑感冒)})
+		Example: influenza \chinese{(流刑感冒)}
 
 	But we expect them to have the same mean
 
@@ -1472,7 +1471,7 @@ NOFRAME
 
 ----------------------------------------------------------------------
 
-OFF A kernel framework
+ON A kernel framework
 
 	$i(t) = \int{k(\tau, t)i(t-\tau) \,d\tau}$
 
@@ -1609,10 +1608,11 @@ Thanks
 
 	Collaborators:
 
-		Park, Weitz 
+		Hampson, Park, Li, Weitz
 
-		Li, Bolker, Earn, Champredon, Gharouni, Papst,
-		Hampson, So \ldots
+		Bolker, Earn
+
+		Champredon, Gharouni, Papst, Roswell, So \ldots
 
 	Funders: NSERC, CIHR, PHAC, WHO, McMaster
 

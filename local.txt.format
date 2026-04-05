@@ -4,7 +4,8 @@ CHINESE %!
 NOTES NULLSLIDE
 
 TALKSEC NULLSLIDE
-## draft: ^DEFHEAD Talk Section: %%
+draft: ^DEFHEAD Talk Section: %%
+draft: NULLSLIDE
 
 ######################################################################
 
@@ -20,22 +21,6 @@ TAIWAN NULLSLIDE %%
 
 ADD %!
 draft: ADD %%
-
-######################################################################
-
-## Control words; edit for specific talks ## NO mismatched omissions!
-
-## Change in source file: for things that can be skipped if discussed elsewhere in same talk
-OFF NULLSLIDE
-draft: ^DEFHEAD OFF %%
-
-ON ^DEFHEAD %%
-draft: ^DEFHEAD ON %%
-
-ONLINE ^%%
-OFFLINE %!
-draft: OFF %%
-
 ######################################################################
 
 ## Can be skipped for time
@@ -54,4 +39,4 @@ draft: ^DEFHEAD BONUS %%
 ## Also older? Suppressed for technical audiences?
 GENERAL ^OFF GENERAL %%
 
-MATH ^OFF %%
+MATH ^ON %%

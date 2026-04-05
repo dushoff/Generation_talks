@@ -21,6 +21,7 @@ Sources += $(wildcard *.txt *.abs *.md)
 ## Also, two levels of selection, because wtf not?
 
 Sources += $(wildcard *.pl)
+## bigtalk is probably deprecated (and matches too many things in grep)
 ## How bigtalk was made; filehead could still be used to put in new pieces I think (Apr 2023, under pressure (surprise!))
 ## %.file.txt: %.txt filehead.pl; $(PUSH)
 ## filecg = $(allcg:.txt=.file.txt)
@@ -42,6 +43,7 @@ all.talk.TXT: bigtalk.txt allselect.pl
 ######################################################################
 
 ## New big talk copied from all.talk.TXT
+## Not everything is here, maybe, like filtered means and Portnoy means
 alltalk.draft.pdf: alltalk.txt
 
 ## talkselect uses .select to select TALKSEC-marked sections (keeping order from .txt file)
@@ -50,6 +52,7 @@ Sources += *.select
 %.select.TXT: %.select alltalk.txt talkselect.pl
 	$(PUSH)
 
+## Just for testing I guess
 ## now.select.draft.pdf: now.select alltalk.txt
 ## now.select.draft.tex: 
 
@@ -71,6 +74,20 @@ Sources += *.select
 
 ######################################################################
 
+## Stuff I just randomly want to look at 2025 Nov 11 (Tue)
+
+## covid_colloq.draft.pdf: covid_colloq.txt
+
+## New paradigm 2024 Apr 29 (Mon), College Park
+## A single, well-commented “current” file
+
+# current.select.draft.pdf: current.select local.txt.format alltalk.txt
+# current.select.final.pdf: current.select local.txt.format alltalk.txt
+
+######################################################################
+
+## Does not make currently (something from Daniel's trace)
+## Last given 2019, maybe don't wory for now
 genEst.draft.pdf: genEst.txt
 
 ######################################################################
@@ -156,9 +173,7 @@ rabies_R0: url=https://github.com/wzmli/rabies_R0.git
 
 ## Note: not yet piped to pipelines (see Makefile)
 Ignore += tz_pipelines ## Fix this up
-subdirs += rabies_correlations
-rabies_correlations: loc= ../../rabies/correlations
-rabies_correlations: url=https://github.com/wzmli/rabies_correlations.git
+pardirs += rabies_correlations
 
 subdirs += coronaSpread
 coronaSpread: loc=../../outbreak/corona
@@ -168,18 +183,19 @@ subdirs += coronaFrame
 coronaFrame: loc=../../research/exponential_framework
 coronaFrame: url=https://github.com/parksw3/wuhan.git
 
-subdirs += ss_pix
-ss_pix: loc=../ss_pix
+pardirs += ss_pix
+## ss_pix: loc=../ss_pix
 
 subdirs += Endemic_curves
 Endemic_curves: loc=../Endemic_curves
 
 ## This is not a JD directory and does not work well with hotdirs
 ## make the figures subdirectory into a pardir at some point
-subdirs += networkSEIR
-networkSEIR: loc=generations_mark1/networkSEIR
-networkSEIR: url=https://github.com/parksw3/networkSEIR.git
+## subdirs += networkSEIR
+## networkSEIR: loc=generations_mark1/networkSEIR
+## networkSEIR: url=https://github.com/parksw3/networkSEIR.git
 colddirs += networkSEIR/fig
+Ignore += networkSEIR
 
 subdirs += link_calculations
 Endemic_curves: loc=../link_calculations
@@ -188,7 +204,9 @@ Endemic_curves: loc=../link_calculations
 
 ## Unprocessed!
 ## For this directory to stand alone (useful?) we need link variables
-subdirs += SIR_simulations Generation_distributions SIR_model_family WA_Ebola_Outbreak trace Disease_data
+subdirs += SIR_simulations Generation_distributions SIR_model_family trace Disease_data
+
+pardirs += WA_Ebola_Outbreak 
 
 ## early 2020
 ## NOTE: subdirs are assumed to be _linked_ (and alled at home)
@@ -198,10 +216,11 @@ $(subdirs):
 	|| (ls -d $(loc)/Makefile && $(LN) $(loc) $@) \
 	|| git clone $(url) $@
 
-Ignore += $(subdirs) generations_mark1
+Ignore += $(subdirs) generations_mark1 $(pardirs)
 
 ## hot to reduce technical debt, cold for emergencies
-hotdirs += $(subdirs)
+hotdirs += $(pardirs)
+hotdirs += $(subdirs) 
 
 ######################################################################
 
@@ -276,10 +295,12 @@ shields/dynamics_top.png: shields/dynamics.png
 
 ######################################################################
 
+## tf is this? 2025 Mar 18 (Tue)
 ## Does not chain right!
 ../TalkArchive:
 	$(justmakethere)
 
+Ignore += cachestuff
 cachestuff: ../TalkArchive
 	$(ln)
 
@@ -306,7 +327,7 @@ makestuff/Makefile:
 -include makestuff/webpix.mk
 -include makestuff/hotcold.mk
 -include makestuff/compare.mk
--include makestuff/cacherepo.mk
--include makestuff/cacheflow.mk
+## -include makestuff/cacherepo.mk
+## -include makestuff/cacheflow.mk
 
 -include makestuff/git.mk
