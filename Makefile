@@ -7,7 +7,7 @@ current: target
 ######################################################################
 
 vim_session:
-	bash -cl "vmt README.md local.txt.format"
+	bash -ic "vmt README.md local.txt.format"
 
 ## Oh my goodness!
 Sources += Makefile legacy.mk content.mk
